@@ -1,0 +1,23 @@
+[package]
+publish = false
+name = "electron-sys"
+version = "0.0.0"
+authors = ["Darin Morrison <freebroccolo@users.noreply.github.com>"]
+edition = "2018"
+
+[lib]
+name = "electron_sys"
+path = "src/lib.rs"
+
+[dependencies]
+serde = "1.0.90"
+serde_derive = "1.0.90"
+wasm-bindgen = "0.2.42"
+
+[dependencies.js-sys]
+version = "0.3.19"
+features = []
+
+[dependencies.web-sys]
+version = "0.3.19"
+features = []
