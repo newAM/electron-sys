@@ -1,8 +1,14 @@
 [package]
-publish = false
 name = "electron-sys"
 version = "0.0.0"
 authors = ["Darin Morrison <freebroccolo@users.noreply.github.com>"]
+license = "MIT/Apache-2.0"
+readme = "README.md"
+categories = ["wasm"]
+repository = "https://github.com/freebroccolo/electron-sys"
+description = """
+Raw bindings to the Electron API for projects using wasm-bindgen.
+"""
 edition = "2018"
 
 [lib]
