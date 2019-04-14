@@ -1,12 +1,12 @@
 {
-  "name": "quick-start",
+  "name": "quick-start-dodrio",
   "version": "0.1.0",
   "author": "Darin Morrison <freebroccolo@users.noreply.github.com>",
   "scripts": {
     "pack-app-main": "cd crates/app-main && wasm-pack build --target nodejs",
     "pack-app-renderer": "cd crates/app-renderer && wasm-pack build --target web",
     "prestart": "npm run pack-app-main && npm run pack-app-renderer",
-    "start": "electron crates/app-main/pkg/quick_start_app_main.js"
+    "start": "electron crates/app-main/pkg/quick_start_dodrio_app_main.js"
   },
   "dependencies": {
     "electron": "4.1.4",

@@ -1,5 +1,5 @@
 [package]
-name = "app-renderer"
+name = "quick-start-app-renderer"
 version = "0.1.0"
 authors = ["Darin Morrison <freebroccolo@users.noreply.github.com>"]
 edition = "2018"
