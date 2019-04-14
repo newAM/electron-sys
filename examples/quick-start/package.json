@@ -1,0 +1,22 @@
+{
+  "name": "quick-start",
+  "version": "0.1.0",
+  "author": "Darin Morrison <freebroccolo@users.noreply.github.com>",
+  "scripts": {
+    "pack-app-main": "cd crates/app-main && wasm-pack build --target nodejs",
+    "pack-app-renderer": "cd crates/app-renderer && wasm-pack build --target no-modules",
+    "prestart": "npm run pack-app-main && npm run pack-app-renderer",
+    "start": "electron crates/app-main/pkg/app_main.js"
+  },
+  "dependencies": {
+    "esm": "3.2.22"
+  },
+  "devDependencies": {
+    "@types/node": "11.13.4",
+    "electron": "^4.1.4",
+    "text-encoding": "0.7.0",
+    "ts-node": "8.0.3",
+    "tslint": "5.15.0",
+    "typescript": "3.4.2"
+  }
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="./crates/app-renderer/pkg/app_renderer.js"></script>
+    <script type="module">
+      const { main } = wasm_bindgen;
+      async function run() {
+        await wasm_bindgen("./crates/app-renderer/pkg/app_renderer_bg.wasm");
+        main();
+      }
+      run();
+    </script>
+  </head>
+  <body></body>
+</html>
