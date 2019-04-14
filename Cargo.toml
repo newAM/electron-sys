@@ -31,3 +31,9 @@ features = []
 [dependencies.wasm-bindgen]
 version = "0.2.42"
 features = ["serde-serialize", "nightly"]
+
+[workspace]
+members = [
+  "examples/quick-start/crates/app-main",
+  "examples/quick-start/crates/app-renderer",
+]
