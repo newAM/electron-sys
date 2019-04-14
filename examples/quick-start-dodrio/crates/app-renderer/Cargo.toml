@@ -1,4 +1,5 @@
 [package]
+publish = false
 name = "quick-start-dodrio-app-renderer"
 version = "0.1.0"
 authors = ["Darin Morrison <freebroccolo@users.noreply.github.com>"]
