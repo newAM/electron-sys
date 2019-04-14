@@ -9,9 +9,6 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 console_error_panic_hook = "0.1.6"
-js-sys = "0.3.19"
-serde = "1.0.90"
-serde_derive = "1.0.90"
 
 [dependencies.electron-sys]
 version = "0.1.0"
@@ -19,8 +16,4 @@ path = "../../../.."
 
 [dependencies.wasm-bindgen]
 version = "0.2.42"
-features = ["serde-serialize", "nightly"]
-
-[dependencies.web-sys]
-version = "0.3.19"
-features = ["console"]
+features = []
