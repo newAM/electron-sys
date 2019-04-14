@@ -1,8 +1,7 @@
 use electron_sys::{app, browser_window, BrowserWindow};
 use wasm_bindgen::prelude::*;
 
-#[allow(non_upper_case_globals)]
-static mut mainWindow: Option<BrowserWindow> = None;
+static mut MAIN_WINDOW: Option<BrowserWindow> = None;
 
 fn create_window() -> Result<(), JsValue> {
     let options = browser_window::Options {
@@ -11,7 +10,7 @@ fn create_window() -> Result<(), JsValue> {
     };
     let window = BrowserWindow::new(Some(options));
     window.load_file("..\\..\\..\\..\\..\\index.html".into()); // FIXME
-    unsafe { mainWindow = Some(window) };
+    unsafe { MAIN_WINDOW = Some(window) };
     Ok(())
 }
 
