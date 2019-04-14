@@ -1,11 +1,10 @@
-use electron_sys::{BrowserWindow, app, browser_window};
+use electron_sys::{app, browser_window, BrowserWindow};
 use wasm_bindgen::prelude::*;
 
 #[allow(non_upper_case_globals)]
 static mut mainWindow: Option<BrowserWindow> = None;
 
 fn create_window() -> Result<(), JsValue> {
-    // use std::path::Path;
     let options = browser_window::Options {
         height: 800,
         width: 600,
