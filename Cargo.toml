@@ -12,6 +12,7 @@ Raw bindings to the Electron API for projects using wasm-bindgen.
 edition = "2018"
 
 [lib]
+crate-type = ["cdylib"]
 name = "electron_sys"
 path = "src/lib.rs"
 
