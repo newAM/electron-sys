@@ -1,29 +1,9 @@
 #![feature(try_trait)]
 
+mod error;
+
 use dodrio::{builder::*, bumpalo, Node, Render, RenderContext, Vdom};
-use failure::Fail;
-use serde_derive::Serialize;
-use std::{convert::From, option::NoneError};
 use wasm_bindgen::prelude::*;
-
-#[wasm_bindgen]
-#[derive(Debug, Fail, Serialize)]
-pub enum AppError {
-    #[fail(display = "object null or undefined")]
-    NoneError, // FIXME: not the best
-}
-
-impl From<NoneError> for AppError {
-    fn from(_: NoneError) -> Self {
-        AppError::NoneError
-    }
-}
-
-impl From<AppError> for JsValue {
-    fn from(err: AppError) -> Self {
-        JsValue::from(format!("{}", err))
-    }
-}
 
 struct Hello {
     name: String,
@@ -37,7 +17,7 @@ impl Render for Hello {
     }
 }
 
-pub fn boot() -> Result<(), AppError> {
+pub fn boot() -> Result<(), error::AppError> {
     Vdom::new(
         web_sys::window()?.document()?.body()?.as_ref(),
         Hello {
