@@ -3,10 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <script type="module">
-      require("./crates/app-renderer/pkg/app_renderer.js");
-      const { main } = wasm_bindgen;
+      require = require("esm")(module);
+      const {
+        default: init,
+        main
+      } = require("./crates/app-renderer/pkg/app_renderer.js");
       async function run() {
-        await wasm_bindgen("./crates/app-renderer/pkg/app_renderer_bg.wasm");
+        await init("./crates/app-renderer/pkg/app_renderer_bg.wasm");
         main();
       }
       run();

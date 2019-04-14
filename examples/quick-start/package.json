@@ -4,11 +4,12 @@
   "author": "Darin Morrison <freebroccolo@users.noreply.github.com>",
   "scripts": {
     "pack-app-main": "cd crates/app-main && wasm-pack build --target nodejs",
-    "pack-app-renderer": "cd crates/app-renderer && wasm-pack build --target no-modules",
+    "pack-app-renderer": "cd crates/app-renderer && wasm-pack build --target web",
     "prestart": "npm run pack-app-main && npm run pack-app-renderer",
     "start": "electron crates/app-main/pkg/app_main.js"
   },
   "dependencies": {
-    "electron": "4.1.4"
+    "electron": "4.1.4",
+    "esm": "3.2.22"
   }
 }
