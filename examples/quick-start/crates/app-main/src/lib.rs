@@ -1,47 +1,12 @@
-use js_sys::{Function, JsString, Object};
-use serde_derive::{Deserialize, Serialize};
+use electron_sys::{BrowserWindow, app, browser_window};
 use wasm_bindgen::prelude::*;
-use web_sys::console;
-
-#[wasm_bindgen]
-#[derive(Clone, Debug, Deserialize, Serialize)]
-pub struct Options {
-    pub height: u32,
-    pub width: u32,
-}
-
-#[wasm_bindgen(module = "electron")]
-extern "C" {
-    #[wasm_bindgen(extends = Object)]
-    pub type EventEmitter;
-
-    #[wasm_bindgen(method)]
-    pub fn on(this: &EventEmitter, event: JsString, cb: &Function);
-
-    #[wasm_bindgen(extends = EventEmitter)]
-    pub type App;
-
-    pub static app: App;
-
-    #[wasm_bindgen(method, js_name = "getAppPath")]
-    pub fn get_app_path(this: &App) -> JsString;
-
-    #[wasm_bindgen(extends = EventEmitter)]
-    pub type BrowserWindow;
-
-    #[wasm_bindgen(constructor)]
-    pub fn new(options: Option<Options>) -> BrowserWindow;
-
-    #[wasm_bindgen(method, js_name = "loadFile")]
-    pub fn load_file(this: &BrowserWindow, path: JsString);
-}
 
 #[allow(non_upper_case_globals)]
 static mut mainWindow: Option<BrowserWindow> = None;
 
 fn create_window() -> Result<(), JsValue> {
     // use std::path::Path;
-    let options = Options {
+    let options = browser_window::Options {
         height: 800,
         width: 600,
     };
