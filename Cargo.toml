@@ -34,4 +34,6 @@ features = ["serde-serialize", "nightly"]
 members = [
   "examples/quick-start/crates/app-main",
   "examples/quick-start/crates/app-renderer",
+  "examples/quick-start-dodrio/crates/app-main",
+  "examples/quick-start-dodrio/crates/app-renderer",
 ]
