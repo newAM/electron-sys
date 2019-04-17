@@ -2,7 +2,7 @@
 
 mod error;
 
-use dodrio::{builder::*, bumpalo, Node, Render, RenderContext, Vdom};
+use dodrio::{bumpalo, Node, Render, RenderContext, Vdom};
 use wasm_bindgen::prelude::*;
 
 struct Hello {
@@ -11,6 +11,7 @@ struct Hello {
 
 impl Render for Hello {
     fn render<'a>(&self, cx: &mut RenderContext<'a>) -> Node<'a> {
+        use dodrio::builder::{p, text};
         let msg = bumpalo::format!(in cx.bump, "Hello, {}!", self.name);
         let msg = msg.into_bump_str();
         p(&cx).children([text(msg)]).finish()
