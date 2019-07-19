@@ -15,19 +15,19 @@ edition = "2018"
 crate-type = ["rlib"]
 
 [dependencies]
-serde = "1.0.93"
-serde_derive = "1.0.93"
+serde = "1.0.97"
+serde_derive = "1.0.97"
 
 [dependencies.js-sys]
-version = "0.3.24"
+version = "0.3.25"
 features = []
 
 [dependencies.web-sys]
-version = "0.3.24"
+version = "0.3.25"
 features = []
 
 [dependencies.wasm-bindgen]
-version = "0.2.47"
+version = "0.2.48"
 features = ["serde-serialize", "nightly"]
 
 [workspace]

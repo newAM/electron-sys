@@ -16,5 +16,5 @@ version = "0.1.0"
 path = "../../../.."
 
 [dependencies.wasm-bindgen]
-version = "0.2.42"
+version = "0.2.48"
 features = ["nightly"]
