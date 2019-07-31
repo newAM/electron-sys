@@ -15,8 +15,8 @@ edition = "2018"
 crate-type = ["rlib"]
 
 [dependencies]
-serde = "1.0.97"
-serde_derive = "1.0.97"
+serde = "1.0.98"
+serde_derive = "1.0.98"
 
 [dependencies.js-sys]
 version = "0.3.25"
