@@ -1,5 +1,3 @@
-#![feature(try_trait)]
-
 mod error;
 
 use dodrio::{bumpalo, Node, Render, RenderContext, Vdom};
@@ -19,14 +17,21 @@ impl Render for Hello {
 }
 
 pub fn boot() -> Result<(), error::AppError> {
-    Vdom::new(
-        web_sys::window()?.document()?.body()?.as_ref(),
-        Hello {
-            name: "World".into(),
-        },
-    )
-    .forget();
-    Ok(())
+    web_sys::window()
+        .and_then(|window| window.document())
+        .and_then(|document| document.body())
+        .and_then(|body| {
+            Some(
+                Vdom::new(
+                    body.as_ref(),
+                    Hello {
+                        name: "World".into(),
+                    },
+                )
+                .forget(),
+            )
+        })
+        .ok_or(error::AppError::NoneError)
 }
 
 #[wasm_bindgen]

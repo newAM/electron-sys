@@ -28,7 +28,7 @@ features = []
 
 [dependencies.wasm-bindgen]
 version = "0.2.48"
-features = ["serde-serialize", "nightly"]
+features = ["serde-serialize"]
 
 [workspace]
 members = [

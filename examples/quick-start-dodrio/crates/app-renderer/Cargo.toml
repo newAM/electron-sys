@@ -21,7 +21,7 @@ rev = "0a993e9758a0ed24a741fc22fff68854bef38ae1"
 
 [dependencies.wasm-bindgen]
 version = "0.2.48"
-features = ["serde-serialize", "nightly"]
+features = ["serde-serialize"]
 
 [dependencies.web-sys]
 version = "0.3.25"
