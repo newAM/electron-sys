@@ -1,5 +1,5 @@
-use electron_sys::{BrowserWindow, app, browser_window};
-use wasm_bindgen::{JsCast, prelude::*};
+use electron_sys::{app, browser_window, BrowserWindow};
+use wasm_bindgen::{prelude::*, JsCast};
 
 fn create_window() -> Result<(), JsValue> {
     let options = browser_window::Options {

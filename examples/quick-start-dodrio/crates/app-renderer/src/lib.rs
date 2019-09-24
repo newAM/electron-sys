@@ -20,17 +20,7 @@ pub fn boot() -> Result<(), error::AppError> {
     web_sys::window()
         .and_then(|window| window.document())
         .and_then(|document| document.body())
-        .and_then(|body| {
-            Some(
-                Vdom::new(
-                    body.as_ref(),
-                    Hello {
-                        name: "World".into(),
-                    },
-                )
-                .forget(),
-            )
-        })
+        .and_then(|body| Some(Vdom::new(body.as_ref(), Hello { name: "World".into() }).forget()))
         .ok_or(error::AppError::NoneError)
 }
 

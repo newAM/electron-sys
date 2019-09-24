@@ -1,8 +1,8 @@
-use js_sys::{Function, Object, JsString};
+use js_sys::{Function, JsString, Object};
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-extern "C" {
+extern {
     #[wasm_bindgen(extends = Object)]
     pub type EventEmitter;
 

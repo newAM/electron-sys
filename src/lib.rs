@@ -1,7 +1,11 @@
+//! Raw bindings to the Electron API for projects using wasm-bindgen
+
+#![deny(clippy::all)]
+// #![deny(missing_docs)] // FIXME: wasm-bindgen macros break this
+
 pub(crate) mod app;
+/// The browser window.
 pub mod browser_window;
 pub(crate) mod event_emitter;
 
-pub use crate::app::*;
-pub use crate::browser_window::*;
-pub use crate::event_emitter::*;
+pub use crate::{app::*, browser_window::*, event_emitter::*};

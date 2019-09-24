@@ -1,6 +1,6 @@
 use failure::Fail;
 use serde_derive::Serialize;
-use std::{convert::From};
+use std::convert::From;
 use wasm_bindgen::prelude::*;
 
 #[derive(Debug, Fail, Serialize)]
