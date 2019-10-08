@@ -9,12 +9,12 @@ edition = "2018"
 crate-type = ["cdylib"]
 
 [dependencies]
-console_error_panic_hook = "0.1.6"
+console_error_panic_hook = "^0.1.6"
 
 [dependencies.electron-sys]
-version = "0.1.0"
+version = "^0.1.0"
 path = "../../../.."
 
 [dependencies.wasm-bindgen]
-version = "0.2.48"
+version = "^0.2.51"
 features = []
