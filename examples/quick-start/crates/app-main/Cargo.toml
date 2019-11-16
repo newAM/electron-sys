@@ -17,7 +17,7 @@ test = false
 console_error_panic_hook = "^0.1.6"
 
 [dependencies.electron-sys]
-version = "^0.1.0"
+version = "^0.2.0"
 path = "../../../.."
 
 [dependencies.js-sys]
