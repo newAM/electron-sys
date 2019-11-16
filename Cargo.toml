@@ -13,20 +13,19 @@ edition = "2018"
 [lib]
 
 [dependencies]
-serde = "^1.0.101"
-serde_derive = "^1.0.101"
+serde = "^1.0.102"
+serde_derive = "^1.0.102"
 
 [dependencies.js-sys]
-version = "^0.3.28"
+version = "^0.3.31"
 features = []
 
 [dependencies.web-sys]
-version = "^0.3.28"
+version = "^0.3.31"
 features = []
 
 [dependencies.wasm-bindgen]
-version = "^0.2.51"
-features = ["serde-serialize", "nightly"]
+version = "^0.2.54"
 
 [workspace]
 members = [
