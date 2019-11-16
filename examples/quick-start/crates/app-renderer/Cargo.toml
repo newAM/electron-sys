@@ -7,6 +7,8 @@ edition = "2018"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
+doctest = false
+test = false
 
 [dependencies]
 console_error_panic_hook = "0.1.6"
