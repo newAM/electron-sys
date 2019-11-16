@@ -26,6 +26,7 @@ features = []
 
 [dependencies.wasm-bindgen]
 version = "^0.2.54"
+features = ["serde-serialize", "strict-macro"]
 
 [workspace]
 members = [
