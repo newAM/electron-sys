@@ -5,6 +5,9 @@ version = "0.1.0"
 authors = ["Darin Morrison <freebroccolo@users.noreply.github.com>"]
 edition = "2018"
 
+[badges]
+maintenance = { status = "experimental" }
+
 [lib]
 crate-type = ["cdylib", "rlib"]
 doctest = false
