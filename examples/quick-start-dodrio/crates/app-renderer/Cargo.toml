@@ -17,11 +17,10 @@ git = "https://github.com/fitzgen/dodrio"
 rev = "0a993e9758a0ed24a741fc22fff68854bef38ae1"
 
 [dependencies.wasm-bindgen]
-version = "^0.2.51"
-features = ["serde-serialize"]
+version = "^0.2.54"
 
 [dependencies.web-sys]
-version = "^0.3.28"
+version = "^0.3.31"
 features = [
   "Document",
   "HtmlElement",
