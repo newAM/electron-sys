@@ -22,10 +22,6 @@ test = false
 version = "^0.3.31"
 features = []
 
-[dependencies.web-sys]
-version = "^0.3.31"
-features = []
-
 [dependencies.wasm-bindgen]
 version = "^0.2.54"
 features = ["strict-macro"]
