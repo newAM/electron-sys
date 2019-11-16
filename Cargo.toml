@@ -10,6 +10,9 @@ Raw bindings to the Electron API for projects using wasm-bindgen.
 """
 edition = "2018"
 
+[badges]
+maintenance = { status = "experimental" }
+
 [lib]
 
 [dependencies]
