@@ -18,6 +18,7 @@ rev = "0a993e9758a0ed24a741fc22fff68854bef38ae1"
 
 [dependencies.wasm-bindgen]
 version = "^0.2.54"
+features = ["strict-macro"]
 
 [dependencies.web-sys]
 version = "^0.3.31"

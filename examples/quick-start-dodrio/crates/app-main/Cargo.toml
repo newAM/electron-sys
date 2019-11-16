@@ -21,3 +21,4 @@ features = []
 
 [dependencies.wasm-bindgen]
 version = "^0.2.54"
+features = ["strict-macro"]
