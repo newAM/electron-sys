@@ -18,10 +18,6 @@ crate-type = ["cdylib", "rlib"]
 doctest = false
 test = false
 
-[dependencies]
-serde = "^1.0.102"
-serde_derive = "^1.0.102"
-
 [dependencies.js-sys]
 version = "^0.3.31"
 features = []
@@ -32,7 +28,7 @@ features = []
 
 [dependencies.wasm-bindgen]
 version = "^0.2.54"
-features = ["serde-serialize", "strict-macro"]
+features = ["strict-macro"]
 
 [workspace]
 members = [

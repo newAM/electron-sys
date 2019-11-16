@@ -1,12 +1,14 @@
-use electron_sys::{app, browser_window, BrowserWindow};
+use electron_sys::{app, BrowserWindow};
+use js_sys::{Object, Reflect};
 use wasm_bindgen::{prelude::*, JsCast};
 
 fn create_window() -> Result<(), JsValue> {
-    let options = browser_window::Options {
-        height: 800,
-        width: 600,
-    };
-    let window = BrowserWindow::new(Some(options));
+    let window = BrowserWindow::new(Some(&{
+        let res = Object::new();
+        Reflect::set(&res, &"height".into(), &800.into()).unwrap();
+        Reflect::set(&res, &"width".into(), &600.into()).unwrap();
+        res
+    }));
     window.load_file("..\\..\\..\\..\\..\\index.html".into()); // FIXME
     Ok(())
 }
