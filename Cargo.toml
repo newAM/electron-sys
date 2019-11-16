@@ -26,6 +26,9 @@ features = []
 version = "^0.2.54"
 features = ["strict-macro"]
 
+[dev-dependencies]
+wasm-bindgen-test = { version = "=0.3.4" }
+
 [workspace]
 members = [
   "examples/quick-start/crates/app-main",

@@ -33,3 +33,6 @@ features = [
   "Node",
   "Window",
 ]
+
+[dev-dependencies]
+wasm-bindgen-test = { version = "=0.3.4" }
