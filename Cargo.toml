@@ -19,15 +19,15 @@ doctest = false
 test = false
 
 [dependencies.js-sys]
-version = "^0.3.31"
+version = "^0.3.32"
 features = []
 
 [dependencies.wasm-bindgen]
-version = "^0.2.54"
+version = "^0.2.55"
 features = ["strict-macro"]
 
 [dev-dependencies]
-wasm-bindgen-test = { version = "=0.3.4" }
+wasm-bindgen-test = { version = "=0.3.5" }
 
 [workspace]
 members = [

@@ -17,11 +17,11 @@ test = false
 console_error_panic_hook = "0.1.6"
 
 [dependencies.wasm-bindgen]
-version = "^0.2.54"
+version = "^0.2.55"
 features = ["strict-macro"]
 
 [dependencies.web-sys]
-version = "^0.3.31"
+version = "^0.3.32"
 features = [
   'Document',
   'Element',
@@ -31,4 +31,4 @@ features = [
 ]
 
 [dev-dependencies]
-wasm-bindgen-test = { version = "=0.3.4" }
+wasm-bindgen-test = { version = "=0.3.5" }

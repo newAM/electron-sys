@@ -22,11 +22,11 @@ git = "https://github.com/fitzgen/dodrio"
 rev = "0a993e9758a0ed24a741fc22fff68854bef38ae1"
 
 [dependencies.wasm-bindgen]
-version = "^0.2.54"
+version = "^0.2.55"
 features = ["strict-macro"]
 
 [dependencies.web-sys]
-version = "^0.3.31"
+version = "^0.3.32"
 features = [
   "Document",
   "HtmlElement",
@@ -35,4 +35,4 @@ features = [
 ]
 
 [dev-dependencies]
-wasm-bindgen-test = { version = "=0.3.4" }
+wasm-bindgen-test = { version = "=0.3.5" }
