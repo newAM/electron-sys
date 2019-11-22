@@ -1,4 +1,5 @@
 [package]
+edition = "2018"
 name = "electron-sys"
 version = "0.2.0"
 authors = ["Darin Morrison <freebroccolo@users.noreply.github.com>"]
@@ -8,7 +9,6 @@ repository = "https://github.com/freebroccolo/electron-sys"
 description = """
 Raw bindings to the Electron API for projects using wasm-bindgen.
 """
-edition = "2018"
 
 [badges]
 maintenance = { status = "experimental" }
