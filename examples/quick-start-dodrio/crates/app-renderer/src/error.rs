@@ -1,5 +1,5 @@
 use failure::Fail;
-use serde_derive::Serialize;
+use serde::Serialize;
 use std::convert::From;
 use wasm_bindgen::prelude::*;
 

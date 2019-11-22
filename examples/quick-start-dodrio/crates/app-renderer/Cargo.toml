@@ -21,6 +21,10 @@ failure = "^0.1.5"
 git = "https://github.com/fitzgen/dodrio"
 rev = "0a993e9758a0ed24a741fc22fff68854bef38ae1"
 
+[dependencies.serde]
+version = "^1.0.102"
+features = ["derive"]
+
 [dependencies.wasm-bindgen]
 version = "^0.2.55"
 features = ["strict-macro"]
