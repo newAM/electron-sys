@@ -1,5 +1,5 @@
 use crate::event_emitter::EventEmitter;
-use js_sys::{Object, JsString};
+use js_sys::{JsString, Object};
 use wasm_bindgen::prelude::*;
 
 pub type Options = Object;
