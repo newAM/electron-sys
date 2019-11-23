@@ -19,6 +19,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - run: rustup show > ~/.rustup.lock
+      - uses: actions/cache@v1
+        with:
+          path: ~/.rustup
+          key: ${{ runner.OS }}-rustup-${{ hashFiles('~/.rustup.lock') }}
       - uses: actions-rs/cargo@v1
         with:
           command: update
@@ -38,11 +43,9 @@ jobs:
         with:
           path: target
           key: ${{ runner.OS }}-cargo-build-target-${{ hashFiles('**/Cargo.lock') }}
-      - uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
-          components: clippy
+      - run: |
+          rustup set profile minimal
+          rustup toolchain install stable --component clippy
       - run: curl -L https://github.com/mozilla/sccache/releases/download/0.2.12/sccache-0.2.12-x86_64-unknown-linux-musl.tar.gz | tar zxf - --overwrite --strip-components=1 -C ~/.cargo/bin
       - uses: actions-rs/cargo@v1
         with:
@@ -57,6 +60,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - run: rustup show > ~/.rustup.lock
+      - uses: actions/cache@v1
+        with:
+          path: ~/.rustup
+          key: ${{ runner.OS }}-rustup-${{ hashFiles('~/.rustup.lock') }}
       - uses: actions-rs/cargo@v1
         with:
           command: update
@@ -76,10 +84,9 @@ jobs:
         with:
           path: target
           key: ${{ runner.OS }}-cargo-build-target-${{ hashFiles('**/Cargo.lock') }}
-      - uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
+      - run: |
+          rustup set profile minimal
+          rustup toolchain install stable
       - run: curl -L https://github.com/mozilla/sccache/releases/download/0.2.12/sccache-0.2.12-x86_64-unknown-linux-musl.tar.gz | tar zxf - --overwrite --strip-components=1 -C ~/.cargo/bin
       - uses: actions-rs/cargo@v1
         with:
@@ -114,6 +121,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - run: rustup show > ~/.rustup.lock
+      - uses: actions/cache@v1
+        with:
+          path: ~/.rustup
+          key: ${{ runner.OS }}-rustup-${{ hashFiles('~/.rustup.lock') }}
       - uses: actions-rs/cargo@v1
         with:
           command: update
@@ -135,6 +147,9 @@ jobs:
           key: ${{ runner.OS }}-cargo-build-target-${{ hashFiles('**/Cargo.lock') }}
       - run: curl -L      https://github.com/mozilla/sccache/releases/download/0.2.12/sccache-0.2.12-x86_64-unknown-linux-musl.tar.gz | tar zxf - --overwrite --strip-components=1 -C ~/.cargo/bin
       - run: curl -L https://github.com/rustwasm/wasm-pack/releases/download/v0.8.1/wasm-pack-v0.8.1-x86_64-unknown-linux-musl.tar.gz | tar zxf - --overwrite --strip-components=1 -C ~/.cargo/bin
+      - run: |
+          rustup set profile minimal
+          rustup toolchain install stable --component clippy
       - uses: actions/cache@v1
         with:
           path: node_modules
@@ -147,9 +162,4 @@ jobs:
         with:
           node-version: '13.x'
       - run: npm ci
-      - uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
-          components: clippy
       - run: wasm-pack test --node -- --all
