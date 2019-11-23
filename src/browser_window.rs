@@ -1,4 +1,4 @@
-use crate::event_emitter::EventEmitter;
+use node_sys::events::EventEmitter;
 use js_sys::{JsString, Object};
 use wasm_bindgen::prelude::*;
 

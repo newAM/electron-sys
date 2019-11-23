@@ -1,4 +1,4 @@
-use crate::event_emitter::EventEmitter;
+use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "electron")]
