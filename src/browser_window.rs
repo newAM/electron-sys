@@ -1,5 +1,5 @@
-use node_sys::events::EventEmitter;
 use js_sys::{JsString, Object};
+use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
 pub type Options = Object;
