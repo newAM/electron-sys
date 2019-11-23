@@ -2,6 +2,8 @@
 
 A simple `electron-sys` example that uses [dodrio](https://github.com/fitzgen/dodrio).
 
+<img src="../../assets/example.png" />
+
 ## Requirements
 
 - [npm](https://nodejs.org/en/download/)
