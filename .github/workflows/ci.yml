@@ -19,11 +19,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: rustup show > ~/.rustup.lock
+      - run: rustup show > .rustup.lock
       - uses: actions/cache@v1
         with:
           path: ~/.rustup
-          key: ${{ runner.OS }}-rustup-${{ hashFiles('~/.rustup.lock') }}
+          key: ${{ runner.OS }}-rustup-${{ hashFiles('.rustup.lock') }}
           restore-keys: |
             ${{ runner.OS }}-build-${{ env.cache-name }}-
             ${{ runner.OS }}-build-
@@ -80,11 +80,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: rustup show > ~/.rustup.lock
+      - run: rustup show > .rustup.lock
       - uses: actions/cache@v1
         with:
           path: ~/.rustup
-          key: ${{ runner.OS }}-rustup-${{ hashFiles('~/.rustup.lock') }}
+          key: ${{ runner.OS }}-rustup-${{ hashFiles('.rustup.lock') }}
           restore-keys: |
             ${{ runner.OS }}-build-${{ env.cache-name }}-
             ${{ runner.OS }}-build-
@@ -161,11 +161,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: rustup show > ~/.rustup.lock
+      - run: rustup show > .rustup.lock
       - uses: actions/cache@v1
         with:
           path: ~/.rustup
-          key: ${{ runner.OS }}-rustup-${{ hashFiles('~/.rustup.lock') }}
+          key: ${{ runner.OS }}-rustup-${{ hashFiles('.rustup.lock') }}
           restore-keys: |
             ${{ runner.OS }}-build-${{ env.cache-name }}-
             ${{ runner.OS }}-build-
