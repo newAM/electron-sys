@@ -19,7 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: rustup show > .rustup.lock
+      - run: |
+          rustup show > .rustup.lock
+          rustup toolchain list | cut -d " " -f1 | xargs -I {} rustup uninstall {}
       - uses: actions/cache@v1
         with:
           path: ~/.rustup
@@ -80,7 +82,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: rustup show > .rustup.lock
+      - run: |
+          rustup show > .rustup.lock
+          rustup toolchain list | cut -d " " -f1 | xargs -I {} rustup uninstall {}
       - uses: actions/cache@v1
         with:
           path: ~/.rustup
@@ -161,7 +165,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: rustup show > .rustup.lock
+      - run: |
+          rustup show > .rustup.lock
+          rustup toolchain list | cut -d " " -f1 | xargs -I {} rustup uninstall {}
       - uses: actions/cache@v1
         with:
           path: ~/.rustup
