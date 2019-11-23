@@ -214,8 +214,8 @@ extern {
     pub fn set_as_default_protocol_client(
         this: &App,
         protocol: JsString,
-        // #[cfg(windows)] path: Option<JsString>,
-        // #[cfg(windows)] args: JsString,
+        /* #[cfg(windows)] path: Option<JsString>,
+         * #[cfg(windows)] args: JsString, */
     ) -> bool;
 
     /// Returns whether the call succeeded.
@@ -224,8 +224,8 @@ extern {
     pub fn remove_as_default_protocol_client(
         this: &App,
         protocol: JsString,
-        // #[cfg(windows)] path: Option<JsString>,
-        // #[cfg(windows)] args: JsString,
+        /* #[cfg(windows)] path: Option<JsString>,
+         * #[cfg(windows)] args: JsString, */
     ) -> bool;
 
     /// This method checks if the current executable is the default handler for a protocol (aka URI
@@ -234,8 +234,8 @@ extern {
     pub fn is_default_protocol_client(
         this: &App,
         protocol: JsString,
-        // #[cfg(windows)] path: Option<JsString>,
-        // #[cfg(windows)] args: JsString,
+        /* #[cfg(windows)] path: Option<JsString>,
+         * #[cfg(windows)] args: JsString, */
     ) -> bool;
 
     /// Adds `tasks` to the `Tasks` category of the Jump List on Windows.
