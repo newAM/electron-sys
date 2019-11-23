@@ -1,7 +1,7 @@
 {
   "name": "quick-start-dodrio",
   "version": "0.1.0",
-  "author": "Darin Morrison <freebroccolo@users.noreply.github.com>",
+  "author": "Darin Morrison <darinmorrison@users.noreply.github.com>",
   "scripts": {
     "pack-app-main": "cd crates/app-main && wasm-pack build --target nodejs",
     "pack-app-renderer": "cd crates/app-renderer && wasm-pack build --target web",
