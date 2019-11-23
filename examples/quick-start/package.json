@@ -9,7 +9,7 @@
     "start": "electron crates/app-main/pkg/quick_start_app_main.js"
   },
   "dependencies": {
-    "electron": "4.1.4",
-    "esm": "3.2.22"
+    "electron": "^7.1.2",
+    "esm": "3.2.25"
   }
 }
