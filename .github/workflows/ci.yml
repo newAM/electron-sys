@@ -24,6 +24,10 @@ jobs:
         with:
           path: ~/.rustup
           key: ${{ runner.OS }}-rustup-${{ hashFiles('~/.rustup.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
       - uses: actions-rs/cargo@v1
         with:
           command: update
@@ -31,18 +35,34 @@ jobs:
         with:
           path: ~/.cache/sccache
           key: ${{ runner.OS }}-sccache-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
       - uses: actions/cache@v1
         with:
           path: ~/.cargo/registry
           key: ${{ runner.OS }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
       - uses: actions/cache@v1
         with:
           path: ~/.cargo/git
           key: ${{ runner.OS }}-cargo-index-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
       - uses: actions/cache@v1
         with:
           path: target
           key: ${{ runner.OS }}-cargo-build-target-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
       - run: |
           rustup set profile minimal
           rustup toolchain install stable --component clippy
@@ -65,6 +85,10 @@ jobs:
         with:
           path: ~/.rustup
           key: ${{ runner.OS }}-rustup-${{ hashFiles('~/.rustup.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
       - uses: actions-rs/cargo@v1
         with:
           command: update
@@ -72,18 +96,34 @@ jobs:
         with:
           path: ~/.cache/sccache
           key: ${{ runner.OS }}-sccache-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
       - uses: actions/cache@v1
         with:
           path: ~/.cargo/registry
           key: ${{ runner.OS }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
       - uses: actions/cache@v1
         with:
           path: ~/.cargo/git
           key: ${{ runner.OS }}-cargo-index-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
       - uses: actions/cache@v1
         with:
           path: target
           key: ${{ runner.OS }}-cargo-build-target-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
       - run: |
           rustup set profile minimal
           rustup toolchain install stable
@@ -126,6 +166,10 @@ jobs:
         with:
           path: ~/.rustup
           key: ${{ runner.OS }}-rustup-${{ hashFiles('~/.rustup.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
       - uses: actions-rs/cargo@v1
         with:
           command: update
@@ -133,14 +177,26 @@ jobs:
         with:
           path: ~/.cache/sccache
           key: ${{ runner.OS }}-sccache-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
       - uses: actions/cache@v1
         with:
           path: ~/.cargo/registry
           key: ${{ runner.OS }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
       - uses: actions/cache@v1
         with:
           path: ~/.cargo/git
           key: ${{ runner.OS }}-cargo-index-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
       - uses: actions/cache@v1
         with:
           path: target
