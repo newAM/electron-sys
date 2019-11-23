@@ -6,6 +6,5 @@
 pub(crate) mod app;
 /// The browser window.
 pub mod browser_window;
-pub(crate) mod event_emitter;
 
-pub use crate::{app::*, browser_window::*, event_emitter::*};
+pub use crate::{app::*, browser_window::*};
