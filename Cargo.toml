@@ -39,6 +39,3 @@ members = [
   "examples/quick-start-dodrio/crates/app-main",
   "examples/quick-start-dodrio/crates/app-renderer",
 ]
-
-[patch.crates-io.node-sys]
-path = "../node-sys"
