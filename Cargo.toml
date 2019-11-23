@@ -18,6 +18,9 @@ crate-type = ["cdylib", "rlib"]
 doctest = false
 test = false
 
+[dependencies.node-sys]
+git = "https://github.com/interfaces-rs/node-sys"
+
 [dependencies.js-sys]
 version = "^0.3.32"
 features = []
@@ -36,3 +39,6 @@ members = [
   "examples/quick-start-dodrio/crates/app-main",
   "examples/quick-start-dodrio/crates/app-renderer",
 ]
+
+[patch.crates-io.node-sys]
+path = "../node-sys"
