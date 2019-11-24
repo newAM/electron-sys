@@ -313,6 +313,7 @@ pub struct SetAboutPanelOptions {
 
 #[wasm_bindgen]
 impl SetAboutPanelOptions {
+    #[allow(clippy::too_many_arguments)]
     #[wasm_bindgen(constructor)]
     pub fn new(
         application_name: Option<JsString>,
