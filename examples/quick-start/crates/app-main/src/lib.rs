@@ -1,4 +1,4 @@
-use electron_sys::{app, global_shortcut, BrowserWindow};
+use electron_sys::{app, global_shortcut, shell, BrowserWindow};
 use js_sys::{Object, Reflect};
 use wasm_bindgen::{prelude::*, JsCast};
 
@@ -19,6 +19,7 @@ pub fn main() -> Result<(), JsValue> {
         let win = create_window().unwrap();
         win.set_title(&"Hello Electron from Rust! ⚛️🦀🕸🚀".into());
         let on_space = Closure::wrap(Box::new(move || {
+            shell.beep();
             app.show_about_panel();
         }) as Box<dyn Fn()>);
         global_shortcut.register(&"Space".into(), on_space.as_ref().unchecked_ref());
