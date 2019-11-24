@@ -609,6 +609,126 @@ extern {
     #[wasm_bindgen(method, js_name = "setJumpList")]
     pub fn set_jump_list(this: &App, categories: Option<Array>) -> JsString;
 
+    /// The return value of this method indicates whether or not this instance of your application
+    /// successfully obtained the lock.
+    #[wasm_bindgen(method, js_name = "requestSingleInstanceLock")]
+    pub fn request_single_instance_lock(this: &App) -> bool;
+
+    /// This method returns whether or not this instance of your app is currently holding the single
+    /// instance lock.
+    #[wasm_bindgen(method, js_name = "hasSingleInstanceLock")]
+    pub fn has_single_instance_lock(this: &App) -> bool;
+
+    /// Releases all locks that were created by `requestSingleInstanceLock`.
+    #[wasm_bindgen(method, js_name = "releaseSingleInstanceLock")]
+    pub fn release_single_instance_lock(this: &App);
+
+    /// Creates an `NSUserActivity` and sets it as the current activity.
+    #[wasm_bindgen(method, js_name = "setUserActivity")]
+    pub fn set_user_activity(this: &App, user_info: &JsValue, webpage_url: Option<JsString>);
+
+    /// Returns the type of the currently running activity.
+    // #[cfg(macos)]
+    #[wasm_bindgen(method, js_name = "getCurrentActivityType")]
+    pub fn get_current_activity_type(this: &App) -> JsString;
+
+    /// Invalidates the current Handoff user activity.
+    // #[cfg(macos)]
+    #[wasm_bindgen(method, js_name = "invalidateCurrentActivity")]
+    pub fn invalidate_current_activity(this: &App);
+
+    /// Marks the current Handoff user activity as inactive without invalidating it.
+    // #[cfg(macos)]
+    #[wasm_bindgen(method, js_name = "resignCurrentActivity")]
+    pub fn resign_current_activity(this: &App);
+
+    /// Updates the current activity if its type matches `type`, merging the entries from
+    /// `user_info` into its current `user_info` dictionary.
+    // #[cfg(macos)]
+    #[wasm_bindgen(method, js_name = "updateCurrentActivity")]
+    pub fn update_current_activity(this: &App, kind: &JsString, user_info: &JsValue);
+
+    /// Changes the Application User Model ID to `id`.
+    // #[cfg(windows)]
+    #[wasm_bindgen(method, js_name = "setAppUserModelId")]
+    pub fn set_app_user_model_id(this: &App, id: JsString);
+
+    /// Imports the certificate in pkcs12 format into the platform certificate store.
+    // #[cfg(linux)]
+    #[wasm_bindgen(method, js_name = "importCertificate")]
+    pub fn import_certificate(this: &App, options: ImportCertificateOptions, callback: &Function);
+
+    /// Disables hardware acceleration for current app.
+    #[wasm_bindgen(method, js_name = "disableHardwareAcceleration")]
+    pub fn disable_hardware_acceleration(this: &App);
+
+    /// By default, Chromium disables 3D APIs (e.g. WebGL) until restart on a per domain basis if
+    /// the GPU processes crashes too frequently. This function disables that behaviour.
+    #[wasm_bindgen(method, js_name = "disableDomainBlockingFor3DAPIs")]
+    pub fn disable_domain_blocking_for_3d_apis(this: &App);
+
+    /// Returns an array of `ProcessMetric` objects that correspond to memory and CPU
+    /// usage statistics of all the processes associated with the app.
+    #[wasm_bindgen(method, js_name = "getAppMetrics")]
+    pub fn get_app_metrics(this: &App) -> Array;
+
+    /// Returns the graphics feature status from chrome://gpu/.
+    #[wasm_bindgen(method, js_name = "getGPUFeatureStatus")]
+    pub fn get_gpu_feature_status(this: &App) -> GPUFeatureStatus;
+
+    #[wasm_bindgen(method, js_name = "getGPUInfo")]
+    pub fn get_gpu_info(this: &App, info_type: &JsString) -> Promise;
+
+    /// Returns whether the current desktop environment is Unity launcher.
+    // #[cfg(linux)]
+    #[wasm_bindgen(method, js_name = "isUnityRunning")]
+    pub fn is_unity_running(this: &App) -> bool;
+
+    // #[cfg(any(macos, windows))]
+    #[wasm_bindgen(method, js_name = "getLoginItemSettings")]
+    pub fn get_login_item_settings(this: &App, options: Option<GetLoginItemSettingsOptions>) -> GetLoginItemSettings;
+
+    /// Set the app's login item settings.
+    #[cfg(any(macos, windows))]
+    #[wasm_bindgen(method, js_name = "setLoginItemSettings")]
+    pub fn set_login_item_settings(this: &App, settings: Option<SetLoginItemSettings>);
+
+    /// Show the app's about panel options.
+    #[cfg(any(macos, linux))]
+    #[wasm_bindgen(method, js_name = "showAboutPanel")]
+    pub fn show_about_panel(this: &App);
+
+    /// Set the about panel options.
+    // #[cfg(any(macos, linux))]
+    #[wasm_bindgen(method, js_name = "setAboutPanelOptions")]
+    pub fn set_about_panel_options(this: &App, options: SetAboutPanelOptions);
+
+    /// Returns whether or not the current OS version allows for native emoji pickers.
+    #[wasm_bindgen(method, js_name = "isEmojiPanelSupported")]
+    pub fn is_emoji_panel_supported(this: &App);
+
+    /// Show the platform's native emoji picker.
+    // #[cfg(any(macos, windows))]
+    #[wasm_bindgen(method, js_name = "showEmojiPanel")]
+    pub fn show_emoji_panel(this: &App);
+
+    /// Returns a function which must be called once you have finished accessing the scoped file.
+    #[wasm_bindgen(method, js_name = "startAccessingSecurityScopedResource")]
+    pub fn start_accessing_security_scoped_resource(this: &App, bookmark_data: &JsString) -> Function;
+
+    /// Enables full sandbox mode on the app.
+    #[wasm_bindgen(method, js_name = "enableSandbox")]
+    pub fn enable_sandbox(this: &App);
+
+    /// Returns whether the application is currently running from the systems Application folder.
+    #[wasm_bindgen(method, js_name = "isInApplicationsFolder")]
+    pub fn is_in_applications_folder(this: &App) -> bool;
+
+    /// Returns whether the move was successful. Please note that if the move is successful, your
+    /// application will quit and relaunch.
+    #[wasm_bindgen(method, js_name = "moveToApplicationsFolder")]
+    pub fn move_to_applications_folder(this: &App, options: Option<MoveToApplicationsFolderOptions>);
+
     //************//
     // Properties //
     //************//
