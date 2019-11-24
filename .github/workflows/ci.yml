@@ -20,13 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: |
-          rustup show > .rustup.lock
           rustup toolchain list | cut -d " " -f1 | xargs -I {} rustup uninstall {}
-      - uses: actions/cache@v1
-        with:
-          path: ~/.rustup
-          key: ${{ runner.OS }}-rustup-${{ hashFiles('.rustup.lock') }}
-      - run: |
           rustup set profile minimal
           rustup toolchain install stable --component clippy
       - uses: actions-rs/cargo@v1
@@ -63,13 +57,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: |
-          rustup show > .rustup.lock
           rustup toolchain list | cut -d " " -f1 | xargs -I {} rustup uninstall {}
-      - uses: actions/cache@v1
-        with:
-          path: ~/.rustup
-          key: ${{ runner.OS }}-rustup-${{ hashFiles('.rustup.lock') }}
-      - run: |
           rustup set profile minimal
           rustup toolchain install stable
       - uses: actions-rs/cargo@v1
@@ -126,13 +114,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: |
-          rustup show > .rustup.lock
           rustup toolchain list | cut -d " " -f1 | xargs -I {} rustup uninstall {}
-      - uses: actions/cache@v1
-        with:
-          path: ~/.rustup
-          key: ${{ runner.OS }}-rustup-${{ hashFiles('.rustup.lock') }}
-      - run: |
           rustup set profile minimal
           rustup toolchain install stable
       - uses: actions-rs/cargo@v1
