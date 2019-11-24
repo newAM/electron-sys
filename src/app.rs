@@ -1,4 +1,4 @@
-use js_sys::{Array, JsString, Promise};
+use js_sys::{Array, Function, JsString, Promise};
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
