@@ -1,4 +1,4 @@
-use electron_sys::{app, BrowserWindow};
+use electron_sys::{app, global_shortcut, BrowserWindow};
 use js_sys::{Object, Reflect};
 use wasm_bindgen::{prelude::*, JsCast};
 
@@ -15,12 +15,16 @@ fn create_window() -> Result<BrowserWindow, JsValue> {
 #[wasm_bindgen(start)]
 pub fn main() -> Result<(), JsValue> {
     console_error_panic_hook::set_once();
-    let clo = Closure::wrap(Box::new(|| {
+    let on_ready = Closure::wrap(Box::new(|| {
         let win = create_window().unwrap();
         win.set_title(&"Hello Electron from Rust! ⚛️🦀🕸🚀".into());
-        app.show_about_panel();
-    }) as Box<dyn FnMut()>);
-    app.on("ready".into(), clo.as_ref().unchecked_ref());
-    clo.forget();
+        let on_space = Closure::wrap(Box::new(move || {
+            app.show_about_panel();
+        }) as Box<dyn Fn()>);
+        global_shortcut.register(&"Space".into(), on_space.as_ref().unchecked_ref());
+        on_space.forget();
+    }) as Box<dyn Fn()>);
+    app.on("ready".into(), on_ready.as_ref().unchecked_ref());
+    on_ready.forget();
     Ok(())
 }
