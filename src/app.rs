@@ -485,6 +485,9 @@ extern {
     #[wasm_bindgen(extends = EventEmitter)]
     pub type App;
 
+    /// The electron app.
+    pub static app: App;
+
     /// Try to close all windows.
     #[wasm_bindgen(method)]
     pub fn quit(this: &App);
@@ -803,7 +806,4 @@ extern {
 
     #[wasm_bindgen(method, setter, js_name = "setAllowRendererProcessReuse")]
     pub fn set_allow_renderer_process_reuse(this: &App, allow_reuse: bool);
-
-    /// The electron app.
-    pub static app: App;
 }
