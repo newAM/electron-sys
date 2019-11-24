@@ -693,7 +693,7 @@ extern {
     pub fn get_login_item_settings(this: &App, options: Option<GetLoginItemSettingsOptions>) -> GetLoginItemSettings;
 
     /// Set the app's login item settings.
-    #[cfg(any(macos, windows))]
+    // #[cfg(any(macos, windows))]
     #[wasm_bindgen(method, js_name = "setLoginItemSettings")]
     pub fn set_login_item_settings(this: &App, settings: Option<SetLoginItemSettings>);
 
