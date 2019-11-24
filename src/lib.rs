@@ -37,6 +37,8 @@ pub(crate) mod net_log;
 
 pub(crate) mod net;
 
+pub(crate) mod object;
+
 pub(crate) mod power_monitor;
 
 pub(crate) mod power_save_blocker;
@@ -88,3 +90,5 @@ pub use crate::{
     web_contents::*,
     web_frame::*,
 };
+
+pub use object::*;
