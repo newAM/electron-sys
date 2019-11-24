@@ -29,6 +29,11 @@ extern {
 
 #[wasm_bindgen]
 extern {
+    pub type ProcessMetric;
+}
+
+#[wasm_bindgen]
+extern {
     pub type Task;
 }
 
