@@ -29,7 +29,8 @@ jobs:
           path: ~/.rustup
           key: ${{ runner.OS }}-rustup-stable-clippy-${{ hashFiles('.rustup.lock') }}
           restore-keys: |
-            ${{ runner.OS }}-rustup-stable-clippy
+            ${{ runner.OS }}-rustup-stable-clippy-${{ hashFiles('.rustup.lock') }}
+            ${{ runner.OS }}-rustup-stable-${{ hashFiles('.rustup.lock') }}
       - if: steps.cache-rustup.outputs.cache-hit != 'true'
         run: |
           rustup set profile minimal
@@ -76,7 +77,7 @@ jobs:
           path: ~/.rustup
           key: ${{ runner.OS }}-rustup-stable-${{ hashFiles('.rustup.lock') }}
           restore-keys: |
-            ${{ runner.OS }}-rustup-stable
+            ${{ runner.OS }}-rustup-stable-${{ hashFiles('.rustup.lock') }}
       - if: steps.cache-rustup.outputs.cache-hit != 'true'
         run: |
           rustup set profile minimal
@@ -124,7 +125,8 @@ jobs:
           path: ~/.rustup
           key: ${{ runner.OS }}-rustup-nightly-rustfmt-${{ hashFiles('.rustup.lock') }}
           restore-keys: |
-            ${{ runner.OS }}-rustup-nightly-rustfmt
+            ${{ runner.OS }}-rustup-nightly-rustfmt-${{ hashFiles('.rustup.lock') }}
+            ${{ runner.OS }}-rustup-nightly-${{ hashFiles('.rustup.lock') }}
       - if: steps.cache-rustup.outputs.cache-hit != 'true'
         run: |
           rustup set profile minimal
@@ -152,7 +154,7 @@ jobs:
           path: ~/.rustup
           key: ${{ runner.OS }}-rustup-stable-${{ hashFiles('.rustup.lock') }}
           restore-keys: |
-            ${{ runner.OS }}-rustup-stable
+            ${{ runner.OS }}-rustup-stable-${{ hashFiles('.rustup.lock') }}
       - if: steps.cache-rustup.outputs.cache-hit != 'true'
         run: |
           rustup set profile minimal
