@@ -14,6 +14,11 @@ extern {
 
 #[wasm_bindgen]
 extern {
+    pub type GPUFeatureStatus;
+}
+
+#[wasm_bindgen]
+extern {
     pub type Menu;
 }
 
