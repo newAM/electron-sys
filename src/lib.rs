@@ -7,4 +7,6 @@ pub(crate) mod app;
 
 pub(crate) mod browser_window;
 
-pub use crate::{app::*, browser_window::*};
+pub(crate) mod global_shortcut;
+
+pub use crate::{app::*, browser_window::*, global_shortcut::*};
