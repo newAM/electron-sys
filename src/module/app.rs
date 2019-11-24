@@ -697,11 +697,6 @@ extern {
     #[wasm_bindgen(method, js_name = "setLoginItemSettings")]
     pub fn set_login_item_settings(this: &App, settings: Option<SetLoginItemSettings>);
 
-    /// Show the app's about panel options.
-    #[cfg(any(macos, linux))]
-    #[wasm_bindgen(method, js_name = "showAboutPanel")]
-    pub fn show_about_panel(this: &App);
-
     /// Set the about panel options.
     // #[cfg(any(macos, linux))]
     #[wasm_bindgen(method, js_name = "setAboutPanelOptions")]
