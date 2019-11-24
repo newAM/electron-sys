@@ -252,9 +252,15 @@ extern {
     #[wasm_bindgen(method, js_name = "setJumpList")]
     pub fn set_jump_list(this: &App, categories: Option<Array>) -> JsString;
 
+    //************//
+    // Properties //
+    //************//
+
+    /// A `Boolean` property that's `true` if Chrome's accessibility support is enabled, `false`
+    /// otherwise.
     // #[cfg(any(macos, windows))]
     #[wasm_bindgen(method, getter, js_name = "accessibilitySupportEnabled")]
-    pub fn is_accessibility_support_enabled(this: &App) -> bool;
+    pub fn accessibility_support_enabled(this: &App) -> bool;
 
     // #[cfg(any(macos, windows))]
     #[wasm_bindgen(method, setter, js_name = "accessibilitySupportEnabled")]
@@ -264,12 +270,15 @@ extern {
     #[wasm_bindgen(method, js_name = "showAboutPanel")]
     pub fn show_about_panel(this: &App);
 
+    /// A property that returns `Menu` if one has been set and `null` otherwise.
     #[wasm_bindgen(method, getter, js_name = "applicationMenu")]
     pub fn application_menu(this: &App) -> Option<Menu>;
 
     #[wasm_bindgen(method, setter, js_name = "applicationMenu")]
     pub fn set_application_menu(this: &App, menu: Option<Menu>);
 
+    /// An `Integer` property that returns the badge count for current app. Setting the count to `0`
+    /// will hide the badge.
     // #[cfg(any(linux, macos))]
     #[wasm_bindgen(method, getter, js_name = "badgeCount")]
     pub fn badge_count(this: &App);
@@ -278,28 +287,39 @@ extern {
     #[wasm_bindgen(method, setter, js_name = "badgeCount")]
     pub fn set_badge_count(this: &App, count: usize);
 
+    /// A `CommandLine` object that allows you to read and manipulate the command line arguments
+    /// that Chromium uses.
     #[wasm_bindgen(method, getter, js_name = "commandLine")]
     pub fn command_line(this: &App) -> CommandLine;
 
+    /// A `Dock` object that allows you to perform actions on your app icon in the user's dock on
+    /// macOS.
     // #[cfg(macos)]
     #[wasm_bindgen(method, getter)]
     pub fn dock(this: &App) -> Dock;
 
+    /// A `Boolean` property that returns `true` if the app is packaged, `false` otherwise.
     #[wasm_bindgen(method, getter, js_name = "isPackaged")]
     pub fn is_packaged(this: &App) -> bool;
 
+    /// A `String` property that indicates the current application's name, which is the name in the
+    /// application's `package.json` file.
     #[wasm_bindgen(method, getter)]
     pub fn name(this: &App) -> JsString;
 
     #[wasm_bindgen(method, setter, js_name = "setName")]
     pub fn set_name(this: &App, name: &JsString);
 
+    /// A `String` which is the user agent string Electron will use as a global fallback.
     #[wasm_bindgen(method, getter, js_name = "userAgentFallback")]
     pub fn user_agent_fallback(this: &App) -> JsString;
 
     #[wasm_bindgen(method, setter, js_name = "setUserAgentFallback")]
     pub fn set_user_agent_fallback(this: &App, user_agent_fallback: &JsString);
 
+    /// A `Boolean` which when `true` disables the overrides that Electron has in place to ensure
+    /// renderer processes are restarted on every navigation. The current default value for this
+    /// property is `false`.
     #[wasm_bindgen(method, getter, js_name = "allowRendererProcessReuse")]
     pub fn allow_renderer_process_reuse(this: &App) -> bool;
 
