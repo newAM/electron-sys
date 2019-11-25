@@ -11,11 +11,7 @@ pub struct FeedUrlOptions {
 #[wasm_bindgen]
 impl FeedUrlOptions {
     #[wasm_bindgen(constructor)]
-    pub fn new(
-        url: JsString,
-        headers: Option<Object>,
-        server_type: Option<JsString>,
-    ) -> FeedUrlOptions {
+    pub fn new(url: JsString, headers: Option<Object>, server_type: Option<JsString>) -> FeedUrlOptions {
         FeedUrlOptions {
             url,
             headers,

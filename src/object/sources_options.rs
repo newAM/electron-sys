@@ -12,11 +12,7 @@ pub struct SourcesOptions {
 #[wasm_bindgen]
 impl SourcesOptions {
     #[wasm_bindgen(constructor)]
-    pub fn new(
-        types: Array,
-        thumbnail_size: Option<Size>,
-        fetch_window_icons: Option<bool>,
-    ) -> SourcesOptions {
+    pub fn new(types: Array, thumbnail_size: Option<Size>, fetch_window_icons: Option<bool>) -> SourcesOptions {
         SourcesOptions {
             types,
             thumbnail_size,

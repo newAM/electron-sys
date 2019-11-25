@@ -4,7 +4,7 @@ use wasm_bindgen::prelude::*;
 #[derive(Clone, Copy, Debug, Eq, Hash, Ord, PartialOrd, PartialEq)]
 pub struct Size {
     height: usize,
-    width: usize
+    width: usize,
 }
 
 #[wasm_bindgen]
