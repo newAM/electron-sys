@@ -42,7 +42,7 @@ impl SourcesOptions {
 
     #[wasm_bindgen(getter)]
     pub fn fetch_window_icons(&self) -> Option<bool> {
-        self.fetch_window_icons.clone()
+        self.fetch_window_icons
     }
 
     #[wasm_bindgen(setter)]
