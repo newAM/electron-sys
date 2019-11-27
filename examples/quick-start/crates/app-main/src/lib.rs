@@ -9,7 +9,6 @@ fn create_window() -> Result<BrowserWindow, JsValue> {
         Reflect::set(&res, &"height".into(), &480.into()).unwrap();
         res
     }));
-    win.load_file(&"..\\..\\..\\index.html".into());
     Ok(win)
 }
 
@@ -18,6 +17,7 @@ pub fn main() -> Result<(), JsValue> {
     console_error_panic_hook::set_once();
     let on_ready = Closure::wrap(Box::new(|| {
         let win = create_window().unwrap();
+        win.load_file(&"..\\..\\..\\index.html".into());
         win.set_title(&"Hello Electron from Rust! ⚛️🦀🕸🚀".into());
         let on_space = Closure::wrap(Box::new(move || {
             shell.beep();
