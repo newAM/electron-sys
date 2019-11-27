@@ -23,7 +23,7 @@ pub fn main() -> Result<(), JsValue> {
             shell.beep();
             app.show_about_panel();
         }) as Box<dyn Fn()>);
-        global_shortcut.register(&"Space".into(), on_space.as_ref().unchecked_ref());
+        global_shortcut.register(&"Ctrl+Space".into(), on_space.as_ref().unchecked_ref());
         on_space.forget();
     }) as Box<dyn Fn()>);
     app.on("ready".into(), on_ready.as_ref().unchecked_ref());
