@@ -2,21 +2,21 @@ use electron_sys::{app, global_shortcut, shell, BrowserWindow};
 use js_sys::{Object, Reflect};
 use wasm_bindgen::{prelude::*, JsCast};
 
-fn create_window() -> Result<BrowserWindow, JsValue> {
+fn create_window() -> BrowserWindow {
     let win = BrowserWindow::new(Some(&{
         let res = Object::new();
         Reflect::set(&res, &"width".into(), &640.into()).unwrap();
         Reflect::set(&res, &"height".into(), &480.into()).unwrap();
         res
     }));
-    Ok(win)
+    win
 }
 
 #[wasm_bindgen(start)]
 pub fn main() -> Result<(), JsValue> {
     console_error_panic_hook::set_once();
     let on_ready = Closure::wrap(Box::new(|| {
-        let win = create_window().unwrap();
+        let win = create_window();
         win.load_file(&"..\\..\\..\\index.html".into());
         win.set_title(&"Hello Electron from Rust! ⚛️🦀🕸🚀".into());
         let on_space = Closure::wrap(Box::new(move || {
