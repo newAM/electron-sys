@@ -69,6 +69,7 @@ pub(crate) mod upload_blob;
 pub(crate) mod upload_data;
 pub(crate) mod upload_file;
 pub(crate) mod upload_raw_data;
+pub(crate) mod web_contents;
 pub(crate) mod web_source;
 
 pub use bluetooth_device::*;
@@ -142,4 +143,5 @@ pub use upload_blob::*;
 pub use upload_data::*;
 pub use upload_file::*;
 pub use upload_raw_data::*;
+pub use web_contents::*;
 pub use web_source::*;

@@ -4,7 +4,4 @@ use wasm_bindgen::prelude::*;
 extern {
     #[wasm_bindgen]
     pub type WebContents;
-
-    #[wasm_bindgen(js_name = "webContents")]
-    pub static web_contents: WebContents;
 }

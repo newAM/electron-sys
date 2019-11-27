@@ -29,7 +29,6 @@ pub(crate) mod screen;
 pub(crate) mod session;
 pub(crate) mod shell;
 pub(crate) mod system_preferences;
-pub(crate) mod web_contents;
 pub(crate) mod web_frame;
 
 pub use app::*;
@@ -57,5 +56,4 @@ pub use screen::*;
 pub use session::*;
 pub use shell::*;
 pub use system_preferences::*;
-pub use web_contents::*;
 pub use web_frame::*;
