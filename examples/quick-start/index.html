@@ -3,10 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy"   content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv=  "Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; object-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; object-src 'self'">
+    <script src="index.js" type="module"></script>
   </head>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
+  <body></body>
 </html>
