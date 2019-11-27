@@ -1,4 +1,4 @@
-use crate::object::ReadBookmark;
+use crate::interface::ReadBookmark;
 use js_sys::{Array, JsString};
 use node_sys::Buffer;
 use wasm_bindgen::prelude::*;

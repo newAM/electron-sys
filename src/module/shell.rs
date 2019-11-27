@@ -1,4 +1,4 @@
-use crate::object::{OpenExternalOptions, ShortcutDetails};
+use crate::interface::{OpenExternalOptions, ShortcutDetails};
 use js_sys::{JsString, Promise};
 use wasm_bindgen::prelude::*;
 

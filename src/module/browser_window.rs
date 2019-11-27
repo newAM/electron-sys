@@ -1,4 +1,4 @@
-use crate::object::{browser_window_options::BrowserWindowOptions, WebContents};
+use crate::interface::{browser_window_options::BrowserWindowOptions, WebContents};
 use js_sys::JsString;
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;

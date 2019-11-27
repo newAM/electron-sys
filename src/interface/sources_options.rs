@@ -1,4 +1,4 @@
-use crate::object::Size;
+use crate::interface::Size;
 use js_sys::Array;
 use wasm_bindgen::prelude::*;
 

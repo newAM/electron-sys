@@ -1,4 +1,4 @@
-use crate::object::OpenDevToolsOptions;
+use crate::interface::OpenDevToolsOptions;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]

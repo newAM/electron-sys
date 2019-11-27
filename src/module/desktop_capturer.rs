@@ -1,4 +1,4 @@
-use crate::object::SourcesOptions;
+use crate::interface::SourcesOptions;
 use js_sys::Promise;
 use wasm_bindgen::prelude::*;
 

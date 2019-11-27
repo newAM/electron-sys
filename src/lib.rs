@@ -4,6 +4,6 @@
 // #![deny(missing_docs)] // FIXME: wasm-bindgen macros break this
 
 pub(crate) mod module;
-pub(crate) mod object;
+pub(crate) mod interface;
 pub use module::*;
-pub use object::*;
+pub use interface::*;

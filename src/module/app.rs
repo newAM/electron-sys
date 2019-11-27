@@ -1,4 +1,4 @@
-use crate::object::{
+use crate::interface::{
     CommandLine,
     Dock,
     GetFileIconOptions,
@@ -301,12 +301,12 @@ extern {
     #[wasm_bindgen(method, setter, js_name = "badgeCount")]
     pub fn set_badge_count(this: &App, count: usize);
 
-    /// A `CommandLine` object that allows you to read and manipulate the command line arguments
+    /// A `CommandLine` interface that allows you to read and manipulate the command line arguments
     /// that Chromium uses.
     #[wasm_bindgen(method, getter, js_name = "commandLine")]
     pub fn command_line(this: &App) -> CommandLine;
 
-    /// A `Dock` object that allows you to perform actions on your app icon in the user's dock on
+    /// A `Dock` interface that allows you to perform actions on your app icon in the user's dock on
     /// macOS.
     // #[cfg(macos)]
     #[wasm_bindgen(method, getter)]

@@ -1,4 +1,4 @@
-use crate::object::FeedUrlOptions;
+use crate::interface::FeedUrlOptions;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "electron")]
