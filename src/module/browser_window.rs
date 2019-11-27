@@ -8,6 +8,7 @@ pub type Options = Object;
 #[wasm_bindgen(module = "electron")]
 extern {
     #[wasm_bindgen(extends = EventEmitter)]
+    #[derive(Clone)]
     pub type BrowserWindow;
 
     #[wasm_bindgen(constructor)]
