@@ -13,7 +13,7 @@ extern {
     pub fn new(options: Option<&Options>) -> BrowserWindow;
 
     #[wasm_bindgen(method, js_name = "loadFile")]
-    pub fn load_file(this: &BrowserWindow, path: JsString);
+    pub fn load_file(this: &BrowserWindow, path: &JsString);
 
     #[wasm_bindgen(method, js_name = "setTitle")]
     pub fn set_title(this: &BrowserWindow, title: &JsString);
