@@ -17,8 +17,11 @@ pub fn main() -> Result<(), JsValue> {
     console_error_panic_hook::set_once();
     let on_ready = Closure::wrap(Box::new(|| {
         let win = create_window();
+        // load the html file
         win.load_file(&"..\\..\\..\\index.html".into());
+        // change the window title
         win.set_title(&"Hello Electron from Rust! ⚛️🦀🕸🚀".into());
+        // register accelerator: Ctrl+Space => opens About panel
         let on_space = Closure::wrap(Box::new(move || {
             shell.beep();
             app.show_about_panel();
