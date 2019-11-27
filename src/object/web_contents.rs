@@ -1,7 +1,10 @@
+use crate::object::OpenDevToolsOptions;
 use wasm_bindgen::prelude::*;
 
-#[wasm_bindgen(module = "electron")]
+#[wasm_bindgen]
 extern {
-    #[wasm_bindgen]
     pub type WebContents;
+
+    #[wasm_bindgen(method, js_name = "openDevTools")]
+    pub fn open_dev_tools(this: &WebContents, options: Option<OpenDevToolsOptions>);
 }
