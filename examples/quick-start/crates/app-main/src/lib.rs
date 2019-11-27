@@ -28,6 +28,13 @@ pub fn main() -> Result<(), JsValue> {
         }) as Box<dyn Fn()>);
         global_shortcut.register(&"Ctrl+Space".into(), on_space.as_ref().unchecked_ref());
         on_space.forget();
+        // open the dev tools panel (undocked)
+        {
+            let activate = Some(false);
+            let mode = "undocked".into();
+            let options = Some(electron_sys::OpenDevToolsOptions::new(activate, mode));
+            win.web_contents().open_dev_tools(options);
+        }
     }) as Box<dyn Fn()>);
     app.on("ready".into(), on_ready.as_ref().unchecked_ref());
     on_ready.forget();
