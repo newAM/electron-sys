@@ -22,12 +22,14 @@ pub fn main() -> Result<(), JsValue> {
         // change the window title
         win.set_title(&"Hello Electron from Rust! ⚛️🦀🕸🚀".into());
         // register accelerator: Ctrl+Space => opens About panel
-        let on_space = Closure::wrap(Box::new(move || {
-            shell.beep();
-            app.show_about_panel();
-        }) as Box<dyn Fn()>);
-        global_shortcut.register(&"Ctrl+Space".into(), on_space.as_ref().unchecked_ref());
-        on_space.forget();
+        {
+            let on_space = Closure::wrap(Box::new(move || {
+                shell.beep();
+                app.show_about_panel();
+            }) as Box<dyn Fn()>);
+            global_shortcut.register(&"Ctrl+Space".into(), on_space.as_ref().unchecked_ref());
+            on_space.forget();
+        }
         // open the dev tools panel (undocked)
         {
             let activate = Some(false);
