@@ -15,6 +15,7 @@ fn create_window() -> BrowserWindow {
 pub fn main() -> Result<(), JsValue> {
     console_error_panic_hook::set_once();
     let on_ready = Closure::wrap(Box::new(|| {
+        // create the electron browser window
         let win = create_window();
         // load the html file
         win.load_file(&"..\\..\\..\\index.html".into());
