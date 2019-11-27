@@ -2,20 +2,11 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <script type="module">
-      require = require("esm")(module);
-      const {
-        default: init,
-        main
-      } = require("./crates/app-renderer/pkg/quick_start_app_renderer.js");
-      async function run() {
-        await init(
-          "./crates/app-renderer/pkg/quick_start_app_renderer_bg.wasm"
-        );
-        main();
-      }
-      run();
-    </script>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy"   content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
   </head>
-  <body></body>
+  <body>
+    <h1>Hello World!</h1>
+  </body>
 </html>
