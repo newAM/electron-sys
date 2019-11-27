@@ -1,9 +1,7 @@
-use crate::object::WebContents;
-use js_sys::{JsString, Object};
+use crate::object::{browser_window_options::BrowserWindowOptions, WebContents};
+use js_sys::JsString;
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
-
-pub type Options = Object;
 
 #[wasm_bindgen(module = "electron")]
 extern {
@@ -12,7 +10,7 @@ extern {
     pub type BrowserWindow;
 
     #[wasm_bindgen(constructor)]
-    pub fn new(options: Option<&Options>) -> BrowserWindow;
+    pub fn new(options: Option<BrowserWindowOptions>) -> BrowserWindow;
 
     #[wasm_bindgen(method, js_name = "loadFile")]
     pub fn load_file(this: &BrowserWindow, path: &JsString);

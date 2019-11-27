@@ -1,4 +1,5 @@
 pub(crate) mod bluetooth_device;
+pub(crate) mod browser_window_options;
 pub(crate) mod certificate;
 pub(crate) mod certificate_principal;
 pub(crate) mod command_line;
@@ -75,6 +76,7 @@ pub(crate) mod web_preferences;
 pub(crate) mod web_source;
 
 pub use bluetooth_device::*;
+pub use browser_window_options::*;
 pub use certificate::*;
 pub use certificate_principal::*;
 pub use command_line::*;

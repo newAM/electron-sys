@@ -1,13 +1,12 @@
-use electron_sys::{app, global_shortcut, shell, BrowserWindow};
-use js_sys::{Object, Reflect};
+use electron_sys::{app, global_shortcut, shell, BrowserWindow, BrowserWindowOptions};
 use wasm_bindgen::{prelude::*, JsCast};
 
 fn create_window() -> BrowserWindow {
-    let win = BrowserWindow::new(Some(&{
-        let res = Object::new();
-        Reflect::set(&res, &"width".into(), &640.into()).unwrap();
-        Reflect::set(&res, &"height".into(), &480.into()).unwrap();
-        res
+    let win = BrowserWindow::new(Some({
+        let mut opts = <BrowserWindowOptions as Default>::default();
+        opts.set_width(Some(640));
+        opts.set_height(Some(480));
+        opts
     }));
     win
 }
