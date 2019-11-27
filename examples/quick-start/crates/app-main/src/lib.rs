@@ -9,6 +9,7 @@ fn create_window() -> Result<BrowserWindow, JsValue> {
         Reflect::set(&res, &"height".into(), &480.into()).unwrap();
         res
     }));
+    win.load_file(&"..\\..\\..\\index.html".into());
     Ok(win)
 }
 
