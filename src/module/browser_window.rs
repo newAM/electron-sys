@@ -1,3 +1,4 @@
+use crate::object::WebContents;
 use js_sys::{JsString, Object};
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
@@ -17,4 +18,7 @@ extern {
 
     #[wasm_bindgen(method, js_name = "setTitle")]
     pub fn set_title(this: &BrowserWindow, title: &JsString);
+
+    #[wasm_bindgen(method, getter, js_name = "webContents")]
+    pub fn web_contents(this: &BrowserWindow) -> WebContents;
 }
