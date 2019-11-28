@@ -127,7 +127,7 @@ jobs:
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./target/doc
           SCRIPT_MODE: true
-        run: wget -q0 - https://raw.githubusercontent.com/interfaces-rs/actions-gh-pages/v2.5.1/entrypoint.sh | bash -
+        run: wget -qO - https://raw.githubusercontent.com/interfaces-rs/actions-gh-pages/v2.5.1/entrypoint.sh | bash -
 
   # verify that code is formatted
   linux-cargo-fmt:
