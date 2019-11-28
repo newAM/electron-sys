@@ -24,6 +24,7 @@ pub(crate) mod touch_bar_scrubber;
 pub(crate) mod touch_bar_segmented_control;
 pub(crate) mod touch_bar_slider;
 pub(crate) mod touch_bar_spacer;
+pub(crate) mod tray;
 pub(crate) mod web_contents;
 
 pub use accelerator::*;
@@ -52,4 +53,5 @@ pub use touch_bar_scrubber::*;
 pub use touch_bar_segmented_control::*;
 pub use touch_bar_slider::*;
 pub use touch_bar_spacer::*;
+pub use tray::*;
 pub use web_contents::*;
