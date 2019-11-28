@@ -95,7 +95,7 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: doc
-          args: --workspace --all-features
+          args: --all-features --no-deps --package electron-sys
       - env:
           PERSONAL_TOKEN: ${{ secrets.ACTIONS_GH_PAGES_TOKEN }}
           PUBLISH_BRANCH: gh-pages
