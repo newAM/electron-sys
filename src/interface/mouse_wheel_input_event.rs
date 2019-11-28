@@ -1,4 +1,4 @@
-use crate::interface::mouse_input_event::MouseInputEvent;
+use crate::interface::MouseInputEvent;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]

@@ -1,4 +1,4 @@
-use crate::interface::input_event::InputEvent;
+use crate::interface::InputEvent;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
