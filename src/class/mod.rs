@@ -15,6 +15,7 @@ pub(crate) mod native_image;
 pub(crate) mod notification;
 pub(crate) mod session;
 pub(crate) mod touch_bar;
+pub(crate) mod touch_bar_button;
 pub(crate) mod web_contents;
 
 pub use accelerator::*;
@@ -34,4 +35,5 @@ pub use native_image::*;
 pub use notification::*;
 pub use session::*;
 pub use touch_bar::*;
+pub use touch_bar_button::*;
 pub use web_contents::*;
