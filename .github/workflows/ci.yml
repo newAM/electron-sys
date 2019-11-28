@@ -95,8 +95,13 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: doc
-          args: --all --all-features
-      - run: cp .ci/assets/docs/index.html target/doc/index.html
+          args: --workspace --all-features
+      - env:
+          PERSONAL_TOKEN: ${{ secrets.ACTIONS_GH_PAGES_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./target/doc
+          SCRIPT_MODE: true
+        run: wget -q0 - https://raw.githubusercontent.com/interfaces-rs/actions-gh-pages/v2.5.1/entrypoint.sh | bash -
 
   # verify that code is formatted
   linux-cargo-fmt:
@@ -166,6 +171,6 @@ jobs:
       - run: curl -L https://github.com/rustwasm/wasm-pack/releases/download/v0.8.1/wasm-pack-v0.8.1-x86_64-unknown-linux-musl.tar.gz | tar zxf - --overwrite --strip-components=1 -C ~/.cargo/bin
       - uses: actions/setup-node@v1
         with:
-          node-version: '13.x'
+          node-version: "13.x"
       - run: npm ci
       - run: wasm-pack test --node -- --all
