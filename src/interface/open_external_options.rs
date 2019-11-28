@@ -23,8 +23,8 @@ impl OpenExternalOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_activate(&mut self, activate: Option<bool>) {
-        self.activate = activate;
+    pub fn set_activate(&mut self, value: Option<bool>) {
+        self.activate = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -33,7 +33,7 @@ impl OpenExternalOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_working_directory(&mut self, working_directory: JsString) {
-        self.working_directory = working_directory;
+    pub fn set_working_directory(&mut self, value: JsString) {
+        self.working_directory = value;
     }
 }

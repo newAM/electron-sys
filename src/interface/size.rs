@@ -20,8 +20,8 @@ impl Size {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_height(&mut self, height: usize) {
-        self.height = height;
+    pub fn set_height(&mut self, value: usize) {
+        self.height = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -30,7 +30,7 @@ impl Size {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_width(&mut self, width: usize) {
-        self.width = width;
+    pub fn set_width(&mut self, value: usize) {
+        self.width = value;
     }
 }

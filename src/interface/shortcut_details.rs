@@ -42,8 +42,8 @@ impl ShortcutDetails {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_app_user_model_id(&mut self, app_user_model_id: Option<JsString>) {
-        self.app_user_model_id = app_user_model_id;
+    pub fn set_app_user_model_id(&mut self, value: Option<JsString>) {
+        self.app_user_model_id = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -52,8 +52,8 @@ impl ShortcutDetails {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_args(&mut self, args: Option<JsString>) {
-        self.args = args;
+    pub fn set_args(&mut self, value: Option<JsString>) {
+        self.args = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -62,8 +62,8 @@ impl ShortcutDetails {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_cwd(&mut self, cwd: Option<JsString>) {
-        self.cwd = cwd;
+    pub fn set_cwd(&mut self, value: Option<JsString>) {
+        self.cwd = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -72,8 +72,8 @@ impl ShortcutDetails {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_description(&mut self, description: Option<JsString>) {
-        self.description = description;
+    pub fn set_description(&mut self, value: Option<JsString>) {
+        self.description = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -82,8 +82,8 @@ impl ShortcutDetails {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_icon(&mut self, icon: Option<JsString>) {
-        self.icon = icon;
+    pub fn set_icon(&mut self, value: Option<JsString>) {
+        self.icon = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -92,8 +92,8 @@ impl ShortcutDetails {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_icon_index(&mut self, icon_index: Option<usize>) {
-        self.icon_index = icon_index;
+    pub fn set_icon_index(&mut self, value: Option<usize>) {
+        self.icon_index = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -102,7 +102,7 @@ impl ShortcutDetails {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_target(&mut self, target: JsString) {
-        self.target = target;
+    pub fn set_target(&mut self, value: JsString) {
+        self.target = value;
     }
 }

@@ -26,8 +26,8 @@ impl SourcesOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_types(&mut self, types: Array) {
-        self.types = types;
+    pub fn set_types(&mut self, value: Array) {
+        self.types = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -36,8 +36,8 @@ impl SourcesOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_thumbnail_size(&mut self, thumbnail_size: Option<Size>) {
-        self.thumbnail_size = thumbnail_size;
+    pub fn set_thumbnail_size(&mut self, value: Option<Size>) {
+        self.thumbnail_size = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -46,7 +46,7 @@ impl SourcesOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_fetch_window_icons(&mut self, fetch_window_icons: Option<bool>) {
-        self.fetch_window_icons = fetch_window_icons;
+    pub fn set_fetch_window_icons(&mut self, value: Option<bool>) {
+        self.fetch_window_icons = value;
     }
 }

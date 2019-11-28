@@ -63,7 +63,7 @@ extern {
     pub fn accessible_title(this: &BrowserWindow) -> JsString;
 
     #[wasm_bindgen(method, setter, js_name = "accessibleTitle")]
-    pub fn set_accessible_title(this: &BrowserWindow, value: &JsString);
+    pub fn set_accessible_title(this: &BrowserWindow, value: JsString);
 
     #[wasm_bindgen(method, getter, js_name = "autoHideMenuBar")]
     pub fn auto_hide_menu_bar(this: &BrowserWindow) -> bool;

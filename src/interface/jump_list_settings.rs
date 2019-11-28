@@ -23,8 +23,8 @@ impl JumpListSettings {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_min_items(&mut self, min_items: usize) {
-        self.min_items = min_items;
+    pub fn set_min_items(&mut self, value: usize) {
+        self.min_items = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -33,7 +33,7 @@ impl JumpListSettings {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_removed_items(&mut self, removed_items: Array) {
-        self.removed_items = removed_items;
+    pub fn set_removed_items(&mut self, value: Array) {
+        self.removed_items = value;
     }
 }

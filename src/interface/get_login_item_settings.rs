@@ -34,8 +34,8 @@ impl GetLoginItemSettings {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_open_at_login(&mut self, open_at_login: bool) {
-        self.open_at_login = open_at_login;
+    pub fn set_open_at_login(&mut self, value: bool) {
+        self.open_at_login = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -44,8 +44,8 @@ impl GetLoginItemSettings {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_open_as_hidden(&mut self, open_as_hidden: bool) {
-        self.open_as_hidden = open_as_hidden;
+    pub fn set_open_as_hidden(&mut self, value: bool) {
+        self.open_as_hidden = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -54,8 +54,8 @@ impl GetLoginItemSettings {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_was_opened_at_login(&mut self, was_opened_at_login: bool) {
-        self.was_opened_at_login = was_opened_at_login;
+    pub fn set_was_opened_at_login(&mut self, value: bool) {
+        self.was_opened_at_login = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -64,8 +64,8 @@ impl GetLoginItemSettings {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_was_opened_as_hidden(&mut self, was_opened_as_hidden: bool) {
-        self.was_opened_as_hidden = was_opened_as_hidden;
+    pub fn set_was_opened_as_hidden(&mut self, value: bool) {
+        self.was_opened_as_hidden = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -74,7 +74,7 @@ impl GetLoginItemSettings {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_restore_state(&mut self, restore_state: bool) {
-        self.restore_state = restore_state;
+    pub fn set_restore_state(&mut self, value: bool) {
+        self.restore_state = value;
     }
 }

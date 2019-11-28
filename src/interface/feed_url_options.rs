@@ -25,8 +25,8 @@ impl FeedUrlOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_url(&mut self, url: JsString) {
-        self.url = url;
+    pub fn set_url(&mut self, value: JsString) {
+        self.url = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -35,8 +35,8 @@ impl FeedUrlOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_headers(&mut self, headers: Option<Object>) {
-        self.headers = headers;
+    pub fn set_headers(&mut self, value: Option<Object>) {
+        self.headers = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -45,7 +45,7 @@ impl FeedUrlOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_server_type(&mut self, server_type: Option<JsString>) {
-        self.server_type = server_type;
+    pub fn set_server_type(&mut self, value: Option<JsString>) {
+        self.server_type = value;
     }
 }

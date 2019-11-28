@@ -21,24 +21,24 @@ extern {
     pub fn label(this: &TouchBarSlider) -> JsString;
 
     #[wasm_bindgen(method, setter)]
-    pub fn set_label(this: &TouchBarSlider, value: &JsString);
+    pub fn set_label(this: &TouchBarSlider, value: JsString);
 
     #[wasm_bindgen(method, getter, js_name = "maxValue")]
     pub fn max_value(this: &TouchBarSlider) -> Number;
 
     #[wasm_bindgen(method, setter, js_name = "maxValue")]
-    pub fn set_max_value(this: &TouchBarSlider, value: &Number);
+    pub fn set_max_value(this: &TouchBarSlider, value: Number);
 
     #[wasm_bindgen(method, getter, js_name = "minValue")]
     pub fn min_value(this: &TouchBarSlider) -> Number;
 
     #[wasm_bindgen(method, setter, js_name = "minValue")]
-    pub fn set_min_value(this: &TouchBarSlider, value: &Number);
+    pub fn set_min_value(this: &TouchBarSlider, value: Number);
 
     #[wasm_bindgen(method, getter)]
     pub fn value(this: &TouchBarSlider) -> Number;
 
     #[wasm_bindgen(method, setter)]
-    pub fn set_value(this: &TouchBarSlider, value: &Number);
+    pub fn set_value(this: &TouchBarSlider, value: Number);
 
 }

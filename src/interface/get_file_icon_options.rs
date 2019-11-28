@@ -19,7 +19,7 @@ impl GetFileIconOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_size(&mut self, size: JsString) {
-        self.size = size;
+    pub fn set_size(&mut self, value: JsString) {
+        self.size = value;
     }
 }

@@ -20,8 +20,8 @@ impl RelaunchOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_args(&mut self, args: JsString) {
-        self.args = args;
+    pub fn set_args(&mut self, value: JsString) {
+        self.args = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -30,7 +30,7 @@ impl RelaunchOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_exec_path(&mut self, exec_path: Option<JsString>) {
-        self.exec_path = exec_path;
+    pub fn set_exec_path(&mut self, value: Option<JsString>) {
+        self.exec_path = value;
     }
 }

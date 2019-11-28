@@ -21,7 +21,7 @@ impl MoveToApplicationsFolderOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_conflict_handler(&mut self, conflict_handler: &Function) {
-        self.conflict_handler = conflict_handler.clone();
+    pub fn set_conflict_handler(&mut self, value: Function) {
+        self.conflict_handler = value;
     }
 }

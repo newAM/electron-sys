@@ -27,25 +27,25 @@ extern {
     pub fn items(this: &TouchBarScrubber) -> Array;
 
     #[wasm_bindgen(method, setter)]
-    pub fn set_items(this: &TouchBarScrubber, value: &Array);
+    pub fn set_items(this: &TouchBarScrubber, value: Array);
 
     #[wasm_bindgen(method, getter)]
     pub fn mode(this: &TouchBarScrubber) -> JsString;
 
     #[wasm_bindgen(method, setter)]
-    pub fn set_mode(this: &TouchBarScrubber, value: &JsString);
+    pub fn set_mode(this: &TouchBarScrubber, value: JsString);
 
     #[wasm_bindgen(method, getter, js_name = "overlayStyle")]
     pub fn overlay_style(this: &TouchBarScrubber) -> JsString;
 
     #[wasm_bindgen(method, setter, js_name = "overlayStyle")]
-    pub fn set_overlay_style(this: &TouchBarScrubber, value: &JsString);
+    pub fn set_overlay_style(this: &TouchBarScrubber, value: JsString);
 
     #[wasm_bindgen(method, getter, js_name = "selectedStyle")]
     pub fn selected_style(this: &TouchBarScrubber) -> JsString;
 
     #[wasm_bindgen(method, setter, js_name = "selectedStyle")]
-    pub fn set_selected_style(this: &TouchBarScrubber, value: &JsString);
+    pub fn set_selected_style(this: &TouchBarScrubber, value: JsString);
 
     #[wasm_bindgen(method, getter, js_name = "showArrowButtons")]
     pub fn show_arrow_buttons(this: &TouchBarScrubber) -> bool;

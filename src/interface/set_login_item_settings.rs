@@ -32,8 +32,8 @@ impl SetLoginItemSettings {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_open_at_login(&mut self, open_at_login: Option<bool>) {
-        self.open_at_login = open_at_login;
+    pub fn set_open_at_login(&mut self, value: Option<bool>) {
+        self.open_at_login = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -47,8 +47,8 @@ impl SetLoginItemSettings {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_path(&mut self, path: Option<JsString>) {
-        self.path = path;
+    pub fn set_path(&mut self, value: Option<JsString>) {
+        self.path = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -57,7 +57,7 @@ impl SetLoginItemSettings {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_args(&mut self, args: JsString) {
-        self.args = args;
+    pub fn set_args(&mut self, value: JsString) {
+        self.args = value;
     }
 }

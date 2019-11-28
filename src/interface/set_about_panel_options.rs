@@ -45,8 +45,8 @@ impl SetAboutPanelOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_application_name(&mut self, application_name: Option<JsString>) {
-        self.application_name = application_name;
+    pub fn set_application_name(&mut self, value: Option<JsString>) {
+        self.application_name = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -55,8 +55,8 @@ impl SetAboutPanelOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_application_version(&mut self, application_version: Option<JsString>) {
-        self.application_version = application_version;
+    pub fn set_application_version(&mut self, value: Option<JsString>) {
+        self.application_version = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -65,8 +65,8 @@ impl SetAboutPanelOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_copyright(&mut self, copyright: Option<JsString>) {
-        self.copyright = copyright;
+    pub fn set_copyright(&mut self, value: Option<JsString>) {
+        self.copyright = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -75,8 +75,8 @@ impl SetAboutPanelOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_version(&mut self, version: Option<JsString>) {
-        self.version = version;
+    pub fn set_version(&mut self, value: Option<JsString>) {
+        self.version = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -85,8 +85,8 @@ impl SetAboutPanelOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_credits(&mut self, credits: Option<JsString>) {
-        self.credits = credits;
+    pub fn set_credits(&mut self, value: Option<JsString>) {
+        self.credits = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -95,8 +95,8 @@ impl SetAboutPanelOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_authors(&mut self, authors: JsString) {
-        self.authors = authors;
+    pub fn set_authors(&mut self, value: JsString) {
+        self.authors = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -105,8 +105,8 @@ impl SetAboutPanelOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_website(&mut self, website: Option<JsString>) {
-        self.website = website;
+    pub fn set_website(&mut self, value: Option<JsString>) {
+        self.website = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -115,7 +115,7 @@ impl SetAboutPanelOptions {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_icon_path(&mut self, icon_path: Option<JsString>) {
-        self.icon_path = icon_path;
+    pub fn set_icon_path(&mut self, value: Option<JsString>) {
+        self.icon_path = value;
     }
 }

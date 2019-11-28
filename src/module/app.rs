@@ -278,7 +278,7 @@ extern {
 
     // #[cfg(any(macos, windows))]
     #[wasm_bindgen(method, setter, js_name = "accessibilitySupportEnabled")]
-    pub fn set_accessibility_support_enabled(this: &App, enabled: bool);
+    pub fn set_accessibility_support_enabled(this: &App, value: bool);
 
     // #[cfg(any(macos, linux))]
     #[wasm_bindgen(method, js_name = "showAboutPanel")]
@@ -289,7 +289,7 @@ extern {
     pub fn application_menu(this: &App) -> Option<Menu>;
 
     #[wasm_bindgen(method, setter, js_name = "applicationMenu")]
-    pub fn set_application_menu(this: &App, menu: Option<Menu>);
+    pub fn set_application_menu(this: &App, value: Option<Menu>);
 
     /// An `Integer` property that returns the badge count for current app. Setting the count to `0`
     /// will hide the badge.
@@ -299,7 +299,7 @@ extern {
 
     // #[cfg(any(linux, macos))]
     #[wasm_bindgen(method, setter, js_name = "badgeCount")]
-    pub fn set_badge_count(this: &App, count: usize);
+    pub fn set_badge_count(this: &App, value: usize);
 
     /// A `CommandLine` interface that allows you to read and manipulate the command line arguments
     /// that Chromium uses.
@@ -322,14 +322,14 @@ extern {
     pub fn name(this: &App) -> JsString;
 
     #[wasm_bindgen(method, setter, js_name = "setName")]
-    pub fn set_name(this: &App, name: &JsString);
+    pub fn set_name(this: &App, value: JsString);
 
     /// A `String` which is the user agent string Electron will use as a global fallback.
     #[wasm_bindgen(method, getter, js_name = "userAgentFallback")]
     pub fn user_agent_fallback(this: &App) -> JsString;
 
     #[wasm_bindgen(method, setter, js_name = "setUserAgentFallback")]
-    pub fn set_user_agent_fallback(this: &App, user_agent_fallback: &JsString);
+    pub fn set_user_agent_fallback(this: &App, value: JsString);
 
     /// A `Boolean` which when `true` disables the overrides that Electron has in place to ensure
     /// renderer processes are restarted on every navigation. The current default value for this
@@ -338,5 +338,5 @@ extern {
     pub fn allow_renderer_process_reuse(this: &App) -> bool;
 
     #[wasm_bindgen(method, setter, js_name = "setAllowRendererProcessReuse")]
-    pub fn set_allow_renderer_process_reuse(this: &App, allow_reuse: bool);
+    pub fn set_allow_renderer_process_reuse(this: &App, value: bool);
 }

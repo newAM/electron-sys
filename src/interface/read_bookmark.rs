@@ -20,8 +20,8 @@ impl ReadBookmark {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_title(&mut self, title: JsString) {
-        self.title = title;
+    pub fn set_title(&mut self, value: JsString) {
+        self.title = value;
     }
 
     #[wasm_bindgen(getter)]
@@ -30,7 +30,7 @@ impl ReadBookmark {
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_url(&mut self, url: JsString) {
-        self.url = url;
+    pub fn set_url(&mut self, value: JsString) {
+        self.url = value;
     }
 }
