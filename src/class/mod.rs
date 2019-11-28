@@ -17,6 +17,7 @@ pub(crate) mod session;
 pub(crate) mod touch_bar;
 pub(crate) mod touch_bar_button;
 pub(crate) mod touch_bar_color_picker;
+pub(crate) mod touch_bar_group;
 pub(crate) mod web_contents;
 
 pub use accelerator::*;
@@ -38,4 +39,5 @@ pub use session::*;
 pub use touch_bar::*;
 pub use touch_bar_button::*;
 pub use touch_bar_color_picker::*;
+pub use touch_bar_group::*;
 pub use web_contents::*;
