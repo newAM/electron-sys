@@ -10,6 +10,7 @@ pub(crate) mod dock;
 pub(crate) mod download_item;
 pub(crate) mod incoming_message;
 pub(crate) mod menu;
+pub(crate) mod menu_item;
 pub(crate) mod native_image;
 pub(crate) mod web_contents;
 
@@ -25,5 +26,6 @@ pub use dock::*;
 pub use download_item::*;
 pub use incoming_message::*;
 pub use menu::*;
+pub use menu_item::*;
 pub use native_image::*;
 pub use web_contents::*;
