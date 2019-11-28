@@ -1,4 +1,4 @@
-use crate::interface::{browser_window_options::BrowserWindowOptions, WebContents};
+use crate::{class::web_contents::WebContents, interface::browser_window_options::BrowserWindowOptions};
 use js_sys::JsString;
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
@@ -6,7 +6,8 @@ use wasm_bindgen::prelude::*;
 #[wasm_bindgen(module = "electron")]
 extern {
     #[wasm_bindgen(extends = EventEmitter)]
-    #[derive(Clone)]
+    #[derive(Clone, Debug, Eq, PartialEq)]
+    /// Docs: http://electronjs.org/docs/api/browser-window
     pub type BrowserWindow;
 
     #[wasm_bindgen(constructor)]

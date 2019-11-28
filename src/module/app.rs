@@ -1,17 +1,17 @@
-use crate::interface::{
-    CommandLine,
-    Dock,
-    GetFileIconOptions,
-    GetLoginItemSettings,
-    GetLoginItemSettingsOptions,
-    GpuFeatureStatus,
-    ImportCertificateOptions,
-    JumpListSettings,
-    Menu,
-    MoveToApplicationsFolderOptions,
-    RelaunchOptions,
-    SetAboutPanelOptions,
-    SetLoginItemSettings,
+use crate::{
+    class::{CommandLine, Dock, Menu},
+    interface::{
+        GetFileIconOptions,
+        GetLoginItemSettings,
+        GetLoginItemSettingsOptions,
+        GpuFeatureStatus,
+        ImportCertificateOptions,
+        JumpListSettings,
+        MoveToApplicationsFolderOptions,
+        RelaunchOptions,
+        SetAboutPanelOptions,
+        SetLoginItemSettings,
+    },
 };
 use js_sys::{Array, Function, JsString, Promise};
 use node_sys::events::EventEmitter;

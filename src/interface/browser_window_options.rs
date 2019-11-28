@@ -1,6 +1,6 @@
 use crate::{
-    module::BrowserWindow,
-    interface::{NativeImage, WebPreferences},
+    class::{BrowserWindow, NativeImage},
+    interface::WebPreferences,
 };
 use js_sys::{JsString, Number};
 use wasm_bindgen::prelude::*;

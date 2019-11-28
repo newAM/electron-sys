@@ -5,7 +5,6 @@
 
 pub(crate) mod app;
 pub(crate) mod auto_updater;
-pub(crate) mod browser_window;
 pub(crate) mod clipboard;
 pub(crate) mod content_tracing;
 pub(crate) mod context_bridge;
@@ -32,7 +31,6 @@ pub(crate) mod system_preferences;
 pub(crate) mod web_frame;
 
 pub use app::*;
-pub use browser_window::*;
 pub use clipboard::*;
 pub use content_tracing::*;
 pub use context_bridge::*;

@@ -4,6 +4,6 @@ use wasm_bindgen::prelude::*;
 #[wasm_bindgen(module = "electron")]
 extern {
     #[wasm_bindgen(extends = Object)]
-    /// Docs: http://electronjs.org/docs/api/native-image
+    #[derive(Clone, Debug, Eq, PartialEq)]
     pub type NativeImage;
 }
