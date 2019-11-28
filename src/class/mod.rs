@@ -26,6 +26,7 @@ pub(crate) mod touch_bar_slider;
 pub(crate) mod touch_bar_spacer;
 pub(crate) mod tray;
 pub(crate) mod web_contents;
+pub(crate) mod web_request;
 
 pub use accelerator::*;
 pub use browser_view::*;
@@ -55,3 +56,4 @@ pub use touch_bar_slider::*;
 pub use touch_bar_spacer::*;
 pub use tray::*;
 pub use web_contents::*;
+pub use web_request::*;
