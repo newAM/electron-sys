@@ -1,3 +1,5 @@
+use crate::interface::TouchBarColorPickerOptions;
+use js_sys::{Array, JsString};
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -7,4 +9,23 @@ extern {
     #[derive(Clone, Debug, Eq, PartialEq)]
     /// Docs: http://electronjs.org/docs/api/touch-bar-color-picker
     pub type TouchBarColorPicker;
+
+    // Constructor
+
+    #[wasm_bindgen(constructor)]
+    pub fn new(options: TouchBarColorPickerOptions) -> TouchBarColorPicker;
+
+    // Instance Properties
+
+    #[wasm_bindgen(method, getter, js_name = "availableColors")]
+    pub fn available_colors(this: &TouchBarColorPicker) -> Array;
+
+    #[wasm_bindgen(method, setter, js_name = "availableColors")]
+    pub fn set_available_colors(this: &TouchBarColorPicker, value: Array);
+
+    #[wasm_bindgen(method, getter, js_name = "selectedColor")]
+    pub fn selected_color(this: &TouchBarColorPicker) -> JsString;
+
+    #[wasm_bindgen(method, setter, js_name = "selectedColor")]
+    pub fn set_selected_color(this: &TouchBarColorPicker, value: JsString);
 }
