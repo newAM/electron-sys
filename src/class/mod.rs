@@ -1,6 +1,7 @@
 pub(crate) mod accelerator;
 pub(crate) mod browser_view;
 pub(crate) mod browser_window;
+pub(crate) mod browser_window_proxy;
 pub(crate) mod command_line;
 pub(crate) mod dock;
 pub(crate) mod menu;
@@ -10,6 +11,7 @@ pub(crate) mod web_contents;
 pub use accelerator::*;
 pub use browser_view::*;
 pub use browser_window::*;
+pub use browser_window_proxy::*;
 pub use command_line::*;
 pub use dock::*;
 pub use menu::*;
