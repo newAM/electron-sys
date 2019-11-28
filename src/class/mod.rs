@@ -20,6 +20,7 @@ pub(crate) mod touch_bar_color_picker;
 pub(crate) mod touch_bar_group;
 pub(crate) mod touch_bar_label;
 pub(crate) mod touch_bar_popover;
+pub(crate) mod touch_bar_scrubber;
 pub(crate) mod web_contents;
 
 pub use accelerator::*;
@@ -44,4 +45,5 @@ pub use touch_bar_color_picker::*;
 pub use touch_bar_group::*;
 pub use touch_bar_label::*;
 pub use touch_bar_popover::*;
+pub use touch_bar_scrubber::*;
 pub use web_contents::*;
