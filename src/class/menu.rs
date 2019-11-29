@@ -50,6 +50,9 @@ extern {
 
     // Instance Properties
 
-    #[wasm_bindgen(method)]
+    #[wasm_bindgen(method, getter)]
     pub fn items(this: &Menu) -> Array;
+
+    #[wasm_bindgen(method, setter)]
+    pub fn set_items(this: &Menu, value: Array);
 }
