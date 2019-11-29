@@ -26,6 +26,14 @@ extern {
 
     // Static Methods
 
+    #[wasm_bindgen(static_method_of = Session, js_name = "fromPartition")]
+    pub fn from_partition(partition: &JsString, options: Option<FromPartitionOptions>) -> Session;
+
+    // Static Properties
+
+    #[wasm_bindgen(static_method_of = Session, getter, js_name = "defaultSession")]
+    pub fn default_session() -> Session;
+
     // Instance Methods
 
     #[wasm_bindgen(method, js_name = "allowNTLMCredentialsForDomains")]
