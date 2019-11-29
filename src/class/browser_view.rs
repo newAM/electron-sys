@@ -45,6 +45,12 @@ extern {
     #[wasm_bindgen(method, getter)]
     pub fn id(this: &BrowserView) -> usize;
 
+    #[wasm_bindgen(method, setter)]
+    pub fn set_id(this: &BrowserView, value: usize);
+
     #[wasm_bindgen(method, getter)]
     pub fn web_contents(this: &BrowserView) -> WebContents;
+
+    #[wasm_bindgen(method, getter)]
+    pub fn set_web_contents(this: &BrowserView, value: WebContents);
 }
