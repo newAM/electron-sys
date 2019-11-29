@@ -81,4 +81,7 @@ extern {
 
     #[wasm_bindgen(method, getter, js_name = "isMacTemplateImage")]
     pub fn is_mac_template_image(this: &NativeImage) -> bool;
+
+    #[wasm_bindgen(method, setter, js_name = "isMacTemplateImage")]
+    pub fn set_is_mac_template_image(this: &NativeImage, value: bool);
 }
