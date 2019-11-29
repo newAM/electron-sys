@@ -21,7 +21,7 @@ extern {
     pub fn segments(this: &TouchBarSegmentedControl) -> Array;
 
     #[wasm_bindgen(method, getter)]
-    pub fn set_segments(this: &TouchBarSegmentedControl, value: &Array);
+    pub fn set_segments(this: &TouchBarSegmentedControl, value: Array);
 
     #[wasm_bindgen(method, getter, js_name = "segment_style")]
     pub fn segment_style(this: &TouchBarSegmentedControl) -> JsString;
