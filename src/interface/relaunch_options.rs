@@ -2,6 +2,7 @@ use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
+#[derive(Clone, Debug, PartialEq)]
 pub struct RelaunchOptions {
     args: JsString,
     exec_path: Option<JsString>,

@@ -2,6 +2,7 @@ use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
+#[derive(Clone, Debug, Eq, PartialEq)]
 pub struct ImportCertificateOptions {
     certificate: JsString,
     password: JsString,

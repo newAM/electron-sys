@@ -2,6 +2,7 @@ use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
+#[derive(Clone, Debug, PartialEq)]
 pub struct ShortcutDetails {
     app_user_model_id: Option<JsString>,
     args: Option<JsString>,

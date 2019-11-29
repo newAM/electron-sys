@@ -2,6 +2,7 @@ use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
+#[derive(Clone, Debug, Eq, PartialEq)]
 pub struct GetLoginItemSettingsOptions {
     path: Option<JsString>, // FIXME: windows
     args: JsString,         // FIXME: windows

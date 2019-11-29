@@ -3,6 +3,7 @@ use js_sys::Array;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
+#[derive(Clone, Debug, PartialEq)]
 pub struct SourcesOptions {
     types: Array,
     thumbnail_size: Option<Size>,

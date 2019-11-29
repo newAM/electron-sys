@@ -2,6 +2,7 @@ use js_sys::Function;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
+#[derive(Clone, Debug, Eq, PartialEq)]
 pub struct MoveToApplicationsFolderOptions {
     conflict_handler: Function,
 }

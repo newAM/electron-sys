@@ -2,6 +2,7 @@ use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
+#[derive(Clone, Debug, PartialEq)]
 pub struct SetLoginItemSettings {
     open_at_login: Option<bool>,
     open_as_hidden: Option<bool>, // FIXME: macos

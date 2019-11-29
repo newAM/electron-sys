@@ -2,6 +2,7 @@ use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
+#[derive(Clone, Debug, PartialEq)]
 pub struct SetAboutPanelOptions {
     application_name: Option<JsString>,
     application_version: Option<JsString>,

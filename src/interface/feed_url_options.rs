@@ -2,6 +2,7 @@ use js_sys::{JsString, Object};
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
+#[derive(Clone, Debug, Eq, PartialEq)]
 pub struct FeedUrlOptions {
     url: JsString,
     headers: Option<Object>,

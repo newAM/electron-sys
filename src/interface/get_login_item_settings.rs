@@ -1,6 +1,7 @@
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
+#[derive(Clone, Copy, Debug, Default, Eq, PartialEq)]
 pub struct GetLoginItemSettings {
     open_at_login: bool,
     open_as_hidden: bool,       // FIXME: macos
