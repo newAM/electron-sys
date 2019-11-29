@@ -193,7 +193,7 @@ impl MenuItemOptions {
         self.kind.clone()
     }
 
-    #[wasm_bindgen(setter, js_name = "type")]
+    #[wasm_bindgen(setter)]
     pub fn set_kind(&mut self, value: Option<JsString>) {
         self.kind = value;
     }

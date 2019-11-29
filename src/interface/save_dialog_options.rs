@@ -62,7 +62,7 @@ impl SaveDialogOptions {
         self.default_path.clone()
     }
 
-    #[wasm_bindgen(setter, js_name = "defaultPath")]
+    #[wasm_bindgen(setter)]
     pub fn set_default_path(&mut self, value: Option<JsString>) {
         self.default_path = value;
     }
@@ -72,7 +72,7 @@ impl SaveDialogOptions {
         self.button_label.clone()
     }
 
-    #[wasm_bindgen(setter, js_name = "buttonLabel")]
+    #[wasm_bindgen(setter)]
     pub fn set_button_label(&mut self, value: Option<JsString>) {
         self.button_label = value;
     }
@@ -102,7 +102,7 @@ impl SaveDialogOptions {
         self.name_field_label.clone()
     }
 
-    #[wasm_bindgen(setter, js_name = "nameFieldLabel")]
+    #[wasm_bindgen(setter)]
     pub fn set_name_field_label(&mut self, value: Option<JsString>) {
         self.name_field_label = value;
     }
@@ -112,7 +112,7 @@ impl SaveDialogOptions {
         self.show_tag_field
     }
 
-    #[wasm_bindgen(setter, js_name = "showTagField")]
+    #[wasm_bindgen(setter)]
     pub fn set_show_tag_field(&mut self, value: Option<bool>) {
         self.show_tag_field = value;
     }
@@ -132,7 +132,7 @@ impl SaveDialogOptions {
         self.security_scoped_bookmarks
     }
 
-    #[wasm_bindgen(setter, js_name = "securityScopedBookmarks")]
+    #[wasm_bindgen(setter)]
     pub fn set_security_scoped_bookmarks(&mut self, value: Option<bool>) {
         self.security_scoped_bookmarks = value;
     }
