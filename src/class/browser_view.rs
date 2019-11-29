@@ -1,6 +1,6 @@
 use crate::{
     class::WebContents,
-    interface::{AutoResizeOptions, Rectangle},
+    interface::{AutoResizeOptions, BrowserViewOptions, Rectangle},
 };
 use js_sys::{Array, JsString, Object};
 use wasm_bindgen::prelude::*;
@@ -11,6 +11,9 @@ extern {
     #[derive(Clone, Debug, Eq, PartialEq)]
     /// Docs: http://electronjs.org/docs/api/browser-view
     pub type BrowserView;
+
+    #[wasm_bindgen(constructor)]
+    pub fn new(options: Option<BrowserViewOptions>) -> BrowserView;
 
     #[wasm_bindgen(static_method_of = BrowserView)]
     pub fn from_id(id: usize) -> BrowserView;
