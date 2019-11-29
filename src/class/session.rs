@@ -4,6 +4,7 @@ use crate::{
         ClearStorageDataOptions,
         CreateInterruptedDownloadOptions,
         EnableNetworkEmulationOptions,
+        FromPartitionOptions,
         NetLog,
         PreconnectOptions,
         Protocol,
