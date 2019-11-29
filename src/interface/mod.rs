@@ -1,3 +1,4 @@
+pub(crate) mod add_representation_options;
 pub(crate) mod auto_resize_options;
 pub(crate) mod bluetooth_device;
 pub(crate) mod browser_window_options;
@@ -90,6 +91,7 @@ pub(crate) mod upload_raw_data;
 pub(crate) mod web_preferences;
 pub(crate) mod web_source;
 
+pub use add_representation_options::*;
 pub use auto_resize_options::*;
 pub use bluetooth_device::*;
 pub use browser_window_options::*;
