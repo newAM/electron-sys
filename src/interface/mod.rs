@@ -1,6 +1,7 @@
 pub(crate) mod add_representation_options;
 pub(crate) mod auto_resize_options;
 pub(crate) mod bluetooth_device;
+pub(crate) mod browser_view_options;
 pub(crate) mod browser_window_options;
 pub(crate) mod certificate;
 pub(crate) mod certificate_principal;
@@ -106,6 +107,7 @@ pub(crate) mod web_source;
 pub use add_representation_options::*;
 pub use auto_resize_options::*;
 pub use bluetooth_device::*;
+pub use browser_view_options::*;
 pub use browser_window_options::*;
 pub use certificate::*;
 pub use certificate_principal::*;
