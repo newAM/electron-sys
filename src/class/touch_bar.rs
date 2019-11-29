@@ -14,7 +14,7 @@ extern {
     #[wasm_bindgen(constructor)]
     pub fn new(options: TouchBarOptions) -> TouchBar;
 
-    // Instance Methods
+    // Instance Properties
 
     #[wasm_bindgen(method, getter, js_name = "escapeItem")]
     pub fn escape_item(this: &TouchBar) -> Option<Object>;
