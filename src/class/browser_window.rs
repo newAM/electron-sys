@@ -95,7 +95,7 @@ extern {
     #[wasm_bindgen(method, setter, js_name = "fullScreenable")]
     pub fn set_full_screenable(this: &BrowserWindow, value: bool);
 
-    #[wasm_bindgen(method, getter)]
+    #[wasm_bindgen(method, getter)] // readonly
     pub fn id(this: &BrowserWindow) -> usize;
 
     #[wasm_bindgen(method, getter)]
@@ -122,6 +122,6 @@ extern {
     #[wasm_bindgen(method, setter)]
     pub fn set_resizable(this: &BrowserWindow, value: bool);
 
-    #[wasm_bindgen(method, getter, js_name = "webContents")]
+    #[wasm_bindgen(method, getter, js_name = "webContents")] // readonly
     pub fn web_contents(this: &BrowserWindow) -> WebContents;
 }

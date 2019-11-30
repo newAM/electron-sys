@@ -136,18 +136,18 @@ extern {
     // Instance Properties //
     //*********************//
 
-    #[wasm_bindgen(method, getter, js_name = "availableSpellCheckerLanguages")]
+    #[wasm_bindgen(method, getter, js_name = "availableSpellCheckerLanguages")] // readonly
     pub fn available_spell_checker_languages(this: &Session) -> Array;
 
-    #[wasm_bindgen(method, getter)]
+    #[wasm_bindgen(method, getter)] // readonly
     pub fn cookies(this: &Session) -> Array;
 
-    #[wasm_bindgen(method, getter, js_name = "netLog")]
+    #[wasm_bindgen(method, getter, js_name = "netLog")] // readonly
     pub fn net_log(this: &Session) -> NetLog;
 
-    #[wasm_bindgen(method, getter)]
+    #[wasm_bindgen(method, getter)] // readonly
     pub fn protocol(this: &Session) -> Protocol;
 
-    #[wasm_bindgen(method, getter, js_name = "webRequest")]
+    #[wasm_bindgen(method, getter, js_name = "webRequest")] // readonly
     pub fn web_request(this: &Session) -> WebRequest;
 }

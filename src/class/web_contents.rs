@@ -315,12 +315,10 @@ extern {
     #[wasm_bindgen(method, setter, js_name = "audioMuted")]
     pub fn set_audio_muted(this: &WebContents, value: bool);
 
-    // readonly
-    #[wasm_bindgen(method, getter)]
+    #[wasm_bindgen(method, getter)] // readonly
     pub fn debugger(this: &WebContents) -> Debugger;
 
-    // readonly
-    #[wasm_bindgen(method, getter, js_name = "devToolsWebContents")]
+    #[wasm_bindgen(method, getter, js_name = "devToolsWebContents")] // readonly
     pub fn dev_tools_web_contents(this: &WebContents) -> WebContents;
 
     #[wasm_bindgen(method, getter, js_name = "frameRate")]
@@ -329,16 +327,13 @@ extern {
     #[wasm_bindgen(method, setter, js_name = "frameRate")]
     pub fn set_frame_rate(this: &WebContents, value: Number);
 
-    // readonly
-    #[wasm_bindgen(method, getter, js_name = "hostWebContents")]
+    #[wasm_bindgen(method, getter, js_name = "hostWebContents")] // readonly
     pub fn host_web_contents(this: &WebContents) -> WebContents;
 
-    // readonly
-    #[wasm_bindgen(method, getter)]
+    #[wasm_bindgen(method, getter)] // readonly
     pub fn id(this: &WebContents) -> usize;
 
-    // readonly
-    #[wasm_bindgen(method, getter)]
+    #[wasm_bindgen(method, getter)] // readonly
     pub fn session(this: &WebContents) -> Session;
 
     #[wasm_bindgen(method, getter)]

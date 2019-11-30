@@ -280,16 +280,16 @@ extern {
 
     /// A `CommandLine` interface that allows you to read and manipulate the command line arguments
     /// that Chromium uses.
-    #[wasm_bindgen(method, getter, js_name = "commandLine")]
+    #[wasm_bindgen(method, getter, js_name = "commandLine")] // readonly
     pub fn command_line(this: &App) -> CommandLine;
 
     /// A `Dock` interface that allows you to perform actions on your app icon in the user's dock on
     /// macOS.
-    #[wasm_bindgen(method, getter)]
+    #[wasm_bindgen(method, getter)] // readonly
     pub fn dock(this: &App) -> Dock;
 
     /// A `Boolean` property that returns `true` if the app is packaged, `false` otherwise.
-    #[wasm_bindgen(method, getter, js_name = "isPackaged")]
+    #[wasm_bindgen(method, getter, js_name = "isPackaged")] // readonly
     pub fn is_packaged(this: &App) -> bool;
 
     /// A `String` property that indicates the current application's name, which is the name in the
