@@ -78,6 +78,7 @@ extern {
     pub fn get_path(this: &App) -> Result<JsString, JsValue>;
 
     /// Returns a promise with the app's icon, which is a `NativeImage`.
+    #[must_use]
     #[wasm_bindgen(method, js_name = "getFileIcon")]
     pub fn get_file_icon(this: &App, path: &JsString, options: Option<GetFileIconOptions>) -> Promise;
 
@@ -218,6 +219,7 @@ extern {
     #[wasm_bindgen(method, js_name = "getGPUFeatureStatus")]
     pub fn get_gpu_feature_status(this: &App) -> GpuFeatureStatus;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "getGPUInfo")]
     pub fn get_gpu_info(this: &App, info_type: &JsString) -> Promise;
 

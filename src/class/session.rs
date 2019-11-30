@@ -39,18 +39,23 @@ extern {
     #[wasm_bindgen(method, js_name = "allowNTLMCredentialsForDomains")]
     pub fn allow_ntlm_credentials_for_domains(this: &Session, domains: &JsString);
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "clear_auth_cache")]
     pub fn clear_auth_cache_and_remove_password(this: &Session, options: RemovePassword) -> Promise;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "clear_auth_cache")]
     pub fn clear_auth_cache_and_remove_client_certificate(this: &Session, options: RemoveClientCertificate) -> Promise;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "clearCache")]
     pub fn clear_cache(this: &Session) -> Promise;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "clearHostResolverCache")]
     pub fn clear_host_resolver_cache(this: &Session) -> Promise;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "clearStorageData")]
     pub fn clear_storage_data(this: &Session, options: Option<ClearStorageDataOptions>) -> Promise;
 
@@ -69,9 +74,11 @@ extern {
     #[wasm_bindgen(method, js_name = "flushStorageData")]
     pub fn flush_storage_data(this: &Session);
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "getBlobData")]
     pub fn get_blob_data(this: &Session, identifier: &JsString) -> Promise;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "getCacheSize")]
     pub fn get_cache_size(this: &Session) -> Promise;
 
@@ -87,6 +94,7 @@ extern {
     #[wasm_bindgen(method)]
     pub fn preconnect(this: &Session, options: PreconnectOptions) -> Array;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "resolveProxy")]
     pub fn resolve_proxy(this: &Session, url: &JsString) -> Promise;
 
@@ -105,6 +113,7 @@ extern {
     #[wasm_bindgen(method, js_name = "setPreloads")]
     pub fn set_preloads(this: &Session, preloads: &Array);
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "setProxy")]
     pub fn set_proxy(this: &Session, options: SetProxyOptions) -> Promise;
 

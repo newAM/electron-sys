@@ -19,6 +19,7 @@ extern {
 
     /// Open the given external protocol URL in the desktop's default manner. (For example, mailto:
     /// URLs in the user's default mail agent).
+    #[must_use]
     #[wasm_bindgen(method, js_name = "openExternal")]
     pub fn open_external(this: &Shell, url: &JsString, options: OpenExternalOptions) -> Promise;
 

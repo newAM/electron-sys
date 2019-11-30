@@ -41,6 +41,7 @@ extern {
     #[wasm_bindgen(method, js_name = "setMenu")]
     pub fn set_menu(this: &Dock, menu: &Menu);
 
+    #[must_use]
     #[wasm_bindgen(method)]
     pub fn show(this: &Dock) -> Promise;
 }

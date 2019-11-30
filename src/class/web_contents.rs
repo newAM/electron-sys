@@ -53,6 +53,7 @@ extern {
     #[wasm_bindgen(method, js_name = "canGoForward")]
     pub fn can_go_to_offset(this: &WebContents, offset: &Number) -> bool;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "capturePage")]
     pub fn capture_page(this: &WebContents, rectangle: Option<Rectangle>) -> Promise;
 
@@ -86,6 +87,7 @@ extern {
     #[wasm_bindgen(method, js_name = "endFrameSubscription")]
     pub fn end_frame_subscription(this: &WebContents);
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "executeJavaScript")]
     pub fn execute_java_script(this: &WebContents, code: &JsString, user_gesture: Option<bool>) -> Promise;
 
@@ -131,9 +133,11 @@ extern {
     #[wasm_bindgen(method, js_name = "goToOffset")]
     pub fn go_to_offset(this: &WebContents, index: usize);
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "insertCSS")]
     pub fn insert_css(this: &WebContents, css: &JsString, options: Option<InsertCssOptions>) -> Promise;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "insertText")]
     pub fn insert_text(this: &WebContents, text: &JsString) -> Promise;
 
@@ -185,9 +189,11 @@ extern {
     #[wasm_bindgen(method, js_name = "isWaitingForResponse")]
     pub fn is_waiting_for_response(this: &WebContents) -> bool;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "loadFile")]
     pub fn load_file(this: &WebContents, file_path: &JsString, options: Option<LoadFileOptions>) -> Promise;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "loadURL")]
     pub fn load_url(this: &WebContents, url: &JsString, options: Option<LoadUrlOptions>) -> Promise;
 
@@ -203,6 +209,7 @@ extern {
     #[wasm_bindgen(method)]
     pub fn print(this: &WebContents, options: Option<WebContentsPrintOptions>, callback: Option<&Function>);
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "printToPDF")]
     pub fn print_to_pdf(this: &WebContents, options: PrintToPdfOptions) -> Promise;
 
@@ -215,6 +222,7 @@ extern {
     #[wasm_bindgen(method, js_name = "reloadIgnoringCache")]
     pub fn reload_ignoring_cache(this: &WebContents);
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "removeInsertedCSS")]
     pub fn remove_inserted_css(this: &WebContents, key: &JsString) -> Promise;
 
@@ -227,6 +235,7 @@ extern {
     #[wasm_bindgen(method, js_name = "replaceMisspelling")]
     pub fn replaceMisspelling(this: &WebContents, text: &JsString);
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "savePage")]
     pub fn save_page(this: &WebContents, full_path: &JsString, save_type: &JsString) -> Promise;
 
@@ -251,9 +260,11 @@ extern {
     #[wasm_bindgen(method, js_name = "setIgnoreMenuShortcuts")]
     pub fn set_ignore_menu_shortcuts(this: &WebContents, ignore: bool);
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "setLayoutZoomLevelLimits")]
     pub fn set_layout_zoom_level_limits(this: &WebContents, min: &Number, max: &Number) -> Promise;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "setVisualZoomLevelLimits")]
     pub fn set_visual_zoom_level_limits(this: &WebContents, min: &Number, max: &Number) -> Promise;
 

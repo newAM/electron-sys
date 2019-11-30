@@ -20,6 +20,7 @@ extern {
     #[wasm_bindgen(method, js_name = "isAttached")]
     pub fn is_attached(this: &Debugger);
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "sendCommand")]
     pub fn send_command(this: &Debugger, method: &JsString, command_params: &JsValue) -> Promise;
 }
