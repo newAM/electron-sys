@@ -54,12 +54,10 @@ extern {
     pub fn focus(this: &App);
 
     /// Hides all application windows without minimizing them.
-    // #[cfg(macos)]
     #[wasm_bindgen(method)]
     pub fn hide(this: &App);
 
     /// Shows application windows after they were hidden. Does not automatically focus them.
-    // #[cfg(macos)]
     #[wasm_bindgen(method)]
     pub fn show(this: &App);
 
@@ -100,12 +98,10 @@ extern {
     pub fn get_locale_country_code(this: &App);
 
     /// Adds path to the recent documents list.
-    // #[cfg(any(macos, windows))]
     #[wasm_bindgen(method, js_name = "addRecentDocument")]
     pub fn add_recent_document(this: &App, path: JsString);
 
     /// Clears the recent documents list.
-    // #[cfg(any(macos, windows))]
     #[wasm_bindgen(method, js_name = "clearRecentDocuments")]
     pub fn clear_recent_documents(this: &App);
 
@@ -114,41 +110,32 @@ extern {
     pub fn set_as_default_protocol_client(
         this: &App,
         protocol: JsString,
-        /* #[cfg(windows)] path: Option<JsString>,
-         * #[cfg(windows)] args: JsString, */
+        path: Option<JsString>,
+        args: JsString,
     ) -> bool;
 
     /// Returns whether the call succeeded.
-    // #[cfg(any(macos, windows))]
     #[wasm_bindgen(method, js_name = "removeAsDefaultProtocolClient")]
     pub fn remove_as_default_protocol_client(
         this: &App,
         protocol: JsString,
-        /* #[cfg(windows)] path: Option<JsString>,
-         * #[cfg(windows)] args: JsString, */
+        path: Option<JsString>,
+        args: JsString,
     ) -> bool;
 
     /// This method checks if the current executable is the default handler for a protocol (aka URI
     /// scheme). If so, it will return true. Otherwise, it will return false.
     #[wasm_bindgen(method, js_name = "isDefaultProtocolClient")]
-    pub fn is_default_protocol_client(
-        this: &App,
-        protocol: JsString,
-        /* #[cfg(windows)] path: Option<JsString>,
-         * #[cfg(windows)] args: JsString, */
-    ) -> bool;
+    pub fn is_default_protocol_client(this: &App, protocol: JsString, path: Option<JsString>, args: JsString) -> bool;
 
     /// Adds `tasks` to the `Tasks` category of the Jump List on Windows.
-    // #[cfg(windows)]
     #[wasm_bindgen(method, js_name = "setUserTasks")]
     pub fn set_user_tasks(this: &App, task: Array) -> bool;
 
-    // #[cfg(windows)]
     #[wasm_bindgen(method, js_name = "getJumpListSettings")]
     pub fn get_jump_list_settings(this: &App) -> JumpListSettings;
 
     /// Sets or removes a custom Jump List for the application
-    // #[cfg(windows)]
     #[wasm_bindgen(method, js_name = "setJumpList")]
     pub fn set_jump_list(this: &App, categories: Option<Array>) -> JsString;
 
@@ -171,33 +158,27 @@ extern {
     pub fn set_user_activity(this: &App, user_info: &JsValue, webpage_url: Option<JsString>);
 
     /// Returns the type of the currently running activity.
-    // #[cfg(macos)]
     #[wasm_bindgen(method, js_name = "getCurrentActivityType")]
     pub fn get_current_activity_type(this: &App) -> JsString;
 
     /// Invalidates the current Handoff user activity.
-    // #[cfg(macos)]
     #[wasm_bindgen(method, js_name = "invalidateCurrentActivity")]
     pub fn invalidate_current_activity(this: &App);
 
     /// Marks the current Handoff user activity as inactive without invalidating it.
-    // #[cfg(macos)]
     #[wasm_bindgen(method, js_name = "resignCurrentActivity")]
     pub fn resign_current_activity(this: &App);
 
     /// Updates the current activity if its type matches `type`, merging the entries from
     /// `user_info` into its current `user_info` dictionary.
-    // #[cfg(macos)]
     #[wasm_bindgen(method, js_name = "updateCurrentActivity")]
     pub fn update_current_activity(this: &App, kind: &JsString, user_info: &JsValue);
 
     /// Changes the Application User Model ID to `id`.
-    // #[cfg(windows)]
     #[wasm_bindgen(method, js_name = "setAppUserModelId")]
     pub fn set_app_user_model_id(this: &App, id: JsString);
 
     /// Imports the certificate in pkcs12 format into the platform certificate store.
-    // #[cfg(linux)]
     #[wasm_bindgen(method, js_name = "importCertificate")]
     pub fn import_certificate(this: &App, options: ImportCertificateOptions, callback: &Function);
 
@@ -224,21 +205,17 @@ extern {
     pub fn get_gpu_info(this: &App, info_type: &JsString) -> Promise;
 
     /// Returns whether the current desktop environment is Unity launcher.
-    // #[cfg(linux)]
     #[wasm_bindgen(method, js_name = "isUnityRunning")]
     pub fn is_unity_running(this: &App) -> bool;
 
-    // #[cfg(any(macos, windows))]
     #[wasm_bindgen(method, js_name = "getLoginItemSettings")]
     pub fn get_login_item_settings(this: &App, options: Option<GetLoginItemSettingsOptions>) -> GetLoginItemSettings;
 
     /// Set the app's login item settings.
-    // #[cfg(any(macos, windows))]
     #[wasm_bindgen(method, js_name = "setLoginItemSettings")]
     pub fn set_login_item_settings(this: &App, settings: Option<SetLoginItemSettings>);
 
     /// Set the about panel options.
-    // #[cfg(any(macos, linux))]
     #[wasm_bindgen(method, js_name = "setAboutPanelOptions")]
     pub fn set_about_panel_options(this: &App, options: SetAboutPanelOptions);
 
@@ -247,7 +224,6 @@ extern {
     pub fn is_emoji_panel_supported(this: &App);
 
     /// Show the platform's native emoji picker.
-    // #[cfg(any(macos, windows))]
     #[wasm_bindgen(method, js_name = "showEmojiPanel")]
     pub fn show_emoji_panel(this: &App);
 
@@ -274,15 +250,12 @@ extern {
 
     /// A `Boolean` property that's `true` if Chrome's accessibility support is enabled, `false`
     /// otherwise.
-    // #[cfg(any(macos, windows))]
     #[wasm_bindgen(method, getter, js_name = "accessibilitySupportEnabled")]
     pub fn accessibility_support_enabled(this: &App) -> bool;
 
-    // #[cfg(any(macos, windows))]
     #[wasm_bindgen(method, setter, js_name = "accessibilitySupportEnabled")]
     pub fn set_accessibility_support_enabled(this: &App, value: bool);
 
-    // #[cfg(any(macos, linux))]
     #[wasm_bindgen(method, js_name = "showAboutPanel")]
     pub fn show_about_panel(this: &App);
 
@@ -295,11 +268,9 @@ extern {
 
     /// An `Integer` property that returns the badge count for current app. Setting the count to `0`
     /// will hide the badge.
-    // #[cfg(any(linux, macos))]
     #[wasm_bindgen(method, getter, js_name = "badgeCount")]
     pub fn badge_count(this: &App);
 
-    // #[cfg(any(linux, macos))]
     #[wasm_bindgen(method, setter, js_name = "badgeCount")]
     pub fn set_badge_count(this: &App, value: usize);
 
@@ -310,7 +281,6 @@ extern {
 
     /// A `Dock` interface that allows you to perform actions on your app icon in the user's dock on
     /// macOS.
-    // #[cfg(macos)]
     #[wasm_bindgen(method, getter)]
     pub fn dock(this: &App) -> Dock;
 
