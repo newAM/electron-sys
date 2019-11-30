@@ -23,6 +23,7 @@
 <span id="23">23</span>
 <span id="24">24</span>
 <span id="25">25</span>
+<span id="26">26</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="ident">js_sys</span>::{<span class="ident">JsString</span>, <span class="ident">Promise</span>};
 <span class="kw">use</span> <span class="ident">node_sys</span>::<span class="ident">events</span>::<span class="ident">EventEmitter</span>;
@@ -46,6 +47,7 @@
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;isAttached&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_attached</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Debugger</span>);
 
+    <span class="attribute">#[<span class="ident">must_use</span>]</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;sendCommand&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">send_command</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Debugger</span>, <span class="ident">method</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>, <span class="ident">command_params</span>: <span class="kw-2">&amp;</span><span class="ident">JsValue</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Promise</span>;
 }
