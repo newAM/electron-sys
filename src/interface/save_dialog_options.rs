@@ -17,7 +17,6 @@ pub struct SaveDialogOptions {
 
 #[wasm_bindgen]
 impl SaveDialogOptions {
-
     //*************//
     // Constructor //
     //*************//
