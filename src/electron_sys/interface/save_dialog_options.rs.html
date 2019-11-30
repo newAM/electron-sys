@@ -137,6 +137,11 @@
 <span id="137">137</span>
 <span id="138">138</span>
 <span id="139">139</span>
+<span id="140">140</span>
+<span id="141">141</span>
+<span id="142">142</span>
+<span id="143">143</span>
+<span id="144">144</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="ident">js_sys</span>::{<span class="ident">Array</span>, <span class="ident">JsString</span>};
 <span class="kw">use</span> <span class="ident">wasm_bindgen</span>::<span class="ident">prelude</span>::<span class="kw-2">*</span>;
@@ -157,7 +162,10 @@
 
 <span class="attribute">#[<span class="ident">wasm_bindgen</span>]</span>
 <span class="kw">impl</span> <span class="ident">SaveDialogOptions</span> {
-    <span class="comment">// Constructor</span>
+
+    <span class="comment">//*************//</span>
+    <span class="comment">// Constructor //</span>
+    <span class="comment">//*************//</span>
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">constructor</span>)]</span>
     <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">clippy</span>::<span class="ident">too_many_arguments</span>)]</span>
@@ -185,7 +193,9 @@
         }
     }
 
-    <span class="comment">// Instance Properties</span>
+    <span class="comment">//*********************//</span>
+    <span class="comment">// Instance Properties //</span>
+    <span class="comment">//*********************//</span>
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">title</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">JsString</span><span class="op">&gt;</span> {

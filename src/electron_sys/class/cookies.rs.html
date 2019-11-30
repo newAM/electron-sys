@@ -28,6 +28,8 @@
 <span id="28">28</span>
 <span id="29">29</span>
 <span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">interface</span>::{<span class="ident">CookiesGetFilter</span>, <span class="ident">CookiesSetDetails</span>};
 <span class="kw">use</span> <span class="ident">js_sys</span>::{<span class="ident">JsString</span>, <span class="ident">Promise</span>};
@@ -41,7 +43,9 @@
     <span class="doccomment">/// Docs: http://electronjs.org/docs/api/cookies</span>
     <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">Cookies</span>;
 
-    <span class="comment">// Instance Methods</span>
+    <span class="comment">//******************//</span>
+    <span class="comment">// Instance Methods //</span>
+    <span class="comment">//******************//</span>
 
     <span class="attribute">#[<span class="ident">must_use</span>]</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;flushStore&quot;</span>)]</span>

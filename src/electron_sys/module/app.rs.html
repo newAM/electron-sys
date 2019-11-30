@@ -240,78 +240,6 @@
 <span id="240">240</span>
 <span id="241">241</span>
 <span id="242">242</span>
-<span id="243">243</span>
-<span id="244">244</span>
-<span id="245">245</span>
-<span id="246">246</span>
-<span id="247">247</span>
-<span id="248">248</span>
-<span id="249">249</span>
-<span id="250">250</span>
-<span id="251">251</span>
-<span id="252">252</span>
-<span id="253">253</span>
-<span id="254">254</span>
-<span id="255">255</span>
-<span id="256">256</span>
-<span id="257">257</span>
-<span id="258">258</span>
-<span id="259">259</span>
-<span id="260">260</span>
-<span id="261">261</span>
-<span id="262">262</span>
-<span id="263">263</span>
-<span id="264">264</span>
-<span id="265">265</span>
-<span id="266">266</span>
-<span id="267">267</span>
-<span id="268">268</span>
-<span id="269">269</span>
-<span id="270">270</span>
-<span id="271">271</span>
-<span id="272">272</span>
-<span id="273">273</span>
-<span id="274">274</span>
-<span id="275">275</span>
-<span id="276">276</span>
-<span id="277">277</span>
-<span id="278">278</span>
-<span id="279">279</span>
-<span id="280">280</span>
-<span id="281">281</span>
-<span id="282">282</span>
-<span id="283">283</span>
-<span id="284">284</span>
-<span id="285">285</span>
-<span id="286">286</span>
-<span id="287">287</span>
-<span id="288">288</span>
-<span id="289">289</span>
-<span id="290">290</span>
-<span id="291">291</span>
-<span id="292">292</span>
-<span id="293">293</span>
-<span id="294">294</span>
-<span id="295">295</span>
-<span id="296">296</span>
-<span id="297">297</span>
-<span id="298">298</span>
-<span id="299">299</span>
-<span id="300">300</span>
-<span id="301">301</span>
-<span id="302">302</span>
-<span id="303">303</span>
-<span id="304">304</span>
-<span id="305">305</span>
-<span id="306">306</span>
-<span id="307">307</span>
-<span id="308">308</span>
-<span id="309">309</span>
-<span id="310">310</span>
-<span id="311">311</span>
-<span id="312">312</span>
-<span id="313">313</span>
-<span id="314">314</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="kw">crate</span>::{
     <span class="ident">class</span>::{<span class="ident">CommandLine</span>, <span class="ident">Dock</span>, <span class="ident">Menu</span>},
@@ -334,93 +262,71 @@
 
 <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">module</span> <span class="op">=</span> <span class="string">&quot;electron&quot;</span>)]</span>
 <span class="kw">extern</span> {
-    <span class="doccomment">/// The electron app interface type.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">extends</span> <span class="op">=</span> <span class="ident">EventEmitter</span>)]</span>
     <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">App</span>;
 
-    <span class="doccomment">/// The electron app.</span>
     <span class="kw">pub</span> <span class="kw">static</span> <span class="ident">app</span>: <span class="ident">App</span>;
 
-    <span class="doccomment">/// Try to close all windows.</span>
+    <span class="comment">//******************//</span>
+    <span class="comment">// Instance Methods //</span>
+    <span class="comment">//******************//</span>
+
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">quit</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// Exits immediately with `exit_code`. `exit_code` defaults to 0.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">exit</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">exit_code</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>);
 
-    <span class="doccomment">/// Relaunches the app when current instance exits.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">relaunch</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">options</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">RelaunchOptions</span><span class="op">&gt;</span>);
 
-    <span class="doccomment">/// Returns `true` if Electron has finished initializing, `false` otherwise.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;isReady&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_ready</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
-    <span class="doccomment">/// May be used as a convenient alternative to checking `app.is_ready()` or subscribing to the</span>
-    <span class="doccomment">/// `ready` event if the app is not ready yet.</span>
     <span class="attribute">#[<span class="ident">must_use</span>]</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;whenReady&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">when_ready</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Promise</span>;
 
-    <span class="doccomment">/// On Linux, focuses on the first visible window. On macOS, makes the application the active</span>
-    <span class="doccomment">/// app. On Windows, focuses on the application&#39;s first window.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">focus</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// Hides all application windows without minimizing them.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">hide</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// Shows application windows after they were hidden. Does not automatically focus them.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">show</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// Sets or creates a directory your app&#39;s logs which can then be manipulated with</span>
-    <span class="doccomment">/// `app.get_path()` or `app.set_path(path_name, new_path)`.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setAppLogsPath&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_app_logs_path</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">path</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">JsString</span><span class="op">&gt;</span>);
 
-    <span class="doccomment">/// Returns the current application directory.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getAppPath&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_app_path</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">JsString</span>;
 
-    <span class="doccomment">/// Returns the path to a special directory or file associated with name. On failure, an `Error`</span>
-    <span class="doccomment">/// is thrown.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">catch</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getPath&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_path</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">JsString</span>, <span class="ident">JsValue</span><span class="op">&gt;</span>;
 
-    <span class="doccomment">/// Returns a promise with the app&#39;s icon, which is a `NativeImage`.</span>
     <span class="attribute">#[<span class="ident">must_use</span>]</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getFileIcon&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_file_icon</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>, <span class="ident">options</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">GetFileIconOptions</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Promise</span>;
 
-    <span class="doccomment">/// Overrides the `path` to a special directory or file associated with `name`. If the path</span>
-    <span class="doccomment">/// specifies a directory that does not exist, an `Error` is thrown.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">catch</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setPath&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_path</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">name</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">JsValue</span><span class="op">&gt;</span>;
 
-    <span class="doccomment">/// Returns the version of the loaded application.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getVersion&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_version</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">JsString</span>;
 
-    <span class="doccomment">/// Returns the current application locale.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getLocale&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_locale</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// Returns the operating system&#39;s locale two-letter ISO 3166 country code.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getLocaleCountryCode&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_locale_country_code</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// Adds path to the recent documents list.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;addRecentDocument&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">add_recent_document</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">path</span>: <span class="ident">JsString</span>);
 
-    <span class="doccomment">/// Clears the recent documents list.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;clearRecentDocuments&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">clear_recent_documents</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// Returns whether the call succeeded.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setAsDefaultProtocolClient&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_as_default_protocol_client</span>(
         <span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>,
@@ -429,7 +335,6 @@
         <span class="ident">args</span>: <span class="ident">JsString</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
-    <span class="doccomment">/// Returns whether the call succeeded.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;removeAsDefaultProtocolClient&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">remove_as_default_protocol_client</span>(
         <span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>,
@@ -438,80 +343,57 @@
         <span class="ident">args</span>: <span class="ident">JsString</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
-    <span class="doccomment">/// This method checks if the current executable is the default handler for a protocol (aka URI</span>
-    <span class="doccomment">/// scheme). If so, it will return true. Otherwise, it will return false.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;isDefaultProtocolClient&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_default_protocol_client</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">protocol</span>: <span class="ident">JsString</span>, <span class="ident">path</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">JsString</span><span class="op">&gt;</span>, <span class="ident">args</span>: <span class="ident">JsString</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
-    <span class="doccomment">/// Adds `tasks` to the `Tasks` category of the Jump List on Windows.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setUserTasks&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_user_tasks</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">task</span>: <span class="ident">Array</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getJumpListSettings&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_jump_list_settings</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">JumpListSettings</span>;
 
-    <span class="doccomment">/// Sets or removes a custom Jump List for the application</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setJumpList&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_jump_list</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">categories</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Array</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">JsString</span>;
 
-    <span class="doccomment">/// The return value of this method indicates whether or not this instance of your application</span>
-    <span class="doccomment">/// successfully obtained the lock.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;requestSingleInstanceLock&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">request_single_instance_lock</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
-    <span class="doccomment">/// This method returns whether or not this instance of your app is currently holding the single</span>
-    <span class="doccomment">/// instance lock.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;hasSingleInstanceLock&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">has_single_instance_lock</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
-    <span class="doccomment">/// Releases all locks that were created by `requestSingleInstanceLock`.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;releaseSingleInstanceLock&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">release_single_instance_lock</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// Creates an `NSUserActivity` and sets it as the current activity.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setUserActivity&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_user_activity</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">user_info</span>: <span class="kw-2">&amp;</span><span class="ident">JsValue</span>, <span class="ident">webpage_url</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">JsString</span><span class="op">&gt;</span>);
 
-    <span class="doccomment">/// Returns the type of the currently running activity.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getCurrentActivityType&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_current_activity_type</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">JsString</span>;
 
-    <span class="doccomment">/// Invalidates the current Handoff user activity.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;invalidateCurrentActivity&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">invalidate_current_activity</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// Marks the current Handoff user activity as inactive without invalidating it.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;resignCurrentActivity&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">resign_current_activity</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// Updates the current activity if its type matches `type`, merging the entries from</span>
-    <span class="doccomment">/// `user_info` into its current `user_info` dictionary.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;updateCurrentActivity&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">update_current_activity</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">kind</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>, <span class="ident">user_info</span>: <span class="kw-2">&amp;</span><span class="ident">JsValue</span>);
 
-    <span class="doccomment">/// Changes the Application User Model ID to `id`.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setAppUserModelId&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_app_user_model_id</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">id</span>: <span class="ident">JsString</span>);
 
-    <span class="doccomment">/// Imports the certificate in pkcs12 format into the platform certificate store.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;importCertificate&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">import_certificate</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">options</span>: <span class="ident">ImportCertificateOptions</span>, <span class="ident">callback</span>: <span class="kw-2">&amp;</span><span class="ident">Function</span>);
 
-    <span class="doccomment">/// Disables hardware acceleration for current app.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;disableHardwareAcceleration&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">disable_hardware_acceleration</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// By default, Chromium disables 3D APIs (e.g. WebGL) until restart on a per domain basis if</span>
-    <span class="doccomment">/// the GPU processes crashes too frequently. This function disables that behaviour.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;disableDomainBlockingFor3DAPIs&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">disable_domain_blocking_for_3d_apis</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// Returns an array of `ProcessMetric` objects that correspond to memory and CPU</span>
-    <span class="doccomment">/// usage statistics of all the processes associated with the app.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getAppMetrics&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_app_metrics</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Array</span>;
 
-    <span class="doccomment">/// Returns the graphics feature status from chrome://gpu/.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getGPUFeatureStatus&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_gpu_feature_status</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GpuFeatureStatus</span>;
 
@@ -519,52 +401,40 @@
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getGPUInfo&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_gpu_info</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">info_type</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Promise</span>;
 
-    <span class="doccomment">/// Returns whether the current desktop environment is Unity launcher.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;isUnityRunning&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_unity_running</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getLoginItemSettings&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_login_item_settings</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">options</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">GetLoginItemSettingsOptions</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GetLoginItemSettings</span>;
 
-    <span class="doccomment">/// Set the app&#39;s login item settings.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setLoginItemSettings&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_login_item_settings</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">settings</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">SetLoginItemSettings</span><span class="op">&gt;</span>);
 
-    <span class="doccomment">/// Set the about panel options.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setAboutPanelOptions&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_about_panel_options</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">options</span>: <span class="ident">SetAboutPanelOptions</span>);
 
-    <span class="doccomment">/// Returns whether or not the current OS version allows for native emoji pickers.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;isEmojiPanelSupported&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_emoji_panel_supported</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// Show the platform&#39;s native emoji picker.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;showEmojiPanel&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">show_emoji_panel</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// Returns a function which must be called once you have finished accessing the scoped file.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;startAccessingSecurityScopedResource&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">start_accessing_security_scoped_resource</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">bookmark_data</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Function</span>;
 
-    <span class="doccomment">/// Enables full sandbox mode on the app.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;enableSandbox&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">enable_sandbox</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// Returns whether the application is currently running from the systems Application folder.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;isInApplicationsFolder&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_in_applications_folder</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
-    <span class="doccomment">/// Returns whether the move was successful. Please note that if the move is successful, your</span>
-    <span class="doccomment">/// application will quit and relaunch.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;moveToApplicationsFolder&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">move_to_applications_folder</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">options</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">MoveToApplicationsFolderOptions</span><span class="op">&gt;</span>);
 
-    <span class="comment">//************//</span>
-    <span class="comment">// Properties //</span>
-    <span class="comment">//************//</span>
+    <span class="comment">//*********************//</span>
+    <span class="comment">// Instance Properties //</span>
+    <span class="comment">//*********************//</span>
 
-    <span class="doccomment">/// A `Boolean` property that&#39;s `true` if Chrome&#39;s accessibility support is enabled, `false`</span>
-    <span class="doccomment">/// otherwise.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;accessibilitySupportEnabled&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">accessibility_support_enabled</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
@@ -574,53 +444,39 @@
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;showAboutPanel&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">show_about_panel</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
-    <span class="doccomment">/// A property that returns `Menu` if one has been set and `null` otherwise.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;applicationMenu&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">application_menu</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Menu</span><span class="op">&gt;</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">setter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;applicationMenu&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_application_menu</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">value</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Menu</span><span class="op">&gt;</span>);
 
-    <span class="doccomment">/// An `Integer` property that returns the badge count for current app. Setting the count to `0`</span>
-    <span class="doccomment">/// will hide the badge.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;badgeCount&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">badge_count</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">setter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;badgeCount&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_badge_count</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">value</span>: <span class="ident">usize</span>);
 
-    <span class="doccomment">/// A `CommandLine` interface that allows you to read and manipulate the command line arguments</span>
-    <span class="doccomment">/// that Chromium uses.</span>
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;commandLine&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;commandLine&quot;</span>)]</span> <span class="comment">// readonly</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">command_line</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">CommandLine</span>;
 
-    <span class="doccomment">/// A `Dock` interface that allows you to perform actions on your app icon in the user&#39;s dock on</span>
-    <span class="doccomment">/// macOS.</span>
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>)]</span> <span class="comment">// readonly</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">dock</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Dock</span>;
 
-    <span class="doccomment">/// A `Boolean` property that returns `true` if the app is packaged, `false` otherwise.</span>
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;isPackaged&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;isPackaged&quot;</span>)]</span> <span class="comment">// readonly</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_packaged</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
-    <span class="doccomment">/// A `String` property that indicates the current application&#39;s name, which is the name in the</span>
-    <span class="doccomment">/// application&#39;s `package.json` file.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">name</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">JsString</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">setter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setName&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_name</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">value</span>: <span class="ident">JsString</span>);
 
-    <span class="doccomment">/// A `String` which is the user agent string Electron will use as a global fallback.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;userAgentFallback&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">user_agent_fallback</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">JsString</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">setter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setUserAgentFallback&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_user_agent_fallback</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">value</span>: <span class="ident">JsString</span>);
 
-    <span class="doccomment">/// A `Boolean` which when `true` disables the overrides that Electron has in place to ensure</span>
-    <span class="doccomment">/// renderer processes are restarted on every navigation. The current default value for this</span>
-    <span class="doccomment">/// property is `false`.</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;allowRendererProcessReuse&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">allow_renderer_process_reuse</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 

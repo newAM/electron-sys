@@ -14,6 +14,8 @@
 <span id="14">14</span>
 <span id="15">15</span>
 <span id="16">16</span>
+<span id="17">17</span>
+<span id="18">18</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">interface</span>::<span class="ident">TouchBarSpacerOptions</span>;
 <span class="kw">use</span> <span class="ident">node_sys</span>::<span class="ident">events</span>::<span class="ident">EventEmitter</span>;
@@ -26,7 +28,9 @@
     <span class="doccomment">/// Docs: http://electronjs.org/docs/api/touch-bar-spacer</span>
     <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">TouchBarSpacer</span>;
 
-    <span class="comment">// Constructor</span>
+    <span class="comment">//*************//</span>
+    <span class="comment">// Constructor //</span>
+    <span class="comment">//*************//</span>
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">constructor</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">options</span>: <span class="ident">TouchBarSpacerOptions</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">TouchBarSpacer</span>;
