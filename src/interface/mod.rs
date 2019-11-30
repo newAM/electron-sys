@@ -110,6 +110,7 @@ pub(crate) mod upload_data;
 pub(crate) mod upload_file;
 pub(crate) mod upload_progress;
 pub(crate) mod upload_raw_data;
+pub(crate) mod web_contents_print_options;
 pub(crate) mod web_preferences;
 pub(crate) mod web_source;
 
@@ -225,5 +226,6 @@ pub use upload_data::*;
 pub use upload_file::*;
 pub use upload_progress::*;
 pub use upload_raw_data::*;
+pub use web_contents_print_options::*;
 pub use web_preferences::*;
 pub use web_source::*;
