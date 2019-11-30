@@ -12,12 +12,16 @@ extern {
     /// Docs: http://electronjs.org/docs/api/menu-item
     pub type MenuItem;
 
-    // Constructor
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     pub fn new(options: MenuItemOptions) -> MenuItem;
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter)]
     pub fn accelerator(this: &MenuItem) -> Option<Accelerator>;

@@ -26,6 +26,10 @@ extern {
     /// The electron app.
     pub static app: App;
 
+    //******************//
+    // Instance Methods //
+    //******************//
+
     /// Try to close all windows.
     #[wasm_bindgen(method)]
     pub fn quit(this: &App);
@@ -244,9 +248,9 @@ extern {
     #[wasm_bindgen(method, js_name = "moveToApplicationsFolder")]
     pub fn move_to_applications_folder(this: &App, options: Option<MoveToApplicationsFolderOptions>);
 
-    //************//
-    // Properties //
-    //************//
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     /// A `Boolean` property that's `true` if Chrome's accessibility support is enabled, `false`
     /// otherwise.

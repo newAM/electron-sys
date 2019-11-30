@@ -9,7 +9,9 @@ extern {
     /// Docs: http://electronjs.org/docs/api/touch-bar-group
     pub type TouchBarGroup;
 
-    // Constructor
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     pub fn new(options: TouchBarGroupOptions) -> TouchBarGroup;

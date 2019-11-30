@@ -9,7 +9,9 @@ extern {
     /// Docs: http://electronjs.org/docs/api/web-request
     pub type WebRequest;
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[wasm_bindgen(method, js_name = "onBeforeRedirect")]
     pub fn on_before_redirect(this: &WebRequest, filter: WebRequestFilter, listener: Option<&Function>);

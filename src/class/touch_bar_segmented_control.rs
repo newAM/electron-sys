@@ -10,12 +10,16 @@ extern {
     /// Docs: http://electronjs.org/docs/api/touch-bar-segmented-control
     pub type TouchBarSegmentedControl;
 
-    // Constructor
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     pub fn new(options: TouchBarSegmentedControlOptions) -> TouchBarSegmentedControl;
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter)]
     pub fn segments(this: &TouchBarSegmentedControl) -> Array;

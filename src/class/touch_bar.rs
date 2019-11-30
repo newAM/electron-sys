@@ -9,12 +9,16 @@ extern {
     /// Docs: http://electronjs.org/docs/api/touch-bar
     pub type TouchBar;
 
-    // Constructor
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     pub fn new(options: TouchBarOptions) -> TouchBar;
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter, js_name = "escapeItem")]
     pub fn escape_item(this: &TouchBar) -> Option<Object>;

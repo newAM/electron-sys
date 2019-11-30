@@ -10,17 +10,23 @@ extern {
     /// Docs: http://electronjs.org/docs/api/notification
     pub type Notification;
 
-    // Constructor
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     pub fn new(options: Option<NotificationOptions>) -> Notification;
 
-    // Static Methods
+    //****************//
+    // Static Methods //
+    //****************//
 
     #[wasm_bindgen(static_method_of = Notification, js_name = "isSupported")]
     pub fn is_supported() -> bool;
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[wasm_bindgen(method)]
     pub fn close(this: &Notification);
@@ -28,7 +34,9 @@ extern {
     #[wasm_bindgen(method)]
     pub fn show(this: &Notification);
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter)]
     pub fn actions(this: &Notification) -> Array;

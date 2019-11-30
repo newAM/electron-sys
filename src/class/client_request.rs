@@ -10,12 +10,16 @@ extern {
     /// Docs: http://electronjs.org/docs/api/client-request
     pub type ClientRequest;
 
-    // Constructor
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     pub fn new(options: ClientRequestOptions) -> ClientRequest;
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[wasm_bindgen(method)]
     pub fn abort(this: &ClientRequest);
@@ -41,7 +45,9 @@ extern {
     #[wasm_bindgen(method)]
     pub fn write(this: &ClientRequest, chunk: &Buffer, encoding: Option<&JsString>, callback: Option<&Function>);
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter, js_name = "chunkedEncoding")]
     pub fn chunked_encoding(this: &ClientRequest) -> bool;

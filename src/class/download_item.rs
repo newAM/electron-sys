@@ -10,7 +10,9 @@ extern {
     /// Docs: http://electronjs.org/docs/api/download-item
     pub type DownloadItem;
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[wasm_bindgen(method)]
     pub fn cancel(this: &DownloadItem);
@@ -72,7 +74,9 @@ extern {
     #[wasm_bindgen(method, js_name = "setSaveDialogOptions")]
     pub fn set_save_dialog_options(this: &DownloadItem, options: SaveDialogOptions);
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter, js_name = "savePath")]
     pub fn save_path(this: &DownloadItem) -> JsString;

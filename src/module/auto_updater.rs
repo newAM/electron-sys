@@ -9,6 +9,10 @@ extern {
     #[wasm_bindgen(js_name = "autoUpdater")]
     pub static auto_updater: AutoUpdater;
 
+    //******************//
+    // Instance Methods //
+    //******************//
+
     /// Asks the server whether there is an update. You must call `set_feed_url` before using this
     /// API.
     #[wasm_bindgen(method, js_name = "checkForUpdates")]

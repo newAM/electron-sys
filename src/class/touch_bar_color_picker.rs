@@ -10,12 +10,16 @@ extern {
     /// Docs: http://electronjs.org/docs/api/touch-bar-color-picker
     pub type TouchBarColorPicker;
 
-    // Constructor
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     pub fn new(options: TouchBarColorPickerOptions) -> TouchBarColorPicker;
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter, js_name = "availableColors")]
     pub fn available_colors(this: &TouchBarColorPicker) -> Array;

@@ -10,12 +10,16 @@ extern {
     /// Docs: http://electronjs.org/docs/api/touch-bar-slider
     pub type TouchBarSlider;
 
-    // Constructor
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     pub fn new(options: TouchBarSliderOptions) -> TouchBarSlider;
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter)]
     pub fn label(this: &TouchBarSlider) -> JsString;

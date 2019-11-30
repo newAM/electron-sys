@@ -17,7 +17,10 @@ pub struct SaveDialogOptions {
 
 #[wasm_bindgen]
 impl SaveDialogOptions {
-    // Constructor
+
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     #[allow(clippy::too_many_arguments)]
@@ -45,7 +48,9 @@ impl SaveDialogOptions {
         }
     }
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(getter)]
     pub fn title(&self) -> Option<JsString> {

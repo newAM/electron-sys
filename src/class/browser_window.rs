@@ -13,7 +13,9 @@ extern {
     /// Docs: http://electronjs.org/docs/api/browser-window
     pub type BrowserWindow;
 
-    // Static Methods
+    //****************//
+    // Static Methods //
+    //****************//
 
     #[wasm_bindgen(static_method_of = BrowserWindow, js_name = "addDevToolsExtension")]
     pub fn add_dev_tools_extension(path: &JsString);
@@ -46,7 +48,9 @@ extern {
     #[wasm_bindgen(static_method_of = BrowserWindow, js_name = "removeExtension")]
     pub fn remove_extension(name: &JsString);
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[wasm_bindgen(constructor)]
     pub fn new(options: Option<BrowserWindowOptions>) -> BrowserWindow;
@@ -57,7 +61,9 @@ extern {
     #[wasm_bindgen(method, js_name = "setTitle")]
     pub fn set_title(this: &BrowserWindow, title: &JsString);
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter, js_name = "accessibleTitle")]
     pub fn accessible_title(this: &BrowserWindow) -> JsString;

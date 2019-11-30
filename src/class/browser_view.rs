@@ -12,7 +12,9 @@ extern {
     /// Docs: http://electronjs.org/docs/api/browser-view
     pub type BrowserView;
 
-    // Constructor
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     pub fn new(options: Option<BrowserViewOptions>) -> BrowserView;
@@ -28,7 +30,9 @@ extern {
     #[wasm_bindgen(static_method_of = BrowserView)]
     pub fn get_all_views() -> Array;
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[wasm_bindgen(method)]
     pub fn destroy(this: &BrowserView);
@@ -48,7 +52,9 @@ extern {
     #[wasm_bindgen(method, js_name = "set_bounds")]
     pub fn set_bounds(this: &BrowserView, bounds: &Rectangle);
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter)]
     pub fn id(this: &BrowserView) -> usize;

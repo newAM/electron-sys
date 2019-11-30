@@ -13,12 +13,16 @@ extern {
     /// Docs: http://electronjs.org/docs/api/tray
     pub type Tray;
 
-    // Constructor
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     pub fn new(image: &NativeImage) -> Tray;
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[wasm_bindgen(method)]
     pub fn destroy(this: &Tray);

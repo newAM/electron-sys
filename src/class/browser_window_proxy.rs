@@ -8,7 +8,9 @@ extern {
     /// Docs: http://electronjs.org/docs/api/browser-window-proxy
     pub type BrowserWindowProxy;
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[wasm_bindgen(method)]
     pub fn blur(this: &BrowserWindowProxy);
@@ -28,7 +30,9 @@ extern {
     #[wasm_bindgen(method)]
     pub fn print(this: &BrowserWindowProxy);
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter)]
     pub fn closed(this: &BrowserWindowProxy) -> bool;

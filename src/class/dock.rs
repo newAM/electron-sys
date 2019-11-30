@@ -9,7 +9,9 @@ extern {
     /// Docs: http://electronjs.org/docs/api/dock
     pub type Dock;
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[wasm_bindgen(method)]
     pub fn bounce(this: &Dock, kind: &JsString) -> usize;

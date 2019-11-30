@@ -25,7 +25,9 @@ extern {
     /// Docs: http://electronjs.org/docs/api/web-contents
     pub type WebContents;
 
-    // Static Methods
+    //****************//
+    // Static Methods //
+    //****************//
 
     #[wasm_bindgen(static_method_of = WebContents)]
     pub fn from_id(id: usize) -> WebContents;
@@ -36,7 +38,9 @@ extern {
     #[wasm_bindgen(static_method_of = WebContents)]
     pub fn get_focused_web_contents() -> WebContents;
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[wasm_bindgen(method, js_name = "addWorkSpace")]
     pub fn add_work_space(this: &WebContents, path: &JsString);
@@ -301,7 +305,9 @@ extern {
     #[wasm_bindgen(method)]
     pub fn unselect(this: &WebContents);
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter, js_name = "audioMuted")]
     pub fn audio_muted(this: &WebContents) -> bool;

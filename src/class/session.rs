@@ -24,17 +24,23 @@ extern {
     /// Docs: http://electronjs.org/docs/api/session
     pub type Session;
 
-    // Static Methods
+    //****************//
+    // Static Methods //
+    //****************//
 
     #[wasm_bindgen(static_method_of = Session, js_name = "fromPartition")]
     pub fn from_partition(partition: &JsString, options: Option<FromPartitionOptions>) -> Session;
 
-    // Static Properties
+    //*******************//
+    // Static Properties //
+    //*******************//
 
     #[wasm_bindgen(static_method_of = Session, getter, js_name = "defaultSession")]
     pub fn default_session() -> Session;
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[wasm_bindgen(method, js_name = "allowNTLMCredentialsForDomains")]
     pub fn allow_ntlm_credentials_for_domains(this: &Session, domains: &JsString);
@@ -126,7 +132,9 @@ extern {
     #[wasm_bindgen(method, js_name = "setUserAgent")]
     pub fn set_user_agent(this: &Session, user_agent: &JsString, accept_languages: Option<JsString>);
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter, js_name = "availableSpellCheckerLanguages")]
     pub fn available_spell_checker_languages(this: &Session) -> Array;

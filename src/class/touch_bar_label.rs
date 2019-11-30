@@ -10,12 +10,16 @@ extern {
     /// Docs: http://electronjs.org/docs/api/touch-bar-label
     pub type TouchBarLabel;
 
-    // Constructor
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     pub fn new(this: TouchBarLabelOptions) -> TouchBarLabel;
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter, js_name = "accessibilityLabel")]
     pub fn accessibility_label(this: &TouchBarLabel) -> JsString;

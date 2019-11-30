@@ -10,6 +10,10 @@ extern {
 
     pub static clipboard: Clipboard;
 
+    //******************//
+    // Instance Methods //
+    //******************//
+
     #[wasm_bindgen(method, js_name = "availableFormats")]
     pub fn available_formats(this: &Clipboard, r#type: Option<&JsString>) -> Array;
 

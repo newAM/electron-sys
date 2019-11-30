@@ -9,12 +9,16 @@ extern {
     /// Docs: http://electronjs.org/docs/api/touch-bar-button
     pub type TouchBarButton;
 
-    // Constructor
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     pub fn new(options: TouchBarButtonOptions) -> TouchBarButton;
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter, js_name = "accessibilityLabel")]
     pub fn accessibility_label(this: &TouchBarButton) -> JsString;

@@ -8,7 +8,9 @@ extern {
     /// Docs: http://electronjs.org/docs/api/command-line
     pub type CommandLine;
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[wasm_bindgen(method, js_name = "appendArgument")]
     pub fn append_argument(this: &CommandLine, value: &JsString);

@@ -10,12 +10,16 @@ extern {
     /// Docs: http://electronjs.org/docs/api/touch-bar-popover
     pub type TouchBarPopover;
 
-    // Constructor
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     pub fn new(options: TouchBarPopoverOptions) -> TouchBarPopover;
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter)]
     pub fn icon(this: &TouchBarPopover) -> NativeImage;

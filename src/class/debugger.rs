@@ -9,7 +9,9 @@ extern {
     /// Docs: http://electronjs.org/docs/api/debugger
     pub type Debugger;
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[wasm_bindgen(method)]
     pub fn attach(this: &Debugger, protocol_version: Option<JsString>);

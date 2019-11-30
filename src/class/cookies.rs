@@ -10,7 +10,9 @@ extern {
     /// Docs: http://electronjs.org/docs/api/cookies
     pub type Cookies;
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "flushStore")]

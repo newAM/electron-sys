@@ -9,7 +9,9 @@ extern {
     /// Docs: http://electronjs.org/docs/api/touch-bar-spacer
     pub type TouchBarSpacer;
 
-    // Constructor
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     pub fn new(options: TouchBarSpacerOptions) -> TouchBarSpacer;

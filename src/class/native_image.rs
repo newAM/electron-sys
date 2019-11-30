@@ -19,7 +19,9 @@ extern {
     #[derive(Clone, Debug, Eq, PartialEq)]
     pub type NativeImage;
 
-    // Static Methods
+    //****************//
+    // Static Methods //
+    //****************//
 
     #[wasm_bindgen(static_method_of = NativeImage, js_name = "createEmpty")]
     pub fn create_empty() -> NativeImage;
@@ -39,7 +41,9 @@ extern {
     #[wasm_bindgen(static_method_of = NativeImage, js_name = "createFromPath")]
     pub fn create_from_path(path: &JsString) -> NativeImage;
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[wasm_bindgen(method, js_name = "addRepresentation")]
     pub fn add_representation(this: &NativeImage, options: AddRepresentationOptions);
@@ -77,7 +81,9 @@ extern {
     #[wasm_bindgen(method, js_name = "toPNG")]
     pub fn to_png(this: &NativeImage, options: Option<ToPngOptions>) -> Buffer;
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter, js_name = "isMacTemplateImage")]
     pub fn is_mac_template_image(this: &NativeImage) -> bool;

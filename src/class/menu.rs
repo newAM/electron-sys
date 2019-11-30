@@ -12,12 +12,16 @@ extern {
     /// Docs: http://electronjs.org/docs/api/menu
     pub type Menu;
 
-    // Constructor
+    //*************//
+    // Constructor //
+    //*************//
 
     #[wasm_bindgen(constructor)]
     pub fn new() -> Menu;
 
-    // Static Methods
+    //****************//
+    // Static Methods //
+    //****************//
 
     #[wasm_bindgen(static_method_of = Menu, js_name = "buildFromTemplate")]
     pub fn build_from_template(template: &Array) -> Menu;
@@ -31,7 +35,9 @@ extern {
     #[wasm_bindgen(static_method_of = Menu, js_name = "setApplicationMenu")]
     pub fn set_application_menu(menu: Option<Menu>);
 
-    // Instance Methods
+    //******************//
+    // Instance Methods //
+    //******************//
 
     #[wasm_bindgen(method)]
     pub fn append(this: &Menu, menu_item: &MenuItem);
@@ -48,7 +54,9 @@ extern {
     #[wasm_bindgen(method)]
     pub fn popup(this: &Menu, options: Option<PopupOptions>);
 
-    // Instance Properties
+    //*********************//
+    // Instance Properties //
+    //*********************//
 
     #[wasm_bindgen(method, getter)]
     pub fn items(this: &Menu) -> Array;
