@@ -55,7 +55,7 @@ extern {
     pub fn get_aspect_ratio(this: &NativeImage, rect: &Rectangle) -> Number;
 
     #[wasm_bindgen(method, js_name = "getBitmap")]
-    pub fn get_bitmap(this: &NativeImage, options: Option<ToBitmapOptions>) -> Number;
+    pub fn get_bitmap(this: &NativeImage, options: Option<ToBitmapOptions>) -> Buffer;
 
     #[wasm_bindgen(method, js_name = "getNativeHandle")]
     pub fn get_native_handle(this: &NativeImage) -> Buffer;
