@@ -6,7 +6,7 @@ use wasm_bindgen::prelude::*;
 pub struct StreamProtocolResponse {
     data: Option<ReadableStream>,
     headers: Option<Object>,
-    status_code: Option<usize>,
+    status_code: Option<u32>,
 }
 
 #[wasm_bindgen]
@@ -15,7 +15,7 @@ impl StreamProtocolResponse {
     pub fn new(
         data: Option<ReadableStream>,
         headers: Option<Object>,
-        status_code: Option<usize>,
+        status_code: Option<u32>,
     ) -> StreamProtocolResponse {
         StreamProtocolResponse {
             data,
@@ -45,12 +45,12 @@ impl StreamProtocolResponse {
     }
 
     #[wasm_bindgen(getter, js_name = "statusCode")]
-    pub fn status_code(&self) -> Option<usize> {
+    pub fn status_code(&self) -> Option<u32> {
         self.status_code
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_status_code(&mut self, value: Option<usize>) {
+    pub fn set_status_code(&mut self, value: Option<u32>) {
         self.status_code = value;
     }
 }

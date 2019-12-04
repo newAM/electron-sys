@@ -1,5 +1,5 @@
 use crate::interface::SaveDialogOptions;
-use js_sys::{Array, JsString, Number};
+use js_sys::{Array, JsString};
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -45,7 +45,7 @@ extern {
     pub fn get_save_path(this: &DownloadItem) -> JsString;
 
     #[wasm_bindgen(method, js_name = "getSavePath")]
-    pub fn get_start_time(this: &DownloadItem) -> Number;
+    pub fn get_start_time(this: &DownloadItem) -> u32;
 
     #[wasm_bindgen(method, js_name = "getState")]
     pub fn get_state(this: &DownloadItem) -> JsString;

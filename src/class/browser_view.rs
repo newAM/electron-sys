@@ -22,7 +22,7 @@ extern {
     // Static Methods
 
     #[wasm_bindgen(static_method_of = BrowserView)]
-    pub fn from_id(id: usize) -> BrowserView;
+    pub fn from_id(id: u32) -> BrowserView;
 
     #[wasm_bindgen(static_method_of = BrowserView)]
     pub fn from_web_contents(web_contents: &WebContents) -> Option<BrowserView>;
@@ -57,10 +57,10 @@ extern {
     //*********************//
 
     #[wasm_bindgen(method, getter)]
-    pub fn id(this: &BrowserView) -> usize;
+    pub fn id(this: &BrowserView) -> u32;
 
     #[wasm_bindgen(method, setter)]
-    pub fn set_id(this: &BrowserView, value: usize);
+    pub fn set_id(this: &BrowserView, value: u32);
 
     #[wasm_bindgen(method, getter)]
     pub fn web_contents(this: &BrowserView) -> WebContents;

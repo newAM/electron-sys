@@ -1,4 +1,4 @@
-use js_sys::{JsString, Number};
+use js_sys::JsString;
 use node_sys::Buffer;
 use wasm_bindgen::prelude::*;
 
@@ -7,9 +7,9 @@ use wasm_bindgen::prelude::*;
 pub struct AddRepresentationOptions {
     buffer: Option<Buffer>,
     data_url: Option<JsString>,
-    height: Option<Number>,
-    scale_factor: Option<Number>,
-    width: Option<Number>,
+    height: Option<usize>,
+    scale_factor: Option<f32>,
+    width: Option<usize>,
 }
 
 #[wasm_bindgen]
@@ -18,9 +18,9 @@ impl AddRepresentationOptions {
     pub fn new(
         buffer: Option<Buffer>,
         data_url: Option<JsString>,
-        height: Option<Number>,
-        scale_factor: Option<Number>,
-        width: Option<Number>,
+        height: Option<usize>,
+        scale_factor: Option<f32>,
+        width: Option<usize>,
     ) -> AddRepresentationOptions {
         AddRepresentationOptions {
             buffer,
@@ -52,32 +52,32 @@ impl AddRepresentationOptions {
     }
 
     #[wasm_bindgen(getter)]
-    pub fn height(&self) -> Option<Number> {
-        self.height.clone()
+    pub fn height(&self) -> Option<usize> {
+        self.height
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_height(&mut self, value: Option<Number>) {
+    pub fn set_height(&mut self, value: Option<usize>) {
         self.height = value;
     }
 
     #[wasm_bindgen(getter)]
-    pub fn scale_factor(&self) -> Option<Number> {
-        self.scale_factor.clone()
+    pub fn scale_factor(&self) -> Option<f32> {
+        self.scale_factor
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_scale_factor(&mut self, value: Option<Number>) {
+    pub fn set_scale_factor(&mut self, value: Option<f32>) {
         self.scale_factor = value;
     }
 
     #[wasm_bindgen(getter)]
-    pub fn width(&self) -> Option<Number> {
-        self.width.clone()
+    pub fn width(&self) -> Option<usize> {
+        self.width
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_width(&mut self, value: Option<Number>) {
+    pub fn set_width(&mut self, value: Option<usize>) {
         self.width = value;
     }
 }

@@ -1,18 +1,17 @@
-use js_sys::Number;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-#[derive(Clone, Debug)]
+#[derive(Clone, Copy, Debug, PartialEq, PartialOrd)]
 pub struct CreateFromBitmapOptions {
     height: usize,
-    scale_factor: Option<Number>,
+    scale_factor: Option<f32>,
     width: usize,
 }
 
 #[wasm_bindgen]
 impl CreateFromBitmapOptions {
     #[wasm_bindgen(constructor)]
-    pub fn new(height: usize, scale_factor: Option<Number>, width: usize) -> CreateFromBitmapOptions {
+    pub fn new(height: usize, scale_factor: Option<f32>, width: usize) -> CreateFromBitmapOptions {
         CreateFromBitmapOptions {
             height,
             scale_factor,
@@ -31,12 +30,12 @@ impl CreateFromBitmapOptions {
     }
 
     #[wasm_bindgen(getter, js_name = "scaleFactor")]
-    pub fn scale_factor(&self) -> Option<Number> {
-        self.scale_factor.clone()
+    pub fn scale_factor(&self) -> Option<f32> {
+        self.scale_factor
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_scale_factor(&mut self, value: Option<Number>) {
+    pub fn set_scale_factor(&mut self, value: Option<f32>) {
         self.scale_factor = value;
     }
 

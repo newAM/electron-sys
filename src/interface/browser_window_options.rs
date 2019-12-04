@@ -2,7 +2,7 @@ use crate::{
     class::{BrowserWindow, NativeImage},
     interface::WebPreferences,
 };
-use js_sys::{JsString, Number};
+use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
@@ -35,7 +35,7 @@ pub struct BrowserWindowOptions {
     minimizable: Option<bool>,
     modal: Option<bool>,
     movable: Option<bool>,
-    opacity: Option<Number>,
+    opacity: Option<f32>,
     paint_when_initially_hidden: Option<bool>,
     parent: Option<BrowserWindow>,
     resizable: Option<bool>,
@@ -88,7 +88,7 @@ impl BrowserWindowOptions {
         minimizable: Option<bool>,
         modal: Option<bool>,
         movable: Option<bool>,
-        opacity: Option<Number>,
+        opacity: Option<f32>,
         paint_when_initially_hidden: Option<bool>,
         parent: Option<BrowserWindow>,
         resizable: Option<bool>,
@@ -433,12 +433,12 @@ impl BrowserWindowOptions {
     }
 
     #[wasm_bindgen(getter)]
-    pub fn opacity(&self) -> Option<Number> {
-        self.opacity.clone()
+    pub fn opacity(&self) -> Option<f32> {
+        self.opacity
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_opacity(&mut self, value: Option<Number>) {
+    pub fn set_opacity(&mut self, value: Option<f32>) {
         self.opacity = value;
     }
 

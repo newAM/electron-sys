@@ -42,10 +42,10 @@ extern {
     pub fn set_click(this: &MenuItem, value: Function);
 
     #[wasm_bindgen(method, getter, js_name = "commandId")]
-    pub fn command_id(this: &MenuItem) -> usize;
+    pub fn command_id(this: &MenuItem) -> u32;
 
     #[wasm_bindgen(method, setter, js_name = "commandId")]
-    pub fn set_command_id(this: &MenuItem, value: usize);
+    pub fn set_command_id(this: &MenuItem, value: u32);
 
     #[wasm_bindgen(method, getter)]
     pub fn enabled(this: &MenuItem) -> bool;

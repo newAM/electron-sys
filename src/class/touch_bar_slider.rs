@@ -1,5 +1,5 @@
 use crate::interface::TouchBarSliderOptions;
-use js_sys::{JsString, Number};
+use js_sys::JsString;
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -28,21 +28,21 @@ extern {
     pub fn set_label(this: &TouchBarSlider, value: JsString);
 
     #[wasm_bindgen(method, getter, js_name = "maxValue")]
-    pub fn max_value(this: &TouchBarSlider) -> Number;
+    pub fn max_value(this: &TouchBarSlider) -> f32;
 
     #[wasm_bindgen(method, setter, js_name = "maxValue")]
-    pub fn set_max_value(this: &TouchBarSlider, value: Number);
+    pub fn set_max_value(this: &TouchBarSlider, value: f32);
 
     #[wasm_bindgen(method, getter, js_name = "minValue")]
-    pub fn min_value(this: &TouchBarSlider) -> Number;
+    pub fn min_value(this: &TouchBarSlider) -> f32;
 
     #[wasm_bindgen(method, setter, js_name = "minValue")]
-    pub fn set_min_value(this: &TouchBarSlider, value: Number);
+    pub fn set_min_value(this: &TouchBarSlider, value: f32);
 
     #[wasm_bindgen(method, getter)]
-    pub fn value(this: &TouchBarSlider) -> Number;
+    pub fn value(this: &TouchBarSlider) -> f32;
 
     #[wasm_bindgen(method, setter)]
-    pub fn set_value(this: &TouchBarSlider, value: Number);
+    pub fn set_value(this: &TouchBarSlider, value: f32);
 
 }

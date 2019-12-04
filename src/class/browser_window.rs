@@ -28,7 +28,7 @@ extern {
 
     // FIXME: should return Option<BrowserWindow>?
     #[wasm_bindgen(static_method_of = BrowserWindow, js_name = "from_id")]
-    pub fn from_id(id: usize) -> BrowserWindow;
+    pub fn from_id(id: u32) -> BrowserWindow;
 
     #[wasm_bindgen(static_method_of = BrowserWindow, js_name = "from_web_contents")]
     pub fn from_web_contents(web_contents: &WebContents) -> Option<BrowserWindow>;
@@ -96,7 +96,7 @@ extern {
     pub fn set_full_screenable(this: &BrowserWindow, value: bool);
 
     #[wasm_bindgen(method, getter)] // readonly
-    pub fn id(this: &BrowserWindow) -> usize;
+    pub fn id(this: &BrowserWindow) -> u32;
 
     #[wasm_bindgen(method, getter)]
     pub fn maximizable(this: &BrowserWindow) -> bool;

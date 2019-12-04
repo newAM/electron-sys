@@ -14,7 +14,7 @@ use crate::{
         WebContentsPrintOptions,
     },
 };
-use js_sys::{Array, Function, JsString, Number, Promise};
+use js_sys::{Array, Function, JsString, Promise};
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -55,7 +55,7 @@ extern {
     pub fn can_go_forward(this: &WebContents) -> bool;
 
     #[wasm_bindgen(method, js_name = "canGoForward")]
-    pub fn can_go_to_offset(this: &WebContents, offset: &Number) -> bool;
+    pub fn can_go_to_offset(this: &WebContents, offset: u32) -> bool;
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "capturePage")]
@@ -105,13 +105,13 @@ extern {
     pub fn get_all_shared_workers(this: &WebContents) -> Array;
 
     #[wasm_bindgen(method, js_name = "getOSProcessId")]
-    pub fn get_os_process_id(this: &WebContents) -> Number;
+    pub fn get_os_process_id(this: &WebContents) -> u32;
 
     #[wasm_bindgen(method, js_name = "getPrinters")]
     pub fn get_printers(this: &WebContents);
 
     #[wasm_bindgen(method, js_name = "getProcessId")]
-    pub fn get_process_id(this: &WebContents) -> usize;
+    pub fn get_process_id(this: &WebContents) -> u32;
 
     #[wasm_bindgen(method, js_name = "getTitle")]
     pub fn get_title(this: &WebContents) -> JsString;
@@ -266,11 +266,11 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "setLayoutZoomLevelLimits")]
-    pub fn set_layout_zoom_level_limits(this: &WebContents, min: &Number, max: &Number) -> Promise;
+    pub fn set_layout_zoom_level_limits(this: &WebContents, min: f32, max: f32) -> Promise;
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "setVisualZoomLevelLimits")]
-    pub fn set_visual_zoom_level_limits(this: &WebContents, min: &Number, max: &Number) -> Promise;
+    pub fn set_visual_zoom_level_limits(this: &WebContents, min: f32, max: f32) -> Promise;
 
     #[wasm_bindgen(method, js_name = "setWebRTCIPHandlingPolicy")]
     pub fn set_web_rtc_ip_handling_policy(this: &WebContents, policy: &JsString);
@@ -322,10 +322,10 @@ extern {
     pub fn dev_tools_web_contents(this: &WebContents) -> WebContents;
 
     #[wasm_bindgen(method, getter, js_name = "frameRate")]
-    pub fn frame_rate(this: &WebContents) -> Number;
+    pub fn frame_rate(this: &WebContents) -> f32;
 
     #[wasm_bindgen(method, setter, js_name = "frameRate")]
-    pub fn set_frame_rate(this: &WebContents, value: Number);
+    pub fn set_frame_rate(this: &WebContents, value: f32);
 
     #[wasm_bindgen(method, getter, js_name = "hostWebContents")] // readonly
     pub fn host_web_contents(this: &WebContents) -> WebContents;
@@ -340,14 +340,14 @@ extern {
     pub fn user_agent(this: &WebContents) -> JsString;
 
     #[wasm_bindgen(method, getter, js_name = "zoomFactor")]
-    pub fn zoom_factor(this: &WebContents) -> Number;
+    pub fn zoom_factor(this: &WebContents) -> f32;
 
     #[wasm_bindgen(method, setter, js_name = "zoomFactor")]
-    pub fn set_zoom_factor(this: &WebContents, value: Number);
+    pub fn set_zoom_factor(this: &WebContents, value: f32);
 
     #[wasm_bindgen(method, setter, js_name = "zoomLevel")]
-    pub fn zoom_level(this: &WebContents) -> Number;
+    pub fn zoom_level(this: &WebContents) -> f32;
 
     #[wasm_bindgen(method, setter, js_name = "zoomLevel")]
-    pub fn set_zoom_level(this: &WebContents, value: Number);
+    pub fn set_zoom_level(this: &WebContents, value: f32);
 }

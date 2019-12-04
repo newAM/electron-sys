@@ -9,7 +9,7 @@ use crate::interface::{
     ToDataUrlOptions,
     ToPngOptions,
 };
-use js_sys::{Array, JsString, Number, Object};
+use js_sys::{Array, JsString, Object};
 use node_sys::Buffer;
 use wasm_bindgen::prelude::*;
 
@@ -52,7 +52,7 @@ extern {
     pub fn crop(this: &NativeImage, rect: &Rectangle) -> NativeImage;
 
     #[wasm_bindgen(method, js_name = "getAspectRatio")]
-    pub fn get_aspect_ratio(this: &NativeImage, rect: &Rectangle) -> Number;
+    pub fn get_aspect_ratio(this: &NativeImage, rect: &Rectangle) -> f32;
 
     #[wasm_bindgen(method, js_name = "getBitmap")]
     pub fn get_bitmap(this: &NativeImage, options: Option<ToBitmapOptions>) -> Buffer;
@@ -76,7 +76,7 @@ extern {
     pub fn to_data_url(this: &NativeImage, options: Option<ToDataUrlOptions>) -> JsString;
 
     #[wasm_bindgen(method, js_name = "toJPEG")]
-    pub fn to_jpeg(this: &NativeImage, quality: &Number) -> Buffer;
+    pub fn to_jpeg(this: &NativeImage, quality: f32) -> Buffer;
 
     #[wasm_bindgen(method, js_name = "toPNG")]
     pub fn to_png(this: &NativeImage, options: Option<ToPngOptions>) -> Buffer;

@@ -1,18 +1,17 @@
-use js_sys::Number;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-#[derive(Clone, Debug)]
+#[derive(Clone, Copy, Debug, PartialEq, PartialOrd)]
 pub struct CreateFromBufferOptions {
     height: Option<usize>,
-    scale_factor: Option<Number>,
+    scale_factor: Option<f32>,
     width: Option<usize>,
 }
 
 #[wasm_bindgen]
 impl CreateFromBufferOptions {
     #[wasm_bindgen(constructor)]
-    pub fn new(height: Option<usize>, scale_factor: Option<Number>, width: Option<usize>) -> CreateFromBufferOptions {
+    pub fn new(height: Option<usize>, scale_factor: Option<f32>, width: Option<usize>) -> CreateFromBufferOptions {
         CreateFromBufferOptions {
             height,
             scale_factor,
@@ -31,12 +30,12 @@ impl CreateFromBufferOptions {
     }
 
     #[wasm_bindgen(getter, js_name = "scaleFactor")]
-    pub fn scale_factor(&self) -> Option<Number> {
-        self.scale_factor.clone()
+    pub fn scale_factor(&self) -> Option<f32> {
+        self.scale_factor
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_scale_factor(&mut self, value: Option<Number>) {
+    pub fn set_scale_factor(&mut self, value: Option<f32>) {
         self.scale_factor = value;
     }
 

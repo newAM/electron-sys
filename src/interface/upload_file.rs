@@ -1,13 +1,13 @@
-use js_sys::{JsString, Number};
+use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Eq, PartialEq)]
 pub struct UploadFile {
     file_path: JsString,
     kind: JsString,
     length: usize,
-    modification_time: Number,
+    modification_time: u32,
     offset: usize,
 }
 
@@ -18,7 +18,7 @@ impl UploadFile {
         file_path: JsString,
         kind: JsString,
         length: usize,
-        modification_time: Number,
+        modification_time: u32,
         offset: usize,
     ) -> UploadFile {
         UploadFile {
@@ -61,12 +61,12 @@ impl UploadFile {
     }
 
     #[wasm_bindgen(getter, js_name = "modificationTime")]
-    pub fn modification_time(&self) -> Number {
-        self.modification_time.clone()
+    pub fn modification_time(&self) -> u32 {
+        self.modification_time
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_modification_time(&mut self, value: Number) {
+    pub fn set_modification_time(&mut self, value: u32) {
         self.modification_time = value;
     }
 

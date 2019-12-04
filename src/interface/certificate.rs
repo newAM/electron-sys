@@ -1,5 +1,5 @@
 use crate::interface::CertificatePrincipal;
-use js_sys::{JsString, Number};
+use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
@@ -17,8 +17,8 @@ extern {
         serial_number: JsString,
         subject: CertificatePrincipal,
         subject_name: JsString,
-        valid_expiry: Number,
-        valid_start: Number,
+        valid_expiry: u32,
+        valid_start: u32,
     ) -> Certificate;
 
     #[wasm_bindgen(method, getter)]
@@ -70,14 +70,14 @@ extern {
     pub fn set_subject_name(this: &Certificate, value: JsString);
 
     #[wasm_bindgen(method, getter, js_name = "validExpiry")]
-    pub fn valid_expiry(this: &Certificate) -> Number;
+    pub fn valid_expiry(this: &Certificate) -> u32;
 
     #[wasm_bindgen(method, setter, js_name = "validExpiry")]
-    pub fn set_valid_expiry(this: &Certificate, value: Number);
+    pub fn set_valid_expiry(this: &Certificate, value: u32);
 
     #[wasm_bindgen(method, getter, js_name = "validStart")]
-    pub fn valid_start(this: &Certificate) -> Number;
+    pub fn valid_start(this: &Certificate) -> u32;
 
     #[wasm_bindgen(method, setter, js_name = "validStart")]
-    pub fn set_valid_start(this: &Certificate, value: Number);
+    pub fn set_valid_start(this: &Certificate, value: u32);
 }

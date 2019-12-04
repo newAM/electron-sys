@@ -21,16 +21,16 @@ extern {
     pub fn set_http_version(this: &IncomingMessage, value: JsString);
 
     #[wasm_bindgen(method, getter, js_name = "httpVersionMajor")]
-    pub fn http_version_major(this: &IncomingMessage) -> usize;
+    pub fn http_version_major(this: &IncomingMessage) -> u32;
 
     #[wasm_bindgen(method, setter, js_name = "httpVersionMajor")]
-    pub fn set_http_version_major(this: &IncomingMessage, value: usize);
+    pub fn set_http_version_major(this: &IncomingMessage, value: u32);
 
     #[wasm_bindgen(method, getter, js_name = "httpVersionMinor")]
-    pub fn http_version_minor(this: &IncomingMessage) -> usize;
+    pub fn http_version_minor(this: &IncomingMessage) -> u32;
 
     #[wasm_bindgen(method, setter, js_name = "httpVersionMinor")]
-    pub fn set_http_version_minor(this: &IncomingMessage, value: usize);
+    pub fn set_http_version_minor(this: &IncomingMessage, value: u32);
 
     #[wasm_bindgen(method, getter, js_name = "statusCode")]
     pub fn status_code(this: &IncomingMessage) -> i32;

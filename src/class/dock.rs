@@ -14,10 +14,10 @@ extern {
     //******************//
 
     #[wasm_bindgen(method)]
-    pub fn bounce(this: &Dock, kind: &JsString) -> usize;
+    pub fn bounce(this: &Dock, kind: &JsString) -> u32;
 
     #[wasm_bindgen(method, js_name = "cancelBounce")]
-    pub fn cancel_bounce(this: &Dock, id: usize);
+    pub fn cancel_bounce(this: &Dock, id: u32);
 
     #[wasm_bindgen(method, js_name = "downloadFinished")]
     pub fn download_finished(this: &Dock, file_path: &JsString);
