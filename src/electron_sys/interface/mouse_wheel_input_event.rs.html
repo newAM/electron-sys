@@ -147,9 +147,7 @@
 <span id="147">147</span>
 <span id="148">148</span>
 <span id="149">149</span>
-<span id="150">150</span>
 </pre><div class="example-wrap"><pre class="rust ">
-<span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">interface</span>::<span class="ident">InputEvent</span>;
 <span class="kw">use</span> <span class="ident">js_sys</span>::{<span class="ident">Array</span>, <span class="ident">JsString</span>};
 <span class="kw">use</span> <span class="ident">wasm_bindgen</span>::<span class="ident">prelude</span>::<span class="kw-2">*</span>;
 
@@ -157,7 +155,7 @@
 
 <span class="attribute">#[<span class="ident">wasm_bindgen</span>]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Debug</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">MouseInputEvent</span> {
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">MouseWheelInputEvent</span> {
     <span class="ident">acceleration_ratio_x</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
     <span class="ident">acceleration_ratio_y</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
     <span class="ident">can_scroll</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
@@ -171,7 +169,7 @@
 }
 
 <span class="attribute">#[<span class="ident">wasm_bindgen</span>]</span>
-<span class="kw">impl</span> <span class="ident">MouseInputEvent</span> {
+<span class="kw">impl</span> <span class="ident">MouseWheelInputEvent</span> {
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">constructor</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(
         <span class="ident">acceleration_ratio_x</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
@@ -184,8 +182,8 @@
         <span class="ident">modifiers</span>: <span class="ident">Array</span>,
         <span class="ident">wheel_ticks_x</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
         <span class="ident">wheel_ticks_y</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
-    ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">MouseInputEvent</span> {
-        <span class="ident">MouseInputEvent</span> {
+    ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">MouseWheelInputEvent</span> {
+        <span class="ident">MouseWheelInputEvent</span> {
             <span class="ident">acceleration_ratio_x</span>,
             <span class="ident">acceleration_ratio_y</span>,
             <span class="ident">can_scroll</span>,
