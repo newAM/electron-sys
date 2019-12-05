@@ -1,6 +1,13 @@
 use crate::interface::{
-    AddRepresentationOptions, CreateFromBitmapOptions, CreateFromBufferOptions, Rectangle, ResizeOptions, Size,
-    ToBitmapOptions, ToDataUrlOptions, ToPngOptions,
+    AddRepresentationOptions,
+    CreateFromBitmapOptions,
+    CreateFromBufferOptions,
+    Rectangle,
+    ResizeOptions,
+    Size,
+    ToBitmapOptions,
+    ToDataUrlOptions,
+    ToPngOptions,
 };
 use js_sys::{Array, JsString, Object};
 use node_sys::Buffer;
