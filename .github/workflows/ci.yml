@@ -18,68 +18,72 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.39.0
-      RUSTC_WRAPPER: sccache
+      RUSTC_WRAPPER: tools/bin/sccache
     steps:
       - uses: actions/checkout@v1
       - name: Prepare for restoring caches
         run: |
-          rm -rf ~/.rustup
-          rm -rf ~/.cargo/git
-          rm -rf ~/.cargo/registry
-      - name: Restore ~/.cargo/bin
-        id: cache-cargo-bin
+          rm -rf /home/runner/.rustup
+          rm -rf /home/runner/.cargo/git
+          rm -rf /home/runner/.cargo/registry
+      - name: Restore /home/runner/tools/bin
+        id: cache-tools-bin
         uses: actions/cache@v1
         with:
-          path: ~/.cargo/bin
-          key: cargo-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/Cargo.lock') }}
+          path: tools/bin
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/Cargo.lock') }}
       - name: Install sccache and wasm-pack
-        if: steps.cache-cargo-bin.outputs.cache-hit != 'true'
+        if: steps.cache-tools-bin.outputs.cache-hit != 'true'
         run: |
-          curl -L      https://github.com/mozilla/sccache/releases/download/0.2.12/sccache-0.2.12-x86_64-unknown-linux-musl.tar.gz | tar zxf - --overwrite --strip-components=1 -C ~/.cargo/bin
-          curl -L https://github.com/rustwasm/wasm-pack/releases/download/v0.8.1/wasm-pack-v0.8.1-x86_64-unknown-linux-musl.tar.gz | tar zxf - --overwrite --strip-components=1 -C ~/.cargo/bin
-      - name: Restore ~/.rustup
+          mkdir -p tools/bin
+          curl -L      https://github.com/mozilla/sccache/releases/download/0.2.12/sccache-0.2.12-x86_64-unknown-linux-musl.tar.gz | tar zxf - --overwrite --strip-components=1 -C tools/bin
+          curl -L https://github.com/rustwasm/wasm-pack/releases/download/v0.8.1/wasm-pack-v0.8.1-x86_64-unknown-linux-musl.tar.gz | tar zxf - --overwrite --strip-components=1 -C tools/bin
+      # if /home/runner/tools/bin wasn't cached, restore rustup
+      - name: Restore /home/runner/.rustup
+        if: "steps.cache-tools-bin.outputs.cache-hit != 'true'"
         id: cache-rustup
-        if: "steps.cache-cargo-bin-cargo-audit.outputs.cache-hit != 'true'"
         uses: actions/cache@v1
         with:
-          path: ~/.rustup
+          path: /home/runner/.rustup
           key: rustup-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('rust-toolchain') }}
+      # if /home/runner/tools/bin wasn't cached, and rustup isn't cached, install toolchain
       - name: Install rust toolchain
-        if: "steps.cache-cargo-bin-cargo-audit.outputs.cache-hit != 'true'
-          && steps.cache-rustup               .outputs.cache-hit != 'true'"
+        if: "steps.cache-tools-bin.outputs.cache-hit != 'true'
+          && steps.cache-rustup   .outputs.cache-hit != 'true'"
         run: |
           rustup set profile minimal
           rustup toolchain install $RUST_TOOLCHAIN --component clippy rustfmt
-      - name: Restore ~/.cache/sccache
-        id: cache-sccache
-        if: "steps.cache-cargo-bin-cargo-audit.outputs.cache-hit != 'true'"
+      # if /home/runner/tools/bin wasn't cached, restore sccache cache
+      - name: Restore /home/runner/.cache/sccache
+        if: "steps.cache-tools-bin.outputs.cache-hit != 'true'"
         uses: actions/cache@v1
         with:
-          path: ~/.cache/sccache
-          key: ccache-${{ runner.OS }}-s${{ hashFiles('**/Cargo.lock') }}
-      - name: Restore ~/.cargo/git
+          path: /home/runner/.cache/sccache
+          key: sccache-[linux-cache-tools]-${{ runner.OS }}-s${{ hashFiles('**/Cargo.lock') }}
+      # if /home/runner/tools/bin wasn't cached, restore /home/runner/.cargo/git
+      - name: Restore /home/runner/.cargo/git
+        if: "steps.cache-tools-bin.outputs.cache-hit != 'true'"
         id: cache-cargo-git
-        if: "steps.cache-cargo-bin-cargo-audit.outputs.cache-hit != 'true'"
         uses: actions/cache@v1
         with:
-          path: ~/.cargo/git
+          path: /home/runner/.cargo/git
           key: cargo-git-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
-      - name: Restore ~/.cargo/registry
+      # if cargo-audit wasn't cached, restore /home/runner/.cargo/registry
+      - name: Restore /home/runner/.cargo/registry
         id: cache-cargo-registry
-        if: "steps.cache-cargo-bin-cargo-audit.outputs.cache-hit != 'true'"
+        if: "steps.cache-tools-bin.outputs.cache-hit != 'true'"
         uses: actions/cache@v1
         with:
-          path: ~/.cargo/registry
+          path: /home/runner/.cargo/registry
           key: cargo-registry-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
       - name: Run cargo fetch
-        if: " steps.cache-cargo-bin-cargo-audit.outputs.cache-hit != 'true'
-          && (steps.cache-cargo-git            .outputs.cache-hit != 'true'
-          ||  steps.cache-cargo-registry       .outputs.cache-hit != 'true'
-          ||  steps.cache-target               .outputs.cache-hit != 'true')"
+        if: " steps.cache-tools-bin     .outputs.cache-hit != 'true'
+          && (steps.cache-cargo-git     .outputs.cache-hit != 'true'
+          ||  steps.cache-cargo-registry.outputs.cache-hit != 'true')"
         run: cargo fetch
       - name: Install cargo-audit
-        if: "steps.cache-cargo-bin-cargo-audit.outputs.cache-hit != 'true'"
-        run: cargo install cargo-audit
+        if: "steps.cache-tools-bin.outputs.cache-hit != 'true'"
+        run: cargo install --root tools --force cargo-audit
 
   # verify that Cargo.lock passes audit
   linux-cargo-audit:
@@ -88,60 +92,20 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.39.0
-      RUSTC_WRAPPER: sccache
+      RUSTC_WRAPPER: tools/bin/sccache
     steps:
       - uses: actions/checkout@v1
-      - name: Prepare for restoring caches
-        run: |
-          rm -rf ~/.rustup
-          rm -rf ~/.cargo/git
-          rm -rf ~/.cargo/registry
-      - name: Restore ~/.rustup
-        id: cache-rustup
+      - name: Restore /home/runner/.rustup
         uses: actions/cache@v1
         with:
-          path: ~/.rustup
+          path: /home/runner/.rustup
           key: rustup-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('rust-toolchain') }}
-      - name: Restore ~/.cache/sccache
-        id: cache-sccache
+      - name: Restore /home/runner/tools/bin
         uses: actions/cache@v1
         with:
-          path: ~/.cache/sccache
-          key: sccache-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
-      - name: Restore ~/.cargo/bin
-        id: cache-cargo-bin
-        uses: actions/cache@v1
-        with:
-          path: ~/.cargo/bin
-          key: cargo-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/Cargo.lock') }}
-      - name: Restore ~/.cargo/bin/cargo-audit
-        id: cache-cargo-bin-cargo-audit
-        uses: actions/cache@v1
-        with:
-          path: ~/.cargo/bin/cargo-audit
-          key: cargo-bin-cargo-audit-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/Cargo.lock') }}
-      - name: Restore ~/.cargo/git
-        id: cache-cargo-git
-        uses: actions/cache@v1
-        with:
-          path: ~/.cargo/git
-          key: cargo-git-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
-      - name: Restore ~/.cargo/registry
-        id: cache-cargo-registry
-        uses: actions/cache@v1
-        with:
-          path: ~/.cargo/registry
-          key: cargo-registry-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
-      - name: Restore ./target
-        id: cache-target
-        uses: actions/cache@v1
-        with:
-          path: target
-          key: cargo-build-target-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
-      - name: Run cargo audit
-        uses: actions-rs/cargo@v1
-        with:
-          command: audit
+          path: tools/bin
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/Cargo.lock') }}
+      - run: tools/bin/cargo-audit audit
 
   # verify that project builds (via "check" via "clippy") on linux
   linux-cargo-clippy:
@@ -150,46 +114,35 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.39.0
-      RUSTC_WRAPPER: sccache
+      RUSTC_WRAPPER: tools/bin/sccache
     steps:
       - uses: actions/checkout@v1
-      - name: Prepare for restoring caches
-        run: |
-          rm -rf ~/.rustup
-          rm -rf ~/.cargo/git
-          rm -rf ~/.cargo/registry
-      - name: Restore ~/.rustup
-        id: cache-rustup
+      - name: Restore /home/runner/.rustup
         uses: actions/cache@v1
         with:
-          path: ~/.rustup
+          path: /home/runner/.rustup
           key: rustup-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('rust-toolchain') }}
-      - name: Restore ~/.cache/sccache
-        id: cache-sccache
+      - name: Restore /home/runner/.cache/sccache
         uses: actions/cache@v1
         with:
-          path: ~/.cache/sccache
-          key: sccache-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
-      - name: Restore ~/.cargo/bin
-        id: cache-cargo-bin
+          path: /home/runner/.cache/sccache
+          key: sccache-[linux-cargo-clippy]-${{ runner.OS }}-s${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore /home/runner/tools/bin
         uses: actions/cache@v1
         with:
-          path: ~/.cargo/bin
-          key: cargo-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/Cargo.lock') }}
-      - name: Restore ~/.cargo/git
-        id: cache-cargo-git
+          path: tools/bin
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore /home/runner/.cargo/git
         uses: actions/cache@v1
         with:
-          path: ~/.cargo/git
+          path: /home/runner/.cargo/git
           key: cargo-git-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
-      - name: Restore ~/.cargo/registry
-        id: cache-cargo-registry
+      - name: Restore /home/runner/.cargo/registry
         uses: actions/cache@v1
         with:
-          path: ~/.cargo/registry
+          path: /home/runner/.cargo/registry
           key: cargo-registry-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
       - name: Restore ./target
-        id: cache-target
         uses: actions/cache@v1
         with:
           path: target
@@ -209,37 +162,32 @@ jobs:
       RUST_TOOLCHAIN: 1.39.0
     steps:
       - uses: actions/checkout@v1
-      - name: Prepare for restoring caches
-        run: |
-          rm -rf ~/.rustup
-          rm -rf ~/.cargo/git
-          rm -rf ~/.cargo/registry
-      - name: Restore ~/.rustup
-        id: cache-rustup
+      - name: Restore /home/runner/.rustup
         uses: actions/cache@v1
         with:
-          path: ~/.rustup
+          path: /home/runner/.rustup
           key: rustup-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('rust-toolchain') }}
-      - name: Restore ~/.cache/sccache
-        id: cache-sccache
+      - name: Restore /home/runner/.cache/sccache
         uses: actions/cache@v1
         with:
-          path: ~/.cache/sccache
-          key: sccache-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
-      - name: Restore ~/.cargo/git
-        id: cache-cargo-git
+          path: /home/runner/.cache/sccache
+          key: sccache-[linux-cargo-docs]-${{ runner.OS }}-s${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore /home/runner/tools/bin
         uses: actions/cache@v1
         with:
-          path: ~/.cargo/git
+          path: tools/bin
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore /home/runner/.cargo/git
+        uses: actions/cache@v1
+        with:
+          path: /home/runner/.cargo/git
           key: cargo-git-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
-      - name: Restore ~/.cargo/registry
-        id: cache-cargo-registry
+      - name: Restore /home/runner/.cargo/registry
         uses: actions/cache@v1
         with:
-          path: ~/.cargo/registry
+          path: /home/runner/.cargo/registry
           key: cargo-registry-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
       - name: Restore ./target
-        id: cache-target
         uses: actions/cache@v1
         with:
           path: target
@@ -265,24 +213,17 @@ jobs:
       RUST_TOOLCHAIN: nightly
     steps:
       - uses: actions/checkout@v1
-      - name: Prepare for restoring caches
-        run: |
-          rm -rf ~/.rustup
-      - name: Restore ~/.rustup
+      - name: Restore /home/runner/.rustup
         id: cache-rustup
         uses: actions/cache@v1
         with:
-          path: ~/.rustup
+          path: /home/runner/.rustup
           key: rustup-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('rust-toolchain') }}
       - name: Install rust toolchain
         if: steps.cache-rustup.outputs.cache-hit != 'true'
         run: |
           rustup set profile minimal
-          rustup toolchain install $RUST_TOOLCHAIN --component clippy rustfmt
-      - if: "steps.cache-cargo-git     .outputs.cache-hit != 'true'
-          || steps.cache-cargo-registry.outputs.cache-hit != 'true'
-          || steps.cache-target        .outputs.cache-hit != 'true'"
-        run: cargo "+$RUST_TOOLCHAIN" fetch
+          rustup toolchain install $RUST_TOOLCHAIN --component rustfmt
       - name: Run cargo fmt
         run: cargo "+$RUST_TOOLCHAIN" fmt --all -- --check
 
@@ -293,46 +234,35 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.39.0
-      RUSTC_WRAPPER: sccache
+      RUSTC_WRAPPER: tools/bin/sccache
     steps:
       - uses: actions/checkout@v1
-      - name: Prepare for restoring caches
-        run: |
-          rm -rf ~/.rustup
-          rm -rf ~/.cargo/git
-          rm -rf ~/.cargo/registry
-      - name: Restore ~/.rustup
-        id: cache-rustup
+      - name: Restore /home/runner/.rustup
         uses: actions/cache@v1
         with:
-          path: ~/.rustup
+          path: /home/runner/.rustup
           key: rustup-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('rust-toolchain') }}
-      - name: Restore ~/.cache/sccache
-        id: cache-sccache
+      - name: Restore /home/runner/.cache/sccache
         uses: actions/cache@v1
         with:
-          path: ~/.cache/sccache
-          key: sccache-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
-      - name: Restore ~/.cargo/bin
-        id: cache-cargo-bin
+          path: /home/runner/.cache/sccache
+          key: sccache-[linux-cargo-test]-${{ runner.OS }}-s${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore /home/runner/tools/bin
         uses: actions/cache@v1
         with:
-          path: ~/.cargo/bin
-          key: cargo-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/Cargo.lock') }}
-      - name: Restore ~/.cargo/git
-        id: cache-cargo-git
+          path: tools/bin
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore /home/runner/.cargo/git
         uses: actions/cache@v1
         with:
-          path: ~/.cargo/git
+          path: /home/runner/.cargo/git
           key: cargo-git-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
-      - name: Restore ~/.cargo/registry
-        id: cache-cargo-registry
+      - name: Restore /home/runner/.cargo/registry
         uses: actions/cache@v1
         with:
-          path: ~/.cargo/registry
+          path: /home/runner/.cargo/registry
           key: cargo-registry-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
       - name: Restore ./target
-        id: cache-target
         uses: actions/cache@v1
         with:
           path: target
@@ -342,4 +272,4 @@ jobs:
         with:
           node-version: "13.x"
       - run: npm ci
-      - run: wasm-pack test --node -- --frozen --all-features --all-targets
+      - run: tools/bin/wasm-pack test --node -- --frozen --all-features --all-targets
