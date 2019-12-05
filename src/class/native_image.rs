@@ -1,13 +1,6 @@
 use crate::interface::{
-    AddRepresentationOptions,
-    CreateFromBitmapOptions,
-    CreateFromBufferOptions,
-    Rectangle,
-    ResizeOptions,
-    Size,
-    ToBitmapOptions,
-    ToDataUrlOptions,
-    ToPngOptions,
+    AddRepresentationOptions, CreateFromBitmapOptions, CreateFromBufferOptions, Rectangle, ResizeOptions, Size,
+    ToBitmapOptions, ToDataUrlOptions, ToPngOptions,
 };
 use js_sys::{Array, JsString, Object};
 use node_sys::Buffer;
@@ -49,10 +42,10 @@ extern {
     pub fn add_representation(this: &NativeImage, options: AddRepresentationOptions);
 
     #[wasm_bindgen(method)]
-    pub fn crop(this: &NativeImage, rect: &Rectangle) -> NativeImage;
+    pub fn crop(this: &NativeImage, rectangle: Rectangle) -> NativeImage;
 
     #[wasm_bindgen(method, js_name = "getAspectRatio")]
-    pub fn get_aspect_ratio(this: &NativeImage, rect: &Rectangle) -> f32;
+    pub fn get_aspect_ratio(this: &NativeImage, rectangle: Rectangle) -> f32;
 
     #[wasm_bindgen(method, js_name = "getBitmap")]
     pub fn get_bitmap(this: &NativeImage, options: Option<ToBitmapOptions>) -> Buffer;

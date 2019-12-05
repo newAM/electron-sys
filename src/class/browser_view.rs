@@ -50,7 +50,7 @@ extern {
     pub fn set_background_color(this: &BrowserView, color: &JsString);
 
     #[wasm_bindgen(method, js_name = "set_bounds")]
-    pub fn set_bounds(this: &BrowserView, bounds: &Rectangle);
+    pub fn set_bounds(this: &BrowserView, bounds: Rectangle);
 
     //*********************//
     // Instance Properties //
