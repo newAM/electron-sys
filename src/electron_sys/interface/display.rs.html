@@ -273,7 +273,7 @@
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">bounds</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Rectangle</span> {
-        <span class="self">self</span>.<span class="ident">bounds</span>.<span class="ident">clone</span>()
+        <span class="self">self</span>.<span class="ident">bounds</span>
     }
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">setter</span>)]</span>
@@ -393,7 +393,7 @@
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;workArea&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">work_area</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Rectangle</span> {
-        <span class="self">self</span>.<span class="ident">work_area</span>.<span class="ident">clone</span>()
+        <span class="self">self</span>.<span class="ident">work_area</span>
     }
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">setter</span>)]</span>

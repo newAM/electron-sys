@@ -147,6 +147,7 @@
 <span id="147">147</span>
 <span id="148">148</span>
 <span id="149">149</span>
+<span id="150">150</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="ident">js_sys</span>::{<span class="ident">Array</span>, <span class="ident">JsString</span>};
 <span class="kw">use</span> <span class="ident">wasm_bindgen</span>::<span class="ident">prelude</span>::<span class="kw-2">*</span>;
@@ -170,6 +171,7 @@
 
 <span class="attribute">#[<span class="ident">wasm_bindgen</span>]</span>
 <span class="kw">impl</span> <span class="ident">MouseInputEvent</span> {
+    <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">clippy</span>::<span class="ident">too_many_arguments</span>)]</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">constructor</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(
         <span class="ident">acceleration_ratio_x</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
@@ -199,7 +201,7 @@
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;accelerationRatioX&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">acceleration_ratio_x</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span> {
-        <span class="self">self</span>.<span class="ident">acceleration_ratio_x</span>.<span class="ident">clone</span>()
+        <span class="self">self</span>.<span class="ident">acceleration_ratio_x</span>
     }
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">setter</span>)]</span>
@@ -209,7 +211,7 @@
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;accelerationRatioY&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">acceleration_ratio_y</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span> {
-        <span class="self">self</span>.<span class="ident">acceleration_ratio_y</span>.<span class="ident">clone</span>()
+        <span class="self">self</span>.<span class="ident">acceleration_ratio_y</span>
     }
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">setter</span>)]</span>
@@ -219,7 +221,7 @@
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;canScroll&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">can_scroll</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
-        <span class="self">self</span>.<span class="ident">can_scroll</span>.<span class="ident">clone</span>()
+        <span class="self">self</span>.<span class="ident">can_scroll</span>
     }
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">setter</span>)]</span>
@@ -229,7 +231,7 @@
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;deltaX&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">delta_x</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span> {
-        <span class="self">self</span>.<span class="ident">delta_x</span>.<span class="ident">clone</span>()
+        <span class="self">self</span>.<span class="ident">delta_x</span>
     }
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">setter</span>)]</span>
@@ -239,7 +241,7 @@
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;deltaY&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">delta_y</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span> {
-        <span class="self">self</span>.<span class="ident">delta_y</span>.<span class="ident">clone</span>()
+        <span class="self">self</span>.<span class="ident">delta_y</span>
     }
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">setter</span>)]</span>
@@ -249,7 +251,7 @@
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;hasPreciseScrollingDeltas&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">has_precise_scrolling_deltas</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
-        <span class="self">self</span>.<span class="ident">has_precise_scrolling_deltas</span>.<span class="ident">clone</span>()
+        <span class="self">self</span>.<span class="ident">has_precise_scrolling_deltas</span>
     }
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">setter</span>)]</span>
@@ -279,7 +281,7 @@
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;wheelTicksX&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">wheel_ticks_x</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span> {
-        <span class="self">self</span>.<span class="ident">wheel_ticks_x</span>.<span class="ident">clone</span>()
+        <span class="self">self</span>.<span class="ident">wheel_ticks_x</span>
     }
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">setter</span>)]</span>
@@ -289,7 +291,7 @@
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;wheelTicksY&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">wheel_ticks_y</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span> {
-        <span class="self">self</span>.<span class="ident">wheel_ticks_y</span>.<span class="ident">clone</span>()
+        <span class="self">self</span>.<span class="ident">wheel_ticks_y</span>
     }
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">setter</span>)]</span>
