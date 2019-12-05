@@ -85,7 +85,7 @@ impl NotificationOptions {
 
     #[wasm_bindgen(getter)]
     pub fn has_reply(&self) -> Option<bool> {
-        self.has_reply.clone()
+        self.has_reply
     }
 
     #[wasm_bindgen(setter)]
@@ -115,7 +115,7 @@ impl NotificationOptions {
 
     #[wasm_bindgen(getter)]
     pub fn silent(&self) -> Option<bool> {
-        self.silent.clone()
+        self.silent
     }
 
     #[wasm_bindgen(setter)]

@@ -20,6 +20,7 @@ pub struct MouseInputEvent {
 
 #[wasm_bindgen]
 impl MouseInputEvent {
+    #[allow(clippy::too_many_arguments)]
     #[wasm_bindgen(constructor)]
     pub fn new(
         acceleration_ratio_x: Option<i32>,
@@ -49,7 +50,7 @@ impl MouseInputEvent {
 
     #[wasm_bindgen(getter, js_name = "accelerationRatioX")]
     pub fn acceleration_ratio_x(&self) -> Option<i32> {
-        self.acceleration_ratio_x.clone()
+        self.acceleration_ratio_x
     }
 
     #[wasm_bindgen(setter)]
@@ -59,7 +60,7 @@ impl MouseInputEvent {
 
     #[wasm_bindgen(getter, js_name = "accelerationRatioY")]
     pub fn acceleration_ratio_y(&self) -> Option<i32> {
-        self.acceleration_ratio_y.clone()
+        self.acceleration_ratio_y
     }
 
     #[wasm_bindgen(setter)]
@@ -69,7 +70,7 @@ impl MouseInputEvent {
 
     #[wasm_bindgen(getter, js_name = "canScroll")]
     pub fn can_scroll(&self) -> Option<bool> {
-        self.can_scroll.clone()
+        self.can_scroll
     }
 
     #[wasm_bindgen(setter)]
@@ -79,7 +80,7 @@ impl MouseInputEvent {
 
     #[wasm_bindgen(getter, js_name = "deltaX")]
     pub fn delta_x(&self) -> Option<i32> {
-        self.delta_x.clone()
+        self.delta_x
     }
 
     #[wasm_bindgen(setter)]
@@ -89,7 +90,7 @@ impl MouseInputEvent {
 
     #[wasm_bindgen(getter, js_name = "deltaY")]
     pub fn delta_y(&self) -> Option<i32> {
-        self.delta_y.clone()
+        self.delta_y
     }
 
     #[wasm_bindgen(setter)]
@@ -99,7 +100,7 @@ impl MouseInputEvent {
 
     #[wasm_bindgen(getter, js_name = "hasPreciseScrollingDeltas")]
     pub fn has_precise_scrolling_deltas(&self) -> Option<bool> {
-        self.has_precise_scrolling_deltas.clone()
+        self.has_precise_scrolling_deltas
     }
 
     #[wasm_bindgen(setter)]
@@ -129,7 +130,7 @@ impl MouseInputEvent {
 
     #[wasm_bindgen(getter, js_name = "wheelTicksX")]
     pub fn wheel_ticks_x(&self) -> Option<i32> {
-        self.wheel_ticks_x.clone()
+        self.wheel_ticks_x
     }
 
     #[wasm_bindgen(setter)]
@@ -139,7 +140,7 @@ impl MouseInputEvent {
 
     #[wasm_bindgen(getter, js_name = "wheelTicksY")]
     pub fn wheel_ticks_y(&self) -> Option<i32> {
-        self.wheel_ticks_y.clone()
+        self.wheel_ticks_y
     }
 
     #[wasm_bindgen(setter)]

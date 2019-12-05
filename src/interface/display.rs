@@ -71,7 +71,7 @@ impl Display {
 
     #[wasm_bindgen(getter)]
     pub fn bounds(&self) -> Rectangle {
-        self.bounds.clone()
+        self.bounds
     }
 
     #[wasm_bindgen(setter)]
@@ -191,7 +191,7 @@ impl Display {
 
     #[wasm_bindgen(getter, js_name = "workArea")]
     pub fn work_area(&self) -> Rectangle {
-        self.work_area.clone()
+        self.work_area
     }
 
     #[wasm_bindgen(setter)]
