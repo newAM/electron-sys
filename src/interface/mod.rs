@@ -129,6 +129,7 @@ pub(crate) mod web_contents_print_options;
 pub(crate) mod web_preferences;
 pub(crate) mod web_request_filter;
 pub(crate) mod web_source;
+pub(crate) mod world_info;
 
 pub use add_representation_options::*;
 pub use auto_resize_options::*;
@@ -261,3 +262,4 @@ pub use web_contents_print_options::*;
 pub use web_preferences::*;
 pub use web_request_filter::*;
 pub use web_source::*;
+pub use world_info::*;
