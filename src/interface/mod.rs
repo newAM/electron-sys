@@ -1,6 +1,7 @@
 pub(crate) mod add_representation_options;
 pub(crate) mod animation_settings;
 pub(crate) mod auto_resize_options;
+pub(crate) mod blink_memory_info;
 pub(crate) mod bluetooth_device;
 pub(crate) mod browser_view_options;
 pub(crate) mod browser_window_options;
@@ -140,6 +141,7 @@ pub(crate) mod world_info;
 pub use add_representation_options::*;
 pub use animation_settings::*;
 pub use auto_resize_options::*;
+pub use blink_memory_info::*;
 pub use bluetooth_device::*;
 pub use browser_view_options::*;
 pub use browser_window_options::*;
