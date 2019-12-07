@@ -212,7 +212,7 @@ extern {
     #[wasm_bindgen(method, js_name = "loadFile")]
     pub fn load_file(this: &BrowserWindow, path: &JsString, options: Option<LoadFileOptions>);
 
-    #[wasm_bindgen(method, js_name = "loadFile")]
+    #[wasm_bindgen(method, js_name = "loadURL")]
     pub fn load_url(this: &BrowserWindow, url: &JsString, options: Option<LoadUrlOptions>);
 
     #[wasm_bindgen(method)]
