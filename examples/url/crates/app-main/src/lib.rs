@@ -1,0 +1,48 @@
+use electron_sys::{app, process, BrowserWindow, BrowserWindowOptions, WebPreferences};
+use wasm_bindgen::{prelude::*, JsCast};
+
+#[wasm_bindgen(start)]
+pub fn main() -> Result<(), JsValue> {
+    console_error_panic_hook::set_once();
+    let ready = Closure::wrap(Box::new(|| {
+        // Create a new window
+        let window = BrowserWindow::new(Some({
+            let mut opts = <BrowserWindowOptions as Default>::default();
+            // Set the initial width to 800px
+            opts.set_width(Some(640));
+            // Set the initial height to 600px
+            opts.set_height(Some(480));
+            // Don't show the window until it ready, this prevents any white flickering
+            opts.set_show(Some(false));
+            opts.set_web_preferences(Some({
+                let mut opts = <WebPreferences as Default>::default();
+                // Disable node integration in remote page
+                opts.set_node_integration(Some(false));
+                opts
+            }));
+            opts
+        }));
+
+        // URL is argument to npm start
+        let url = process.argv().get(2).unchecked_into();
+        window.load_url(&url, None);
+
+        let ready_to_show = {
+            let window = window.clone();
+            let clo = Closure::wrap(Box::new(move || {
+                window.maximize();
+                window.show();
+            }) as Box<dyn Fn()>);
+            clo
+        };
+        // Show window when page is ready
+        window.once("ready-to-show", ready_to_show.as_ref().unchecked_ref());
+        ready_to_show.forget();
+    }) as Box<dyn Fn()>);
+
+    // Wait until the app is ready
+    app.on("ready", ready.as_ref().unchecked_ref());
+    ready.forget();
+
+    Ok(())
+}
