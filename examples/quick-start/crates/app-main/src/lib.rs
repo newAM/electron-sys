@@ -18,7 +18,7 @@ pub fn main() -> Result<(), JsValue> {
         // create the electron browser window
         let win = create_window();
         // load the html file
-        win.load_file(&"..\\..\\..\\index.html".into());
+        win.load_file(&"..\\..\\..\\index.html".into(), None);
         // change the window title
         win.set_title(&"Hello Electron from Rust! ⚛️🦀🕸🚀".into());
         // register accelerator: Ctrl+Space => opens About panel
