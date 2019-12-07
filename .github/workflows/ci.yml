@@ -160,6 +160,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.39.0
+      RUSTC_WRAPPER: tools/bin/sccache
     steps:
       - uses: actions/checkout@v1
       - name: Restore /home/runner/.rustup
