@@ -95,6 +95,15 @@ extern {
     #[wasm_bindgen(method, js_name = "executeJavaScript")]
     pub fn execute_java_script(this: &WebContents, code: &JsString, user_gesture: Option<bool>) -> Promise;
 
+    #[must_use]
+    #[wasm_bindgen(method, js_name = "executeJavaScriptInIsolatedWorld")]
+    pub fn execute_java_script_in_isolated_world(
+        this: &WebContents,
+        world_id: u32,
+        scripts: &Array,
+        user_gesture: Option<bool>,
+    ) -> Promise;
+
     #[wasm_bindgen(method, js_name = "findInPage")]
     pub fn find_in_page(this: &WebContents, text: &JsString, options: Option<FindInPageOptions>) -> usize;
 
