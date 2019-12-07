@@ -36,9 +36,6 @@ extern {
     #[wasm_bindgen(method, js_name = "getColor")]
     pub fn get_color(this: &SystemPreferences, color: &JsString) -> JsString;
 
-    #[wasm_bindgen(method, js_name = "getEffectiveAppearance")]
-    pub fn get_effective_appearance(this: &SystemPreferences) -> JsString;
-
     #[wasm_bindgen(method, js_name = "getMediaAccessStatus")]
     pub fn get_media_access_status(this: &SystemPreferences, media_type: &JsString) -> JsString;
 
