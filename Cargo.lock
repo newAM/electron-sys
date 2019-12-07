@@ -77,7 +77,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "node-sys"
 version = "0.1.0"
-source = "git+https://github.com/interfaces-rs/node-sys#483fb8f7a06edc4ca381d94dac240bbb547b1ebe"
+source = "git+https://github.com/interfaces-rs/node-sys#c614ad2e5eae4e030f0fe5b617fae143061a513b"
 dependencies = [
  "js-sys 0.3.32 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.103 (registry+https://github.com/rust-lang/crates.io-index)",
