@@ -23,9 +23,9 @@ extern {
     // Instance Properties //
     //*********************//
 
-    #[wasm_bindgen(method, getter, js_name = "currentlyLogging")]
+    #[wasm_bindgen(method, getter, js_name = "currentlyLogging")] // readonly
     pub fn currently_logging(this: &NetLog) -> bool;
 
-    #[wasm_bindgen(method, getter, js_name = "currentlyLoggingPath")]
+    #[wasm_bindgen(method, getter, js_name = "currentlyLoggingPath")] // readonly
     pub fn currently_logging_path(this: &NetLog) -> JsString;
 }

@@ -79,21 +79,21 @@ extern {
     // Instance Properties //
     //*********************//
 
-    #[wasm_bindgen(method, getter, js_name = "firstChild")]
+    #[wasm_bindgen(method, getter, js_name = "firstChild")] // readonly
     pub fn first_child(this: &WebFrame) -> Option<WebFrame>;
 
-    #[wasm_bindgen(method, getter, js_name = "nextSibling")]
+    #[wasm_bindgen(method, getter, js_name = "nextSibling")] // readonly
     pub fn next_sibling(this: &WebFrame) -> Option<WebFrame>;
 
-    #[wasm_bindgen(method, getter)]
+    #[wasm_bindgen(method, getter)] // readonly
     pub fn opener(this: &WebFrame) -> Option<WebFrame>;
 
-    #[wasm_bindgen(method, getter)]
+    #[wasm_bindgen(method, getter)] // readonly
     pub fn parent(this: &WebFrame) -> Option<WebFrame>;
 
-    #[wasm_bindgen(method, getter, js_name = "routingId")]
+    #[wasm_bindgen(method, getter, js_name = "routingId")] // readonly
     pub fn routing_id(this: &WebFrame) -> u32;
 
-    #[wasm_bindgen(method, getter)]
+    #[wasm_bindgen(method, getter)] // readonly
     pub fn top(this: &WebFrame) -> Option<WebFrame>;
 }

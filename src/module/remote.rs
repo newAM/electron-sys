@@ -32,6 +32,6 @@ extern {
     // Instance Properties //
     //*********************//
 
-    #[wasm_bindgen(method, getter)]
+    #[wasm_bindgen(method, getter)] // readonly
     pub fn process(this: &Remote) -> Process;
 }

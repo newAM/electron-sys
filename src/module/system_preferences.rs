@@ -112,6 +112,6 @@ extern {
     #[wasm_bindgen(method, setter, js_name = "appLevelAppearance")]
     pub fn set_app_level_appearance(this: &SystemPreferences, value: JsString);
 
-    #[wasm_bindgen(method, getter, js_name = "effectiveAppearance")]
+    #[wasm_bindgen(method, getter, js_name = "effectiveAppearance")] // readonly
     pub fn effective_appearance(this: &SystemPreferences) -> JsString;
 }
