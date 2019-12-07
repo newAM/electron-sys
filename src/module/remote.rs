@@ -1,6 +1,8 @@
-use crate::class::{BrowserWindow, WebContents};
+use crate::{
+    class::{BrowserWindow, WebContents},
+    interface::Process,
+};
 use js_sys::JsString;
-use node_sys::Process;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "electron")]
