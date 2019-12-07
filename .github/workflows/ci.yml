@@ -112,6 +112,11 @@ jobs:
       RUSTC_WRAPPER: tools/bin/sccache
     steps:
       - uses: actions/checkout@v1
+      - name: Prepare for restoring caches
+        run: |
+          rm -rf /home/runner/.rustup
+          rm -rf /home/runner/.cargo/git
+          rm -rf /home/runner/.cargo/registry
       - name: Restore /home/runner/.rustup
         uses: actions/cache@v1
         with:
@@ -158,6 +163,11 @@ jobs:
       RUSTC_WRAPPER: tools/bin/sccache
     steps:
       - uses: actions/checkout@v1
+      - name: Prepare for restoring caches
+        run: |
+          rm -rf /home/runner/.rustup
+          rm -rf /home/runner/.cargo/git
+          rm -rf /home/runner/.cargo/registry
       - name: Restore /home/runner/.rustup
         uses: actions/cache@v1
         with:
@@ -209,6 +219,9 @@ jobs:
       RUST_TOOLCHAIN: nightly
     steps:
       - uses: actions/checkout@v1
+      - name: Prepare for restoring caches
+        run: |
+          rm -rf /home/runner/.rustup
       - name: Restore /home/runner/.rustup
         id: cache-rustup
         uses: actions/cache@v1
@@ -233,6 +246,11 @@ jobs:
       RUSTC_WRAPPER: tools/bin/sccache
     steps:
       - uses: actions/checkout@v1
+      - name: Prepare for restoring caches
+        run: |
+          rm -rf /home/runner/.rustup
+          rm -rf /home/runner/.cargo/git
+          rm -rf /home/runner/.cargo/registry
       - name: Restore /home/runner/.rustup
         uses: actions/cache@v1
         with:
