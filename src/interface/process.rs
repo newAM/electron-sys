@@ -1,10 +1,12 @@
 use crate::interface::{BlinkMemoryInfo, CpuUsage, HeapStatistics, IoCounters, ProcessMemoryInfo, SystemMemoryInfo};
 use js_sys::JsString;
+use node_sys::Process as NodeProcess;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 extern {
-    #[derive(Clone, Debug)]
+    #[wasm_bindgen(extends = NodeProcess)]
+    #[derive(Clone, Debug, PartialEq)]
     pub type Process;
 
     //******************//

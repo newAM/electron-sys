@@ -1,9 +1,7 @@
+use crate::interface::Process;
 use wasm_bindgen::prelude::*;
 
-#[wasm_bindgen(module = "electron")]
+#[wasm_bindgen]
 extern {
-    #[wasm_bindgen]
-    pub type Process;
-
     pub static process: Process;
 }
