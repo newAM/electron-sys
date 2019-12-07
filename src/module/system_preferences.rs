@@ -1,10 +1,11 @@
 use crate::interface::AnimationSettings;
 use js_sys::{Function, JsString, Object, Promise};
+use node_sys::EventEmitter;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "electron")]
 extern {
-    #[wasm_bindgen]
+    #[wasm_bindgen(extends = EventEmitter)]
     pub type SystemPreferences;
 
     #[wasm_bindgen(js_name = "systemPreferences")]

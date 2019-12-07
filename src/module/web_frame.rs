@@ -1,10 +1,11 @@
 use crate::interface::{ResourceUsage, SpellCheckProvider, WorldInfo};
 use js_sys::{Array, JsString, Number, Promise};
+use node_sys::EventEmitter;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "electron")]
 extern {
-    #[wasm_bindgen]
+    #[wasm_bindgen(extends = EventEmitter)]
     pub type WebFrame;
 
     #[wasm_bindgen(js_name = "webFrame")]

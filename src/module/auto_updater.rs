@@ -1,9 +1,10 @@
 use crate::interface::FeedUrlOptions;
+use node_sys::EventEmitter;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "electron")]
 extern {
-    #[wasm_bindgen]
+    #[wasm_bindgen(extends = EventEmitter)]
     pub type AutoUpdater;
 
     #[wasm_bindgen(js_name = "autoUpdater")]
