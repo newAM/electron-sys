@@ -95,11 +95,6 @@ jobs:
       RUSTC_WRAPPER: tools/bin/sccache
     steps:
       - uses: actions/checkout@v1
-      - name: Restore /home/runner/.rustup
-        uses: actions/cache@v1
-        with:
-          path: /home/runner/.rustup
-          key: rustup-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('rust-toolchain') }}
       - name: Restore /home/runner/tools/bin
         uses: actions/cache@v1
         with:
