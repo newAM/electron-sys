@@ -19,6 +19,14 @@
 <span id="19">19</span>
 <span id="20">20</span>
 <span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
+<span id="29">29</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="ident">wasm_bindgen</span>::<span class="ident">prelude</span>::<span class="kw-2">*</span>;
 
@@ -32,13 +40,21 @@
 <span class="kw">impl</span> <span class="ident">IgnoreMouseEventsOptions</span> {
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">constructor</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_with_values</span>(<span class="ident">forward</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">IgnoreMouseEventsOptions</span> {
-        <span class="ident">IgnoreMouseEventsOptions</span> {
-            <span class="ident">forward</span>
-        }
+        <span class="ident">IgnoreMouseEventsOptions</span> { <span class="ident">forward</span> }
     }
 
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">IgnoreMouseEventsOptions</span> {
         <span class="ident">Default</span>::<span class="ident">default</span>()
+    }
+
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">forward</span>(<span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
+        <span class="self">self</span>.<span class="ident">forward</span>
+    }
+
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">setter</span>)]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_forward</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">value</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>) {
+        <span class="self">self</span>.<span class="ident">forward</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 }
 </pre></div>
