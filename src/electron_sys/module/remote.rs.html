@@ -33,10 +33,14 @@
 <span id="33">33</span>
 <span id="34">34</span>
 <span id="35">35</span>
+<span id="36">36</span>
+<span id="37">37</span>
 </pre><div class="example-wrap"><pre class="rust ">
-<span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">class</span>::{<span class="ident">BrowserWindow</span>, <span class="ident">WebContents</span>};
+<span class="kw">use</span> <span class="kw">crate</span>::{
+    <span class="ident">class</span>::{<span class="ident">BrowserWindow</span>, <span class="ident">WebContents</span>},
+    <span class="ident">interface</span>::<span class="ident">Process</span>,
+};
 <span class="kw">use</span> <span class="ident">js_sys</span>::<span class="ident">JsString</span>;
-<span class="kw">use</span> <span class="ident">node_sys</span>::<span class="ident">Process</span>;
 <span class="kw">use</span> <span class="ident">wasm_bindgen</span>::<span class="ident">prelude</span>::<span class="kw-2">*</span>;
 
 <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">module</span> <span class="op">=</span> <span class="string">&quot;electron&quot;</span>)]</span>
@@ -66,7 +70,7 @@
     <span class="comment">// Instance Properties //</span>
     <span class="comment">//*********************//</span>
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>)]</span> <span class="comment">// readonly</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">process</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Remote</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Process</span>;
 }
 </pre></div>
