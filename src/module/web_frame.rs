@@ -18,6 +18,7 @@ extern {
     #[wasm_bindgen(method, js_name = "clearCache")]
     pub fn clear_cache(this: &WebFrame);
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "executeJavaScript")]
     pub fn execute_java_script(this: &WebFrame, code: &JsString, user_gesture: Option<bool>) -> Promise;
 

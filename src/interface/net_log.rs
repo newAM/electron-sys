@@ -11,9 +11,11 @@ extern {
     // Instance Methods //
     //******************//
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "startLogging")]
     pub fn start_logging(this: &NetLog, path: &JsString, options: StartLoggingOptions) -> Promise;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "stopLogging")]
     pub fn stop_logging(this: &NetLog) -> Promise;
 

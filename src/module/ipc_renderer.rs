@@ -10,6 +10,7 @@ extern {
     #[wasm_bindgen(js_name = "ipcRenderer")]
     pub static ipc_renderer: IpcRenderer;
 
+    #[must_use]
     #[wasm_bindgen(method, variadic)]
     pub fn invoke(this: &IpcRenderer, channel: &JsString, args: Box<[JsValue]>) -> Promise;
 

@@ -25,12 +25,14 @@ extern {
     #[wasm_bindgen(method, js_name = "finishTransactionsByDate")]
     pub fn finish_transactions_by_date(this: &InAppPurchase, date: &JsString);
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "getProducts")]
     pub fn get_products(this: &InAppPurchase, product_ids: &Array) -> Promise;
 
     #[wasm_bindgen(method, js_name = "getReceiptsURL")]
     pub fn get_receipts_url(this: &InAppPurchase) -> JsString;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "purchaseProduct")]
     pub fn purchaseProduct(this: &InAppPurchase, product_id: &JsString, quantity: Option<u32>) -> Promise;
 }

@@ -20,6 +20,7 @@ extern {
 
     pub static dialog: Dialog;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "showCertificateTrustDialog")]
     pub fn show_certificate_trust_dialog(
         this: &Dialog,
@@ -30,6 +31,7 @@ extern {
     #[wasm_bindgen(method, js_name = "showErrBox")]
     pub fn show_err_box(this: &Dialog, title: &JsString, content: &JsString);
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "showMessageBox")]
     pub fn show_message_box(
         this: &Dialog,
@@ -44,6 +46,7 @@ extern {
         options: MessageBoxSyncOptions,
     ) -> usize;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "showOpenDialog")]
     pub fn show_open_dialog(
         this: &Dialog,
@@ -58,6 +61,7 @@ extern {
         options: OpenDialogSyncOptions,
     ) -> Option<Array>;
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "showSaveDialog")]
     pub fn show_save_dialog(
         this: &Dialog,

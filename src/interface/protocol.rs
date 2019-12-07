@@ -46,6 +46,7 @@ extern {
         completion: Option<&Function>,
     );
 
+    #[must_use]
     #[wasm_bindgen(method, js_name = "isProtocolHandled")]
     pub fn is_protocol_handled(this: &Protocol, scheme: &JsString) -> Promise;
 
