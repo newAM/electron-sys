@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "hash",
+  "version": "0.1.0",
+  "author": "Darin Morrison <darinmorrison@users.noreply.github.com>",
+  "scripts": {
+    "pack-app-main": "cd crates/app-main && wasm-pack build --target nodejs",
+    "prestart": "npm run pack-app-main",
+    "start": "electron crates/app-main/pkg/hash_app_main.js"
+  },
+  "dependencies": {
+    "electron": "8.0.0-beta.4"
+  }
+}
