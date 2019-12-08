@@ -19,28 +19,6 @@ extern {
     #[derive(Clone, Debug, Eq, PartialEq)]
     pub type NativeImage;
 
-    //****************//
-    // Static Methods //
-    //****************//
-
-    #[wasm_bindgen(static_method_of = NativeImage, js_name = "createEmpty")]
-    pub fn create_empty() -> NativeImage;
-
-    #[wasm_bindgen(static_method_of = NativeImage, js_name = "createFromBitmap")]
-    pub fn create_from_bitmap(buffer: &Buffer, options: CreateFromBitmapOptions) -> NativeImage;
-
-    #[wasm_bindgen(static_method_of = NativeImage, js_name = "createFromBuffer")]
-    pub fn create_from_buffer(buffer: &Buffer, options: Option<CreateFromBufferOptions>) -> NativeImage;
-
-    #[wasm_bindgen(static_method_of = NativeImage, js_name = "createFromDataURL")]
-    pub fn create_from_data_url(data_url: &JsString) -> NativeImage;
-
-    #[wasm_bindgen(static_method_of = NativeImage, js_name = "createFromNamedImage")]
-    pub fn create_from_named_image(image_name: &JsString, hsl_shift: Option<Array>) -> NativeImage;
-
-    #[wasm_bindgen(static_method_of = NativeImage, js_name = "createFromPath")]
-    pub fn create_from_path(path: &JsString) -> NativeImage;
-
     //******************//
     // Instance Methods //
     //******************//
