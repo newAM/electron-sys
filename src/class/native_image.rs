@@ -1,7 +1,5 @@
 use crate::interface::{
     AddRepresentationOptions,
-    CreateFromBitmapOptions,
-    CreateFromBufferOptions,
     Rectangle,
     ResizeOptions,
     Size,
@@ -9,7 +7,7 @@ use crate::interface::{
     ToDataUrlOptions,
     ToPngOptions,
 };
-use js_sys::{Array, JsString, Object};
+use js_sys::{JsString, Object};
 use node_sys::Buffer;
 use wasm_bindgen::prelude::*;
 
