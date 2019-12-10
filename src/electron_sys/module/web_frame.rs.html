@@ -99,7 +99,7 @@
 <span id="99">99</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">interface</span>::{<span class="ident">ResourceUsage</span>, <span class="ident">SpellCheckProvider</span>, <span class="ident">WorldInfo</span>};
-<span class="kw">use</span> <span class="ident">js_sys</span>::{<span class="ident">Array</span>, <span class="ident">JsString</span>, <span class="ident">Number</span>, <span class="ident">Promise</span>};
+<span class="kw">use</span> <span class="ident">js_sys</span>::{<span class="ident">JsString</span>, <span class="ident">Number</span>, <span class="ident">Promise</span>};
 <span class="kw">use</span> <span class="ident">node_sys</span>::<span class="ident">EventEmitter</span>;
 <span class="kw">use</span> <span class="ident">wasm_bindgen</span>::<span class="ident">prelude</span>::<span class="kw-2">*</span>;
 
@@ -126,7 +126,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">execute_java_script_in_isolated_world</span>(
         <span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">WebFrame</span>,
         <span class="ident">world_id</span>: <span class="ident">u32</span>,
-        <span class="ident">scripts</span>: <span class="kw-2">&amp;</span><span class="ident">Array</span>,
+        <span class="ident">scripts</span>: <span class="ident">Box</span><span class="op">&lt;</span>[<span class="ident">JsValue</span>]<span class="op">&gt;</span>,
         <span class="ident">user_gesture</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Promise</span>;
 

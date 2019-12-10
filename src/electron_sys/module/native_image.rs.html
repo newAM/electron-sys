@@ -49,7 +49,7 @@
     <span class="ident">class</span>::<span class="ident">NativeImage</span>,
     <span class="ident">interface</span>::{<span class="ident">CreateFromBitmapOptions</span>, <span class="ident">CreateFromBufferOptions</span>},
 };
-<span class="kw">use</span> <span class="ident">js_sys</span>::{<span class="ident">Array</span>, <span class="ident">JsString</span>};
+<span class="kw">use</span> <span class="ident">js_sys</span>::<span class="ident">JsString</span>;
 <span class="kw">use</span> <span class="ident">node_sys</span>::<span class="ident">Buffer</span>;
 <span class="kw">use</span> <span class="ident">wasm_bindgen</span>::<span class="ident">prelude</span>::<span class="kw-2">*</span>;
 
@@ -85,7 +85,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">create_from_named_image</span>(
         <span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">NativeImageModule</span>,
         <span class="ident">image_name</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>,
-        <span class="ident">hsl_shift</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Array</span><span class="op">&gt;</span>,
+        <span class="ident">hsl_shift</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span>[<span class="ident">JsValue</span>]<span class="op">&gt;</span><span class="op">&gt;</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">NativeImage</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;createFromPath&quot;</span>)]</span>

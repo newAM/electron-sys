@@ -35,7 +35,7 @@
 <span id="35">35</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">interface</span>::<span class="ident">TouchBarColorPickerOptions</span>;
-<span class="kw">use</span> <span class="ident">js_sys</span>::{<span class="ident">Array</span>, <span class="ident">JsString</span>};
+<span class="kw">use</span> <span class="ident">js_sys</span>::{<span class="ident">JsString</span>};
 <span class="kw">use</span> <span class="ident">node_sys</span>::<span class="ident">events</span>::<span class="ident">EventEmitter</span>;
 <span class="kw">use</span> <span class="ident">wasm_bindgen</span>::<span class="ident">prelude</span>::<span class="kw-2">*</span>;
 
@@ -58,10 +58,10 @@
     <span class="comment">//*********************//</span>
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;availableColors&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">available_colors</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">TouchBarColorPicker</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Array</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">available_colors</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">TouchBarColorPicker</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Box</span><span class="op">&lt;</span>[<span class="ident">JsValue</span>]<span class="op">&gt;</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">setter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;availableColors&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_available_colors</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">TouchBarColorPicker</span>, <span class="ident">value</span>: <span class="ident">Array</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_available_colors</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">TouchBarColorPicker</span>, <span class="ident">value</span>: <span class="ident">Box</span><span class="op">&lt;</span>[<span class="ident">JsValue</span>]<span class="op">&gt;</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;selectedColor&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">selected_color</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">TouchBarColorPicker</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">JsString</span>;

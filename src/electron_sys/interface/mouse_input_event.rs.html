@@ -149,7 +149,7 @@
 <span id="149">149</span>
 <span id="150">150</span>
 </pre><div class="example-wrap"><pre class="rust ">
-<span class="kw">use</span> <span class="ident">js_sys</span>::{<span class="ident">Array</span>, <span class="ident">JsString</span>};
+<span class="kw">use</span> <span class="ident">js_sys</span>::{<span class="ident">JsString</span>};
 <span class="kw">use</span> <span class="ident">wasm_bindgen</span>::<span class="ident">prelude</span>::<span class="kw-2">*</span>;
 
 <span class="comment">// NOTE: extends InputEvent</span>
@@ -164,7 +164,7 @@
     <span class="ident">delta_y</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
     <span class="ident">has_precise_scrolling_deltas</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
     <span class="ident">kind</span>: <span class="ident">JsString</span>,
-    <span class="ident">modifiers</span>: <span class="ident">Array</span>,
+    <span class="ident">modifiers</span>: <span class="ident">Box</span><span class="op">&lt;</span>[<span class="ident">JsValue</span>]<span class="op">&gt;</span>,
     <span class="ident">wheel_ticks_x</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
     <span class="ident">wheel_ticks_y</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
 }
@@ -181,7 +181,7 @@
         <span class="ident">delta_y</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
         <span class="ident">has_precise_scrolling_deltas</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
         <span class="ident">kind</span>: <span class="ident">JsString</span>,
-        <span class="ident">modifiers</span>: <span class="ident">Array</span>,
+        <span class="ident">modifiers</span>: <span class="ident">Box</span><span class="op">&lt;</span>[<span class="ident">JsValue</span>]<span class="op">&gt;</span>,
         <span class="ident">wheel_ticks_x</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
         <span class="ident">wheel_ticks_y</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">MouseInputEvent</span> {
@@ -270,12 +270,12 @@
     }
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">modifiers</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Array</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">modifiers</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Box</span><span class="op">&lt;</span>[<span class="ident">JsValue</span>]<span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">modifiers</span>.<span class="ident">clone</span>()
     }
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">setter</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_modifiers</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">value</span>: <span class="ident">Array</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_modifiers</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">value</span>: <span class="ident">Box</span><span class="op">&lt;</span>[<span class="ident">JsValue</span>]<span class="op">&gt;</span>) {
         <span class="self">self</span>.<span class="ident">modifiers</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
