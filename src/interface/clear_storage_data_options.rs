@@ -1,18 +1,22 @@
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-#[derive(Clone, Debug, Default, Eq, PartialEq)]
+#[derive(Clone, Debug, Default, PartialEq)]
 pub struct ClearStorageDataOptions {
     origin: Option<JsString>,
-    quotas: Option<Array>,
-    storages: Option<Array>,
+    quotas: Option<Box<[JsValue]>>,
+    storages: Option<Box<[JsValue]>>,
 }
 
 #[wasm_bindgen]
 impl ClearStorageDataOptions {
     #[wasm_bindgen(constructor)]
-    pub fn new(origin: Option<JsString>, quotas: Option<Array>, storages: Option<Array>) -> ClearStorageDataOptions {
+    pub fn new(
+        origin: Option<JsString>,
+        quotas: Option<Box<[JsValue]>>,
+        storages: Option<Box<[JsValue]>>,
+    ) -> ClearStorageDataOptions {
         ClearStorageDataOptions {
             origin,
             quotas,
@@ -31,22 +35,22 @@ impl ClearStorageDataOptions {
     }
 
     #[wasm_bindgen(getter)]
-    pub fn quotas(&self) -> Option<Array> {
+    pub fn quotas(&self) -> Option<Box<[JsValue]>> {
         self.quotas.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_quotas(&mut self, value: Option<Array>) {
+    pub fn set_quotas(&mut self, value: Option<Box<[JsValue]>>) {
         self.quotas = value;
     }
 
     #[wasm_bindgen(getter)]
-    pub fn storages(&self) -> Option<Array> {
+    pub fn storages(&self) -> Option<Box<[JsValue]>> {
         self.storages.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_storages(&mut self, value: Option<Array>) {
+    pub fn set_storages(&mut self, value: Option<Box<[JsValue]>>) {
         self.storages = value;
     }
 }

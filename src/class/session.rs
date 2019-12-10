@@ -13,7 +13,7 @@ use crate::{
         SetProxyOptions,
     },
 };
-use js_sys::{Array, Function, JsString, Promise};
+use js_sys::{Function, JsString, Promise};
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -89,16 +89,16 @@ extern {
     pub fn get_cache_size(this: &Session) -> Promise;
 
     #[wasm_bindgen(method, js_name = "getPreloads")]
-    pub fn get_preloads(this: &Session) -> Array;
+    pub fn get_preloads(this: &Session) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, js_name = "getSpellCheckerLanguages")]
-    pub fn get_spell_checker_languages(this: &Session) -> Array;
+    pub fn get_spell_checker_languages(this: &Session) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, js_name = "getUserAgent")]
-    pub fn get_user_agent(this: &Session) -> Array;
+    pub fn get_user_agent(this: &Session) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method)]
-    pub fn preconnect(this: &Session, options: PreconnectOptions) -> Array;
+    pub fn preconnect(this: &Session, options: PreconnectOptions) -> Box<[JsValue]>;
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "resolveProxy")]
@@ -117,7 +117,7 @@ extern {
     pub fn set_permission_request_handler(this: &Session, handler: Option<&Function>);
 
     #[wasm_bindgen(method, js_name = "setPreloads")]
-    pub fn set_preloads(this: &Session, preloads: &Array);
+    pub fn set_preloads(this: &Session, preloads: Box<[JsValue]>);
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "setProxy")]
@@ -127,7 +127,7 @@ extern {
     pub fn set_spell_checker_dictionary_download_url(this: &Session, url: &JsString);
 
     #[wasm_bindgen(method, js_name = "setSpellCheckerLanguages")]
-    pub fn set_spell_checker_languages(this: &Session, languages: &Array);
+    pub fn set_spell_checker_languages(this: &Session, languages: Box<[JsValue]>);
 
     #[wasm_bindgen(method, js_name = "setUserAgent")]
     pub fn set_user_agent(this: &Session, user_agent: &JsString, accept_languages: Option<JsString>);
@@ -137,10 +137,10 @@ extern {
     //*********************//
 
     #[wasm_bindgen(method, getter, js_name = "availableSpellCheckerLanguages")] // readonly
-    pub fn available_spell_checker_languages(this: &Session) -> Array;
+    pub fn available_spell_checker_languages(this: &Session) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, getter)] // readonly
-    pub fn cookies(this: &Session) -> Array;
+    pub fn cookies(this: &Session) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, getter, js_name = "netLog")] // readonly
     pub fn net_log(this: &Session) -> NetLog;

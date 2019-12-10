@@ -1,4 +1,4 @@
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
@@ -7,8 +7,8 @@ pub struct CertificatePrincipal {
     common_name: JsString,
     country: JsString,
     locality: JsString,
-    organization_units: Array,
-    organizations: Array,
+    organization_units: Box<[JsValue]>,
+    organizations: Box<[JsValue]>,
     state: JsString,
 }
 
@@ -19,8 +19,8 @@ impl CertificatePrincipal {
         common_name: JsString,
         country: JsString,
         locality: JsString,
-        organization_units: Array,
-        organizations: Array,
+        organization_units: Box<[JsValue]>,
+        organizations: Box<[JsValue]>,
         state: JsString,
     ) -> CertificatePrincipal {
         CertificatePrincipal {
@@ -64,22 +64,22 @@ impl CertificatePrincipal {
     }
 
     #[wasm_bindgen(getter, js_name = "organizationUnits")]
-    pub fn organization_units(&self) -> Array {
+    pub fn organization_units(&self) -> Box<[JsValue]> {
         self.organization_units.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_organization_units(&mut self, value: Array) {
+    pub fn set_organization_units(&mut self, value: Box<[JsValue]>) {
         self.organization_units = value;
     }
 
     #[wasm_bindgen(getter)]
-    pub fn organizations(&self) -> Array {
+    pub fn organizations(&self) -> Box<[JsValue]> {
         self.organizations.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_organizations(&mut self, value: Array) {
+    pub fn set_organizations(&mut self, value: Box<[JsValue]>) {
         self.organizations = value;
     }
 

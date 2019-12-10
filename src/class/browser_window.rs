@@ -12,7 +12,7 @@ use crate::{
         VisibleOnAllWorkspacesOptions,
     },
 };
-use js_sys::{Array, Function, JsString, Map};
+use js_sys::{Function, JsString, Map};
 use node_sys::{events::EventEmitter, Buffer};
 use wasm_bindgen::prelude::*;
 
@@ -44,7 +44,7 @@ extern {
     pub fn from_web_contents(web_contents: &WebContents) -> Option<BrowserWindow>;
 
     #[wasm_bindgen(static_method_of = BrowserWindow, js_name = "getAllWindows")]
-    pub fn get_all_windows() -> Array;
+    pub fn get_all_windows() -> Box<[JsValue]>;
 
     #[wasm_bindgen(static_method_of = BrowserWindow, js_name = "getDevToolsExtension")]
     pub fn get_dev_tools_extension() -> Map;
@@ -108,10 +108,10 @@ extern {
     pub fn get_browser_view(this: &BrowserWindow) -> Option<BrowserView>;
 
     #[wasm_bindgen(method, js_name = "getBrowserViews")]
-    pub fn get_browser_views(this: &BrowserWindow) -> Array;
+    pub fn get_browser_views(this: &BrowserWindow) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, js_name = "getChildWindows")]
-    pub fn get_child_windows(this: &BrowserWindow) -> Array;
+    pub fn get_child_windows(this: &BrowserWindow) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, js_name = "getContentBounds")]
     pub fn get_content_bounds(this: &BrowserWindow) -> Rectangle;
@@ -126,7 +126,7 @@ extern {
     pub fn get_media_source_id(this: &BrowserWindow) -> JsString;
 
     #[wasm_bindgen(method, js_name = "getMinimumSize")]
-    pub fn get_minimum_size(this: &BrowserWindow) -> Array;
+    pub fn get_minimum_size(this: &BrowserWindow) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, js_name = "getNativeWindowHandle")]
     pub fn get_native_window_handle(this: &BrowserWindow) -> Buffer;
@@ -141,13 +141,13 @@ extern {
     pub fn get_parent_window(this: &BrowserWindow) -> BrowserWindow;
 
     #[wasm_bindgen(method, js_name = "getPosition")]
-    pub fn get_position(this: &BrowserWindow) -> Array;
+    pub fn get_position(this: &BrowserWindow) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, js_name = "getRepresentedFilename")]
-    pub fn get_represented_filename(this: &BrowserWindow) -> Array;
+    pub fn get_represented_filename(this: &BrowserWindow) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, js_name = "getSize")]
-    pub fn get_size(this: &BrowserWindow) -> Array;
+    pub fn get_size(this: &BrowserWindow) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, js_name = "getTitle")]
     pub fn get_title(this: &BrowserWindow) -> JsString;
@@ -342,7 +342,7 @@ extern {
     pub fn set_represented_filename(this: &BrowserWindow, filename: &JsString);
 
     #[wasm_bindgen(method, js_name = "setShape")]
-    pub fn set_shape(this: &BrowserWindow, rectangles: &Array);
+    pub fn set_shape(this: &BrowserWindow, rectangles: Box<[JsValue]>);
 
     #[wasm_bindgen(method, js_name = "setSheetOffset")]
     pub fn set_sheet_offset(this: &BrowserWindow, y: i32, x: Option<i32>);
@@ -357,7 +357,7 @@ extern {
     pub fn set_skip_taskbar(this: &BrowserWindow, skip: bool);
 
     #[wasm_bindgen(method, js_name = "setThumbarButtons")]
-    pub fn set_thumbar_buttons(this: &BrowserWindow, buttons: &Array) -> bool;
+    pub fn set_thumbar_buttons(this: &BrowserWindow, buttons: Box<[JsValue]>) -> bool;
 
     #[wasm_bindgen(method, js_name = "setThumbnailClip")]
     pub fn set_thumbnail_clip(this: &BrowserWindow, region: Rectangle);

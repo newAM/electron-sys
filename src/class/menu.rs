@@ -2,7 +2,7 @@ use crate::{
     class::{BrowserWindow, MenuItem},
     interface::PopupOptions,
 };
-use js_sys::{Array, JsString, Object};
+use js_sys::{JsString, Object};
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "electron")]
@@ -24,10 +24,10 @@ extern {
     //****************//
 
     #[wasm_bindgen(static_method_of = Menu, js_name = "buildFromTemplate")]
-    pub fn build_from_template(template: &Array) -> Menu;
+    pub fn build_from_template(template: Box<[JsValue]>) -> Menu;
 
     #[wasm_bindgen(static_method_of = Menu, js_name = "getApplicationMenu")]
-    pub fn get_application_menu(template: &Array) -> Option<Menu>;
+    pub fn get_application_menu(template: Box<[JsValue]>) -> Option<Menu>;
 
     #[wasm_bindgen(static_method_of = Menu, js_name = "sendApplicationToFirstResponder")]
     pub fn send_application_to_first_responder(action: &JsString);
@@ -59,8 +59,8 @@ extern {
     //*********************//
 
     #[wasm_bindgen(method, getter)]
-    pub fn items(this: &Menu) -> Array;
+    pub fn items(this: &Menu) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, setter)]
-    pub fn set_items(this: &Menu, value: Array);
+    pub fn set_items(this: &Menu, value: Box<[JsValue]>);
 }

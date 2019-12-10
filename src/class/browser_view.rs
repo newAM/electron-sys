@@ -2,7 +2,7 @@ use crate::{
     class::WebContents,
     interface::{AutoResizeOptions, BrowserViewOptions, Rectangle},
 };
-use js_sys::{Array, JsString, Object};
+use js_sys::{JsString, Object};
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "electron")]
@@ -28,7 +28,7 @@ extern {
     pub fn from_web_contents(web_contents: &WebContents) -> Option<BrowserView>;
 
     #[wasm_bindgen(static_method_of = BrowserView)]
-    pub fn get_all_views() -> Array;
+    pub fn get_all_views() -> Box<[JsValue]>;
 
     //******************//
     // Instance Methods //

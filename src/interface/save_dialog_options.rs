@@ -1,15 +1,15 @@
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-#[derive(Clone, Debug, Default, Eq, PartialEq)]
+#[derive(Clone, Debug, Default, PartialEq)]
 pub struct SaveDialogOptions {
     button_label: Option<JsString>,
     default_path: Option<JsString>,
-    filters: Option<Array>,
+    filters: Option<Box<[JsValue]>>,
     message: Option<JsString>,
     name_field_label: Option<JsString>,
-    properties: Option<Array>,
+    properties: Option<Box<[JsValue]>>,
     security_scoped_bookmarks: Option<bool>,
     show_tag_field: Option<bool>,
     title: Option<JsString>,
@@ -26,10 +26,10 @@ impl SaveDialogOptions {
     pub fn new(
         button_label: Option<JsString>,
         default_path: Option<JsString>,
-        filters: Option<Array>,
+        filters: Option<Box<[JsValue]>>,
         message: Option<JsString>,
         name_field_label: Option<JsString>,
-        properties: Option<Array>,
+        properties: Option<Box<[JsValue]>>,
         security_scoped_bookmarks: Option<bool>,
         show_tag_field: Option<bool>,
         title: Option<JsString>,
@@ -82,12 +82,12 @@ impl SaveDialogOptions {
     }
 
     #[wasm_bindgen(getter)]
-    pub fn filters(&self) -> Option<Array> {
+    pub fn filters(&self) -> Option<Box<[JsValue]>> {
         self.filters.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_filters(&mut self, value: Option<Array>) {
+    pub fn set_filters(&mut self, value: Option<Box<[JsValue]>>) {
         self.filters = value;
     }
 
@@ -122,12 +122,12 @@ impl SaveDialogOptions {
     }
 
     #[wasm_bindgen(getter)]
-    pub fn properties(&self) -> Option<Array> {
+    pub fn properties(&self) -> Option<Box<[JsValue]>> {
         self.properties.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_properties(&mut self, value: Option<Array>) {
+    pub fn set_properties(&mut self, value: Option<Box<[JsValue]>>) {
         self.properties = value;
     }
 

@@ -1,5 +1,5 @@
 use crate::interface::TouchBarSegmentedControlOptions;
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -22,10 +22,10 @@ extern {
     //*********************//
 
     #[wasm_bindgen(method, getter)]
-    pub fn segments(this: &TouchBarSegmentedControl) -> Array;
+    pub fn segments(this: &TouchBarSegmentedControl) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, getter)]
-    pub fn set_segments(this: &TouchBarSegmentedControl, value: Array);
+    pub fn set_segments(this: &TouchBarSegmentedControl, value: Box<[JsValue]>);
 
     #[wasm_bindgen(method, getter, js_name = "segment_style")]
     pub fn segment_style(this: &TouchBarSegmentedControl) -> JsString;

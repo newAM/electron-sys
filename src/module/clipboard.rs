@@ -2,7 +2,7 @@ use crate::{
     class::NativeImage,
     interface::{Data, ReadBookmark},
 };
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use node_sys::Buffer;
 use wasm_bindgen::prelude::*;
 
@@ -18,7 +18,7 @@ extern {
     //******************//
 
     #[wasm_bindgen(method, js_name = "availableFormats")]
-    pub fn available_formats(this: &Clipboard, r#type: Option<&JsString>) -> Array;
+    pub fn available_formats(this: &Clipboard, r#type: Option<&JsString>) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method)]
     pub fn clear(this: &Clipboard, r#type: Option<&JsString>);

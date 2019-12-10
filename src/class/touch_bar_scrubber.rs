@@ -1,5 +1,5 @@
 use crate::interface::TouchBarScrubberOptions;
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -28,10 +28,10 @@ extern {
     pub fn set_continuous(this: &TouchBarScrubber, value: bool);
 
     #[wasm_bindgen(method, getter)]
-    pub fn items(this: &TouchBarScrubber) -> Array;
+    pub fn items(this: &TouchBarScrubber) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, setter)]
-    pub fn set_items(this: &TouchBarScrubber, value: Array);
+    pub fn set_items(this: &TouchBarScrubber, value: Box<[JsValue]>);
 
     #[wasm_bindgen(method, getter)]
     pub fn mode(this: &TouchBarScrubber) -> JsString;

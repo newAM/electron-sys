@@ -1,11 +1,11 @@
 use crate::class::NativeImage;
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 #[derive(Clone, Debug, PartialEq)]
 pub struct MessageBoxOptions {
-    buttons: Option<Array>,
+    buttons: Option<Box<[JsValue]>>,
     cancel_id: Option<u32>,
     checkbox_checked: Option<bool>,
     checkbox_label: Option<JsString>,
@@ -24,7 +24,7 @@ impl MessageBoxOptions {
     #[allow(clippy::too_many_arguments)]
     #[wasm_bindgen(constructor)]
     pub fn new(
-        buttons: Option<Array>,
+        buttons: Option<Box<[JsValue]>>,
         cancel_id: Option<u32>,
         checkbox_checked: Option<bool>,
         checkbox_label: Option<JsString>,
@@ -54,12 +54,12 @@ impl MessageBoxOptions {
     }
 
     #[wasm_bindgen(getter)]
-    pub fn buttons(&self) -> Option<Array> {
+    pub fn buttons(&self) -> Option<Box<[JsValue]>> {
         self.buttons.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_buttons(&mut self, value: Option<Array>) {
+    pub fn set_buttons(&mut self, value: Option<Box<[JsValue]>>) {
         self.buttons = value;
     }
 

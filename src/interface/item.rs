@@ -1,28 +1,27 @@
 use crate::class::NativeImage;
-use js_sys::Array;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-#[derive(Clone, Debug, Eq, PartialEq)]
+#[derive(Clone, Debug, PartialEq)]
 pub struct Item {
-    file: Array,
+    file: Box<[JsValue]>,
     icon: NativeImage,
 }
 
 #[wasm_bindgen]
 impl Item {
     #[wasm_bindgen(constructor)]
-    pub fn new(file: Array, icon: NativeImage) -> Item {
+    pub fn new(file: Box<[JsValue]>, icon: NativeImage) -> Item {
         Item { file, icon }
     }
 
     #[wasm_bindgen(getter)]
-    pub fn file(&self) -> Array {
+    pub fn file(&self) -> Box<[JsValue]> {
         self.file.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_file(&mut self, value: Array) {
+    pub fn set_file(&mut self, value: Box<[JsValue]>) {
         self.file = value;
     }
 

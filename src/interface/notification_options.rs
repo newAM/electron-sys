@@ -1,11 +1,11 @@
 use crate::class::NativeImage;
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-#[derive(Clone, Debug, Eq, PartialEq)]
+#[derive(Clone, Debug, PartialEq)]
 pub struct NotificationOptions {
-    actions: Option<Array>,
+    actions: Option<Box<[JsValue]>>,
     body: JsString,
     close_button_text: Option<JsString>,
     has_reply: Option<bool>,
@@ -24,7 +24,7 @@ impl NotificationOptions {
     #[allow(clippy::too_many_arguments)]
     #[wasm_bindgen(constructor)]
     pub fn new(
-        actions: Option<Array>,
+        actions: Option<Box<[JsValue]>>,
         body: JsString,
         close_button_text: Option<JsString>,
         has_reply: Option<bool>,
@@ -54,12 +54,12 @@ impl NotificationOptions {
     }
 
     #[wasm_bindgen(getter)]
-    pub fn actions(&self) -> Option<Array> {
+    pub fn actions(&self) -> Option<Box<[JsValue]>> {
         self.actions.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_actions(&mut self, value: Option<Array>) {
+    pub fn set_actions(&mut self, value: Option<Box<[JsValue]>>) {
         self.actions = value;
     }
 

@@ -1,5 +1,5 @@
 use crate::interface::{ResourceUsage, SpellCheckProvider, WorldInfo};
-use js_sys::{Array, JsString, Number, Promise};
+use js_sys::{JsString, Number, Promise};
 use node_sys::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -26,7 +26,7 @@ extern {
     pub fn execute_java_script_in_isolated_world(
         this: &WebFrame,
         world_id: u32,
-        scripts: &Array,
+        scripts: Box<[JsValue]>,
         user_gesture: Option<bool>,
     ) -> Promise;
 

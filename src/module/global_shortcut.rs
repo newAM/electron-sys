@@ -1,4 +1,4 @@
-use js_sys::{Array, Function, JsString};
+use js_sys::{Function, JsString};
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "electron")]
@@ -13,7 +13,7 @@ extern {
     pub fn register(this: &GlobalShortcut, accelerator: &JsString, callback: &Function);
 
     #[wasm_bindgen(method, js_name = "registerAll")]
-    pub fn register_all(this: &GlobalShortcut, accelerators: &Array, callback: &Function);
+    pub fn register_all(this: &GlobalShortcut, accelerators: Box<[JsValue]>, callback: &Function);
 
     #[wasm_bindgen(method, js_name = "isRegistered")]
     pub fn is_registered(this: &GlobalShortcut, accelerator: &JsString) -> bool;

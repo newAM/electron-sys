@@ -1,5 +1,5 @@
 use crate::interface::SaveDialogOptions;
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -57,7 +57,7 @@ extern {
     pub fn get_url(this: &DownloadItem) -> JsString;
 
     #[wasm_bindgen(method, js_name = "getURLChain")]
-    pub fn get_url_chain(this: &DownloadItem) -> Array;
+    pub fn get_url_chain(this: &DownloadItem) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, js_name = "has_user_gesture")]
     pub fn has_user_gesture(this: &DownloadItem) -> bool;

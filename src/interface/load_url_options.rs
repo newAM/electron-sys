@@ -1,14 +1,14 @@
 use crate::interface::Referrer;
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-#[derive(Clone, Debug, Eq, PartialEq)]
+#[derive(Clone, Debug, PartialEq)]
 pub struct LoadUrlOptions {
     base_url_for_data_url: Option<JsString>,
     extra_headers: Option<JsString>,
     http_referrer: Referrer,
-    post_data: Array,
+    post_data: Box<[JsValue]>,
     user_agent: Option<JsString>,
 }
 
@@ -19,7 +19,7 @@ impl LoadUrlOptions {
         base_url_for_data_url: Option<JsString>,
         extra_headers: Option<JsString>,
         http_referrer: Referrer,
-        post_data: Array,
+        post_data: Box<[JsValue]>,
         user_agent: Option<JsString>,
     ) -> LoadUrlOptions {
         LoadUrlOptions {
@@ -62,12 +62,12 @@ impl LoadUrlOptions {
     }
 
     #[wasm_bindgen(getter, js_name = "postData")]
-    pub fn post_data(&self) -> Array {
+    pub fn post_data(&self) -> Box<[JsValue]> {
         self.post_data.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_post_data(&mut self, value: Array) {
+    pub fn set_post_data(&mut self, value: Box<[JsValue]>) {
         self.post_data = value;
     }
 

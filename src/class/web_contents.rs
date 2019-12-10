@@ -14,7 +14,7 @@ use crate::{
         WebContentsPrintOptions,
     },
 };
-use js_sys::{Array, Function, JsString, Promise};
+use js_sys::{Function, JsString, Promise};
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -33,7 +33,7 @@ extern {
     pub fn from_id(id: usize) -> WebContents;
 
     #[wasm_bindgen(static_method_of = WebContents)]
-    pub fn get_all_web_contents() -> Array;
+    pub fn get_all_web_contents() -> Box<[JsValue]>;
 
     #[wasm_bindgen(static_method_of = WebContents)]
     pub fn get_focused_web_contents() -> WebContents;
@@ -100,7 +100,7 @@ extern {
     pub fn execute_java_script_in_isolated_world(
         this: &WebContents,
         world_id: u32,
-        scripts: &Array,
+        scripts: Box<[JsValue]>,
         user_gesture: Option<bool>,
     ) -> Promise;
 
@@ -111,7 +111,7 @@ extern {
     pub fn focus(this: &WebContents);
 
     #[wasm_bindgen(method, js_name = "getAllSharedWorkers")]
-    pub fn get_all_shared_workers(this: &WebContents) -> Array;
+    pub fn get_all_shared_workers(this: &WebContents) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, js_name = "getOSProcessId")]
     pub fn get_os_process_id(this: &WebContents) -> u32;

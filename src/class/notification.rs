@@ -1,5 +1,5 @@
 use crate::interface::NotificationOptions;
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -39,10 +39,10 @@ extern {
     //*********************//
 
     #[wasm_bindgen(method, getter)]
-    pub fn actions(this: &Notification) -> Array;
+    pub fn actions(this: &Notification) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, setter)]
-    pub fn set_actions(this: &Notification, value: Array);
+    pub fn set_actions(this: &Notification, value: Box<[JsValue]>);
 
     #[wasm_bindgen(method, getter)]
     pub fn body(this: &Notification) -> JsString;

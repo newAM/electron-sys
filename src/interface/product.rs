@@ -1,4 +1,4 @@
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
@@ -7,7 +7,7 @@ extern {
     pub type Product;
 
     #[wasm_bindgen(method, getter, js_name = "contentLengths")]
-    pub fn content_lengths(this: &Product) -> Array;
+    pub fn content_lengths(this: &Product) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, getter, js_name = "contentVersion")]
     pub fn content_version(this: &Product) -> JsString;
@@ -31,7 +31,7 @@ extern {
     pub fn product_identifier(this: &Product, value: JsString);
 
     #[wasm_bindgen(method, setter, js_name = "contentLengths")]
-    pub fn set_content_lengths(this: &Product, value: Array);
+    pub fn set_content_lengths(this: &Product, value: Box<[JsValue]>);
 
     #[wasm_bindgen(method, setter, js_name = "contentVersion")]
     pub fn set_content_version(this: &Product, value: JsString);

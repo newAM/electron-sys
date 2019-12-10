@@ -1,4 +1,4 @@
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 // NOTE: extends MouseInputEvent
@@ -13,7 +13,7 @@ pub struct MouseWheelInputEvent {
     delta_y: Option<i32>,
     has_precise_scrolling_deltas: Option<bool>,
     kind: JsString,
-    modifiers: Array,
+    modifiers: Box<[JsValue]>,
     wheel_ticks_x: Option<i32>,
     wheel_ticks_y: Option<i32>,
 }
@@ -30,7 +30,7 @@ impl MouseWheelInputEvent {
         delta_y: Option<i32>,
         has_precise_scrolling_deltas: Option<bool>,
         kind: JsString,
-        modifiers: Array,
+        modifiers: Box<[JsValue]>,
         wheel_ticks_x: Option<i32>,
         wheel_ticks_y: Option<i32>,
     ) -> MouseWheelInputEvent {
@@ -119,12 +119,12 @@ impl MouseWheelInputEvent {
     }
 
     #[wasm_bindgen(getter)]
-    pub fn modifiers(&self) -> Array {
+    pub fn modifiers(&self) -> Box<[JsValue]> {
         self.modifiers.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_modifiers(&mut self, value: Array) {
+    pub fn set_modifiers(&mut self, value: Box<[JsValue]>) {
         self.modifiers = value;
     }
 

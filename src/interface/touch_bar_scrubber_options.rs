@@ -1,12 +1,12 @@
-use js_sys::{Array, Function, JsString};
+use js_sys::{Function, JsString};
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-#[derive(Clone, Debug, Eq, PartialEq)]
+#[derive(Clone, Debug, PartialEq)]
 pub struct TouchBarScrubberOptions {
     continuous: Option<bool>,
     highlight: Option<Function>,
-    items: Array,
+    items: Box<[JsValue]>,
     mode: Option<JsString>,
     overlay_style: Option<JsString>,
     select: Option<Function>,
@@ -21,7 +21,7 @@ impl TouchBarScrubberOptions {
     pub fn new_with_values(
         continuous: Option<bool>,
         highlight: Option<Function>,
-        items: Array,
+        items: Box<[JsValue]>,
         mode: Option<JsString>,
         overlay_style: Option<JsString>,
         select: Option<Function>,
@@ -40,7 +40,7 @@ impl TouchBarScrubberOptions {
         }
     }
 
-    pub fn new(items: Array) -> TouchBarScrubberOptions {
+    pub fn new(items: Box<[JsValue]>) -> TouchBarScrubberOptions {
         let continuous = Default::default();
         let highlight = Default::default();
         let mode = Default::default();
@@ -81,12 +81,12 @@ impl TouchBarScrubberOptions {
     }
 
     #[wasm_bindgen(getter)]
-    pub fn items(&self) -> Array {
+    pub fn items(&self) -> Box<[JsValue]> {
         self.items.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_items(&mut self, value: Array) {
+    pub fn set_items(&mut self, value: Box<[JsValue]>) {
         self.items = value;
     }
 

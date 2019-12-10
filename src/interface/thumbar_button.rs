@@ -1,19 +1,24 @@
 use crate::class::NativeImage;
-use js_sys::{Array, Function};
+use js_sys::Function;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 pub struct ThumbarButton {
     click: Function,
-    flags: Option<Array>,
+    flags: Option<Box<[JsValue]>>,
     icon: NativeImage,
-    tooltip: Option<Array>,
+    tooltip: Option<Box<[JsValue]>>,
 }
 
 #[wasm_bindgen]
 impl ThumbarButton {
     #[wasm_bindgen]
-    pub fn new(click: Function, flags: Option<Array>, icon: NativeImage, tooltip: Option<Array>) -> ThumbarButton {
+    pub fn new(
+        click: Function,
+        flags: Option<Box<[JsValue]>>,
+        icon: NativeImage,
+        tooltip: Option<Box<[JsValue]>>,
+    ) -> ThumbarButton {
         ThumbarButton {
             click,
             flags,
@@ -33,12 +38,12 @@ impl ThumbarButton {
     }
 
     #[wasm_bindgen(getter)]
-    pub fn flags(&self) -> Option<Array> {
+    pub fn flags(&self) -> Option<Box<[JsValue]>> {
         self.flags.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_flags(&mut self, value: Option<Array>) {
+    pub fn set_flags(&mut self, value: Option<Box<[JsValue]>>) {
         self.flags = value;
     }
 
@@ -53,12 +58,12 @@ impl ThumbarButton {
     }
 
     #[wasm_bindgen(getter)]
-    pub fn tooltip(&self) -> Option<Array> {
+    pub fn tooltip(&self) -> Option<Box<[JsValue]>> {
         self.tooltip.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_tooltip(&mut self, value: Option<Array>) {
+    pub fn set_tooltip(&mut self, value: Option<Box<[JsValue]>>) {
         self.tooltip = value;
     }
 }

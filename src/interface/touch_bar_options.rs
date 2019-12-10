@@ -1,17 +1,17 @@
-use js_sys::{Array, Object};
+use js_sys::Object;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 #[derive(Clone, Debug, Default, PartialEq)]
 pub struct TouchBarOptions {
     escape_item: Option<Object>,
-    items: Option<Array>,
+    items: Option<Box<[JsValue]>>,
 }
 
 #[wasm_bindgen]
 impl TouchBarOptions {
     #[wasm_bindgen(constructor)]
-    pub fn new_with_values(escape_item: Option<Object>, items: Option<Array>) -> TouchBarOptions {
+    pub fn new_with_values(escape_item: Option<Object>, items: Option<Box<[JsValue]>>) -> TouchBarOptions {
         TouchBarOptions { escape_item, items }
     }
 
@@ -30,12 +30,12 @@ impl TouchBarOptions {
     }
 
     #[wasm_bindgen(getter)]
-    pub fn items(&self) -> Option<Array> {
+    pub fn items(&self) -> Option<Box<[JsValue]>> {
         self.items.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_items(&mut self, value: Option<Array>) {
+    pub fn set_items(&mut self, value: Option<Box<[JsValue]>>) {
         self.items = value;
     }
 }

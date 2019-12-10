@@ -13,7 +13,7 @@ use crate::{
         SetLoginItemSettings,
     },
 };
-use js_sys::{Array, Function, JsString, Promise};
+use js_sys::{Function, JsString, Promise};
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -104,13 +104,13 @@ extern {
     pub fn is_default_protocol_client(this: &App, protocol: JsString, path: Option<JsString>, args: JsString) -> bool;
 
     #[wasm_bindgen(method, js_name = "setUserTasks")]
-    pub fn set_user_tasks(this: &App, task: Array) -> bool;
+    pub fn set_user_tasks(this: &App, task: Box<[JsValue]>) -> bool;
 
     #[wasm_bindgen(method, js_name = "getJumpListSettings")]
     pub fn get_jump_list_settings(this: &App) -> JumpListSettings;
 
     #[wasm_bindgen(method, js_name = "setJumpList")]
-    pub fn set_jump_list(this: &App, categories: Option<Array>) -> JsString;
+    pub fn set_jump_list(this: &App, categories: Option<Box<[JsValue]>>) -> JsString;
 
     #[wasm_bindgen(method, js_name = "requestSingleInstanceLock")]
     pub fn request_single_instance_lock(this: &App) -> bool;
@@ -149,7 +149,7 @@ extern {
     pub fn disable_domain_blocking_for_3d_apis(this: &App);
 
     #[wasm_bindgen(method, js_name = "getAppMetrics")]
-    pub fn get_app_metrics(this: &App) -> Array;
+    pub fn get_app_metrics(this: &App) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, js_name = "getGPUFeatureStatus")]
     pub fn get_gpu_feature_status(this: &App) -> GpuFeatureStatus;

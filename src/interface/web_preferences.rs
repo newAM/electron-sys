@@ -1,12 +1,12 @@
 use crate::{class::Session, interface::DefaultFontFamily};
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 #[derive(Clone, Debug, Default)]
 pub struct WebPreferences {
     accessible_title: Option<JsString>,
-    additional_arguments: Option<Array>,
+    additional_arguments: Option<Box<[JsValue]>>,
     affinity: Option<JsString>,
     allow_running_insecure_content: Option<bool>,
     autoplay_policy: Option<JsString>,
@@ -53,7 +53,7 @@ impl WebPreferences {
     #[wasm_bindgen(constructor)]
     pub fn new_with_values(
         accessible_title: Option<JsString>,
-        additional_arguments: Option<Array>,
+        additional_arguments: Option<Box<[JsValue]>>,
         affinity: Option<JsString>,
         allow_running_insecure_content: Option<bool>,
         autoplay_policy: Option<JsString>,
@@ -148,12 +148,12 @@ impl WebPreferences {
     }
 
     #[wasm_bindgen(getter, js_name = "additionalArguments")]
-    pub fn additional_arguments(&self) -> Option<Array> {
+    pub fn additional_arguments(&self) -> Option<Box<[JsValue]>> {
         self.additional_arguments.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_additional_arguments(&mut self, value: Option<Array>) {
+    pub fn set_additional_arguments(&mut self, value: Option<Box<[JsValue]>>) {
         self.additional_arguments = value;
     }
 

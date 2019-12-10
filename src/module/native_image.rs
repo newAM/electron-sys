@@ -2,7 +2,7 @@ use crate::{
     class::NativeImage,
     interface::{CreateFromBitmapOptions, CreateFromBufferOptions},
 };
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use node_sys::Buffer;
 use wasm_bindgen::prelude::*;
 
@@ -38,7 +38,7 @@ extern {
     pub fn create_from_named_image(
         this: &NativeImageModule,
         image_name: &JsString,
-        hsl_shift: Option<Array>,
+        hsl_shift: Option<Box<[JsValue]>>,
     ) -> NativeImage;
 
     #[wasm_bindgen(method, js_name = "createFromPath")]

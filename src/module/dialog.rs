@@ -10,7 +10,7 @@ use crate::{
         SaveDialogSyncOptions,
     },
 };
-use js_sys::{Array, JsString, Promise};
+use js_sys::{JsString, Promise};
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "electron")]
@@ -59,7 +59,7 @@ extern {
         this: &Dialog,
         browser_window: Option<&BrowserWindow>,
         options: OpenDialogSyncOptions,
-    ) -> Option<Array>;
+    ) -> Option<Box<[JsValue]>>;
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "showSaveDialog")]

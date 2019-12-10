@@ -1,4 +1,4 @@
-use js_sys::{Array, Function, JsString};
+use js_sys::{Function, JsString};
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
@@ -7,7 +7,7 @@ pub struct TouchBarSegmentedControlOptions {
     change: Option<Function>,
     mode: Option<JsString>,
     segment_style: Option<JsString>,
-    segments: Array,
+    segments: Box<[JsValue]>,
     selected_index: Option<usize>,
 }
 
@@ -18,7 +18,7 @@ impl TouchBarSegmentedControlOptions {
         change: Option<Function>,
         mode: Option<JsString>,
         segment_style: Option<JsString>,
-        segments: Array,
+        segments: Box<[JsValue]>,
         selected_index: Option<usize>,
     ) -> TouchBarSegmentedControlOptions {
         TouchBarSegmentedControlOptions {
@@ -30,7 +30,7 @@ impl TouchBarSegmentedControlOptions {
         }
     }
 
-    pub fn new(segments: Array) -> TouchBarSegmentedControlOptions {
+    pub fn new(segments: Box<[JsValue]>) -> TouchBarSegmentedControlOptions {
         let change = Default::default();
         let mode = Default::default();
         let segment_style = Default::default();
@@ -69,12 +69,12 @@ impl TouchBarSegmentedControlOptions {
     }
 
     #[wasm_bindgen(getter)]
-    pub fn segments(&self) -> Array {
+    pub fn segments(&self) -> Box<[JsValue]> {
         self.segments.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_segments(&mut self, value: Array) {
+    pub fn set_segments(&mut self, value: Box<[JsValue]>) {
         self.segments = value;
     }
 

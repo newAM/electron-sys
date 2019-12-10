@@ -1,11 +1,10 @@
 use crate::interface::Size;
-use js_sys::Array;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 #[derive(Clone, Debug, PartialEq)]
 pub struct SourcesOptions {
-    types: Array,
+    types: Box<[JsValue]>,
     thumbnail_size: Option<Size>,
     fetch_window_icons: Option<bool>,
 }
@@ -13,7 +12,11 @@ pub struct SourcesOptions {
 #[wasm_bindgen]
 impl SourcesOptions {
     #[wasm_bindgen(constructor)]
-    pub fn new(types: Array, thumbnail_size: Option<Size>, fetch_window_icons: Option<bool>) -> SourcesOptions {
+    pub fn new(
+        types: Box<[JsValue]>,
+        thumbnail_size: Option<Size>,
+        fetch_window_icons: Option<bool>,
+    ) -> SourcesOptions {
         SourcesOptions {
             types,
             thumbnail_size,
@@ -22,12 +25,12 @@ impl SourcesOptions {
     }
 
     #[wasm_bindgen(getter)]
-    pub fn types(&self) -> Array {
+    pub fn types(&self) -> Box<[JsValue]> {
         self.types.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_types(&mut self, value: Array) {
+    pub fn set_types(&mut self, value: Box<[JsValue]>) {
         self.types = value;
     }
 

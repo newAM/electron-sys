@@ -1,4 +1,4 @@
-use js_sys::{Array, JsString, Promise};
+use js_sys::{JsString, Promise};
 use node_sys::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -27,7 +27,7 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "getProducts")]
-    pub fn get_products(this: &InAppPurchase, product_ids: &Array) -> Promise;
+    pub fn get_products(this: &InAppPurchase, product_ids: Box<[JsValue]>) -> Promise;
 
     #[wasm_bindgen(method, js_name = "getReceiptsURL")]
     pub fn get_receipts_url(this: &InAppPurchase) -> JsString;

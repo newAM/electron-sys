@@ -1,4 +1,4 @@
-use js_sys::{Array, Function, JsString, Promise};
+use js_sys::{Function, JsString, Promise};
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
@@ -75,7 +75,7 @@ extern {
     );
 
     #[wasm_bindgen(method, js_name = "registerSchemesAsPriviledged")]
-    pub fn register_schemes_as_privileged(this: &Protocol, custom_schemes: &Array);
+    pub fn register_schemes_as_privileged(this: &Protocol, custom_schemes: Box<[JsValue]>);
 
     #[wasm_bindgen(method, js_name = "registerStreamProtocol")]
     pub fn register_stream_protocol(

@@ -1,5 +1,5 @@
 use crate::interface::{CrashReport, CrashReporterStartOptions};
-use js_sys::{Array, JsString};
+use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "electron")]
@@ -23,7 +23,7 @@ extern {
     pub fn get_parameters(this: &CrashReporter);
 
     #[wasm_bindgen(method, js_name = "getUploadedReports")]
-    pub fn get_uploaded_reports(this: &CrashReporter) -> Array;
+    pub fn get_uploaded_reports(this: &CrashReporter) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, js_name = "getUploadToServer")]
     pub fn get_upload_to_server(this: &CrashReporter) -> bool;

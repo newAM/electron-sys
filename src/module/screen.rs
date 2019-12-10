@@ -2,7 +2,6 @@ use crate::{
     class::BrowserWindow,
     interface::{Display, Point, Rectangle},
 };
-use js_sys::Array;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "electron")]
@@ -21,7 +20,7 @@ extern {
     pub fn dip_to_screen_rect(this: &Screen, window: BrowserWindow, rect: Rectangle) -> Rectangle;
 
     #[wasm_bindgen(method, js_name = "getCursorScreenPoint")]
-    pub fn get_all_displays(this: &Screen) -> Array;
+    pub fn get_all_displays(this: &Screen) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method, js_name = "getDisplayMatching")]
     pub fn get_display_matching(this: &Screen, rect: Rectangle) -> Display;

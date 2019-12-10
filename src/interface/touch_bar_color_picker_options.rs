@@ -1,10 +1,10 @@
-use js_sys::{Array, Function, JsString};
+use js_sys::{Function, JsString};
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-#[derive(Clone, Debug, Default, Eq, PartialEq)]
+#[derive(Clone, Debug, Default, PartialEq)]
 pub struct TouchBarColorPickerOptions {
-    available_colors: Option<Array>,
+    available_colors: Option<Box<[JsValue]>>,
     change: Option<Function>,
     selected_color: Option<JsString>,
 }
@@ -13,7 +13,7 @@ pub struct TouchBarColorPickerOptions {
 impl TouchBarColorPickerOptions {
     #[wasm_bindgen(constructor)]
     pub fn new_with_values(
-        available_colors: Option<Array>,
+        available_colors: Option<Box<[JsValue]>>,
         change: Option<Function>,
         selected_color: Option<JsString>,
     ) -> TouchBarColorPickerOptions {
@@ -29,12 +29,12 @@ impl TouchBarColorPickerOptions {
     }
 
     #[wasm_bindgen(getter, js_name = "availableColors")]
-    pub fn available_colors(&self) -> Option<Array> {
+    pub fn available_colors(&self) -> Option<Box<[JsValue]>> {
         self.available_colors.clone()
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_available_colors(&mut self, value: Option<Array>) {
+    pub fn set_available_colors(&mut self, value: Option<Box<[JsValue]>>) {
         self.available_colors = value;
     }
 
