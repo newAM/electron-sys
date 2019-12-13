@@ -4,6 +4,10 @@ The [electron-quick-start](https://github.com/electron/electron-quick-start) exa
 
 <img src="../../assets/example.png" />
 
+## Status
+
+Working.
+
 ## Requirements
 
 - [npm](https://nodejs.org/en/download/)

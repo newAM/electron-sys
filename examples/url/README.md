@@ -1,6 +1,10 @@
 # URL
 
-The Electron [URL simple sample](https://github.com/electron/simple-samples/tree/master/url) ported to Rust via wasm-bindgen.
+The Electron [URL](https://github.com/electron/simple-samples/tree/master/url) simple sample ported to Rust via wasm-bindgen.
+
+## Status
+
+Working.
 
 ## Requirements
 
