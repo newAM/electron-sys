@@ -24,6 +24,9 @@ path = "../../../.."
 version = "^0.3.32"
 features = []
 
+[dependencies.node-sys]
+git = "https://github.com/interfaces-rs/node-sys"
+
 [dependencies.wasm-bindgen]
 version = "^0.2.55"
 features = ["strict-macro"]

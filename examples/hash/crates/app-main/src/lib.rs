@@ -1,5 +1,5 @@
 use electron_sys::{app, BrowserWindow, BrowserWindowOptions, WebPreferences};
-use node_sys::{__dirname, path};
+use node_sys::{globals, path};
 use wasm_bindgen::{prelude::*, JsCast};
 
 #[wasm_bindgen(start)]
@@ -13,7 +13,14 @@ pub fn main() -> Result<(), JsValue> {
             opts.set_web_preferences(Some({
                 let mut opts = <WebPreferences as Default>::default();
                 opts.set_preload(Some(path::resolve(
-                    vec![__dirname.clone().into(), "index.js".into()].into_boxed_slice(),
+                    vec![
+                        globals::__dirname.clone().into(),
+                        "..".into(),
+                        "..".into(),
+                        "..".into(),
+                        "index.js".into(),
+                    ]
+                    .into_boxed_slice(),
                 )));
                 opts
             }));
