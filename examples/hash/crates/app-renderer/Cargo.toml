@@ -1,7 +1,7 @@
 [package]
 publish = false
 edition = "2018"
-name = "hash-app-main"
+name = "hash-app-renderer"
 version = "0.1.0"
 authors = ["Darin Morrison <freebroccolo@users.noreply.github.com>"]
 
@@ -14,15 +14,12 @@ doctest = false
 test = false
 
 [dependencies]
-console_error_panic_hook = "^0.1.6"
+console_error_panic_hook = "0.1.6"
+js-sys = "^0.3.32"
 
-[dependencies.electron-sys]
-version = "^0.2.0"
-path = "../../../.."
-
-[dependencies.js-sys]
-version = "^0.3.32"
-features = []
+[dependencies.node-sys]
+# git = "https://github.com/interfaces-rs/node-sys"
+path = "../../../../../node-sys"
 
 [dependencies.wasm-bindgen]
 version = "^0.2.55"
@@ -31,7 +28,12 @@ features = ["strict-macro"]
 [dependencies.web-sys]
 version = "^0.3.32"
 features = [
-    "console"
+  'Document',
+  'Element',
+  'Event',
+  'EventTarget',
+  'HtmlInputElement',
+  'Window',
 ]
 
 [dev-dependencies]

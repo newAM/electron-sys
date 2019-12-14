@@ -5,7 +5,8 @@
   "author": "Darin Morrison <darinmorrison@users.noreply.github.com>",
   "scripts": {
     "pack-app-main": "cd crates/app-main && wasm-pack build --target nodejs",
-    "prestart": "npm run pack-app-main",
+    "pack-app-renderer": "cd crates/app-renderer && wasm-pack build --target nodejs",
+    "prestart": "npm run pack-app-main && npm run pack-app-renderer",
     "start": "electron crates/app-main/pkg/hash_app_main.js"
   },
   "dependencies": {
