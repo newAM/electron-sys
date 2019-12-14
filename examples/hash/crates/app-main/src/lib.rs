@@ -12,8 +12,6 @@ pub fn main() -> Result<(), JsValue> {
             opts.set_height(Some(480));
             opts.set_web_preferences(Some({
                 let mut opts = <WebPreferences as Default>::default();
-                // Disable node integration in remote page
-                opts.set_node_integration(Some(false));
                 opts.set_preload(Some(path::resolve(
                     vec![__dirname.clone().into(), "index.js".into()].into_boxed_slice(),
                 )));
