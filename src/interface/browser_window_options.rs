@@ -162,7 +162,7 @@ impl BrowserWindowOptions {
         Default::default()
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "acceptFirstMouse")]
     pub fn accept_first_mouse(&self) -> Option<bool> {
         self.accept_first_mouse
     }
@@ -172,7 +172,7 @@ impl BrowserWindowOptions {
         self.accept_first_mouse = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "alwaysOnTop")]
     pub fn always_on_top(&self) -> Option<bool> {
         self.always_on_top
     }
@@ -182,7 +182,7 @@ impl BrowserWindowOptions {
         self.always_on_top = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "autoHideMenuBar")]
     pub fn auto_hide_menu_bar(&self) -> Option<bool> {
         self.auto_hide_menu_bar
     }
@@ -192,7 +192,7 @@ impl BrowserWindowOptions {
         self.auto_hide_menu_bar = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "backgroundColor")]
     pub fn background_color(&self) -> Option<JsString> {
         self.background_color.clone()
     }
@@ -222,7 +222,7 @@ impl BrowserWindowOptions {
         self.closable = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "darkTheme")]
     pub fn dark_theme(&self) -> Option<bool> {
         self.dark_theme
     }
@@ -232,7 +232,7 @@ impl BrowserWindowOptions {
         self.dark_theme = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "disableAutoHideCursor")]
     pub fn disable_auto_hide_cursor(&self) -> Option<bool> {
         self.disable_auto_hide_cursor
     }
@@ -242,7 +242,7 @@ impl BrowserWindowOptions {
         self.disable_auto_hide_cursor = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "enableLargerThanScreen")]
     pub fn enable_larger_than_screen(&self) -> Option<bool> {
         self.enable_larger_than_screen
     }
@@ -272,7 +272,7 @@ impl BrowserWindowOptions {
         self.frame = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "fullscreenWindowTitle")]
     pub fn fullscreen_window_title(&self) -> Option<bool> {
         self.fullscreen_window_title
     }
@@ -302,7 +302,7 @@ impl BrowserWindowOptions {
         self.fullscreenable = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "hasShadow")]
     pub fn has_shadow(&self) -> Option<bool> {
         self.has_shadow
     }
@@ -352,7 +352,7 @@ impl BrowserWindowOptions {
         self.kiosk = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "maxHeight")]
     pub fn max_height(&self) -> Option<usize> {
         self.max_height
     }
@@ -362,7 +362,7 @@ impl BrowserWindowOptions {
         self.max_height = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "maxWidth")]
     pub fn max_width(&self) -> Option<usize> {
         self.max_width
     }
@@ -382,7 +382,7 @@ impl BrowserWindowOptions {
         self.maximizable = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "minHeight")]
     pub fn min_height(&self) -> Option<usize> {
         self.min_height
     }
@@ -392,7 +392,7 @@ impl BrowserWindowOptions {
         self.min_height = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "minWidth")]
     pub fn min_width(&self) -> Option<usize> {
         self.min_width
     }
@@ -442,7 +442,7 @@ impl BrowserWindowOptions {
         self.opacity = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "painWhenInitiallyHidden")]
     pub fn paint_when_initially_hidden(&self) -> Option<bool> {
         self.paint_when_initially_hidden
     }
@@ -482,7 +482,7 @@ impl BrowserWindowOptions {
         self.show = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "simpleFullscreen")]
     pub fn simple_fullscreen(&self) -> Option<bool> {
         self.simple_fullscreen
     }
@@ -492,7 +492,7 @@ impl BrowserWindowOptions {
         self.simple_fullscreen = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "skipTaskbar")]
     pub fn skip_taskbar(&self) -> Option<bool> {
         self.skip_taskbar
     }
@@ -502,7 +502,7 @@ impl BrowserWindowOptions {
         self.skip_taskbar = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "tabbingIdentifier")]
     pub fn tabbing_identifier(&self) -> Option<JsString> {
         self.tabbing_identifier.clone()
     }
@@ -512,7 +512,7 @@ impl BrowserWindowOptions {
         self.tabbing_identifier = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "thickFrame")]
     pub fn thick_frame(&self) -> Option<bool> {
         self.thick_frame
     }
@@ -522,7 +522,7 @@ impl BrowserWindowOptions {
         self.thick_frame = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "titleBarStyle")]
     pub fn title_bar_style(&self) -> Option<JsString> {
         self.title_bar_style.clone()
     }
@@ -552,7 +552,7 @@ impl BrowserWindowOptions {
         self.transparent = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "useContentSize")]
     pub fn use_content_size(&self) -> Option<bool> {
         self.use_content_size
     }
@@ -572,7 +572,7 @@ impl BrowserWindowOptions {
         self.vibrancy = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "webPreferences")]
     pub fn web_preferences(&self) -> Option<WebPreferences> {
         self.web_preferences.clone()
     }
@@ -612,7 +612,7 @@ impl BrowserWindowOptions {
         self.y = value;
     }
 
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(getter, js_name = "zoomToPageWidth")]
     pub fn zoom_to_page_width(&self) -> Option<bool> {
         self.zoom_to_page_width
     }
