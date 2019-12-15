@@ -58,6 +58,7 @@ dependencies = [
  "console_error_panic_hook",
  "electron-sys",
  "js-sys",
+ "node-sys",
  "wasm-bindgen",
  "wasm-bindgen-test",
  "web-sys",
