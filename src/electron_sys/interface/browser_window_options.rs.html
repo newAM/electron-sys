@@ -787,7 +787,7 @@
         <span class="ident">Default</span>::<span class="ident">default</span>()
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;acceptFirstMouse&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">accept_first_mouse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">accept_first_mouse</span>
     }
@@ -797,7 +797,7 @@
         <span class="self">self</span>.<span class="ident">accept_first_mouse</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;alwaysOnTop&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">always_on_top</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">always_on_top</span>
     }
@@ -807,7 +807,7 @@
         <span class="self">self</span>.<span class="ident">always_on_top</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;autoHideMenuBar&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">auto_hide_menu_bar</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">auto_hide_menu_bar</span>
     }
@@ -817,7 +817,7 @@
         <span class="self">self</span>.<span class="ident">auto_hide_menu_bar</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;backgroundColor&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">background_color</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">JsString</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">background_color</span>.<span class="ident">clone</span>()
     }
@@ -847,7 +847,7 @@
         <span class="self">self</span>.<span class="ident">closable</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;darkTheme&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">dark_theme</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">dark_theme</span>
     }
@@ -857,7 +857,7 @@
         <span class="self">self</span>.<span class="ident">dark_theme</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;disableAutoHideCursor&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">disable_auto_hide_cursor</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">disable_auto_hide_cursor</span>
     }
@@ -867,7 +867,7 @@
         <span class="self">self</span>.<span class="ident">disable_auto_hide_cursor</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;enableLargerThanScreen&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">enable_larger_than_screen</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">enable_larger_than_screen</span>
     }
@@ -897,7 +897,7 @@
         <span class="self">self</span>.<span class="ident">frame</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;fullscreenWindowTitle&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">fullscreen_window_title</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">fullscreen_window_title</span>
     }
@@ -927,7 +927,7 @@
         <span class="self">self</span>.<span class="ident">fullscreenable</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;hasShadow&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">has_shadow</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">has_shadow</span>
     }
@@ -977,7 +977,7 @@
         <span class="self">self</span>.<span class="ident">kiosk</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;maxHeight&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">max_height</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">usize</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">max_height</span>
     }
@@ -987,7 +987,7 @@
         <span class="self">self</span>.<span class="ident">max_height</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;maxWidth&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">max_width</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">usize</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">max_width</span>
     }
@@ -1007,7 +1007,7 @@
         <span class="self">self</span>.<span class="ident">maximizable</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;minHeight&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">min_height</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">usize</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">min_height</span>
     }
@@ -1017,7 +1017,7 @@
         <span class="self">self</span>.<span class="ident">min_height</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;minWidth&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">min_width</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">usize</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">min_width</span>
     }
@@ -1067,7 +1067,7 @@
         <span class="self">self</span>.<span class="ident">opacity</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;painWhenInitiallyHidden&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">paint_when_initially_hidden</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">paint_when_initially_hidden</span>
     }
@@ -1107,7 +1107,7 @@
         <span class="self">self</span>.<span class="ident">show</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;simpleFullscreen&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">simple_fullscreen</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">simple_fullscreen</span>
     }
@@ -1117,7 +1117,7 @@
         <span class="self">self</span>.<span class="ident">simple_fullscreen</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;skipTaskbar&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">skip_taskbar</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">skip_taskbar</span>
     }
@@ -1127,7 +1127,7 @@
         <span class="self">self</span>.<span class="ident">skip_taskbar</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;tabbingIdentifier&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">tabbing_identifier</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">JsString</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">tabbing_identifier</span>.<span class="ident">clone</span>()
     }
@@ -1137,7 +1137,7 @@
         <span class="self">self</span>.<span class="ident">tabbing_identifier</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;thickFrame&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">thick_frame</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">thick_frame</span>
     }
@@ -1147,7 +1147,7 @@
         <span class="self">self</span>.<span class="ident">thick_frame</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;titleBarStyle&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">title_bar_style</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">JsString</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">title_bar_style</span>.<span class="ident">clone</span>()
     }
@@ -1177,7 +1177,7 @@
         <span class="self">self</span>.<span class="ident">transparent</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;useContentSize&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">use_content_size</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">use_content_size</span>
     }
@@ -1197,7 +1197,7 @@
         <span class="self">self</span>.<span class="ident">vibrancy</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;webPreferences&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">web_preferences</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">WebPreferences</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">web_preferences</span>.<span class="ident">clone</span>()
     }
@@ -1237,7 +1237,7 @@
         <span class="self">self</span>.<span class="ident">y</span> <span class="op">=</span> <span class="ident">value</span>;
     }
 
-    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>)]</span>
+    <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">getter</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;zoomToPageWidth&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">zoom_to_page_width</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">zoom_to_page_width</span>
     }
