@@ -1,4 +1,4 @@
-use electron_sys::{app, BrowserWindow, BrowserWindowOptions, WebPreferences};
+use electron_sys::{app, BrowserWindow, BrowserWindowOptions};
 use node_sys::{globals, path};
 use wasm_bindgen::{prelude::*, JsCast};
 
@@ -10,23 +10,24 @@ pub fn main() -> Result<(), JsValue> {
             let mut opts = <BrowserWindowOptions as Default>::default();
             opts.set_width(Some(640));
             opts.set_height(Some(480));
-            opts.set_web_preferences(Some({
-                let mut opts = <WebPreferences as Default>::default();
-                opts.set_preload(Some(path::resolve(
-                    vec![
-                        globals::__dirname.clone().into(),
-                        "..".into(),
-                        "..".into(),
-                        "..".into(),
-                        "index.js".into(),
-                    ]
-                    .into_boxed_slice(),
-                )));
-                opts
-            }));
             opts.set_show(Some(false));
             opts
         }));
+        {
+            let session = win.web_contents().session();
+            let path = path::resolve(
+                vec![
+                    globals::__dirname.clone().into(),
+                    "..".into(),
+                    "..".into(),
+                    "..".into(),
+                    "index.js".into(),
+                ]
+                .into_boxed_slice(),
+            )
+            .into();
+            session.set_preloads(vec![path].into_boxed_slice());
+        }
         // open the dev tools panel (undocked)
         {
             let activate = Some(false);
