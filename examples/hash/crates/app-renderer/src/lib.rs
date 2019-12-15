@@ -1,7 +1,6 @@
-use js_sys::Reflect;
 use node_sys::crypto;
 use wasm_bindgen::{prelude::*, JsCast};
-use web_sys::{Event, HtmlInputElement};
+use web_sys::HtmlInputElement;
 
 #[wasm_bindgen]
 pub fn handler() -> Result<(), JsValue> {
