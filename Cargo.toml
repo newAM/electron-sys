@@ -62,9 +62,6 @@ wasm-bindgen-test = { version = "=0.3.5" }
 
 [workspace]
 members = [
-  "examples/electron-tray/crates/app-main",
-  "examples/hash/crates/app-main",
-  "examples/hash/crates/app-renderer",
   "examples/quick-start/crates/app-main",
   "examples/quick-start/crates/app-renderer",
   "examples/url/crates/app-main",
