@@ -42,45 +42,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "electron-tray-app-main"
-version = "0.1.0"
-dependencies = [
- "console_error_panic_hook",
- "electron-sys",
- "js-sys",
- "node-sys",
- "wasm-bindgen",
- "wasm-bindgen-test",
-]
-
-[[package]]
-name = "hash-app-main"
-version = "0.1.0"
-dependencies = [
- "console_error_panic_hook",
- "electron-sys",
- "js-sys",
- "node-sys",
- "wasm-bindgen",
- "wasm-bindgen-test",
- "web-sys",
- "wee_alloc",
-]
-
-[[package]]
-name = "hash-app-renderer"
-version = "0.1.0"
-dependencies = [
- "console_error_panic_hook",
- "js-sys",
- "node-sys",
- "wasm-bindgen",
- "wasm-bindgen-test",
- "web-sys",
- "wee_alloc",
-]
-
-[[package]]
 name = "heck"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -140,7 +101,7 @@ checksum = "8452105ba047068f40ff7093dd1d9da90898e63dd61736462e9cdda6a90ad3c3"
 [[package]]
 name = "node-sys"
 version = "0.1.0"
-source = "git+https://github.com/interfaces-rs/node-sys#17f73d818c4fafde1b023d9f19f3dd5739c5e294"
+source = "git+https://github.com/interfaces-rs/node-sys#9502f6a80279391a8481fe940d537259c2c9309e"
 dependencies = [
  "cfg-if",
  "js-sys",
@@ -177,6 +138,7 @@ dependencies = [
  "js-sys",
  "wasm-bindgen",
  "wasm-bindgen-test",
+ "wee_alloc",
 ]
 
 [[package]]
@@ -187,6 +149,7 @@ dependencies = [
  "wasm-bindgen",
  "wasm-bindgen-test",
  "web-sys",
+ "wee_alloc",
 ]
 
 [[package]]
@@ -265,6 +228,7 @@ dependencies = [
  "js-sys",
  "wasm-bindgen",
  "wasm-bindgen-test",
+ "wee_alloc",
 ]
 
 [[package]]
