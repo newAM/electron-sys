@@ -1,4 +1,5 @@
 use electron_sys::{app, process, BrowserWindow, BrowserWindowOptions, WebPreferences};
+use js_sys::JsString;
 use wasm_bindgen::{prelude::*, JsCast};
 
 #[cfg(feature = "wee_alloc")]
@@ -28,8 +29,10 @@ pub fn main() -> Result<(), JsValue> {
         }));
 
         // URL is argument to npm start
-        let url = process.argv().get(2).unchecked_into();
-        window.load_url(&url, None);
+        let default = JsString::from("https://duckduckgo.com");
+        let arg = process.argv();
+        let url = arg.get(2).unwrap_or(&default).unchecked_ref();
+        window.load_url(url, None);
 
         let ready_to_show = {
             let window = window.clone();
