@@ -17,6 +17,6 @@ Working.
 ## Building
 
 ```
-$ npm install
+$ npm ci
 $ npm start
 ```

@@ -15,6 +15,6 @@ Working.
 ## Building
 
 ```
-$ npm install
+$ npm ci
 $ npm start <URL>   # e.g., npm start https://duckduckgo.com
 ```
