@@ -17,7 +17,6 @@ test = false
 default = ["wee_alloc"]
 
 [dependencies]
-console_error_panic_hook = "0.1.6"
 js-sys = "^0.3.32"
 
 [dependencies.node-sys]
@@ -41,6 +40,9 @@ features = [
 [dependencies.wee_alloc]
 version = "^0.4.5"
 optional = true
+
+[target."cfg(debug_assertions)".dependencies]
+console_error_panic_hook = "^0.1.6"
 
 [dev-dependencies]
 wasm-bindgen-test = { version = "=0.3.5" }
