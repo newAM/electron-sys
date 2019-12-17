@@ -9,12 +9,12 @@ authors = ["Darin Morrison <freebroccolo@users.noreply.github.com>"]
 maintenance = { status = "experimental" }
 
 [lib]
-crate-type = ["cdylib", "rlib"]
+crate-type = ["cdylib"]
 doctest = false
 test = false
 
-[dependencies]
-console_error_panic_hook = "0.1.6"
+[features]
+default = ["wee_alloc"]
 
 [dependencies.wasm-bindgen]
 version = "^0.2.55"
@@ -30,5 +30,12 @@ features = [
   'Window',
 ]
 
+[dependencies.wee_alloc]
+version = "^0.4.5"
+optional = true
+
+[target."cfg(debug_assertions)".dependencies]
+console_error_panic_hook = "^0.1.6"
+
 [dev-dependencies]
-wasm-bindgen-test = { version = "=0.3.5" }
+wasm-bindgen-test = { version = "^0.3.5" }

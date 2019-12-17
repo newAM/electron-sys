@@ -31,7 +31,7 @@ opt-level = 'z'
 panic = 'abort'
 
 [features]
-# default = ["wee_alloc"]
+default = ["wee_alloc"]
 
 [dependencies.node-sys]
 git = "https://github.com/interfaces-rs/node-sys"

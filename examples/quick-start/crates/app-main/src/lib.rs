@@ -1,6 +1,10 @@
 use electron_sys::{app, global_shortcut, shell, BrowserWindow, BrowserWindowOptions};
 use wasm_bindgen::{prelude::*, JsCast};
 
+#[cfg(feature = "wee_alloc")]
+#[global_allocator]
+static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
+
 fn create_window() -> BrowserWindow {
     let win = BrowserWindow::new(Some({
         let mut opts = <BrowserWindowOptions as Default>::default();
