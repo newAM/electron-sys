@@ -18,6 +18,12 @@ crate-type = ["cdylib", "rlib"]
 doctest = false
 test = false
 
+[profile.dev]
+codegen-units = 1
+lto = true
+opt-level = 'z'
+panic = 'abort'
+
 [dependencies.node-sys]
 git = "https://github.com/interfaces-rs/node-sys"
 
