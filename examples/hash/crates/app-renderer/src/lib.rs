@@ -2,6 +2,10 @@ use node_sys::crypto;
 use wasm_bindgen::{prelude::*, JsCast};
 use web_sys::HtmlInputElement;
 
+#[cfg(feature = "wee_alloc")]
+#[global_allocator]
+static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
+
 #[wasm_bindgen]
 pub fn handler() -> Result<(), JsValue> {
     console_error_panic_hook::set_once();
