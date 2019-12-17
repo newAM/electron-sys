@@ -9,7 +9,7 @@ authors = ["Darin Morrison <freebroccolo@users.noreply.github.com>"]
 maintenance = { status = "experimental" }
 
 [lib]
-crate-type = ["cdylib", "rlib"]
+crate-type = ["cdylib"]
 doctest = false
 test = false
 
