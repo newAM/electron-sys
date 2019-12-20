@@ -36,9 +36,8 @@ default = ["wee_alloc"]
 [dependencies.node-sys]
 git = "https://github.com/interfaces-rs/node-sys"
 
-[dependencies.js-sys]
-version = "^0.3.32"
-features = []
+[dependencies]
+js-sys = "^0.3.32"
 
 [dependencies.wasm-bindgen]
 version = "^0.2.55"
@@ -62,6 +61,8 @@ wasm-bindgen-test = { version = "=0.3.5" }
 
 [workspace]
 members = [
+  "examples/hash/crates/app-main",
+  "examples/hash/crates/app-renderer",
   "examples/quick-start/crates/app-main",
   "examples/quick-start/crates/app-renderer",
   "examples/url/crates/app-main",
