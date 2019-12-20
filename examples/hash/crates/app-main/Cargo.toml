@@ -21,14 +21,14 @@ version = "^0.2.0"
 path = "../../../.."
 
 [dependencies.js-sys]
-version = "^0.3.32"
+version = "^0.3.33"
 features = []
 
 [dependencies.node-sys]
 git = "https://github.com/interfaces-rs/node-sys"
 
 [dependencies.wasm-bindgen]
-version = "^0.2.55"
+version = "^0.2.56"
 features = ["strict-macro"]
 
 [dependencies.wee_alloc]

@@ -17,11 +17,11 @@ test = false
 default = ["wee_alloc"]
 
 [dependencies.wasm-bindgen]
-version = "^0.2.55"
+version = "^0.2.56"
 features = ["strict-macro"]
 
 [dependencies.web-sys]
-version = "^0.3.32"
+version = "^0.3.33"
 features = [
   'Document',
   'Element',
