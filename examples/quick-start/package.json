@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "author": "Darin Morrison <darinmorrison@users.noreply.github.com>",
   "scripts": {
+    "build": "npm run pack-app-main && npm run pack-app-renderer",
     "pack-app-main": "cd crates/app-main && wasm-pack build --target nodejs",
     "pack-app-renderer": "cd crates/app-renderer && wasm-pack build --target web",
-    "prestart": "npm run pack-app-main && npm run pack-app-renderer",
     "start": "electron crates/app-main/pkg/quick_start_app_main.js"
   },
   "dependencies": {
