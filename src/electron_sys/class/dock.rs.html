@@ -64,13 +64,13 @@
     <span class="comment">//******************//</span>
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">bounce</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Dock</span>, <span class="ident">kind</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">u32</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">bounce</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Dock</span>, <span class="ident">kind</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">u32</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;cancelBounce&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">cancel_bounce</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Dock</span>, <span class="ident">id</span>: <span class="ident">u32</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;downloadFinished&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">download_finished</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Dock</span>, <span class="ident">file_path</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">download_finished</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Dock</span>, <span class="ident">file_path</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getBadge&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_badge</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Dock</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">JsString</span>;
@@ -85,7 +85,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_visible</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Dock</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setBadge&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_badge</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Dock</span>, <span class="ident">text</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_badge</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Dock</span>, <span class="ident">text</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setIcon&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_icon</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Dock</span>, <span class="ident">image</span>: <span class="kw-2">&amp;</span><span class="ident">NativeImage</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;

@@ -230,16 +230,6 @@
 <span id="230">230</span>
 <span id="231">231</span>
 <span id="232">232</span>
-<span id="233">233</span>
-<span id="234">234</span>
-<span id="235">235</span>
-<span id="236">236</span>
-<span id="237">237</span>
-<span id="238">238</span>
-<span id="239">239</span>
-<span id="240">240</span>
-<span id="241">241</span>
-<span id="242">242</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="kw">crate</span>::{
     <span class="ident">class</span>::{<span class="ident">CommandLine</span>, <span class="ident">Dock</span>, <span class="ident">Menu</span>},
@@ -297,7 +287,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">show</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setAppLogsPath&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_app_logs_path</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">path</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">JsString</span><span class="op">&gt;</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_app_logs_path</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">path</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getAppPath&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_app_path</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">JsString</span>;
@@ -307,10 +297,10 @@
 
     <span class="attribute">#[<span class="ident">must_use</span>]</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getFileIcon&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_file_icon</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>, <span class="ident">options</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">GetFileIconOptions</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Promise</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_file_icon</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">options</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">GetFileIconOptions</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Promise</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">catch</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setPath&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_path</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">name</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">JsValue</span><span class="op">&gt;</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_path</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">name</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">JsValue</span><span class="op">&gt;</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getVersion&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_version</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">JsString</span>;
@@ -322,29 +312,19 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_locale_country_code</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;addRecentDocument&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">add_recent_document</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">path</span>: <span class="ident">JsString</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">add_recent_document</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;clearRecentDocuments&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">clear_recent_documents</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setAsDefaultProtocolClient&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_as_default_protocol_client</span>(
-        <span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>,
-        <span class="ident">protocol</span>: <span class="ident">JsString</span>,
-        <span class="ident">path</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">JsString</span><span class="op">&gt;</span>,
-        <span class="ident">args</span>: <span class="ident">JsString</span>,
-    ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_as_default_protocol_client</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">protocol</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">path</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">args</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;removeAsDefaultProtocolClient&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">remove_as_default_protocol_client</span>(
-        <span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>,
-        <span class="ident">protocol</span>: <span class="ident">JsString</span>,
-        <span class="ident">path</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">JsString</span><span class="op">&gt;</span>,
-        <span class="ident">args</span>: <span class="ident">JsString</span>,
-    ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">remove_as_default_protocol_client</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">protocol</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">path</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">args</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;isDefaultProtocolClient&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_default_protocol_client</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">protocol</span>: <span class="ident">JsString</span>, <span class="ident">path</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">JsString</span><span class="op">&gt;</span>, <span class="ident">args</span>: <span class="ident">JsString</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_default_protocol_client</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">protocol</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">path</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">args</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setUserTasks&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_user_tasks</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">task</span>: <span class="ident">Box</span><span class="op">&lt;</span>[<span class="ident">JsValue</span>]<span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
@@ -365,7 +345,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">release_single_instance_lock</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setUserActivity&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_user_activity</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">user_info</span>: <span class="kw-2">&amp;</span><span class="ident">JsValue</span>, <span class="ident">webpage_url</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">JsString</span><span class="op">&gt;</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_user_activity</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">user_info</span>: <span class="kw-2">&amp;</span><span class="ident">JsValue</span>, <span class="ident">webpage_url</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getCurrentActivityType&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_current_activity_type</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">JsString</span>;
@@ -377,10 +357,10 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">resign_current_activity</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;updateCurrentActivity&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">update_current_activity</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">kind</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>, <span class="ident">user_info</span>: <span class="kw-2">&amp;</span><span class="ident">JsValue</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">update_current_activity</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">kind</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">user_info</span>: <span class="kw-2">&amp;</span><span class="ident">JsValue</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setAppUserModelId&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_app_user_model_id</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">id</span>: <span class="ident">JsString</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_app_user_model_id</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">id</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;importCertificate&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">import_certificate</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">options</span>: <span class="ident">ImportCertificateOptions</span>, <span class="ident">callback</span>: <span class="kw-2">&amp;</span><span class="ident">Function</span>);
@@ -399,7 +379,7 @@
 
     <span class="attribute">#[<span class="ident">must_use</span>]</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getGPUInfo&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_gpu_info</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">info_type</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Promise</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_gpu_info</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">info_type</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Promise</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;isUnityRunning&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_unity_running</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
@@ -420,7 +400,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">show_emoji_panel</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;startAccessingSecurityScopedResource&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">start_accessing_security_scoped_resource</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">bookmark_data</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Function</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">start_accessing_security_scoped_resource</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>, <span class="ident">bookmark_data</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Function</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;enableSandbox&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">enable_sandbox</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">App</span>);

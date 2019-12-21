@@ -108,7 +108,7 @@
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Promise</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;showErrBox&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">show_err_box</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Dialog</span>, <span class="ident">title</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>, <span class="ident">content</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">show_err_box</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Dialog</span>, <span class="ident">title</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">content</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>);
 
     <span class="attribute">#[<span class="ident">must_use</span>]</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;showMessageBox&quot;</span>)]</span>

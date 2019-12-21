@@ -167,7 +167,7 @@
         <span class="ident">SetProxyOptions</span>,
     },
 };
-<span class="kw">use</span> <span class="ident">js_sys</span>::{<span class="ident">Function</span>, <span class="ident">JsString</span>, <span class="ident">Promise</span>};
+<span class="kw">use</span> <span class="ident">js_sys</span>::{<span class="ident">Function</span>, <span class="ident">Promise</span>};
 <span class="kw">use</span> <span class="ident">node_sys</span>::<span class="ident">events</span>::<span class="ident">EventEmitter</span>;
 <span class="kw">use</span> <span class="ident">wasm_bindgen</span>::<span class="ident">prelude</span>::<span class="kw-2">*</span>;
 
@@ -183,7 +183,7 @@
     <span class="comment">//****************//</span>
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">static_method_of</span> <span class="op">=</span> <span class="ident">Session</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;fromPartition&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_partition</span>(<span class="ident">partition</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>, <span class="ident">options</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">FromPartitionOptions</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Session</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_partition</span>(<span class="ident">partition</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">options</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">FromPartitionOptions</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Session</span>;
 
     <span class="comment">//*******************//</span>
     <span class="comment">// Static Properties //</span>
@@ -197,7 +197,7 @@
     <span class="comment">//******************//</span>
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;allowNTLMCredentialsForDomains&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">allow_ntlm_credentials_for_domains</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">domains</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">allow_ntlm_credentials_for_domains</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">domains</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>);
 
     <span class="attribute">#[<span class="ident">must_use</span>]</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;clear_auth_cache&quot;</span>)]</span>
@@ -226,7 +226,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">disable_network_emulation</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;downloadURL&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">download_url</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">url</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">download_url</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">url</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;enableNetworkEmulation&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">enable_network_emulation</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">options</span>: <span class="ident">EnableNetworkEmulationOptions</span>);
@@ -236,7 +236,7 @@
 
     <span class="attribute">#[<span class="ident">must_use</span>]</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getBlobData&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_blob_data</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">identifier</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Promise</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_blob_data</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">identifier</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Promise</span>;
 
     <span class="attribute">#[<span class="ident">must_use</span>]</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;getCacheSize&quot;</span>)]</span>
@@ -256,13 +256,13 @@
 
     <span class="attribute">#[<span class="ident">must_use</span>]</span>
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;resolveProxy&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">resolve_proxy</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">url</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Promise</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">resolve_proxy</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">url</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Promise</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setCertificateVerifyProc&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_certificate_verify_proc</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">proc</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">Function</span><span class="op">&gt;</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setDownloadPath&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_download_path</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_download_path</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setPermissionCheckHandler&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_permission_check_handler</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">handler</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">Function</span><span class="op">&gt;</span>);
@@ -278,13 +278,13 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_proxy</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">options</span>: <span class="ident">SetProxyOptions</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Promise</span>;
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setSpellCheckerDictionaryDownloadURL&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_spell_checker_dictionary_download_url</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">url</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_spell_checker_dictionary_download_url</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">url</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setSpellCheckerLanguages&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_spell_checker_languages</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">languages</span>: <span class="ident">Box</span><span class="op">&lt;</span>[<span class="ident">JsValue</span>]<span class="op">&gt;</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;setUserAgent&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_user_agent</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">user_agent</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>, <span class="ident">accept_languages</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">JsString</span><span class="op">&gt;</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_user_agent</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Session</span>, <span class="ident">user_agent</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">accept_languages</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>);
 
     <span class="comment">//*********************//</span>
     <span class="comment">// Instance Properties //</span>

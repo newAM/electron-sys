@@ -166,7 +166,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_fd_limit</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Process</span>, <span class="ident">max_descriptors</span>: <span class="ident">u64</span>);
 
     <span class="attribute">#[<span class="ident">wasm_bindgen</span>(<span class="ident">method</span>, <span class="ident">js_name</span> <span class="op">=</span> <span class="string">&quot;takeHeapSnapshot&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">take_heap_snapshot</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Process</span>, <span class="ident">file_path</span>: <span class="kw-2">&amp;</span><span class="ident">JsString</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">take_heap_snapshot</span>(<span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="ident">Process</span>, <span class="ident">file_path</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
     <span class="comment">//*********************//</span>
     <span class="comment">// Instance Properties //</span>
