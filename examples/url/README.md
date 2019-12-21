@@ -16,5 +16,6 @@ Working.
 
 ```
 $ npm ci
+$ npm run build
 $ npm start <URL>   # e.g., npm start https://duckduckgo.com
 ```
