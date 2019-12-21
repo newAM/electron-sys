@@ -30,8 +30,8 @@ pub fn main() -> Result<(), JsValue> {
 
         // URL is argument to npm start
         let default = JsString::from("https://duckduckgo.com");
-        let arg = process.argv();
-        let url = arg.get(2).unwrap_or(&default).unchecked_ref();
+        let args = process.argv();
+        let url = args.get(2).unwrap_or(&default).unchecked_ref();
         window.load_url(url, None);
 
         let ready_to_show = {
