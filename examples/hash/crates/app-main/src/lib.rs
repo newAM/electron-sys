@@ -26,13 +26,6 @@ pub fn main() -> Result<(), JsValue> {
         }
         // load the html file
         win.load_file(&"../../../index.html", None);
-        // open the dev tools panel (undocked)
-        // {
-        //     let activate = Some(false);
-        //     let mode = "undocked".into();
-        //     let options = Some(electron_sys::OpenDevToolsOptions::new(activate, mode));
-        //     win.web_contents().open_dev_tools(options);
-        // }
     }) as Box<dyn Fn()>);
     app.on("ready".into(), on_ready.as_ref().unchecked_ref());
     on_ready.forget();
