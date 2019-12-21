@@ -1,5 +1,4 @@
 use crate::{class::Session, interface::FromPartitionOptions};
-use js_sys::JsString;
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -15,8 +14,7 @@ extern {
     //******************//
 
     #[wasm_bindgen(method, js_name = "fromPartition")]
-    pub fn from_partition(this: &SessionModule, partition: &JsString, options: Option<FromPartitionOptions>)
-    -> Session;
+    pub fn from_partition(this: &SessionModule, partition: &str, options: Option<FromPartitionOptions>) -> Session;
 
     //*********************//
     // Instance Properties //

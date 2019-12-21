@@ -1,4 +1,4 @@
-use js_sys::{Function, JsString};
+use js_sys::Function;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "electron")]
@@ -10,16 +10,16 @@ extern {
     pub static global_shortcut: GlobalShortcut;
 
     #[wasm_bindgen(method)]
-    pub fn register(this: &GlobalShortcut, accelerator: &JsString, callback: &Function);
+    pub fn register(this: &GlobalShortcut, accelerator: &str, callback: &Function);
 
     #[wasm_bindgen(method, js_name = "registerAll")]
     pub fn register_all(this: &GlobalShortcut, accelerators: Box<[JsValue]>, callback: &Function);
 
     #[wasm_bindgen(method, js_name = "isRegistered")]
-    pub fn is_registered(this: &GlobalShortcut, accelerator: &JsString) -> bool;
+    pub fn is_registered(this: &GlobalShortcut, accelerator: &str) -> bool;
 
     #[wasm_bindgen(method)]
-    pub fn unregister(this: &GlobalShortcut, accelerator: &JsString);
+    pub fn unregister(this: &GlobalShortcut, accelerator: &str);
 
     #[wasm_bindgen(method, js_name = "unregisterAll")]
     pub fn unregister_all(this: &GlobalShortcut);

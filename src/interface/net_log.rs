@@ -13,7 +13,7 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "startLogging")]
-    pub fn start_logging(this: &NetLog, path: &JsString, options: StartLoggingOptions) -> Promise;
+    pub fn start_logging(this: &NetLog, path: &str, options: StartLoggingOptions) -> Promise;
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "stopLogging")]

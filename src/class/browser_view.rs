@@ -2,7 +2,7 @@ use crate::{
     class::WebContents,
     interface::{AutoResizeOptions, BrowserViewOptions, Rectangle},
 };
-use js_sys::{JsString, Object};
+use js_sys::Object;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "electron")]
@@ -47,7 +47,7 @@ extern {
     pub fn set_auto_resize(this: &BrowserView, options: AutoResizeOptions);
 
     #[wasm_bindgen(method, js_name = "set_background_color")]
-    pub fn set_background_color(this: &BrowserView, color: &JsString);
+    pub fn set_background_color(this: &BrowserView, color: &str);
 
     #[wasm_bindgen(method, js_name = "set_bounds")]
     pub fn set_bounds(this: &BrowserView, bounds: Rectangle);

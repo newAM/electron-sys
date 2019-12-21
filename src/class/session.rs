@@ -13,7 +13,7 @@ use crate::{
         SetProxyOptions,
     },
 };
-use js_sys::{Function, JsString, Promise};
+use js_sys::{Function, Promise};
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -29,7 +29,7 @@ extern {
     //****************//
 
     #[wasm_bindgen(static_method_of = Session, js_name = "fromPartition")]
-    pub fn from_partition(partition: &JsString, options: Option<FromPartitionOptions>) -> Session;
+    pub fn from_partition(partition: &str, options: Option<FromPartitionOptions>) -> Session;
 
     //*******************//
     // Static Properties //
@@ -43,7 +43,7 @@ extern {
     //******************//
 
     #[wasm_bindgen(method, js_name = "allowNTLMCredentialsForDomains")]
-    pub fn allow_ntlm_credentials_for_domains(this: &Session, domains: &JsString);
+    pub fn allow_ntlm_credentials_for_domains(this: &Session, domains: &str);
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "clear_auth_cache")]
@@ -72,7 +72,7 @@ extern {
     pub fn disable_network_emulation(this: &Session);
 
     #[wasm_bindgen(method, js_name = "downloadURL")]
-    pub fn download_url(this: &Session, url: &JsString);
+    pub fn download_url(this: &Session, url: &str);
 
     #[wasm_bindgen(method, js_name = "enableNetworkEmulation")]
     pub fn enable_network_emulation(this: &Session, options: EnableNetworkEmulationOptions);
@@ -82,7 +82,7 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "getBlobData")]
-    pub fn get_blob_data(this: &Session, identifier: &JsString) -> Promise;
+    pub fn get_blob_data(this: &Session, identifier: &str) -> Promise;
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "getCacheSize")]
@@ -102,13 +102,13 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "resolveProxy")]
-    pub fn resolve_proxy(this: &Session, url: &JsString) -> Promise;
+    pub fn resolve_proxy(this: &Session, url: &str) -> Promise;
 
     #[wasm_bindgen(method, js_name = "setCertificateVerifyProc")]
     pub fn set_certificate_verify_proc(this: &Session, proc: Option<&Function>);
 
     #[wasm_bindgen(method, js_name = "setDownloadPath")]
-    pub fn set_download_path(this: &Session, path: &JsString);
+    pub fn set_download_path(this: &Session, path: &str);
 
     #[wasm_bindgen(method, js_name = "setPermissionCheckHandler")]
     pub fn set_permission_check_handler(this: &Session, handler: Option<&Function>);
@@ -124,13 +124,13 @@ extern {
     pub fn set_proxy(this: &Session, options: SetProxyOptions) -> Promise;
 
     #[wasm_bindgen(method, js_name = "setSpellCheckerDictionaryDownloadURL")]
-    pub fn set_spell_checker_dictionary_download_url(this: &Session, url: &JsString);
+    pub fn set_spell_checker_dictionary_download_url(this: &Session, url: &str);
 
     #[wasm_bindgen(method, js_name = "setSpellCheckerLanguages")]
     pub fn set_spell_checker_languages(this: &Session, languages: Box<[JsValue]>);
 
     #[wasm_bindgen(method, js_name = "setUserAgent")]
-    pub fn set_user_agent(this: &Session, user_agent: &JsString, accept_languages: Option<JsString>);
+    pub fn set_user_agent(this: &Session, user_agent: &str, accept_languages: Option<&str>);
 
     //*********************//
     // Instance Properties //

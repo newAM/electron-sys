@@ -14,13 +14,13 @@ extern {
     //******************//
 
     #[wasm_bindgen(method)]
-    pub fn bounce(this: &Dock, kind: &JsString) -> u32;
+    pub fn bounce(this: &Dock, kind: &str) -> u32;
 
     #[wasm_bindgen(method, js_name = "cancelBounce")]
     pub fn cancel_bounce(this: &Dock, id: u32);
 
     #[wasm_bindgen(method, js_name = "downloadFinished")]
-    pub fn download_finished(this: &Dock, file_path: &JsString);
+    pub fn download_finished(this: &Dock, file_path: &str);
 
     #[wasm_bindgen(method, js_name = "getBadge")]
     pub fn get_badge(this: &Dock) -> JsString;
@@ -35,7 +35,7 @@ extern {
     pub fn is_visible(this: &Dock) -> bool;
 
     #[wasm_bindgen(method, js_name = "setBadge")]
-    pub fn set_badge(this: &Dock, text: &JsString) -> bool;
+    pub fn set_badge(this: &Dock, text: &str) -> bool;
 
     #[wasm_bindgen(method, js_name = "setIcon")]
     pub fn set_icon(this: &Dock, image: &NativeImage) -> bool;

@@ -1,4 +1,4 @@
-use js_sys::{Function, JsString};
+use js_sys::Function;
 use node_sys::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -11,11 +11,11 @@ extern {
     pub static ipc_main: IpcMain;
 
     #[wasm_bindgen(method)]
-    pub fn handle(this: &IpcMain, channel: &JsString, listener: &Function);
+    pub fn handle(this: &IpcMain, channel: &str, listener: &Function);
 
     #[wasm_bindgen(method, js_name = "handleOnce")]
-    pub fn handle_once(this: &IpcMain, channel: &JsString, listener: &Function);
+    pub fn handle_once(this: &IpcMain, channel: &str, listener: &Function);
 
     #[wasm_bindgen(method, js_name = "removeHandler")]
-    pub fn remove_handler(this: &IpcMain, channel: &JsString);
+    pub fn remove_handler(this: &IpcMain, channel: &str);
 }

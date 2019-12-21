@@ -1,5 +1,5 @@
 use crate::interface::{CookiesGetFilter, CookiesSetDetails};
-use js_sys::{JsString, Promise};
+use js_sys::Promise;
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -24,7 +24,7 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method)]
-    pub fn remove(this: &Cookies, url: &JsString, name: &JsString) -> Promise;
+    pub fn remove(this: &Cookies, url: &str, name: &str) -> Promise;
 
     #[must_use]
     #[wasm_bindgen(method)]

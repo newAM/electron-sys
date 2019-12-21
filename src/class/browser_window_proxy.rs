@@ -1,4 +1,4 @@
-use js_sys::{JsString, Object};
+use js_sys::Object;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(module = "electron")]
@@ -19,13 +19,13 @@ extern {
     pub fn close(this: &BrowserWindowProxy);
 
     #[wasm_bindgen(method)]
-    pub fn eval(this: &BrowserWindowProxy, code: &JsString);
+    pub fn eval(this: &BrowserWindowProxy, code: &str);
 
     #[wasm_bindgen(method)]
     pub fn focus(this: &BrowserWindowProxy);
 
     #[wasm_bindgen(method, js_name = "postMessage")]
-    pub fn post_message(this: &BrowserWindowProxy, message: &JsValue, target_origin: &JsString);
+    pub fn post_message(this: &BrowserWindowProxy, message: &JsValue, target_origin: &str);
 
     #[wasm_bindgen(method)]
     pub fn print(this: &BrowserWindowProxy);

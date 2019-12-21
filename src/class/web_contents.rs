@@ -43,7 +43,7 @@ extern {
     //******************//
 
     #[wasm_bindgen(method, js_name = "addWorkSpace")]
-    pub fn add_work_space(this: &WebContents, path: &JsString);
+    pub fn add_work_space(this: &WebContents, path: &str);
 
     #[wasm_bindgen(method, js_name = "beginFrameSubscription")]
     pub fn begin_frame_subscription(this: &WebContents, only_dirty: bool, callback: &Function);
@@ -93,7 +93,7 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "executeJavaScript")]
-    pub fn execute_java_script(this: &WebContents, code: &JsString, user_gesture: Option<bool>) -> Promise;
+    pub fn execute_java_script(this: &WebContents, code: &str, user_gesture: Option<bool>) -> Promise;
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "executeJavaScriptInIsolatedWorld")]
@@ -105,7 +105,7 @@ extern {
     ) -> Promise;
 
     #[wasm_bindgen(method, js_name = "findInPage")]
-    pub fn find_in_page(this: &WebContents, text: &JsString, options: Option<FindInPageOptions>) -> usize;
+    pub fn find_in_page(this: &WebContents, text: &str, options: Option<FindInPageOptions>) -> usize;
 
     #[wasm_bindgen(method)]
     pub fn focus(this: &WebContents);
@@ -148,11 +148,11 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "insertCSS")]
-    pub fn insert_css(this: &WebContents, css: &JsString, options: Option<InsertCssOptions>) -> Promise;
+    pub fn insert_css(this: &WebContents, css: &str, options: Option<InsertCssOptions>) -> Promise;
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "insertText")]
-    pub fn insert_text(this: &WebContents, text: &JsString) -> Promise;
+    pub fn insert_text(this: &WebContents, text: &str) -> Promise;
 
     #[wasm_bindgen(method, js_name = "inspectElement")]
     pub fn inspect_element(this: &WebContents, x: usize, y: usize);
@@ -164,7 +164,7 @@ extern {
     pub fn inspect_shared_worker(this: &WebContents);
 
     #[wasm_bindgen(method, js_name = "inspectSharedWorkerById")]
-    pub fn inspect_shared_worker_by_id(this: &WebContents, worker_id: &JsString);
+    pub fn inspect_shared_worker_by_id(this: &WebContents, worker_id: &str);
 
     #[wasm_bindgen(method)]
     pub fn invalidate(this: &WebContents);
@@ -204,11 +204,11 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "loadFile")]
-    pub fn load_file(this: &WebContents, file_path: &JsString, options: Option<LoadFileOptions>) -> Promise;
+    pub fn load_file(this: &WebContents, file_path: &str, options: Option<LoadFileOptions>) -> Promise;
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "loadURL")]
-    pub fn load_url(this: &WebContents, url: &JsString, options: Option<LoadUrlOptions>) -> Promise;
+    pub fn load_url(this: &WebContents, url: &str, options: Option<LoadUrlOptions>) -> Promise;
 
     #[wasm_bindgen(method, js_name = "openDevTools")]
     pub fn open_dev_tools(this: &WebContents, options: Option<OpenDevToolsOptions>);
@@ -237,32 +237,32 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "removeInsertedCSS")]
-    pub fn remove_inserted_css(this: &WebContents, key: &JsString) -> Promise;
+    pub fn remove_inserted_css(this: &WebContents, key: &str) -> Promise;
 
     #[wasm_bindgen(method, js_name = "removeWorkSpace")]
-    pub fn remove_work_space(this: &WebContents, path: &JsString);
+    pub fn remove_work_space(this: &WebContents, path: &str);
 
     #[wasm_bindgen(method)]
-    pub fn replace(this: &WebContents, text: &JsString);
+    pub fn replace(this: &WebContents, text: &str);
 
     #[wasm_bindgen(method, js_name = "replaceMisspelling")]
-    pub fn replaceMisspelling(this: &WebContents, text: &JsString);
+    pub fn replaceMisspelling(this: &WebContents, text: &str);
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "savePage")]
-    pub fn save_page(this: &WebContents, full_path: &JsString, save_type: &JsString) -> Promise;
+    pub fn save_page(this: &WebContents, full_path: &str, save_type: &str) -> Promise;
 
     #[wasm_bindgen(method, js_name = "selectAll")]
     pub fn select_all(this: &WebContents);
 
     #[wasm_bindgen(method, variadic)]
-    pub fn send(this: &WebContents, channel: &JsString, args: Box<[JsValue]>);
+    pub fn send(this: &WebContents, channel: &str, args: Box<[JsValue]>);
 
     #[wasm_bindgen(method, js_name = "sendInputEvent")]
     pub fn send_input_event(this: &WebContents, input_event: &InputEvent);
 
     #[wasm_bindgen(method, variadic, js_name = "sendToFrame")]
-    pub fn send_to_frame(this: &WebContents, frame_id: usize, channel: &JsString, args: Box<[JsValue]>);
+    pub fn send_to_frame(this: &WebContents, frame_id: usize, channel: &str, args: Box<[JsValue]>);
 
     #[wasm_bindgen(method, js_name = "setBackgroundThrottling")]
     pub fn set_background_throttling(this: &WebContents, allowed: bool);
@@ -282,7 +282,7 @@ extern {
     pub fn set_visual_zoom_level_limits(this: &WebContents, min: f32, max: f32) -> Promise;
 
     #[wasm_bindgen(method, js_name = "setWebRTCIPHandlingPolicy")]
-    pub fn set_web_rtc_ip_handling_policy(this: &WebContents, policy: &JsString);
+    pub fn set_web_rtc_ip_handling_policy(this: &WebContents, policy: &str);
 
     #[wasm_bindgen(method, js_name = "showDefinitionForSelection")]
     pub fn show_definition_for_selection(this: &WebContents);
@@ -297,7 +297,7 @@ extern {
     pub fn stop(this: &WebContents);
 
     #[wasm_bindgen(method, js_name = "stopFindInPage")]
-    pub fn stop_finding_in_page(this: &WebContents, action: &JsString);
+    pub fn stop_finding_in_page(this: &WebContents, action: &str);
 
     #[wasm_bindgen(method, js_name = "stopPainting")]
     pub fn stop_painting(this: &WebContents);

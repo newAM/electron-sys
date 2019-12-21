@@ -1,4 +1,4 @@
-use js_sys::{JsString, Promise};
+use js_sys::Promise;
 use node_sys::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -12,17 +12,17 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, variadic)]
-    pub fn invoke(this: &IpcRenderer, channel: &JsString, args: Box<[JsValue]>) -> Promise;
+    pub fn invoke(this: &IpcRenderer, channel: &str, args: Box<[JsValue]>) -> Promise;
 
     #[wasm_bindgen(method, variadic)]
-    pub fn send(this: &IpcRenderer, channel: &JsString, args: Box<[JsValue]>);
+    pub fn send(this: &IpcRenderer, channel: &str, args: Box<[JsValue]>);
 
     #[wasm_bindgen(method, variadic, js_name = "sendSync")]
-    pub fn send_sync(this: &IpcRenderer, channel: &JsString, args: Box<[JsValue]>) -> JsValue;
+    pub fn send_sync(this: &IpcRenderer, channel: &str, args: Box<[JsValue]>) -> JsValue;
 
     #[wasm_bindgen(method, variadic, js_name = "sendTo")]
-    pub fn send_to(this: &IpcRenderer, web_contents_id: u32, channel: &JsString, args: Box<[JsValue]>);
+    pub fn send_to(this: &IpcRenderer, web_contents_id: u32, channel: &str, args: Box<[JsValue]>);
 
     #[wasm_bindgen(method, variadic, js_name = "sendToHost")]
-    pub fn send_to_host(this: &IpcRenderer, channel: &JsString, args: Box<[JsValue]>);
+    pub fn send_to_host(this: &IpcRenderer, channel: &str, args: Box<[JsValue]>);
 }

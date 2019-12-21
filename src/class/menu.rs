@@ -46,7 +46,7 @@ extern {
     pub fn close_popup(this: &Menu, browser_window: Option<BrowserWindow>);
 
     #[wasm_bindgen(method, js_name = "getMenuItemById")]
-    pub fn get_menu_item_by_id(this: &Menu, id: &JsString) -> MenuItem;
+    pub fn get_menu_item_by_id(this: &Menu, id: &str) -> MenuItem;
 
     #[wasm_bindgen(method)]
     pub fn insert(this: &Menu, pos: usize, menu_item: &MenuItem);

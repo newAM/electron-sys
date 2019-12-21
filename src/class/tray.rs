@@ -64,8 +64,8 @@ extern {
     pub fn set_pressed_image(this: &Tray, image: NativeImage);
 
     #[wasm_bindgen(method, js_name = "setTitle")]
-    pub fn set_title(this: &Tray, title: &JsString);
+    pub fn set_title(this: &Tray, title: &str);
 
     #[wasm_bindgen(method, js_name = "setToolTip")]
-    pub fn set_tool_tip(this: &Tray, tool_tip: &JsString);
+    pub fn set_tool_tip(this: &Tray, tool_tip: &str);
 }

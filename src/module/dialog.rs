@@ -29,7 +29,7 @@ extern {
     ) -> Promise;
 
     #[wasm_bindgen(method, js_name = "showErrBox")]
-    pub fn show_err_box(this: &Dialog, title: &JsString, content: &JsString);
+    pub fn show_err_box(this: &Dialog, title: &str, content: &str);
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "showMessageBox")]

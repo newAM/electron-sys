@@ -1,4 +1,4 @@
-use js_sys::{JsString, Promise};
+use js_sys::Promise;
 use node_sys::events::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -14,7 +14,7 @@ extern {
     //******************//
 
     #[wasm_bindgen(method)]
-    pub fn attach(this: &Debugger, protocol_version: Option<JsString>);
+    pub fn attach(this: &Debugger, protocol_version: Option<&str>);
 
     #[wasm_bindgen(method)]
     pub fn detach(this: &Debugger);
@@ -24,5 +24,5 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "sendCommand")]
-    pub fn send_command(this: &Debugger, method: &JsString, command_params: &JsValue) -> Promise;
+    pub fn send_command(this: &Debugger, method: &str, command_params: &JsValue) -> Promise;
 }

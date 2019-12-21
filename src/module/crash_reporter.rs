@@ -11,7 +11,7 @@ extern {
     pub static crash_reporter: CrashReporter;
 
     #[wasm_bindgen(method, js_name = "addExtraParameter")]
-    pub fn add_extra_parameter(this: &CrashReporter, key: &JsString, value: &JsString);
+    pub fn add_extra_parameter(this: &CrashReporter, key: &str, value: &str);
 
     #[wasm_bindgen(method, js_name = "getCrashesDirectory")]
     pub fn get_crashes_directory(this: &CrashReporter) -> JsString;
@@ -29,7 +29,7 @@ extern {
     pub fn get_upload_to_server(this: &CrashReporter) -> bool;
 
     #[wasm_bindgen(method, js_name = "removeExtraParameter")]
-    pub fn remove_extra_parameter(this: &CrashReporter, key: &JsString);
+    pub fn remove_extra_parameter(this: &CrashReporter, key: &str);
 
     #[wasm_bindgen(method, js_name = "setUploadToServer")]
     pub fn setUploadToServer(this: &CrashReporter, upload_to_server: bool);

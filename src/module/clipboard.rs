@@ -18,16 +18,16 @@ extern {
     //******************//
 
     #[wasm_bindgen(method, js_name = "availableFormats")]
-    pub fn available_formats(this: &Clipboard, r#type: Option<&JsString>) -> Box<[JsValue]>;
+    pub fn available_formats(this: &Clipboard, r#type: Option<&str>) -> Box<[JsValue]>;
 
     #[wasm_bindgen(method)]
-    pub fn clear(this: &Clipboard, r#type: Option<&JsString>);
+    pub fn clear(this: &Clipboard, r#type: Option<&str>);
 
     #[wasm_bindgen(method)]
-    pub fn has(this: &Clipboard, format: &JsString, r#type: Option<&JsString>) -> bool;
+    pub fn has(this: &Clipboard, format: &str, r#type: Option<&str>) -> bool;
 
     #[wasm_bindgen(method)]
-    pub fn read(this: &Clipboard, format: &JsString) -> JsString;
+    pub fn read(this: &Clipboard, format: &str) -> JsString;
 
     #[wasm_bindgen(method, js_name = "readBookmark")]
     pub fn read_bookmark(this: &Clipboard) -> ReadBookmark;
@@ -39,38 +39,38 @@ extern {
     pub fn read_find_text(this: &Clipboard) -> JsString;
 
     #[wasm_bindgen(method, js_name = "readHTML")]
-    pub fn read_html(this: &Clipboard, kind: &JsString) -> JsString;
+    pub fn read_html(this: &Clipboard, kind: &str) -> JsString;
 
     #[wasm_bindgen(method, js_name = "readImage")]
-    pub fn read_image(this: &Clipboard, kind: &JsString) -> NativeImage;
+    pub fn read_image(this: &Clipboard, kind: &str) -> NativeImage;
 
     #[wasm_bindgen(method, js_name = "readRTF")]
-    pub fn read_rtf(this: &Clipboard, kind: &JsString) -> JsString;
+    pub fn read_rtf(this: &Clipboard, kind: &str) -> JsString;
 
     #[wasm_bindgen(method, js_name = "readText")]
-    pub fn read_text(this: &Clipboard, kind: &JsString) -> JsString;
+    pub fn read_text(this: &Clipboard, kind: &str) -> JsString;
 
     #[wasm_bindgen(method)]
-    pub fn write(this: &Clipboard, data: Data, kind: &JsString);
+    pub fn write(this: &Clipboard, data: Data, kind: &str);
 
     #[wasm_bindgen(method, js_name = "writeBookmark")]
-    pub fn write_bookmark(this: &Clipboard, title: &JsString, url: &JsString, kind: Option<&JsString>);
+    pub fn write_bookmark(this: &Clipboard, title: &str, url: &str, kind: Option<&str>);
 
     #[wasm_bindgen(method, js_name = "writeBuffer")]
-    pub fn write_buffer(this: &Clipboard, format: &JsString, buffer: &Buffer, kind: Option<&JsString>);
+    pub fn write_buffer(this: &Clipboard, format: &str, buffer: &Buffer, kind: Option<&str>);
 
     #[wasm_bindgen(method, js_name = "writeFindText")]
-    pub fn write_find_text(this: &Clipboard, text: &JsString);
+    pub fn write_find_text(this: &Clipboard, text: &str);
 
     #[wasm_bindgen(method, js_name = "writeHTML")]
-    pub fn write_html(this: &Clipboard, markup: &JsString, kind: &JsString);
+    pub fn write_html(this: &Clipboard, markup: &str, kind: &str);
 
     #[wasm_bindgen(method, js_name = "writeImage")]
-    pub fn write_image(this: &Clipboard, image: &NativeImage, kind: &JsString);
+    pub fn write_image(this: &Clipboard, image: &NativeImage, kind: &str);
 
     #[wasm_bindgen(method, js_name = "writeRTF")]
-    pub fn write_rtf(this: &Clipboard, text: &JsString, kind: &JsString);
+    pub fn write_rtf(this: &Clipboard, text: &str, kind: &str);
 
     #[wasm_bindgen(method, js_name = "writeText")]
-    pub fn write_text(this: &Clipboard, text: &JsString, kind: &JsString);
+    pub fn write_text(this: &Clipboard, text: &str, kind: &str);
 }

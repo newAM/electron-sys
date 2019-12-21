@@ -28,10 +28,10 @@ extern {
     //****************//
 
     #[wasm_bindgen(static_method_of = BrowserWindow, js_name = "addDevToolsExtension")]
-    pub fn add_dev_tools_extension(path: &JsString);
+    pub fn add_dev_tools_extension(path: &str);
 
     #[wasm_bindgen(static_method_of = BrowserWindow, js_name = "addExtension")]
-    pub fn add_extension(path: &JsString);
+    pub fn add_extension(path: &str);
 
     #[wasm_bindgen(static_method_of = BrowserWindow, js_name = "fromBrowserView")]
     pub fn from_browser_view(browser_view: &BrowserView) -> Option<BrowserWindow>;
@@ -53,10 +53,10 @@ extern {
     pub fn get_focused_window() -> Option<BrowserWindow>;
 
     #[wasm_bindgen(static_method_of = BrowserWindow, js_name = "removeDevToolsExtension")]
-    pub fn remove_dev_tools_extension(name: &JsString);
+    pub fn remove_dev_tools_extension(name: &str);
 
     #[wasm_bindgen(static_method_of = BrowserWindow, js_name = "removeExtension")]
-    pub fn remove_extension(name: &JsString);
+    pub fn remove_extension(name: &str);
 
     //******************//
     // Instance Methods //
@@ -210,10 +210,10 @@ extern {
     pub fn is_window_message_hooked(this: &BrowserWindow, message: u32) -> bool;
 
     #[wasm_bindgen(method, js_name = "loadFile")]
-    pub fn load_file(this: &BrowserWindow, path: &JsString, options: Option<LoadFileOptions>);
+    pub fn load_file(this: &BrowserWindow, path: &str, options: Option<LoadFileOptions>);
 
     #[wasm_bindgen(method, js_name = "loadURL")]
-    pub fn load_url(this: &BrowserWindow, url: &JsString, options: Option<LoadUrlOptions>);
+    pub fn load_url(this: &BrowserWindow, url: &str, options: Option<LoadUrlOptions>);
 
     #[wasm_bindgen(method)]
     pub fn maximize(this: &BrowserWindow);
@@ -225,7 +225,7 @@ extern {
     pub fn minimize(this: &BrowserWindow);
 
     #[wasm_bindgen(method, js_name = "moveAbove")]
-    pub fn move_above(this: &BrowserWindow, media_source_id: JsString);
+    pub fn move_above(this: &BrowserWindow, media_source_id: &str);
 
     #[wasm_bindgen(method, js_name = "moveTabToNewWindow")]
     pub fn move_tab_to_new_window(this: &BrowserWindow);
@@ -234,7 +234,7 @@ extern {
     pub fn move_top(this: &BrowserWindow);
 
     #[wasm_bindgen(method, js_name = "previewFile")]
-    pub fn preview_file(this: &BrowserWindow, path: &JsString, display_name: Option<&JsString>);
+    pub fn preview_file(this: &BrowserWindow, path: &str, display_name: Option<&str>);
 
     #[wasm_bindgen(method)]
     pub fn reload(this: &BrowserWindow);
@@ -255,7 +255,7 @@ extern {
     pub fn select_previous_tab(this: &BrowserWindow);
 
     #[wasm_bindgen(method, js_name = "setAlwaysOnTop")]
-    pub fn set_always_on_top(this: &BrowserWindow, flag: bool, level: Option<&JsString>, relative_level: Option<i32>);
+    pub fn set_always_on_top(this: &BrowserWindow, flag: bool, level: Option<&str>, relative_level: Option<i32>);
 
     #[wasm_bindgen(method, js_name = "setAppDetails")]
     pub fn set_app_details(this: &BrowserWindow, options: AppDetailsOptions);
@@ -267,7 +267,7 @@ extern {
     pub fn set_auto_hide_cursor(this: &BrowserWindow, auto_hide: bool);
 
     #[wasm_bindgen(method, js_name = "setBackgroundColor")]
-    pub fn set_background_color(this: &BrowserWindow, background_color: &JsString);
+    pub fn set_background_color(this: &BrowserWindow, background_color: &str);
 
     #[wasm_bindgen(method, js_name = "setBounds")]
     pub fn set_bounds(this: &BrowserWindow, bounds: Rectangle, animate: Option<bool>);
@@ -327,7 +327,7 @@ extern {
     pub fn set_opacity(this: &BrowserWindow, opacity: f32);
 
     #[wasm_bindgen(method, js_name = "setOverlayIcon")]
-    pub fn set_overlay_icon(this: &BrowserWindow, overlay: Option<&NativeImage>, description: &JsString);
+    pub fn set_overlay_icon(this: &BrowserWindow, overlay: Option<&NativeImage>, description: &str);
 
     #[wasm_bindgen(method, js_name = "setParentWindow")]
     pub fn set_parent_window(this: &BrowserWindow, parent: Option<&BrowserWindow>);
@@ -339,7 +339,7 @@ extern {
     pub fn set_progress_bar(this: &BrowserWindow, progress: u32, options: Option<ProgressBarOptions>);
 
     #[wasm_bindgen(method, js_name = "setRepresentedFilename")]
-    pub fn set_represented_filename(this: &BrowserWindow, filename: &JsString);
+    pub fn set_represented_filename(this: &BrowserWindow, filename: &str);
 
     #[wasm_bindgen(method, js_name = "setShape")]
     pub fn set_shape(this: &BrowserWindow, rectangles: Box<[JsValue]>);
@@ -363,16 +363,16 @@ extern {
     pub fn set_thumbnail_clip(this: &BrowserWindow, region: Rectangle);
 
     #[wasm_bindgen(method, js_name = "setThumbnailToolTip")]
-    pub fn set_thumbnail_tool_tip(this: &BrowserWindow, tool_tip: &JsString);
+    pub fn set_thumbnail_tool_tip(this: &BrowserWindow, tool_tip: &str);
 
     #[wasm_bindgen(method, js_name = "setTitle")]
-    pub fn set_title(this: &BrowserWindow, title: &JsString);
+    pub fn set_title(this: &BrowserWindow, title: &str);
 
     #[wasm_bindgen(method, js_name = "setTouchBar")]
     pub fn set_touch_bar(this: &BrowserWindow, touch_bar: Option<&TouchBar>);
 
     #[wasm_bindgen(method, js_name = "setVibrancy")]
-    pub fn set_vibrancy(this: &BrowserWindow, kind: Option<&JsString>);
+    pub fn set_vibrancy(this: &BrowserWindow, kind: Option<&str>);
 
     #[wasm_bindgen(method, js_name = "setVisibleOnAllWorkspaces")]
     pub fn set_visible_on_all_workspaces(

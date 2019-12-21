@@ -54,7 +54,7 @@ extern {
     pub fn show(this: &App);
 
     #[wasm_bindgen(method, js_name = "setAppLogsPath")]
-    pub fn set_app_logs_path(this: &App, path: Option<JsString>);
+    pub fn set_app_logs_path(this: &App, path: Option<&str>);
 
     #[wasm_bindgen(method, js_name = "getAppPath")]
     pub fn get_app_path(this: &App) -> JsString;
@@ -64,10 +64,10 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "getFileIcon")]
-    pub fn get_file_icon(this: &App, path: &JsString, options: Option<GetFileIconOptions>) -> Promise;
+    pub fn get_file_icon(this: &App, path: &str, options: Option<GetFileIconOptions>) -> Promise;
 
     #[wasm_bindgen(method, catch, js_name = "setPath")]
-    pub fn set_path(this: &App, name: &JsString, path: &JsString) -> Result<(), JsValue>;
+    pub fn set_path(this: &App, name: &str, path: &str) -> Result<(), JsValue>;
 
     #[wasm_bindgen(method, js_name = "getVersion")]
     pub fn get_version(this: &App) -> JsString;
@@ -79,29 +79,19 @@ extern {
     pub fn get_locale_country_code(this: &App);
 
     #[wasm_bindgen(method, js_name = "addRecentDocument")]
-    pub fn add_recent_document(this: &App, path: JsString);
+    pub fn add_recent_document(this: &App, path: &str);
 
     #[wasm_bindgen(method, js_name = "clearRecentDocuments")]
     pub fn clear_recent_documents(this: &App);
 
     #[wasm_bindgen(method, js_name = "setAsDefaultProtocolClient")]
-    pub fn set_as_default_protocol_client(
-        this: &App,
-        protocol: JsString,
-        path: Option<JsString>,
-        args: JsString,
-    ) -> bool;
+    pub fn set_as_default_protocol_client(this: &App, protocol: &str, path: Option<&str>, args: &str) -> bool;
 
     #[wasm_bindgen(method, js_name = "removeAsDefaultProtocolClient")]
-    pub fn remove_as_default_protocol_client(
-        this: &App,
-        protocol: JsString,
-        path: Option<JsString>,
-        args: JsString,
-    ) -> bool;
+    pub fn remove_as_default_protocol_client(this: &App, protocol: &str, path: Option<&str>, args: &str) -> bool;
 
     #[wasm_bindgen(method, js_name = "isDefaultProtocolClient")]
-    pub fn is_default_protocol_client(this: &App, protocol: JsString, path: Option<JsString>, args: JsString) -> bool;
+    pub fn is_default_protocol_client(this: &App, protocol: &str, path: Option<&str>, args: &str) -> bool;
 
     #[wasm_bindgen(method, js_name = "setUserTasks")]
     pub fn set_user_tasks(this: &App, task: Box<[JsValue]>) -> bool;
@@ -122,7 +112,7 @@ extern {
     pub fn release_single_instance_lock(this: &App);
 
     #[wasm_bindgen(method, js_name = "setUserActivity")]
-    pub fn set_user_activity(this: &App, user_info: &JsValue, webpage_url: Option<JsString>);
+    pub fn set_user_activity(this: &App, user_info: &JsValue, webpage_url: Option<&str>);
 
     #[wasm_bindgen(method, js_name = "getCurrentActivityType")]
     pub fn get_current_activity_type(this: &App) -> JsString;
@@ -134,10 +124,10 @@ extern {
     pub fn resign_current_activity(this: &App);
 
     #[wasm_bindgen(method, js_name = "updateCurrentActivity")]
-    pub fn update_current_activity(this: &App, kind: &JsString, user_info: &JsValue);
+    pub fn update_current_activity(this: &App, kind: &str, user_info: &JsValue);
 
     #[wasm_bindgen(method, js_name = "setAppUserModelId")]
-    pub fn set_app_user_model_id(this: &App, id: JsString);
+    pub fn set_app_user_model_id(this: &App, id: &str);
 
     #[wasm_bindgen(method, js_name = "importCertificate")]
     pub fn import_certificate(this: &App, options: ImportCertificateOptions, callback: &Function);
@@ -156,7 +146,7 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "getGPUInfo")]
-    pub fn get_gpu_info(this: &App, info_type: &JsString) -> Promise;
+    pub fn get_gpu_info(this: &App, info_type: &str) -> Promise;
 
     #[wasm_bindgen(method, js_name = "isUnityRunning")]
     pub fn is_unity_running(this: &App) -> bool;
@@ -177,7 +167,7 @@ extern {
     pub fn show_emoji_panel(this: &App);
 
     #[wasm_bindgen(method, js_name = "startAccessingSecurityScopedResource")]
-    pub fn start_accessing_security_scoped_resource(this: &App, bookmark_data: &JsString) -> Function;
+    pub fn start_accessing_security_scoped_resource(this: &App, bookmark_data: &str) -> Function;
 
     #[wasm_bindgen(method, js_name = "enableSandbox")]
     pub fn enable_sandbox(this: &App);

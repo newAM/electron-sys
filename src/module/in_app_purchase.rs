@@ -23,7 +23,7 @@ extern {
     pub fn finish_all_transactions(this: &InAppPurchase);
 
     #[wasm_bindgen(method, js_name = "finishTransactionsByDate")]
-    pub fn finish_transactions_by_date(this: &InAppPurchase, date: &JsString);
+    pub fn finish_transactions_by_date(this: &InAppPurchase, date: &str);
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "getProducts")]
@@ -34,5 +34,5 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "purchaseProduct")]
-    pub fn purchaseProduct(this: &InAppPurchase, product_id: &JsString, quantity: Option<u32>) -> Promise;
+    pub fn purchaseProduct(this: &InAppPurchase, product_id: &str, quantity: Option<u32>) -> Promise;
 }

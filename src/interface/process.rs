@@ -47,7 +47,7 @@ extern {
     pub fn set_fd_limit(this: &Process, max_descriptors: u64);
 
     #[wasm_bindgen(method, js_name = "takeHeapSnapshot")]
-    pub fn take_heap_snapshot(this: &Process, file_path: &JsString) -> bool;
+    pub fn take_heap_snapshot(this: &Process, file_path: &str) -> bool;
 
     //*********************//
     // Instance Properties //

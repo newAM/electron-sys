@@ -13,15 +13,15 @@ extern {
     //******************//
 
     #[wasm_bindgen(method, js_name = "appendArgument")]
-    pub fn append_argument(this: &CommandLine, value: &JsString);
+    pub fn append_argument(this: &CommandLine, value: &str);
 
     #[wasm_bindgen(method, js_name = "appendSwitch")]
-    pub fn append_switch(this: &CommandLine, switch: &JsString, value: Option<&JsString>);
+    pub fn append_switch(this: &CommandLine, switch: &str, value: Option<&str>);
 
     // FIXME: null is empty string from electron; we could return Option though
     #[wasm_bindgen(method, js_name = "getSwitchValue")]
-    pub fn get_switch_value(this: &CommandLine, switch: &JsString) -> JsString;
+    pub fn get_switch_value(this: &CommandLine, switch: &str) -> JsString;
 
     #[wasm_bindgen(method, js_name = "hasSwitch")]
-    pub fn has_switch(this: &CommandLine, switch: &JsString) -> bool;
+    pub fn has_switch(this: &CommandLine, switch: &str) -> bool;
 }

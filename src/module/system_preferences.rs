@@ -19,7 +19,7 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "askForMediaAccess")]
-    pub fn ask_for_media_access(this: &SystemPreferences, media_type: &JsString) -> Promise;
+    pub fn ask_for_media_access(this: &SystemPreferences, media_type: &str) -> Promise;
 
     #[wasm_bindgen(method, js_name = "canPromptTouchID")]
     pub fn can_prompt_touch_id(this: &SystemPreferences) -> bool;
@@ -34,16 +34,16 @@ extern {
     pub fn get_app_level_appearance(this: &SystemPreferences) -> JsString;
 
     #[wasm_bindgen(method, js_name = "getColor")]
-    pub fn get_color(this: &SystemPreferences, color: &JsString) -> JsString;
+    pub fn get_color(this: &SystemPreferences, color: &str) -> JsString;
 
     #[wasm_bindgen(method, js_name = "getMediaAccessStatus")]
-    pub fn get_media_access_status(this: &SystemPreferences, media_type: &JsString) -> JsString;
+    pub fn get_media_access_status(this: &SystemPreferences, media_type: &str) -> JsString;
 
     #[wasm_bindgen(method, js_name = "getSystemColor")]
-    pub fn get_system_color(this: &SystemPreferences, color: &JsString) -> JsString;
+    pub fn get_system_color(this: &SystemPreferences, color: &str) -> JsString;
 
     #[wasm_bindgen(method, js_name = "getUserDefault")]
-    pub fn get_user_default(this: &SystemPreferences, key: &JsString, kind: &JsString) -> JsValue;
+    pub fn get_user_default(this: &SystemPreferences, key: &str, kind: &str) -> JsValue;
 
     #[wasm_bindgen(method, js_name = "isAeroGlassEnabled")]
     pub fn is_aero_glass_enabled(this: &SystemPreferences) -> bool;
@@ -55,40 +55,40 @@ extern {
     pub fn is_trusted_accessibility_client(this: &SystemPreferences, prompt: bool) -> bool;
 
     #[wasm_bindgen(method, js_name = "postLocalNotification")]
-    pub fn post_local_notification(this: &SystemPreferences, event: &JsString, user_info: &Object);
+    pub fn post_local_notification(this: &SystemPreferences, event: &str, user_info: &Object);
 
     #[wasm_bindgen(method, js_name = "postNotification")]
     pub fn post_notification(
         this: &SystemPreferences,
-        event: &JsString,
+        event: &str,
         user_info: &Object,
         deliver_immediately: Option<bool>,
     );
 
     #[wasm_bindgen(method, js_name = "postWorkspaceNotification")]
-    pub fn post_workspace_notification(this: &SystemPreferences, event: &JsString, user_info: &Object);
+    pub fn post_workspace_notification(this: &SystemPreferences, event: &str, user_info: &Object);
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "promptTouchID")]
-    pub fn prompt_touch_id(this: &SystemPreferences, reason: &JsString) -> Promise;
+    pub fn prompt_touch_id(this: &SystemPreferences, reason: &str) -> Promise;
 
     #[wasm_bindgen(method, js_name = "registerDefaults")]
     pub fn register_defaults(this: &SystemPreferences, defaults: &Object);
 
     #[wasm_bindgen(method, js_name = "removeUserDefaults")]
-    pub fn remove_user_defaults(this: &SystemPreferences, key: &JsString);
+    pub fn remove_user_defaults(this: &SystemPreferences, key: &str);
 
     #[wasm_bindgen(method, js_name = "setUserDefaults")]
-    pub fn set_user_defaults(this: &SystemPreferences, key: &JsString, kind: &JsString, value: &JsString);
+    pub fn set_user_defaults(this: &SystemPreferences, key: &str, kind: &str, value: &str);
 
     #[wasm_bindgen(method, js_name = "subscribeLocalNotification")]
-    pub fn subscribe_local_notification(this: &SystemPreferences, event: &JsString, callback: &Function) -> u32;
+    pub fn subscribe_local_notification(this: &SystemPreferences, event: &str, callback: &Function) -> u32;
 
     #[wasm_bindgen(method, js_name = "subscribeNotification")]
-    pub fn subscribe_notification(this: &SystemPreferences, event: &JsString, callback: &Function) -> u32;
+    pub fn subscribe_notification(this: &SystemPreferences, event: &str, callback: &Function) -> u32;
 
     #[wasm_bindgen(method, js_name = "subscribeWorkspaceNotification")]
-    pub fn subscribe_workspace_notification(this: &SystemPreferences, event: &JsString, callback: &Function);
+    pub fn subscribe_workspace_notification(this: &SystemPreferences, event: &str, callback: &Function);
 
     #[wasm_bindgen(method, js_name = "unsubscribeLocalNotification")]
     pub fn unsubscribe_local_notification(this: &SystemPreferences, id: u32);

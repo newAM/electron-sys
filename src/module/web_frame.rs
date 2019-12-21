@@ -20,7 +20,7 @@ extern {
 
     #[must_use]
     #[wasm_bindgen(method, js_name = "executeJavaScript")]
-    pub fn execute_java_script(this: &WebFrame, code: &JsString, user_gesture: Option<bool>) -> Promise;
+    pub fn execute_java_script(this: &WebFrame, code: &str, user_gesture: Option<bool>) -> Promise;
 
     #[wasm_bindgen(method, js_name = "executeJavaScriptInIsolatedWorld")]
     pub fn execute_java_script_in_isolated_world(
@@ -31,13 +31,13 @@ extern {
     ) -> Promise;
 
     #[wasm_bindgen(method, js_name = "findFrameByName")]
-    pub fn find_frame_by_name(this: &WebFrame, name: &JsString) -> WebFrame;
+    pub fn find_frame_by_name(this: &WebFrame, name: &str) -> WebFrame;
 
     #[wasm_bindgen(method, js_name = "findFrameByRoutingId")]
     pub fn find_frame_by_routing_id(this: &WebFrame, routing_id: u32) -> WebFrame;
 
     #[wasm_bindgen(method, js_name = "getFrameForSelector")]
-    pub fn get_frame_for_selector(this: &WebFrame, selector: &JsString) -> WebFrame;
+    pub fn get_frame_for_selector(this: &WebFrame, selector: &str) -> WebFrame;
 
     #[wasm_bindgen(method, js_name = "getResourceUsage")]
     pub fn get_resource_usage(this: &WebFrame) -> ResourceUsage;
@@ -49,13 +49,13 @@ extern {
     pub fn get_zoom_level(this: &WebFrame) -> Number;
 
     #[wasm_bindgen(method, js_name = "insertCSS")]
-    pub fn insert_css(this: &WebFrame, css: JsString) -> JsString;
+    pub fn insert_css(this: &WebFrame, css: &str) -> JsString;
 
     #[wasm_bindgen(method, js_name = "insertText")]
-    pub fn insert_text(this: &WebFrame, text: JsString);
+    pub fn insert_text(this: &WebFrame, text: &str);
 
     #[wasm_bindgen(method, js_name = "removeInsertedCSS")]
-    pub fn remove_inserted_css(this: &WebFrame, key: JsString);
+    pub fn remove_inserted_css(this: &WebFrame, key: &str);
 
     #[wasm_bindgen(method, js_name = "setIsolatedWorldInfo")]
     pub fn set_isolated_world_info(this: &WebFrame, world_id: u32, info: WorldInfo);
@@ -64,7 +64,7 @@ extern {
     pub fn set_layout_zoom_level_limits(this: &WebFrame, min: &Number, max: &Number);
 
     #[wasm_bindgen(method, js_name = "setSpellCheckProvider")]
-    pub fn set_spell_check_provider(this: &WebFrame, language: &JsString, provider: SpellCheckProvider);
+    pub fn set_spell_check_provider(this: &WebFrame, language: &str, provider: SpellCheckProvider);
 
     #[wasm_bindgen(method, js_name = "setVisualZoomLevelLimits")]
     pub fn set_visual_zoom_level_limits(this: &WebFrame, min: &Number, max: &Number);
