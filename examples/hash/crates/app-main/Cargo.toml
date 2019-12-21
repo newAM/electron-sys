@@ -20,12 +20,12 @@ default = ["wee_alloc"]
 version = "^0.2.0"
 path = "../../../.."
 
+[dependencies]
+node-sys = "^0.2.0"
+
 [dependencies.js-sys]
 version = "^0.3.33"
 features = []
-
-[dependencies.node-sys]
-git = "https://github.com/interfaces-rs/node-sys"
 
 [dependencies.wasm-bindgen]
 version = "^0.2.56"

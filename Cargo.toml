@@ -33,11 +33,9 @@ panic = 'abort'
 [features]
 default = ["wee_alloc"]
 
-[dependencies.node-sys]
-git = "https://github.com/interfaces-rs/node-sys"
-
 [dependencies]
 js-sys = "^0.3.33"
+node-sys = "^0.2.0"
 
 [dependencies.wasm-bindgen]
 version = "^0.2.56"
