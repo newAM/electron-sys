@@ -13,8 +13,8 @@ pub fn main() -> Result<(), JsValue> {
         // create the electron browser window
         let win = BrowserWindow::new(Some({
             let mut opts = <BrowserWindowOptions as Default>::default();
-            opts.set_width(Some(640));
-            opts.set_height(Some(480));
+            opts.set_width(Some(800));
+            opts.set_height(Some(600));
             opts
         }));
         // set the preloads
@@ -25,7 +25,7 @@ pub fn main() -> Result<(), JsValue> {
                 .set_preloads(vec![preload_path.into()].into_boxed_slice());
         }
         // load the html file
-        win.load_file(&"../../../index.html".into(), None);
+        win.load_file(&"../../../index.html", None);
         // open the dev tools panel (undocked)
         // {
         //     let activate = Some(false);

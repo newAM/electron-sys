@@ -29,10 +29,10 @@ pub fn main() -> Result<(), JsValue> {
         }));
 
         // URL is argument to npm start
-        let default = JsString::from("https://duckduckgo.com");
+        let default = JsString::from("https://duckduckgo.com").into();
         let args = process.argv();
-        let url = args.get(2).unwrap_or(&default).unchecked_ref();
-        window.load_url(url, None);
+        let url = args.get(2).unwrap_or(&default).unchecked_ref::<JsString>();
+        window.load_url(String::from(url).as_str(), None);
 
         let ready_to_show = {
             let window = window.clone();
