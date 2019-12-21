@@ -17,7 +17,7 @@ pub fn main() -> Result<(), JsValue> {
             opts.set_height(Some(600));
             opts
         }));
-        // set the preloads
+        // set the preloads (for node integration; needed for usage of "crypto" module)
         {
             let preload_path = path::resolve(vec!["preload.js".into()].into_boxed_slice());
             win.web_contents()
