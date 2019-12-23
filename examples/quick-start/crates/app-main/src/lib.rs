@@ -6,13 +6,12 @@ use wasm_bindgen::{prelude::*, JsCast};
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 fn create_window() -> BrowserWindow {
-    let win = BrowserWindow::new(Some({
+    BrowserWindow::new(Some({
         let mut opts = <BrowserWindowOptions as Default>::default();
         opts.set_width(Some(640));
         opts.set_height(Some(480));
         opts
-    }));
-    win
+    }))
 }
 
 #[wasm_bindgen(start)]
@@ -42,7 +41,7 @@ pub fn main() -> Result<(), JsValue> {
             win.web_contents().open_dev_tools(options);
         }
     }) as Box<dyn Fn()>);
-    app.on("ready".into(), on_ready.as_ref().unchecked_ref());
+    app.on("ready", on_ready.as_ref().unchecked_ref());
     on_ready.forget();
     Ok(())
 }

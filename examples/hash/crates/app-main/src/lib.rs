@@ -27,7 +27,7 @@ pub fn main() -> Result<(), JsValue> {
         // load the html file
         win.load_file(&"../../../index.html", None);
     }) as Box<dyn Fn()>);
-    app.on("ready".into(), on_ready.as_ref().unchecked_ref());
+    app.on("ready", on_ready.as_ref().unchecked_ref());
     on_ready.forget();
     Ok(())
 }

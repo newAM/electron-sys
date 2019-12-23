@@ -15,7 +15,6 @@ pub fn main() -> Result<(), JsValue> {
         .unwrap_throw()
         .unchecked_into::<HtmlTextAreaElement>();
     let handler_clo = {
-        let document = document.clone();
         let text_input = text_area.clone();
         Closure::wrap(Box::new(move || {
             let text = &text_input.value().into();

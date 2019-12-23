@@ -36,11 +36,10 @@ pub fn main() -> Result<(), JsValue> {
 
         let ready_to_show = {
             let window = window.clone();
-            let clo = Closure::wrap(Box::new(move || {
+            Closure::wrap(Box::new(move || {
                 window.maximize();
                 window.show();
-            }) as Box<dyn Fn()>);
-            clo
+            }) as Box<dyn Fn()>)
         };
         // Show window when page is ready
         window.once("ready-to-show", ready_to_show.as_ref().unchecked_ref());
