@@ -18,8 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.40.0
-      RUSTC_WRAPPER: tools/bin/sccache
+      RUSTC_WRAPPER: sccache
     steps:
+      - run: echo "::add-path::$GITHUB_WORKSPACE/tools/bin"
       - uses: actions/checkout@v1
       - name: Prepare for restoring caches
         run: |
@@ -92,8 +93,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.40.0
-      RUSTC_WRAPPER: tools/bin/sccache
+      RUSTC_WRAPPER: sccache
     steps:
+      - run: echo "::add-path::$GITHUB_WORKSPACE/tools/bin"
       - uses: actions/checkout@v1
       - name: Restore /home/runner/tools/bin
         uses: actions/cache@v1
@@ -109,8 +111,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.40.0
-      RUSTC_WRAPPER: tools/bin/sccache
+      RUSTC_WRAPPER: sccache
     steps:
+      - run: echo "::add-path::$GITHUB_WORKSPACE/tools/bin"
       - uses: actions/checkout@v1
       - name: Prepare for restoring caches
         run: |
@@ -160,8 +163,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.40.0
-      RUSTC_WRAPPER: tools/bin/sccache
+      RUSTC_WRAPPER: sccache
     steps:
+      - run: echo "::add-path::$GITHUB_WORKSPACE/tools/bin"
       - uses: actions/checkout@v1
       - name: Prepare for restoring caches
         run: |
@@ -218,6 +222,7 @@ jobs:
     env:
       RUST_TOOLCHAIN: nightly
     steps:
+      - run: echo "::add-path::$GITHUB_WORKSPACE/tools/bin"
       - uses: actions/checkout@v1
       - name: Prepare for restoring caches
         run: |
@@ -243,8 +248,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.40.0
-      RUSTC_WRAPPER: tools/bin/sccache
+      RUSTC_WRAPPER: sccache
     steps:
+      - run: echo "::add-path::$GITHUB_WORKSPACE/tools/bin"
       - uses: actions/checkout@v1
       - name: Prepare for restoring caches
         run: |
@@ -286,7 +292,7 @@ jobs:
         with:
           node-version: "13.x"
       - run: npm ci
-      - run: tools/bin/wasm-pack test --node -- --frozen --all-features --all-targets --benches --bins --examples --tests --workspace
+      - run: wasm-pack test --node -- --frozen --all-features --all-targets --benches --bins --examples --tests --workspace
 
   # verify that the hash example builds on linux
   linux-example-hash:
@@ -295,8 +301,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.40.0
-      RUSTC_WRAPPER: tools/bin/sccache
+      RUSTC_WRAPPER: sccache
     steps:
+      - run: echo "::add-path::$GITHUB_WORKSPACE/tools/bin"
       - uses: actions/checkout@v1
       - name: Prepare for restoring caches
         run: |
@@ -349,8 +356,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.40.0
-      RUSTC_WRAPPER: tools/bin/sccache
+      RUSTC_WRAPPER: sccache
     steps:
+      - run: echo "::add-path::$GITHUB_WORKSPACE/tools/bin"
       - uses: actions/checkout@v1
       - name: Prepare for restoring caches
         run: |
@@ -403,8 +411,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.40.0
-      RUSTC_WRAPPER: tools/bin/sccache
+      RUSTC_WRAPPER: sccache
     steps:
+      - run: echo "::add-path::$GITHUB_WORKSPACE/tools/bin"
       - uses: actions/checkout@v1
       - name: Prepare for restoring caches
         run: |
