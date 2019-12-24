@@ -151,7 +151,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: clippy
-          args: --frozen --all-features --all-targets -- -D warnings
+          args: --all-features --all-targets --benches --bins --examples --tests --workspace -- -D warnings
 
   # build the documentation
   linux-cargo-docs:
