@@ -15,7 +15,7 @@ fn create_window() -> BrowserWindow {
 }
 
 #[wasm_bindgen(start)]
-pub fn main() -> Result<(), JsValue> {
+pub fn run() -> Result<(), JsValue> {
     console_error_panic_hook::set_once();
     let on_ready = Closure::wrap(Box::new(|| {
         // create the electron browser window

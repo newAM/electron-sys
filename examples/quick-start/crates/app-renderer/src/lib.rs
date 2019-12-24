@@ -4,8 +4,8 @@ use wasm_bindgen::prelude::*;
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-#[wasm_bindgen]
-pub fn main() -> Result<(), JsValue> {
+#[wasm_bindgen(start)]
+pub fn run() -> Result<(), JsValue> {
     console_error_panic_hook::set_once();
     let window = web_sys::window().unwrap_throw();
     let document = window.document().unwrap_throw();

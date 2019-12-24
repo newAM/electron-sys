@@ -6,8 +6,8 @@ use web_sys::HtmlTextAreaElement;
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-#[wasm_bindgen]
-pub fn main() -> Result<(), JsValue> {
+#[wasm_bindgen(start)]
+pub fn run() -> Result<(), JsValue> {
     console_error_panic_hook::set_once();
     let document = web_sys::window().unwrap_throw().document().unwrap_throw();
     let text_area = document
