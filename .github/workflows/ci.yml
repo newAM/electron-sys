@@ -31,7 +31,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: tools/bin
-          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/Cargo.lock') }}
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/tools-cache.lock') }}
       - name: Install sccache and wasm-pack
         if: steps.cache-tools-bin.outputs.cache-hit != 'true'
         run: |
