@@ -2,9 +2,9 @@
 # It is not intended for manual editing.
 [[package]]
 name = "anyhow"
-version = "1.0.25"
+version = "1.0.26"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9267dff192e68f3399525901e709a48c1d3982c9c072fa32f2127a0cb0babf14"
+checksum = "7825f6833612eb2414095684fcf6c635becf3ce97fe48cf6421321e93bfbd53c"
 
 [[package]]
 name = "bumpalo"
@@ -30,7 +30,7 @@ dependencies = [
 
 [[package]]
 name = "electron-sys"
-version = "0.3.1"
+version = "0.4.0"
 dependencies = [
  "console_error_panic_hook",
  "js-sys",
@@ -120,9 +120,9 @@ checksum = "8452105ba047068f40ff7093dd1d9da90898e63dd61736462e9cdda6a90ad3c3"
 
 [[package]]
 name = "node-sys"
-version = "0.2.0"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "85a552e7cf050f06e9360b2417ef2bcdf23d8a8a58639e58a3c5be68a07cb4d7"
+checksum = "01c5f73f02a7e6bdeb5d85cb42327649f05c56e19b479398702218f23ece7232"
 dependencies = [
  "cfg-if",
  "js-sys",
