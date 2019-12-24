@@ -289,9 +289,9 @@ jobs:
       - run: tools/bin/wasm-pack test --node -- --frozen --all-features --all-targets --benches --bins --examples --tests --workspace
 
   # verify that the hash example builds on linux
-  linux-examples-hash:
-    name: Run cargo test
-    needs: [skip-commit, linux-cargo-clippy]
+  linux-example-hash:
+    name: Build hash example
+    needs: [skip-commit, linux-cache-tools]
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.40.0
@@ -343,9 +343,9 @@ jobs:
         working-directory: ./examples/hash
 
   # verify that the quick-start example builds on linux
-  linux-examples-quick-start:
-    name: Run cargo test
-    needs: [skip-commit, linux-cargo-clippy]
+  linux-example-quick-start:
+    name: Build quick-start example
+    needs: [skip-commit, linux-cache-tools]
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.40.0
@@ -397,9 +397,9 @@ jobs:
         working-directory: ./examples/quick-start
 
   # verify that the url example builds on linux
-  linux-examples-url:
-    name: Run cargo test
-    needs: [skip-commit, linux-cargo-clippy]
+  linux-example-url:
+    name: Build url example
+    needs: [skip-commit, linux-cache-tools]
     runs-on: ubuntu-latest
     env:
       RUST_TOOLCHAIN: 1.40.0
