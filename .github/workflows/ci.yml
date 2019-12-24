@@ -287,3 +287,165 @@ jobs:
           node-version: "13.x"
       - run: npm ci
       - run: tools/bin/wasm-pack test --node -- --frozen --all-features --all-targets --benches --bins --examples --tests --workspace
+
+  # verify that the hash example builds on linux
+  linux-examples-hash:
+    name: Run cargo test
+    needs: [skip-commit, linux-cargo-clippy]
+    runs-on: ubuntu-latest
+    env:
+      RUST_TOOLCHAIN: 1.40.0
+      RUSTC_WRAPPER: tools/bin/sccache
+    steps:
+      - uses: actions/checkout@v1
+      - name: Prepare for restoring caches
+        run: |
+          rm -rf /home/runner/.rustup
+          rm -rf /home/runner/.cargo/git
+          rm -rf /home/runner/.cargo/registry
+      - name: Restore /home/runner/.rustup
+        uses: actions/cache@v1
+        with:
+          path: /home/runner/.rustup
+          key: rustup-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('rust-toolchain') }}
+      - name: Restore /home/runner/.cache/sccache
+        uses: actions/cache@v1
+        with:
+          path: /home/runner/.cache/sccache
+          key: sccache-[linux-cargo-test]-${{ runner.OS }}-s${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore /home/runner/tools/bin
+        uses: actions/cache@v1
+        with:
+          path: tools/bin
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore /home/runner/.cargo/git
+        uses: actions/cache@v1
+        with:
+          path: /home/runner/.cargo/git
+          key: cargo-git-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore /home/runner/.cargo/registry
+        uses: actions/cache@v1
+        with:
+          path: /home/runner/.cargo/registry
+          key: cargo-registry-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore ./target
+        uses: actions/cache@v1
+        with:
+          path: target
+          key: cargo-build-target-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
+      - name: Configure node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "13.x"
+      - run: npm ci
+        working-directory: ./examples/hash
+      - run: npm run build
+        working-directory: ./examples/hash
+
+  # verify that the quick-start example builds on linux
+  linux-examples-quick-start:
+    name: Run cargo test
+    needs: [skip-commit, linux-cargo-clippy]
+    runs-on: ubuntu-latest
+    env:
+      RUST_TOOLCHAIN: 1.40.0
+      RUSTC_WRAPPER: tools/bin/sccache
+    steps:
+      - uses: actions/checkout@v1
+      - name: Prepare for restoring caches
+        run: |
+          rm -rf /home/runner/.rustup
+          rm -rf /home/runner/.cargo/git
+          rm -rf /home/runner/.cargo/registry
+      - name: Restore /home/runner/.rustup
+        uses: actions/cache@v1
+        with:
+          path: /home/runner/.rustup
+          key: rustup-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('rust-toolchain') }}
+      - name: Restore /home/runner/.cache/sccache
+        uses: actions/cache@v1
+        with:
+          path: /home/runner/.cache/sccache
+          key: sccache-[linux-cargo-test]-${{ runner.OS }}-s${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore /home/runner/tools/bin
+        uses: actions/cache@v1
+        with:
+          path: tools/bin
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore /home/runner/.cargo/git
+        uses: actions/cache@v1
+        with:
+          path: /home/runner/.cargo/git
+          key: cargo-git-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore /home/runner/.cargo/registry
+        uses: actions/cache@v1
+        with:
+          path: /home/runner/.cargo/registry
+          key: cargo-registry-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore ./target
+        uses: actions/cache@v1
+        with:
+          path: target
+          key: cargo-build-target-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
+      - name: Configure node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "13.x"
+      - run: npm ci
+        working-directory: ./examples/quick-start
+      - run: npm run build
+        working-directory: ./examples/quick-start
+
+  # verify that the url example builds on linux
+  linux-examples-url:
+    name: Run cargo test
+    needs: [skip-commit, linux-cargo-clippy]
+    runs-on: ubuntu-latest
+    env:
+      RUST_TOOLCHAIN: 1.40.0
+      RUSTC_WRAPPER: tools/bin/sccache
+    steps:
+      - uses: actions/checkout@v1
+      - name: Prepare for restoring caches
+        run: |
+          rm -rf /home/runner/.rustup
+          rm -rf /home/runner/.cargo/git
+          rm -rf /home/runner/.cargo/registry
+      - name: Restore /home/runner/.rustup
+        uses: actions/cache@v1
+        with:
+          path: /home/runner/.rustup
+          key: rustup-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('rust-toolchain') }}
+      - name: Restore /home/runner/.cache/sccache
+        uses: actions/cache@v1
+        with:
+          path: /home/runner/.cache/sccache
+          key: sccache-[linux-cargo-test]-${{ runner.OS }}-s${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore /home/runner/tools/bin
+        uses: actions/cache@v1
+        with:
+          path: tools/bin
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore /home/runner/.cargo/git
+        uses: actions/cache@v1
+        with:
+          path: /home/runner/.cargo/git
+          key: cargo-git-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore /home/runner/.cargo/registry
+        uses: actions/cache@v1
+        with:
+          path: /home/runner/.cargo/registry
+          key: cargo-registry-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
+      - name: Restore ./target
+        uses: actions/cache@v1
+        with:
+          path: target
+          key: cargo-build-target-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
+      - name: Configure node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "13.x"
+      - run: npm ci
+        working-directory: ./examples/url
+      - run: npm run build
+        working-directory: ./examples/url
