@@ -20,7 +20,7 @@ use wasm_bindgen::prelude::*;
 #[wasm_bindgen(module = "electron")]
 extern {
     #[wasm_bindgen(extends = EventEmitter)]
-    #[derive(Clone, Debug, Eq, PartialEq)]
+    #[derive(Clone, Debug)]
     /// Docs: http://electronjs.org/docs/api/session
     pub type Session;
 

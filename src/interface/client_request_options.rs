@@ -3,7 +3,7 @@ use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-#[derive(Clone, Debug, Default, Eq, PartialEq)]
+#[derive(Clone, Debug, Default)]
 pub struct ClientRequestOptions {
     host: Option<JsString>,
     hostname: Option<JsString>,

@@ -6,7 +6,7 @@ use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
 extern {
     #[wasm_bindgen(extends = NodeProcess)]
-    #[derive(Clone, Debug, PartialEq)]
+    #[derive(Clone, Debug)]
     pub type Process;
 
     //******************//

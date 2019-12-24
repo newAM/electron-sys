@@ -35,7 +35,7 @@ default = ["wee_alloc"]
 
 [dependencies]
 js-sys = "^0.3.33"
-node-sys = "^0.2.0"
+node-sys = "^0.3.0"
 
 [dependencies.wasm-bindgen]
 version = "^0.2.56"

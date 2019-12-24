@@ -3,7 +3,7 @@ use js_sys::Function;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-#[derive(Clone, Debug, Eq, PartialEq)]
+#[derive(Clone, Debug)]
 pub struct PopupOptions {
     callback: Option<Function>,
     positioning_item: Option<usize>,

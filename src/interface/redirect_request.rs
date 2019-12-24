@@ -3,7 +3,7 @@ use js_sys::JsString;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug)]
 pub struct RedirectRequest {
     method: Option<JsString>,
     session: Option<Session>,
