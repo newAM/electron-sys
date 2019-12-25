@@ -112,6 +112,7 @@ jobs:
     needs: [skip-commit, linux-cache-tools]
     runs-on: ubuntu-latest
     env:
+      RUSTFLAGS: -Dwarnings
       RUST_TOOLCHAIN: 1.40.0
       RUSTC_WRAPPER: sccache
     steps:
@@ -156,7 +157,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: check
-          args: --all-features --all-targets --benches --bins --examples --tests --workspace -- -D warnings
+          args: --all-features --all-targets --benches --bins --examples --tests --workspace
 
   # verify that project passes clippy lints on linux
   linux-cargo-clippy:
