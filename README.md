@@ -25,7 +25,7 @@
 
 ## Status
 
-Experimental.
+Experimental but with full coverage of the Electron API.
 
 ## Examples
 
