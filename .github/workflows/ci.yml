@@ -62,7 +62,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: /home/runner/.cache/sccache
-          key: sccache-[linux-cache-tools]-${{ runner.OS }}-s${{ hashFiles('**/Cargo.lock') }}
+          key: sccache-[linux-cache-tools]-${{ runner.OS }}-s${{ hashFiles('.github/caching/sccache.lock') }}
       # if /home/runner/tools/bin wasn't cached, restore /home/runner/.cargo/git
       - name: Restore /home/runner/.cargo/git
         if: "steps.cache-tools-bin.outputs.cache-hit != 'true'"
@@ -131,7 +131,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: /home/runner/.cache/sccache
-          key: sccache-[linux-cargo-clippy]-${{ runner.OS }}-s${{ hashFiles('**/Cargo.lock') }}
+          key: sccache-[linux-cargo-clippy]-${{ runner.OS }}-s${{ hashFiles('.github/caching/sccache.lock') }}
       - name: Restore /home/runner/tools/bin
         uses: actions/cache@v1
         with:
@@ -183,7 +183,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: /home/runner/.cache/sccache
-          key: sccache-[linux-cargo-docs]-${{ runner.OS }}-s${{ hashFiles('**/Cargo.lock') }}
+          key: sccache-[linux-cargo-docs]-${{ runner.OS }}-s${{ hashFiles('.github/caching/sccache.lock') }}
       - name: Restore /home/runner/tools/bin
         uses: actions/cache@v1
         with:
@@ -268,7 +268,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: /home/runner/.cache/sccache
-          key: sccache-[linux-cargo-test]-${{ runner.OS }}-s${{ hashFiles('**/Cargo.lock') }}
+          key: sccache-[linux-cargo-test]-${{ runner.OS }}-s${{ hashFiles('.github/caching/sccache.lock') }}
       - name: Restore /home/runner/tools/bin
         uses: actions/cache@v1
         with:
@@ -321,7 +321,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: /home/runner/.cache/sccache
-          key: sccache-[linux-cargo-test]-${{ runner.OS }}-s${{ hashFiles('**/Cargo.lock') }}
+          key: sccache-[linux-example-hash]-${{ runner.OS }}-s${{ hashFiles('.github/caching/sccache.lock') }}
       - name: Restore /home/runner/tools/bin
         uses: actions/cache@v1
         with:
@@ -376,7 +376,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: /home/runner/.cache/sccache
-          key: sccache-[linux-cargo-test]-${{ runner.OS }}-s${{ hashFiles('**/Cargo.lock') }}
+          key: sccache-[linux-example-quick-start]-${{ runner.OS }}-s${{ hashFiles('.github/caching/sccache.lock') }}
       - name: Restore /home/runner/tools/bin
         uses: actions/cache@v1
         with:
@@ -431,7 +431,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: /home/runner/.cache/sccache
-          key: sccache-[linux-cargo-test]-${{ runner.OS }}-s${{ hashFiles('**/Cargo.lock') }}
+          key: sccache-[linux-example-url]-${{ runner.OS }}-s${{ hashFiles('.github/caching/sccache.lock') }}
       - name: Restore /home/runner/tools/bin
         uses: actions/cache@v1
         with:
