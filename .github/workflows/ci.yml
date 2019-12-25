@@ -104,7 +104,7 @@ jobs:
         with:
           path: tools/bin
           key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/Cargo.lock') }}
-      - run: tools/bin/cargo-audit audit
+      - run: cargo-audit audit
 
   # verify that project builds (via "check" via "clippy") on linux
   linux-cargo-clippy:
