@@ -32,7 +32,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: tools/bin
-          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/tools-cache.lock') }}
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('.github/caching/tools-cache.lock') }}
       - name: Install sccache and wasm-pack
         if: steps.cache-tools-bin.outputs.cache-hit != 'true'
         run: |
@@ -103,7 +103,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: tools/bin
-          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/tools-cache.lock') }}
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('.github/caching/tools-cache.lock') }}
       - run: cargo-audit audit
 
   # verify that project builds (via "check" via "clippy") on linux
@@ -136,7 +136,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: tools/bin
-          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/tools-cache.lock') }}
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('.github/caching/tools-cache.lock') }}
       - name: Restore /home/runner/.cargo/git
         uses: actions/cache@v1
         with:
@@ -188,7 +188,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: tools/bin
-          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/tools-cache.lock') }}
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('.github/caching/tools-cache.lock') }}
       - name: Restore /home/runner/.cargo/git
         uses: actions/cache@v1
         with:
@@ -273,7 +273,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: tools/bin
-          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/tools-cache.lock') }}
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('.github/caching/tools-cache.lock') }}
       - name: Restore /home/runner/.cargo/git
         uses: actions/cache@v1
         with:
@@ -326,7 +326,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: tools/bin
-          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/tools-cache.lock') }}
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('.github/caching/tools-cache.lock') }}
       - name: Restore /home/runner/.cargo/git
         uses: actions/cache@v1
         with:
@@ -381,7 +381,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: tools/bin
-          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/tools-cache.lock') }}
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('.github/caching/tools-cache.lock') }}
       - name: Restore /home/runner/.cargo/git
         uses: actions/cache@v1
         with:
@@ -436,7 +436,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: tools/bin
-          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('**/tools-cache.lock') }}
+          key: tools-bin-${{ runner.OS }}-[${{ env.RUST_TOOLCHAIN }}]-${{ hashFiles('.github/caching/tools-cache.lock') }}
       - name: Restore /home/runner/.cargo/git
         uses: actions/cache@v1
         with:
