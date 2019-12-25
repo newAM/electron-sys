@@ -1,5 +1,5 @@
 use crate::interface::{Dpi, Margins};
-use js_sys::{JsString, Number, Object};
+use js_sys::{JsString, Object};
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
@@ -18,7 +18,7 @@ pub struct WebContentsPrintOptions {
     page_ranges: Option<Object>,
     pages_per_sheet: Option<u32>,
     print_background: Option<bool>,
-    scale_factor: Option<Number>,
+    scale_factor: Option<f64>,
     silent: Option<bool>,
 }
 
@@ -40,7 +40,7 @@ impl WebContentsPrintOptions {
         page_ranges: Option<Object>,
         pages_per_sheet: Option<u32>,
         print_background: Option<bool>,
-        scale_factor: Option<Number>,
+        scale_factor: Option<f64>,
         silent: Option<bool>,
     ) -> WebContentsPrintOptions {
         WebContentsPrintOptions {
@@ -197,12 +197,12 @@ impl WebContentsPrintOptions {
     }
 
     #[wasm_bindgen(getter)]
-    pub fn scale_factor(&self) -> Option<Number> {
-        self.scale_factor.clone()
+    pub fn scale_factor(&self) -> Option<f64> {
+        self.scale_factor
     }
 
     #[wasm_bindgen(setter)]
-    pub fn set_scale_factor(&mut self, value: Option<Number>) {
+    pub fn set_scale_factor(&mut self, value: Option<f64>) {
         self.scale_factor = value;
     }
 

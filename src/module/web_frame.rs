@@ -1,5 +1,5 @@
 use crate::interface::{ResourceUsage, SpellCheckProvider, WorldInfo};
-use js_sys::{JsString, Number, Promise};
+use js_sys::{JsString, Promise};
 use node_sys::EventEmitter;
 use wasm_bindgen::prelude::*;
 
@@ -43,10 +43,10 @@ extern {
     pub fn get_resource_usage(this: &WebFrame) -> ResourceUsage;
 
     #[wasm_bindgen(method, js_name = "getZoomFactor")]
-    pub fn get_zoom_factor(this: &WebFrame) -> Number;
+    pub fn get_zoom_factor(this: &WebFrame) -> f64;
 
     #[wasm_bindgen(method, js_name = "getZoomLevel")]
-    pub fn get_zoom_level(this: &WebFrame) -> Number;
+    pub fn get_zoom_level(this: &WebFrame) -> f64;
 
     #[wasm_bindgen(method, js_name = "insertCSS")]
     pub fn insert_css(this: &WebFrame, css: &str) -> JsString;
@@ -61,19 +61,19 @@ extern {
     pub fn set_isolated_world_info(this: &WebFrame, world_id: u32, info: WorldInfo);
 
     #[wasm_bindgen(method, js_name = "setLayoutZoomLevelLimits")]
-    pub fn set_layout_zoom_level_limits(this: &WebFrame, min: &Number, max: &Number);
+    pub fn set_layout_zoom_level_limits(this: &WebFrame, min: f64, max: f64);
 
     #[wasm_bindgen(method, js_name = "setSpellCheckProvider")]
     pub fn set_spell_check_provider(this: &WebFrame, language: &str, provider: SpellCheckProvider);
 
     #[wasm_bindgen(method, js_name = "setVisualZoomLevelLimits")]
-    pub fn set_visual_zoom_level_limits(this: &WebFrame, min: &Number, max: &Number);
+    pub fn set_visual_zoom_level_limits(this: &WebFrame, min: f64, max: f64);
 
     #[wasm_bindgen(method, js_name = "setZoomFactor")]
-    pub fn set_zoom_factor(this: &WebFrame, factor: &Number);
+    pub fn set_zoom_factor(this: &WebFrame, factor: f64);
 
     #[wasm_bindgen(method, js_name = "setZoomLevel")]
-    pub fn set_zoom_level(this: &WebFrame, level: &Number);
+    pub fn set_zoom_level(this: &WebFrame, level: f64);
 
     //*********************//
     // Instance Properties //
