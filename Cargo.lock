@@ -120,9 +120,9 @@ checksum = "8452105ba047068f40ff7093dd1d9da90898e63dd61736462e9cdda6a90ad3c3"
 
 [[package]]
 name = "node-sys"
-version = "0.3.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "01c5f73f02a7e6bdeb5d85cb42327649f05c56e19b479398702218f23ece7232"
+checksum = "065c1cf29de830520a5c53050329fed0d8ffcd6928ed03187b39bfb6fdf7bf03"
 dependencies = [
  "cfg-if",
  "js-sys",
