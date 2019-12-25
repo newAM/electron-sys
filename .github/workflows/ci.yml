@@ -206,9 +206,9 @@ jobs:
           path: target
           key: cargo-build-target-${{ runner.OS }}-${{ hashFiles('**/Cargo.lock') }}
       - name: Run cargo clippy
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/clippy-check@v1
         with:
-          command: clippy
+          token: ${{ secrets.GITHUB_TOKEN }}
           args: --all-features --all-targets --benches --bins --examples --tests --workspace -- -D warnings
 
   # build the documentation
