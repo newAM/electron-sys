@@ -6,7 +6,7 @@ The Electron [Activity Monitor](https://github.com/electron/simple-samples/tree/
 
 ## Status
 
-Not yet completed.
+Working.
 
 ## Requirements
 
