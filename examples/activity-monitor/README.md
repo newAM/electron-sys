@@ -2,8 +2,6 @@
 
 The Electron [Hash](https://github.com/electron/simple-samples/tree/master/activity-monitor) simple sample ported to Rust via wasm-bindgen.
 
-<img src="../../assets/hash.png" />
-
 ## Status
 
 Not yet completed.
