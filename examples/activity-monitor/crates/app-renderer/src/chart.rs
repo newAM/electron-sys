@@ -263,10 +263,10 @@ extern {
     pub type ChartDataSets;
 
     #[wasm_bindgen(method, getter)]
-    pub fn data(this: &ChartDataSets) -> Box<[JsValue]>;
+    pub fn data(this: &ChartDataSets) -> Option<Box<[JsValue]>>;
 
     #[wasm_bindgen(method, setter)]
-    pub fn set_data(this: &ChartDataSets, value: Box<[JsValue]>);
+    pub fn set_data(this: &ChartDataSets, value: Option<Box<[JsValue]>>);
 }
 
 #[wasm_bindgen]
