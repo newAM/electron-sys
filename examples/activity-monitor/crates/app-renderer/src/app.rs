@@ -7,6 +7,7 @@ use crate::chart::{
     ChartOptions,
     ChartTitleOptions,
 };
+use js_sys::Function;
 use node_sys::{os, CpuInfo};
 use wasm_bindgen::{prelude::*, JsCast};
 use web_sys::HtmlCanvasElement;
@@ -104,7 +105,14 @@ fn get_cpu_times(cpu_info: &CpuInfo) -> [f64; 3] {
 
 #[allow(dead_code)]
 fn draw_chart() {
-    unimplemented!("draw_chart")
+    let window = web_sys::window().unwrap_throw();
+    let clo = Closure::wrap(Box::new(update_datasets) as Box<dyn Fn()>);
+    let handler = clo.as_ref().unchecked_ref::<Function>();
+    let timeout = 1000;
+    window
+        .set_interval_with_callback_and_timeout_and_arguments_0(handler, timeout)
+        .unwrap_throw();
+    clo.forget();
 }
 
 #[wasm_bindgen(start)]
