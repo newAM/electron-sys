@@ -79,13 +79,13 @@ fn get_cpus() -> impl Iterator<Item = CpuInfo> {
 }
 
 #[allow(dead_code)]
-fn set_last_measure_times<T>(cpus: T)
-where
-    T: Iterator<Item = CpuInfo>,
-{
-    for (_i, _cpu) in cpus.enumerate() {
-        unimplemented!("FIXME")
+fn set_last_measure_times() {
+    LAST_MEASURE_TIMES.with(|times| {
+        let mut times = times.borrow_mut();
+        for (i, cpu) in get_cpus().enumerate() {
+            times[i] = get_cpu_times(&cpu);
     }
+    });
 }
 
 #[allow(dead_code)]
