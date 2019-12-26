@@ -211,49 +211,28 @@ impl ChartTitleOptions {
 }
 
 #[wasm_bindgen]
-#[derive(Debug, Default, Clone)]
-pub struct ChartOptions {
-    legend: Option<ChartLegendOptions>,
-    maintain_aspect_ratio: Option<bool>,
-    title: Option<ChartTitleOptions>,
-}
+extern {
+    #[wasm_bindgen(extends = Object)]
+    #[derive(Debug, Clone)]
+    pub type ChartOptions;
 
-#[wasm_bindgen]
-impl ChartOptions {
-    #[wasm_bindgen(constructor)]
-    pub fn new() -> ChartOptions {
-        Default::default()
-    }
+    #[wasm_bindgen(method, getter)]
+    pub fn legend(this: &ChartOptions) -> Option<ChartLegendOptions>;
 
-    #[wasm_bindgen(getter)]
-    pub fn legend(&self) -> Option<ChartLegendOptions> {
-        self.legend.clone()
-    }
+    #[wasm_bindgen(method, setter)]
+    pub fn set_legend(this: &ChartOptions, value: Option<ChartLegendOptions>);
 
-    #[wasm_bindgen(setter)]
-    pub fn set_legend(&mut self, value: Option<ChartLegendOptions>) {
-        self.legend = value;
-    }
+    #[wasm_bindgen(method, getter, js_name = "maintainAspectRatio")]
+    pub fn maintain_aspect_ratio(this: &ChartOptions) -> Option<bool>;
 
-    #[wasm_bindgen(getter, js_name = "maintainAspectRatio")]
-    pub fn maintain_aspect_ratio(&self) -> Option<bool> {
-        self.maintain_aspect_ratio
-    }
+    #[wasm_bindgen(method, setter, js_name = "maintainAspectRatio")]
+    pub fn set_maintain_aspect_ratio(this: &ChartOptions, value: Option<bool>);
 
-    #[wasm_bindgen(setter)]
-    pub fn set_maintain_aspect_ratio(&mut self, value: Option<bool>) {
-        self.maintain_aspect_ratio = value;
-    }
+    #[wasm_bindgen(method, getter)]
+    pub fn title(this: &ChartOptions) -> Option<ChartTitleOptions>;
 
-    #[wasm_bindgen(getter)]
-    pub fn title(&self) -> Option<ChartTitleOptions> {
-        self.title.clone()
-    }
-
-    #[wasm_bindgen(setter)]
-    pub fn set_title(&mut self, value: Option<ChartTitleOptions>) {
-        self.title = value;
-    }
+    #[wasm_bindgen(method, setter)]
+    pub fn set_title(this: &ChartOptions, value: Option<ChartTitleOptions>);
 }
 
 #[wasm_bindgen]

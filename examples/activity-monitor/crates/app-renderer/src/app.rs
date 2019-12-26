@@ -8,7 +8,7 @@ use crate::chart::{
     ChartOptions,
     ChartTitleOptions,
 };
-use js_sys::Function;
+use js_sys::{Function, Object};
 use node_sys::{os, CpuInfo};
 use std::cell::RefCell;
 use wasm_bindgen::{prelude::*, JsCast};
@@ -39,7 +39,7 @@ thread_local! {
                 data
             }));
             options.set_options(Some({
-                let mut options = ChartOptions::new();
+                let options = Object::new().unchecked_into::<ChartOptions>();
                 options.set_maintain_aspect_ratio(Some(false));
                 options.set_title(Some({
                     let mut title = ChartTitleOptions::new();
