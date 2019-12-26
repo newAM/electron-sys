@@ -1,4 +1,4 @@
-use js_sys::JsString;
+use js_sys::{JsString, Object};
 use wasm_bindgen::prelude::*;
 use web_sys::HtmlCanvasElement;
 
@@ -258,6 +258,7 @@ impl ChartOptions {
 
 #[wasm_bindgen]
 extern {
+    #[wasm_bindgen(extends = Object)]
     #[derive(Debug, Clone)]
     pub type ChartDataSets;
 
