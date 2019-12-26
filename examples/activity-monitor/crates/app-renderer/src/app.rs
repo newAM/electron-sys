@@ -78,10 +78,7 @@ fn get_cpus() -> impl Iterator<Item = CpuInfo> {
 
 fn set_last_measure_times() {
     LAST_MEASURE_TIMES.with(|times| {
-        let mut times = times.borrow_mut();
-        for (i, cpu) in get_cpus().enumerate() {
-            times[i] = get_cpu_times(&cpu);
-        }
+        *times.borrow_mut() = get_cpus().map(|cpu| get_cpu_times(&cpu)).collect::<Vec<_>>();
     });
 }
 
