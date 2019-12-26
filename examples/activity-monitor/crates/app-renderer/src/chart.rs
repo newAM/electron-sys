@@ -267,6 +267,12 @@ extern {
 
     #[wasm_bindgen(method, setter)]
     pub fn set_data(this: &ChartDataSets, value: Option<Box<[JsValue]>>);
+
+    #[wasm_bindgen(method, getter, js_name = "backgroundColor")]
+    pub fn background_color(this: &ChartDataSets) -> Option<Box<[JsValue]>>;
+
+    #[wasm_bindgen(method, setter, js_name = "backgroundColor")]
+    pub fn set_background_color(this: &ChartDataSets, value: Option<Box<[JsValue]>>);
 }
 
 #[wasm_bindgen]
