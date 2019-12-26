@@ -9,6 +9,7 @@ use crate::chart::{
 };
 use js_sys::Function;
 use node_sys::{os, CpuInfo};
+use std::cell::RefCell;
 use wasm_bindgen::{prelude::*, JsCast};
 use web_sys::HtmlCanvasElement;
 
@@ -69,7 +70,7 @@ thread_local! {
 }
 
 thread_local! {
-    static LAST_MEASURE_TIMES: Box<[[f64; 3]]> = Box::new([]);
+    static LAST_MEASURE_TIMES: RefCell<Vec<[f64; 3]>> = RefCell::new(vec![]);
 }
 
 #[allow(dead_code)]
