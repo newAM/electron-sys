@@ -154,60 +154,34 @@ impl ChartLegendLabelOptions {
 }
 
 #[wasm_bindgen]
-#[derive(Debug, Default, Clone)]
-pub struct ChartTitleOptions {
-    display: Option<bool>,
-    font_color: Option<JsString>,
-    font_size: Option<u8>,
-    text: Option<JsString>,
-}
+extern {
+    #[wasm_bindgen(extends = Object)]
+    #[derive(Debug, Clone)]
+    pub type ChartTitleOptions;
 
-#[wasm_bindgen]
-impl ChartTitleOptions {
-    #[wasm_bindgen(constructor)]
-    pub fn new() -> ChartTitleOptions {
-        Default::default()
-    }
+    #[wasm_bindgen(method, getter)]
+    pub fn display(this: &ChartTitleOptions) -> Option<bool>;
 
-    #[wasm_bindgen(getter)]
-    pub fn display(&self) -> Option<bool> {
-        self.display
-    }
+    #[wasm_bindgen(method, setter)]
+    pub fn set_display(this: &ChartTitleOptions, value: Option<bool>);
 
-    #[wasm_bindgen(setter)]
-    pub fn set_display(&mut self, value: Option<bool>) {
-        self.display = value;
-    }
+    #[wasm_bindgen(method, getter, js_name = "fontColor")]
+    pub fn font_color(this: &ChartTitleOptions) -> Option<JsString>;
 
-    #[wasm_bindgen(getter, js_name = "fontColor")]
-    pub fn font_color(&self) -> Option<JsString> {
-        self.font_color.clone()
-    }
+    #[wasm_bindgen(method, setter)]
+    pub fn set_font_color(this: &ChartTitleOptions, value: Option<JsString>);
 
-    #[wasm_bindgen(setter)]
-    pub fn set_font_color(&mut self, value: Option<JsString>) {
-        self.font_color = value;
-    }
+    #[wasm_bindgen(method, getter, js_name = "fontSize")]
+    pub fn font_size(this: &ChartTitleOptions) -> Option<u8>;
 
-    #[wasm_bindgen(getter, js_name = "fontSize")]
-    pub fn font_size(&self) -> Option<u8> {
-        self.font_size
-    }
+    #[wasm_bindgen(method, setter, js_name = "fontSize")]
+    pub fn set_font_size(this: &ChartTitleOptions, value: Option<u8>);
 
-    #[wasm_bindgen(setter)]
-    pub fn set_font_size(&mut self, value: Option<u8>) {
-        self.font_size = value;
-    }
+    #[wasm_bindgen(method, getter)]
+    pub fn text(this: &ChartTitleOptions) -> Option<JsString>;
 
-    #[wasm_bindgen(getter)]
-    pub fn text(&self) -> Option<JsString> {
-        self.text.clone()
-    }
-
-    #[wasm_bindgen(setter)]
-    pub fn set_text(&mut self, value: Option<JsString>) {
-        self.text = value;
-    }
+    #[wasm_bindgen(method, setter)]
+    pub fn set_text(this: &ChartTitleOptions, value: Option<JsString>);
 }
 
 #[wasm_bindgen]

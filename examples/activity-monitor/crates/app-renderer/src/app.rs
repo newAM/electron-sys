@@ -42,7 +42,7 @@ thread_local! {
                 let options = Object::new().unchecked_into::<ChartOptions>();
                 options.set_maintain_aspect_ratio(Some(false));
                 options.set_title(Some({
-                    let mut title = ChartTitleOptions::new();
+                    let title = Object::new().unchecked_into::<ChartTitleOptions>();
                     title.set_display(Some(true));
                     title.set_text(Some("CPU Activity".into()));
                     title.set_font_color(Some("rgb(250, 250, 250)".into()));
