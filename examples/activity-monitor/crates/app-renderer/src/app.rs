@@ -139,8 +139,8 @@ fn update_datasets() {
 }
 
 #[allow(dead_code)]
-fn get_cpu_times(cpu_info: &CpuInfo) -> [f64; 3] {
-    let times = cpu_info.times();
+fn get_cpu_times(cpu: &CpuInfo) -> [f64; 3] {
+    let times = cpu.times();
     [times.user(), times.sys(), times.idle()]
 }
 
