@@ -2,6 +2,7 @@ use crate::chart::{
     Chart,
     ChartConfiguration,
     ChartData,
+    ChartDataSets,
     ChartLegendLabelOptions,
     ChartLegendOptions,
     ChartOptions,
@@ -34,9 +35,7 @@ thread_local! {
                     "System Time (ms)".into(),
                     "Idle Time (ms)".into(),
                 ].into_boxed_slice()));
-                data.set_datasets(Some(vec![
-                    // FIXME
-                ].into_boxed_slice()));
+                data.set_datasets(Some(get_datasets()));
                 data
             }));
             options.set_options(Some({
@@ -89,8 +88,29 @@ fn set_last_measure_times() {
 }
 
 #[allow(dead_code)]
-fn get_datasets() {
-    unimplemented!("getDatasets")
+fn get_datasets() -> Box<[JsValue]> {
+    let mut datasets = vec![];
+    for cpu in get_cpus() {
+        let cpu_data = ChartDataSets::new();
+        cpu_data.set_data(Some(
+            get_cpu_times(&cpu)
+                .to_vec()
+                .into_iter()
+                .map(Into::into)
+                .collect::<Vec<_>>()
+                .into_boxed_slice(),
+        ));
+        cpu_data.set_background_color(Some(
+            vec![
+                "rgba(255,  99, 132, 1)".into(),
+                "rgba( 54, 162, 235, 1)".into(),
+                "rgba(255, 206,  86, 1)".into(),
+            ]
+            .into_boxed_slice(),
+        ));
+        datasets.push(cpu_data.into());
+}
+    datasets.into_boxed_slice()
 }
 
 #[allow(dead_code)]
