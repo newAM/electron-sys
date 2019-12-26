@@ -22,7 +22,7 @@ thread_local! {
     static CHART: Chart = {
         let document = web_sys::window().unwrap_throw().document().unwrap_throw();
         let context = document
-            .get_element_by_id("text-input")
+            .get_element_by_id("chart")
             .unwrap_throw()
             .unchecked_into::<HtmlCanvasElement>();
         let options = {
