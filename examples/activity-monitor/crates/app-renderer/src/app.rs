@@ -86,7 +86,7 @@ fn set_last_measure_times() {
 fn get_datasets() -> Box<[JsValue]> {
     let mut datasets = vec![];
     for cpu in get_cpus() {
-        let cpu_data = ChartDataSets::new();
+        let cpu_data = Object::new().unchecked_into::<ChartDataSets>();
         cpu_data.set_data(Some(
             get_cpu_times(&cpu)
                 .to_vec()

@@ -215,9 +215,6 @@ extern {
     #[derive(Debug, Clone)]
     pub type ChartDataSets;
 
-    #[wasm_bindgen(constructor)]
-    pub fn new() -> ChartDataSets;
-
     #[wasm_bindgen(method, getter)]
     pub fn data(this: &ChartDataSets) -> Option<Box<[JsValue]>>;
 
@@ -229,12 +226,6 @@ extern {
 
     #[wasm_bindgen(method, setter, js_name = "backgroundColor")]
     pub fn set_background_color(this: &ChartDataSets, value: Option<Box<[JsValue]>>);
-}
-
-impl Default for ChartDataSets {
-    fn default() -> ChartDataSets {
-        ChartDataSets::new()
-    }
 }
 
 #[wasm_bindgen]
