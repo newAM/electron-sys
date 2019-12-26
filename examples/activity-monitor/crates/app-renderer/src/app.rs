@@ -72,18 +72,16 @@ thread_local! {
     static LAST_MEASURE_TIMES: RefCell<Vec<[f64; 3]>> = RefCell::new(vec![]);
 }
 
-#[allow(dead_code)]
 fn get_cpus() -> impl Iterator<Item = CpuInfo> {
     os::cpus().into_vec().into_iter().map(JsCast::unchecked_into)
 }
 
-#[allow(dead_code)]
 fn set_last_measure_times() {
     LAST_MEASURE_TIMES.with(|times| {
         let mut times = times.borrow_mut();
         for (i, cpu) in get_cpus().enumerate() {
             times[i] = get_cpu_times(&cpu);
-    }
+        }
     });
 }
 
@@ -109,7 +107,7 @@ fn get_datasets() -> Box<[JsValue]> {
             .into_boxed_slice(),
         ));
         datasets.push(cpu_data.into());
-}
+    }
     datasets.into_boxed_slice()
 }
 
@@ -138,13 +136,11 @@ fn update_datasets() {
     });
 }
 
-#[allow(dead_code)]
 fn get_cpu_times(cpu: &CpuInfo) -> [f64; 3] {
     let times = cpu.times();
     [times.user(), times.sys(), times.idle()]
 }
 
-#[allow(dead_code)]
 fn draw_chart() {
     let window = web_sys::window().unwrap_throw();
     let clo = Closure::wrap(Box::new(update_datasets) as Box<dyn Fn()>);
