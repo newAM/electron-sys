@@ -113,9 +113,29 @@ fn get_datasets() -> Box<[JsValue]> {
     datasets.into_boxed_slice()
 }
 
-#[allow(dead_code)]
 fn update_datasets() {
-    unimplemented!("updateDatasets")
+    CHART.with(|chart| {
+        LAST_MEASURE_TIMES.with(|times| {
+            let times = times.borrow();
+            for (i, cpu) in get_cpus().enumerate() {
+                let mut data = get_cpu_times(&cpu);
+                data[0] -= times[i][0];
+                data[1] -= times[i][1];
+                data[2] -= times[i][2];
+                let data = data
+                    .to_vec()
+                    .into_iter()
+                    .map(Into::into)
+                    .collect::<Vec<_>>()
+                    .into_boxed_slice();
+                let cpu_data = &chart.data().datasets().unwrap_throw()[i];
+                let cpu_data = cpu_data.unchecked_ref::<ChartDataSets>();
+                cpu_data.set_data(Some(data));
+            }
+        });
+        chart.update();
+        set_last_measure_times();
+    });
 }
 
 #[allow(dead_code)]
