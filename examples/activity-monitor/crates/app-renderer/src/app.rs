@@ -159,5 +159,7 @@ fn draw_chart() {
 #[wasm_bindgen(start)]
 pub fn run() -> Result<(), JsValue> {
     console_error_panic_hook::set_once();
+    set_last_measure_times();
+    draw_chart();
     Ok(())
 }
