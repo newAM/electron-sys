@@ -22,13 +22,20 @@ pub fn run() -> Result<(), JsValue> {
         }));
         // set the preloads (for node integration; needed for usage of "crypto" module)
         {
-            let preload_path = path::resolve(vec!["preload.js".into()].into_boxed_slice());
+            let preload_path = path::resolve(vec!["dist/preload.js".into()].into_boxed_slice());
             win.web_contents()
                 .session()
                 .set_preloads(vec![preload_path.into()].into_boxed_slice());
         }
         // load the html file
-        win.load_file(&"../../../index.html", None);
+        win.load_file(&"../../../dist/index.html", None);
+
+        {
+            let activate = Some(false);
+            let mode = "undocked".into();
+            let options = Some(electron_sys::OpenDevToolsOptions::new(activate, mode));
+            win.web_contents().open_dev_tools(options);
+        }
 
         let ready_to_show = {
             let win = win.clone();

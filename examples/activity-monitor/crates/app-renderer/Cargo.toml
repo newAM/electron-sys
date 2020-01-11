@@ -27,6 +27,7 @@ features = ["strict-macro"]
 [dependencies.web-sys]
 version = "^0.3.33"
 features = [
+  'console',
   'Document',
   'Element',
   'HtmlCanvasElement',
