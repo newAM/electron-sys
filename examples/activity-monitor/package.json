@@ -6,7 +6,9 @@
   "scripts": {
     "build": "rimraf crates/app-main/pkg && rimraf crates/app-renderer/pkg && rimraf dist && npm run pack-app-main && npm run pack-app-renderer",
     "pack-app-main": "cd crates/app-main && wasm-pack build --target nodejs",
-    "pack-app-renderer": "webpack --debug",
+    "pack-app-renderer-build": "cd crates/app-renderer && wasm-pack build --target web",
+    "pack-app-renderer-postprocess": "cd crates/app-renderer && perl -pi -e \"s/^\\bimport\\b/\\/\\/ import/g\" pkg/activity_monitor_app_renderer.js",
+    "pack-app-renderer": "npm run pack-app-renderer-build && npm run pack-app-renderer-postprocess && webpack --debug",
     "start": "electron crates/app-main/pkg/activity_monitor_app_main.js"
   },
   "dependencies": {
