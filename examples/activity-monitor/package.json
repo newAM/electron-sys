@@ -6,8 +6,8 @@
   "scripts": {
     "build": "rimraf crates/app-main/pkg && rimraf crates/app-renderer/pkg && rimraf dist && npm run pack-app-main && npm run pack-app-renderer",
     "pack-app-main": "cd crates/app-main && wasm-pack build --target nodejs",
-    "pack-app-renderer-build": "cd crates/app-renderer && wasm-pack build --target web",
-    "pack-app-renderer-postprocess": "cd crates/app-renderer && perl -pi -e \"s/^\\bimport\\b/\\/\\/ import/g\" pkg/activity_monitor_app_renderer.js",
+    "pack-app-renderer-build": "cd crates/app-renderer && wasm-pack build --target bundler",
+    "pack-app-renderer-postprocess": "cd crates/app-renderer && perl -pi -e \"s/^\\bimport\\b { cpus/\\/\\/ import { cpus/g\" pkg/activity_monitor_app_renderer.js",
     "pack-app-renderer": "npm run pack-app-renderer-build && npm run pack-app-renderer-postprocess && webpack --debug",
     "start": "electron crates/app-main/pkg/activity_monitor_app_main.js"
   },
@@ -18,7 +18,6 @@
     "@types/copy-webpack-plugin": "^4.4.1",
     "@types/node": "^12.12.2",
     "@types/webpack": "^4.1.4",
-    "@wasm-tool/wasm-pack-plugin": "^0.4.2",
     "copy-webpack-plugin": "^5.1.1",
     "rimraf": "^3.0.0",
     "ts-node": "^8.6.1",
