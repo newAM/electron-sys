@@ -34,9 +34,9 @@ checksum = "7825f6833612eb2414095684fcf6c635becf3ce97fe48cf6421321e93bfbd53c"
 
 [[package]]
 name = "bumpalo"
-version = "2.6.0"
+version = "3.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ad807f2fc2bf185eeb98ff3a901bd46dc5ad58163d0fa4577ba0d25674d71708"
+checksum = "1f359dc14ff8911330a51ef78022d376f25ed00248912803b58f00cb1c27f742"
 
 [[package]]
 name = "cfg-if"
@@ -104,9 +104,9 @@ dependencies = [
 
 [[package]]
 name = "js-sys"
-version = "0.3.33"
+version = "0.3.35"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "367647c532db6f1555d7151e619540ec5f713328235b8c062c6b4f63e84adfe3"
+checksum = "7889c7c36282151f6bf465be4700359318aef36baa951462382eae49e9577cf9"
 dependencies = [
  "wasm-bindgen",
 ]
@@ -134,9 +134,9 @@ dependencies = [
 
 [[package]]
 name = "memchr"
-version = "2.2.1"
+version = "2.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "88579771288728879b57485cc7d6b07d648c9f0141eb955f8ab7f9d45394468e"
+checksum = "53445de381a1f436797497c61d851644d0e8e88e6140f22872ad33a704933978"
 
 [[package]]
 name = "memory_units"
@@ -146,9 +146,9 @@ checksum = "8452105ba047068f40ff7093dd1d9da90898e63dd61736462e9cdda6a90ad3c3"
 
 [[package]]
 name = "node-sys"
-version = "0.4.0"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "065c1cf29de830520a5c53050329fed0d8ffcd6928ed03187b39bfb6fdf7bf03"
+checksum = "0d87f8ffaf2d505222944437a1d984109f6b30249febf2410a011b4caa4ef9a7"
 dependencies = [
  "cfg-if",
  "js-sys",
@@ -169,9 +169,9 @@ dependencies = [
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.6"
+version = "1.0.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9c9e470a8dc4aeae2dee2f335e8f533e2d4b347e1434e5671afc49b054592f27"
+checksum = "3acb317c6ff86a4e579dfa00fc5e6cca91ecbb4e7eb2df0468805b674eb88548"
 dependencies = [
  "unicode-xid",
 ]
@@ -228,9 +228,9 @@ checksum = "4bf77cb82ba8453b42b6ae1d692e4cdc92f9a47beaf89a847c8be83f4e328ad3"
 
 [[package]]
 name = "syn"
-version = "1.0.11"
+version = "1.0.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dff0acdb207ae2fe6d5976617f887eb1e35a2ba52c13c7234c790960cdad9238"
+checksum = "af6f3550d8dff9ef7dc34d384ac6f107e5d31c8f57d9f28e0081503f547ac8f5"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -269,9 +269,9 @@ checksum = "914b1a6776c4c929a602fafd8bc742e06365d4bcbe48c30f9cca5824f70dc9dd"
 
 [[package]]
 name = "wasm-bindgen"
-version = "0.2.56"
+version = "0.2.58"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "99de4b68939a880d530aed51289a7c7baee154e3ea8ac234b542c49da7134aaf"
+checksum = "5205e9afdf42282b192e2310a5b463a6d1c1d774e30dc3c791ac37ab42d2616c"
 dependencies = [
  "cfg-if",
  "wasm-bindgen-macro",
@@ -279,9 +279,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-backend"
-version = "0.2.56"
+version = "0.2.58"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b58e66a093a7b7571cb76409763c495b8741ac4319ac20acc2b798f6766d92ee"
+checksum = "11cdb95816290b525b32587d76419facd99662a07e59d3cdb560488a819d9a45"
 dependencies = [
  "bumpalo",
  "lazy_static",
@@ -294,9 +294,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-futures"
-version = "0.4.6"
+version = "0.4.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3bf1b55e0dc85085cfab2c0c520b977afcf16ac5801ee0de8dde42a4f5649b2a"
+checksum = "8bbdd49e3e28b40dec6a9ba8d17798245ce32b019513a845369c641b275135d9"
 dependencies = [
  "cfg-if",
  "js-sys",
@@ -306,9 +306,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-macro"
-version = "0.2.56"
+version = "0.2.58"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a80f89daea7b0a67b11f6e9f911422ed039de9963dce00048a653b63d51194bf"
+checksum = "574094772ce6921576fb6f2e3f7497b8a76273b6db092be18fc48a082de09dc3"
 dependencies = [
  "quote",
  "wasm-bindgen-macro-support",
@@ -316,9 +316,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-macro-support"
-version = "0.2.56"
+version = "0.2.58"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4f9dbc3734ad6cff6b76b75b7df98c06982becd0055f651465a08f769bca5c61"
+checksum = "e85031354f25eaebe78bb7db1c3d86140312a911a106b2e29f9cc440ce3e7668"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -329,15 +329,15 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-shared"
-version = "0.2.56"
+version = "0.2.58"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d907984f8506b3554eab48b8efff723e764ddbf76d4cd4a3fe4196bc00c49a70"
+checksum = "f5e7e61fc929f4c0dddb748b102ebf9f632e2b8d739f2016542b4de2965a9601"
 
 [[package]]
 name = "wasm-bindgen-test"
-version = "0.3.6"
+version = "0.3.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "87d10750e72390ddfaad9420525f4e3ed565408586c859aa2bf91f8ebad65774"
+checksum = "98fd0ec352c44d1726b6c2bec524612b1c81e34a7d858f597a6c71f8e018c82e"
 dependencies = [
  "console_error_panic_hook",
  "js-sys",
@@ -349,9 +349,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-test-macro"
-version = "0.3.6"
+version = "0.3.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5b84bb462de0772abdec0394671153f280483828f883cbaa12d71f6142196a01"
+checksum = "97837a6e83ab24a4b3a38d44a257e13335b54f4b4548b2c9d71edd0bf570cb4f"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -359,9 +359,9 @@ dependencies = [
 
 [[package]]
 name = "wasm-bindgen-webidl"
-version = "0.2.56"
+version = "0.2.58"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f85a3825a459cf6a929d03bacb54dca37a614d43032ad1343ef2d4822972947d"
+checksum = "ef012a0d93fc0432df126a8eaf547b2dce25a8ce9212e1d3cbeef5c11157975d"
 dependencies = [
  "anyhow",
  "heck",
@@ -375,9 +375,9 @@ dependencies = [
 
 [[package]]
 name = "web-sys"
-version = "0.3.33"
+version = "0.3.35"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2fb60433d0dc12c803b9b017b3902d80c9451bab78d27bc3210bf2a7b96593f1"
+checksum = "aaf97caf6aa8c2b1dac90faf0db529d9d63c93846cca4911856f78a83cebf53b"
 dependencies = [
  "anyhow",
  "js-sys",

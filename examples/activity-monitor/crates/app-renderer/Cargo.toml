@@ -17,15 +17,15 @@ test = false
 default = ["wee_alloc"]
 
 [dependencies]
-js-sys = "^0.3.33"
-node-sys = "^0.4.0"
+js-sys = "^0.3.35"
+node-sys = "^0.4.1"
 
 [dependencies.wasm-bindgen]
-version = "^0.2.56"
+version = "^0.2.58"
 features = ["strict-macro"]
 
 [dependencies.web-sys]
-version = "^0.3.33"
+version = "^0.3.35"
 features = [
   'Document',
   'Element',
@@ -42,4 +42,4 @@ optional = true
 console_error_panic_hook = "^0.1.6"
 
 [dev-dependencies]
-wasm-bindgen-test = { version = "^0.3.6" }
+wasm-bindgen-test = { version = "^0.3.8" }

@@ -4,11 +4,12 @@
   "version": "0.1.0",
   "author": "Darin Morrison <darinmorrison@users.noreply.github.com>",
   "scripts": {
-    "build": "npm run pack-app-main",
+    "build": "rimraf crates/app-main/pkg && npm run pack-app-main",
     "pack-app-main": "cd crates/app-main && wasm-pack build --target nodejs",
     "start": "electron crates/app-main/pkg/url_app_main.js"
   },
   "dependencies": {
-    "electron": "^8.0.0-beta.7"
+    "electron": "^8.0.1",
+    "rimraf": "^3.0.2"
   }
 }

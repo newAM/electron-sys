@@ -21,11 +21,11 @@ version = "^0.4.0"
 path = "../../../.."
 
 [dependencies.js-sys]
-version = "^0.3.33"
+version = "^0.3.35"
 features = []
 
 [dependencies.wasm-bindgen]
-version = "^0.2.56"
+version = "^0.2.58"
 features = ["strict-macro"]
 
 [dependencies.wee_alloc]
@@ -36,4 +36,4 @@ optional = true
 console_error_panic_hook = "^0.1.6"
 
 [dev-dependencies]
-wasm-bindgen-test = { version = "^0.3.6" }
+wasm-bindgen-test = { version = "^0.3.8" }
