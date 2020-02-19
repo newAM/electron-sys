@@ -22,7 +22,7 @@ path = "../../../.."
 
 [dependencies]
 js-sys = "^0.3.35"
-node-sys = "^0.4.1"
+node-sys = "^0.4.2"
 
 [dependencies.wasm-bindgen]
 version = "^0.2.58"
