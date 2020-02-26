@@ -34,15 +34,15 @@ panic = 'abort'
 default = ["wee_alloc"]
 
 [dependencies]
-js-sys = "^0.3.35"
+js-sys = "^0.3.39"
 node-sys = "^0.4.2"
 
 [dependencies.wasm-bindgen]
-version = "^0.2.58"
+version = "^0.2.62"
 features = ["strict-macro"]
 
 [dependencies.web-sys]
-version = "^0.3.35"
+version = "^0.3.39"
 features = [
   "Event",
 ]
@@ -55,7 +55,7 @@ optional = true
 console_error_panic_hook = "^0.1.6"
 
 [dev-dependencies]
-wasm-bindgen-test = { version = "^0.3.8" }
+wasm-bindgen-test = { version = "^0.3.12" }
 
 [workspace]
 members = [
@@ -67,19 +67,3 @@ members = [
   "examples/quick-start/crates/app-renderer",
   "examples/url/crates/app-main",
 ]
-
-[patch.crates-io.wasm-bindgen]
-git = "https://github.com/rustwasm/wasm-bindgen"
-rev = "673e9b78300b38f7510ee6a4229a8ce04deca531"
-
-[patch.crates-io.js-sys]
-git = "https://github.com/rustwasm/wasm-bindgen"
-rev = "673e9b78300b38f7510ee6a4229a8ce04deca531"
-
-[patch.crates-io.web-sys]
-git = "https://github.com/rustwasm/wasm-bindgen"
-rev = "673e9b78300b38f7510ee6a4229a8ce04deca531"
-
-[patch.crates-io.wasm-bindgen-test]
-git = "https://github.com/rustwasm/wasm-bindgen"
-rev = "673e9b78300b38f7510ee6a4229a8ce04deca531"
