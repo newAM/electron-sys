@@ -12,7 +12,7 @@ pub fn run() -> Result<(), JsValue> {
     let ready = Closure::wrap(Box::new(|| {
         // Create a new window
         let window = BrowserWindow::new(Some({
-            let mut opts = <BrowserWindowOptions as Default>::default();
+            let opts = <BrowserWindowOptions as Default>::default();
             // Set the initial width to 800px
             opts.set_width(Some(640));
             // Set the initial height to 600px
@@ -20,7 +20,7 @@ pub fn run() -> Result<(), JsValue> {
             // Don't show the window until it ready, this prevents any white flickering
             opts.set_show(Some(false));
             opts.set_web_preferences(Some({
-                let mut opts = <WebPreferences as Default>::default();
+                let opts = <WebPreferences as Default>::default();
                 // Disable node integration in remote page
                 opts.set_node_integration(Some(false));
                 opts

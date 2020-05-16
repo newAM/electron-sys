@@ -7,7 +7,7 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 fn create_window() -> BrowserWindow {
     BrowserWindow::new(Some({
-        let mut opts = <BrowserWindowOptions as Default>::default();
+        let opts = <BrowserWindowOptions as Default>::default();
         opts.set_width(Some(640));
         opts.set_height(Some(480));
         opts
