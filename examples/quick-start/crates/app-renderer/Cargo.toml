@@ -16,6 +16,9 @@ test = false
 [features]
 default = ["wee_alloc"]
 
+[dependencies]
+console_error_panic_hook = "^0.1.6"
+
 [dependencies.wasm-bindgen]
 version = "^0.2.62"
 features = ["strict-macro"]
@@ -33,9 +36,6 @@ features = [
 [dependencies.wee_alloc]
 version = "^0.4.5"
 optional = true
-
-[target."cfg(debug_assertions)".dependencies]
-console_error_panic_hook = "^0.1.6"
 
 [dev-dependencies]
 wasm-bindgen-test = { version = "^0.3.12" }
